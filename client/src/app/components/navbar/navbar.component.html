@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-sm navbar-custom">
+  <a href="/" class="navbar-brand">Virtual Biotech</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCustom">
+      <i class="fa fa-bars fa-lg py-1 text-white"></i>
+  </button>
+  <div class="navbar-collapse collapse" id="navbarCustom">
+      <ul class="navbar-nav">
+          <li [routerLinkActive]="['active']" class="nav-item">
+              <a class="nav-link" routerLink="/home">Home</a>
+          </li>
+          <li [routerLinkActive]="['active']" class="nav-item">
+              <a class="nav-link" routerLink="/vc_list">VC List</a>
+          </li>
+          <li [routerLinkActive]="['active']" class="nav-item">
+              <a class="nav-link" routerLink="/about_us">About Us</a>
+          </li>
+      </ul>
+      <a class="ml-auto navbar-text" routerLink="/login">Login</a>
+  </div>
+</nav>
