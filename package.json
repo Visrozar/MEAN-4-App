@@ -1,0 +1,33 @@
+{
+  "name": "mean-4-app",
+  "version": "1.0.0",
+  "description": "MEAN Stack app with Angular 4",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Visrozar/MEAN-4-App.git"
+  },
+  "keywords": [
+    "MEAN",
+    "Stack",
+    "Angular",
+    "4",
+    "application"
+  ],
+  "author": "Elvis Rozario, Isaac Nadar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Visrozar/MEAN-4-App/issues"
+  },
+  "homepage": "https://github.com/Visrozar/MEAN-4-App#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongoose": "^4.12.4"
+  },
+  "devDependencies": {
+    "@angular/cli": "^1.4.9"
+  }
+}
