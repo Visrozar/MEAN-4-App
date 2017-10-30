@@ -1,1 +1,9 @@
-<h1 class="page-header">Home Page</h1>
+<input name="term" [(ngModel)]="term">
+<!-- <div *ngFor="let vclist of vclists | filter : term">
+    {{ vclist.Location }}
+</div> -->
+
+<tr *ngFor="let vclist of vclists | filter : term ">
+    <td>{{vclist.Location}}</td>
+    <td>{{vclist['VC Name']}}</td>
+</tr>

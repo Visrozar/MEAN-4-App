@@ -7,13 +7,16 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { VclistComponent } from './components/vclist/vclist.component';
+import { VclistService } from './vclist.service';
+import { FilterPipe, SortByPipe } from './vclist.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    VclistComponent
+    VclistComponent,
+    FilterPipe, SortByPipe
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,7 @@ import { VclistComponent } from './components/vclist/vclist.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [VclistService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
