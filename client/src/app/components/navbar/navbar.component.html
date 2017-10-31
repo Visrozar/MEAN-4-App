@@ -1,20 +1,29 @@
-<nav class="navbar navbar-expand-sm navbar-custom">
-  <a href="/" class="navbar-brand">Virtual Biotech</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCustom">
-      <i class="fa fa-bars fa-lg py-1 text-white"></i>
-  </button>
-  <div class="navbar-collapse collapse" id="navbarCustom">
-      <ul class="navbar-nav">
-          <li [routerLinkActive]="['active']" class="nav-item">
-              <a class="nav-link" routerLink="/home">Home</a>
-          </li>
-          <li [routerLinkActive]="['active']" class="nav-item">
-              <a class="nav-link" routerLink="/vc_list">VC List</a>
-          </li>
-          <li [routerLinkActive]="['active']" class="nav-item">
-              <a class="nav-link" routerLink="/about_us">About Us</a>
-          </li>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Virtual Biotech</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li [routerLinkActive]="['active']" class="nav-item">
+          <a class="nav-link" routerLink="/home">Home</a>
+        </li>
+        <li [routerLinkActive]="['active']" class="nav-item">
+          <a class="nav-link" routerLink="/vc_list">VC List</a>
+        </li>
       </ul>
-      <a class="ml-auto navbar-text" routerLink="/login">Login</a>
+      <!-- <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a class="ml-auto navbar-text" routerLink="/login">Login</a>
+        </li>
+      </ul> -->
+    </div>
   </div>
 </nav>

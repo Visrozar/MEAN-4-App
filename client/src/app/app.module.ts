@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { VclistComponent } from './components/vclist/vclist.component';
+import { VclistService } from './services/vclist.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { VclistComponent } from './components/vclist/vclist.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [VclistService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
