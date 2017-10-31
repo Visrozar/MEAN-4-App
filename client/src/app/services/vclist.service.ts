@@ -8,7 +8,7 @@ export class VclistService {
 
   constructor(public http: Http) { }
 
-  getData() {
+  getVclist() {
     return this.http.get("../assets/csv.json")
       .map((res: Response) => res.json());
   }

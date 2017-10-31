@@ -13,8 +13,9 @@ const appRoutes: Routes = [
     component: VclistComponent
   },
   { 
-    path: '*', 
-    component: HomeComponent
+    path: '**', 
+    redirectTo: '/home',
+    pathMatch: 'full'
   }
 ];
 

@@ -1,66 +1,35 @@
-<!-- <input [(ngModel)]="term"> -->
-<!-- <div *ngFor="let vclist of vclists | filter : term">
-    {{ vclist.Location }}
-</div> -->
-
-
-<!-- <form>
-    <select [(ngModel)]="term" (ngModelChange)="onChange($event)">
-        <option *ngFor="let c of test" [ngValue]="c"> {{c}} </option>
-    </select>
-</form>
-
-
-<tr *ngFor="let vclist of vclists | filter : term ">
-    <td>{{vclist.Location}}</td>
-    <td>{{vclist['VC Name']}}</td>
-</tr> -->
-
-<!-- <form>
-    <div class="form-group">
-        <label>Location</label>
-        <select name="term" [(ngModel)]="term">
-            <option *ngFor="let vclist of vclists">{{ vclist.Location.split(" ").splice(-1)[0] }}</option>
-        </select>
-        <label>Investment Focus</label>
-        <select name="term" [(ngModel)]="term">
-            <option *ngFor="let vclist of vclists">{{ vclist['Investment Focus'] }}</option>
-        </select>
-        <label>Prefered Indication</label>
-        <select name="term" [(ngModel)]="term">
-            <option *ngFor="let vclist of vclists">{{ vclist['Prefered Indication'] }}</option>
-        </select>
-        <label>Investment Stage</label>
-        <select name="term" [(ngModel)]="term">
-            <option *ngFor="let vclist of vclists">{{ vclist['Investment Stage'] }}</option>
-        </select>
-    </div>
-</form> -->
-
 <div *ngFor="let vclist of vclists" class="container list">
-    <div class="row card">
-        <h3 class="text-center">{{vclist['VC Name']}}</h3>
-        <h3 *ngIf="!vclist['VC Name']">&nbsp;</h3>
-        <p style="float:right; margin-top:-40px;">
-            <a class="btn btn--border btn--primary1 btn--animated1" href="{{vclist.Website}}" role="button">visit website &raquo;</a>
-        </p>
+  <div class="row card">
+    <div class="col-xs-3">
+        <img class="sh-styles" src="assets/images/logo.ico" alt="company logo">
     </div>
-    <div class="row">
-        <div class="col-xs-4 field">
-            <p>Investment Focus:</p>
-            <p>Investment Stage:</p>
-            <p>Research/Industry Partner:</p>
-            <p>Location:</p>
-        </div>
-        <div class="col-xs-8 vr field">
-            <p class="tags">{{vclist['Investment Focus'].split(',').join(' |')}}</p>
-            <p *ngIf="!vclist['Investment Focus']">&nbsp;</p>
-            <p>{{vclist['Investment Stage'].split(',').join(' |')}}</p>
-            <p *ngIf="!vclist['Investment Stage']">&nbsp;</p>
-            <p>{{vclist.Research[' Industry Partner'].split(',').join(' |')}}</p>
-            <p *ngIf="!vclist.Research[' Industry Partner']">&nbsp;</p>
-            <p>{{vclist.Location.split(',').join(' |')}}</p>
-            <p *ngIf="!vclist.Location">&nbsp;</p>
-        </div>
+    <div class="col-xs-6">
+      <a class="no-underline" href="{{vclist.Website}}"><h3 class="text-center">{{vclist['VC Name']}}</h3></a>
     </div>
+    <div class="col-xs-3">
+      <p class="website">
+        <a class="website btn btn-primary" href="{{vclist.Website}}" role="button">visit website &raquo;</a>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <table class="table">
+      <tr *ngIf="vclist['Investment Focus']">
+        <td class="vr">Investment Focus:</td>
+        <td>{{vclist['Investment Focus'].split(',').join(' |')}}</td>
+      </tr>
+      <tr *ngIf="vclist['Investment Stage']">
+        <td class="vr">Investment Stage:</td>
+        <td>{{vclist['Investment Stage'].split(',').join(' |')}}</td>
+      </tr>
+      <tr *ngIf="vclist.Research[' Industry Partner']">
+        <td class="vr">Research/Industry Partner:</td>
+        <td>{{vclist.Research[' Industry Partner'].split(',').join(' |')}}</td>
+      </tr>
+      <tr *ngIf="vclist.Location">
+        <td class="vr">Location:</td>
+        <td>{{vclist.Location.split(',').join(' |')}}</td>
+      </tr>
+    </table>
+  </div>
 </div>
