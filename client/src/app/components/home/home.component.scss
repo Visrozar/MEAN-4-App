@@ -1,5 +1,211 @@
-@import '~app/scss/_variables';
+@import '~scss/_scroll-anchor';
+@import '~scss/_dna';
+@import '~scss/_variables';
 
-h1 {
-  color: $primary-color;
+.header-img {
+  background: $orange;
+  background-repeat: no-repeat;
+  height: auto;
+  border-radius: 0px;
 }
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.scroll-button {
+  cursor: pointer;
+}
+
+.cont-style {
+  color: white;
+}
+
+.cont-1 {
+  padding-top: 35px;
+}
+
+.description {
+  margin-top: 40px;
+  color: $green;
+}
+
+.stake-holders {
+  color: $green;
+  background: white;
+  h2{
+    margin-top: 0;
+  }
+}
+
+.heading {
+  text-overflow: ellipsis;
+  max-width: 762px;
+  color: white;
+  font-size: 40px;
+}
+
+.box {
+  background: white;
+  border-radius: 0.3rem;
+  padding: 15px;
+  font-size: 15px !important;
+}
+
+.shadow {
+  box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  letter-spacing: 1.2px;
+  padding: 12px 32px;
+  text-align: center;
+  text-transform: uppercase;
+  overflow: hidden;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn--primary {
+  color: white;
+}
+
+.btn--primary1 {
+  color: $green;
+}
+
+.btn--border {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.btn--animated {
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+
+.btn--animated.btn--border.btn--primary {
+  border: 1px solid white;
+}
+
+.btn--animated1.btn--border.btn--primary1 {
+  border: 1px solid $green;
+}
+
+.btn--animated:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  z-index: -1;
+}
+
+.btn--animated:hover {
+  color: $green;
+}
+
+.btn--animated1:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $green;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  z-index: -1;
+}
+
+.btn--animated1:hover {
+  color: white;
+}
+
+.btn--animated:hover:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66);
+  transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66);
+}
+
+.btn--animated1:hover:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66);
+  transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66);
+}
+
+.jumbotron {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 520px) {
+  .heading {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  .jumbotron {
+    padding: 4rem 2rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .sh-styles {
+    margin-top: 0;
+  }
+
+  .jumbotron {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .sh-styles {
+    width: 250px !important;
+    height: 200px !important;
+    margin-top: 20%;
+  }
+}
+
