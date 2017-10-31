@@ -1,0 +1,35 @@
+<div *ngFor="let vclist of vclists" class="container list">
+  <div class="row card">
+    <div class="col-xs-3">
+        <img class="sh-styles" src="assets/images/logo.ico" alt="company logo">
+    </div>
+    <div class="col-xs-6">
+      <a class="no-underline" href="{{vclist.Website}}"><h3 class="text-center">{{vclist['VC Name']}}</h3></a>
+    </div>
+    <div class="col-xs-3">
+      <p class="website">
+        <a class="website btn btn-primary" href="{{vclist.Website}}" role="button">visit website &raquo;</a>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <table class="table">
+      <tr *ngIf="vclist['Investment Focus']">
+        <td class="vr">Investment Focus:</td>
+        <td>{{vclist['Investment Focus'].split(',').join(' |')}}</td>
+      </tr>
+      <tr *ngIf="vclist['Investment Stage']">
+        <td class="vr">Investment Stage:</td>
+        <td>{{vclist['Investment Stage'].split(',').join(' |')}}</td>
+      </tr>
+      <tr *ngIf="vclist.Research[' Industry Partner']">
+        <td class="vr">Research/Industry Partner:</td>
+        <td>{{vclist.Research[' Industry Partner'].split(',').join(' |')}}</td>
+      </tr>
+      <tr *ngIf="vclist.Location">
+        <td class="vr">Location:</td>
+        <td>{{vclist.Location.split(',').join(' |')}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+@import '~scss/_variables';
+
+.navbar-default {
+    background-color: #c34113;
+}
+
+.navbar{
+    margin-bottom: 0px;
+    border-radius: 0px;
+}
+
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: $green;
+}
+
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: $green;
+}
+
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color:white;
+}
+
+.navbar-text{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.navbar-default .navbar-nav > .active{
+   background: #ac3911;
+ }
+ .navbar-default .navbar-nav > .active > a, 
+ .navbar-default .navbar-nav > .active > a:hover, 
+ .navbar-default .navbar-nav > .active > a:focus {
+      background: #ac3911;
+ }
