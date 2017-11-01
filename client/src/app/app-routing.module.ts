@@ -5,11 +5,11 @@ import { VclistComponent } from './components/vclist/vclist.component';
 
 const appRoutes: Routes = [
   { 
-    path: '/home', 
+    path: 'home', 
     component: HomeComponent
   },
   { 
-    path: '/vc_list', 
+    path: 'vc_list', 
     component: VclistComponent
   },
   { 

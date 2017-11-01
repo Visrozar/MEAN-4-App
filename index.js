@@ -1,8 +1,11 @@
 const express = require('express');
 const app = express();
+const router = express.Router();
 const mongoose = require('mongoose');
 const config = require('./config/database');
 const path = require('path');
+const authentication = require('./routes/authentication')(router);
+const bodyParser = require('body-parser');
 
 //For Heroku deployment
 const port = process.env.PORT || 8000;
@@ -31,7 +34,7 @@ app.get('/', (req, res) => {
 app.get('**', (req, res) => {
     res.sendFile(path.join(__dirname + env + '/index.html'));
 });
-  
+
 app.listen(port, () => {
     console.log('Listening to port '+ port);
 });

@@ -188,7 +188,7 @@ AppModule = __decorate([
 /***/ "../../../../../src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<main role=\"main\">\r\n  <div id=\"head\" class=\"jumbotron header-img\">\r\n    <div class=\"container cont-style\">\r\n      <h2 class=\"display-1 heading\">Virtual Boitech is the first online community for life science investors in Europe</h2>\r\n      <p style=\"margin-top:40px;\">\r\n        <a class=\"btn btn--border btn--primary btn--animated\" href=\"#\" role=\"button\">Join us &raquo;</a>\r\n      </p>\r\n\r\n      <!-- dna code -->\r\n      <div class='dna'>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n      </div>\r\n      <div class=\"row\">\r\n        <div class=\"col-md-5 description\">\r\n          <p class=\"box shadow\">VirtualBiotech is a non-commercial initiative managed by venture capital professionals with the aim to form a free\r\n            online community for life science investors in Europe.</p>\r\n        </div>\r\n        <div class=\"col-md-5 description\">\r\n          <p class=\"box shadow\">VirtualBiotech is NOT a fund raising platform. We solely enable scientists and life science enterpreneurs to introduce\r\n            their projects/companies to our community members.</p>\r\n        </div>\r\n      </div>\r\n      <div class=\"row\">\r\n        <section id=\"section05\" class=\"col-md-12 text-center demo\">\r\n          <a class=\"scroll-button\" (click)=\"scrollDown()\">\r\n            <span></span>See how you can benefit from Virtual Biotech</a>\r\n        </section>\r\n      </div>\r\n\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"container cont-1\">\r\n    <div class=\"container\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-7 stake-holders\">\r\n          <h2>For life science investors:</h2>\r\n          <ul>\r\n            <li>Browse the listed investment opportunities and stay up to date with the life science startup scene in Europe</li>\r\n            <li>Download the available slide decks freely and anonymously and move any time to direct contact with the founders</li>\r\n            <li>Find out which projects are most popular in the community and have the choice to express your interest in any\r\n              listed project</li>\r\n            <li>By expressing interest, you will be introduced to other interested members to potentially share your due diligence\r\n              and build syndicates</li>\r\n          </ul>\r\n          <p>\r\n            <a class=\"btn btn--border btn--primary1 btn--animated1\" style=\"display:table-cell; vertical-align:middle; text-align:center\"\r\n              href=\"#\" role=\"button\">Join our investor community &raquo;</a>\r\n          </p>\r\n        </div>\r\n        <div class=\"col-md-5\" style=\"display:table-cell; vertical-align:middle; text-align:center\">\r\n          <img class=\"sh-styles\" src=\"assets/images/investor.svg\" style=\"width:350px;height:250px;\" alt=\"investor\">\r\n        </div>\r\n      </div>\r\n      <div class=\"row\" style=\"margin-top:100px;\">\r\n        <div class=\"col-md-5\" style=\"display:table-cell; vertical-align:middle; text-align:center\">\r\n          <img class=\"sh-styles\" src=\"assets/images/ent.svg\" style=\"width:350px;height:250px;\" alt=\"entrepreneurs\">\r\n        </div>\r\n        <div class=\"col-md-7 stake-holders\">\r\n          <h2>For life science entrepreneurs:</h2>\r\n          <ul>\r\n            <li>Benefit from our community to reach more life science investors, pave the way for future contact or follow up\r\n              in a soft and indirect way</li>\r\n            <li>List your company or project simply and without any commitment to our platform</li>\r\n            <li>Your company will be added to our deal flow which will be sent to our community members of life science investors</li>\r\n            <li>The investors will be able to check your company profile, contact you directly and share their interest with\r\n              other investors</li>\r\n          </ul>\r\n          <p>\r\n            <a class=\"btn btn--border btn--primary1 btn--animated1\" style=\"display:table-cell; vertical-align:middle; text-align:center\"\r\n              href=\"#\" role=\"button\">Submit your business plan &raquo;</a>\r\n          </p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <hr>\r\n  </div>\r\n</main>\r\n"
+module.exports = "<main role=\"main\">\r\n  <div id=\"head\" class=\"jumbotron header-img\">\r\n    <div class=\"container cont-style\">\r\n      <h2 class=\"display-1 heading\">Virtual Boitech is the first online community for life science investors in Europe</h2>\r\n      <p style=\"margin-top:40px;\">\r\n        <a class=\"btn btn--border btn--primary btn--animated\" routerLink=\"/home\" role=\"button\">Join us &raquo;</a>\r\n      </p>\r\n\r\n      <!-- dna code -->\r\n      <div class='dna'>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n        <div class='protein'>\r\n          <b></b>\r\n          <b></b>\r\n        </div>\r\n      </div>\r\n      <div class=\"row\">\r\n        <div class=\"col-md-5 description\">\r\n          <p class=\"box shadow\">VirtualBiotech is a non-commercial initiative managed by venture capital professionals with the aim to form a free\r\n            online community for life science investors in Europe.</p>\r\n        </div>\r\n        <div class=\"col-md-5 description\">\r\n          <p class=\"box shadow\">VirtualBiotech is NOT a fund raising platform. We solely enable scientists and life science enterpreneurs to introduce\r\n            their projects/companies to our community members.</p>\r\n        </div>\r\n      </div>\r\n      <div class=\"row\">\r\n        <section id=\"section05\" class=\"col-md-12 text-center demo\">\r\n          <a class=\"scroll-button\" (click)=\"scrollDown()\">\r\n            <span></span>See how you can benefit from Virtual Biotech</a>\r\n        </section>\r\n      </div>\r\n\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"container cont-1\">\r\n    <div class=\"container\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-7 stake-holders\">\r\n          <h2>For life science investors:</h2>\r\n          <ul>\r\n            <li>Browse the listed investment opportunities and stay up to date with the life science startup scene in Europe</li>\r\n            <li>Download the available slide decks freely and anonymously and move any time to direct contact with the founders</li>\r\n            <li>Find out which projects are most popular in the community and have the choice to express your interest in any\r\n              listed project</li>\r\n            <li>By expressing interest, you will be introduced to other interested members to potentially share your due diligence\r\n              and build syndicates</li>\r\n          </ul>\r\n          <p>\r\n            <a class=\"btn btn--border btn--primary1 btn--animated1\" style=\"display:table-cell; vertical-align:middle; text-align:center\"\r\n              href=\"#\" role=\"button\">Join our investor community &raquo;</a>\r\n          </p>\r\n        </div>\r\n        <div class=\"col-md-5\" style=\"display:table-cell; vertical-align:middle; text-align:center\">\r\n          <img class=\"sh-styles\" src=\"assets/images/investor.svg\" style=\"width:350px;height:250px;\" alt=\"investor\">\r\n        </div>\r\n      </div>\r\n      <div class=\"row\" style=\"margin-top:100px;\">\r\n        <div class=\"col-md-5\" style=\"display:table-cell; vertical-align:middle; text-align:center\">\r\n          <img class=\"sh-styles\" src=\"assets/images/ent.svg\" style=\"width:350px;height:250px;\" alt=\"entrepreneurs\">\r\n        </div>\r\n        <div class=\"col-md-7 stake-holders\">\r\n          <h2>For life science entrepreneurs:</h2>\r\n          <ul>\r\n            <li>Benefit from our community to reach more life science investors, pave the way for future contact or follow up\r\n              in a soft and indirect way</li>\r\n            <li>List your company or project simply and without any commitment to our platform</li>\r\n            <li>Your company will be added to our deal flow which will be sent to our community members of life science investors</li>\r\n            <li>The investors will be able to check your company profile, contact you directly and share their interest with\r\n              other investors</li>\r\n          </ul>\r\n          <p>\r\n            <a class=\"btn btn--border btn--primary1 btn--animated1\" style=\"display:table-cell; vertical-align:middle; text-align:center\"\r\n              href=\"#\" role=\"button\">Submit your business plan &raquo;</a>\r\n          </p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <hr>\r\n  </div>\r\n</main>\r\n"
 
 /***/ }),
 
@@ -230,9 +230,6 @@ var HomeComponent = (function () {
     function HomeComponent() {
     }
     HomeComponent.prototype.ngOnInit = function () {
-        if (window.innerWidth > 1000 && window.innerWidth < 2000) {
-            document.getElementById("head").style.height = window.innerHeight - 51 + 'px';
-        }
     };
     HomeComponent.prototype.scrollDown = function () {
         $('html,body').animate({
@@ -257,7 +254,7 @@ HomeComponent = __decorate([
 /***/ "../../../../../src/app/components/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default\">\r\n  <div class=\"container-fluid\">\r\n    <div class=\"navbar-header\">\r\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\">\r\n        <span class=\"sr-only\">Toggle navigation</span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n      </button>\r\n      <a class=\"navbar-brand\" href=\"#\">Virtual Biotech</a>\r\n    </div>\r\n\r\n    <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\r\n      <ul class=\"nav navbar-nav\">\r\n        <li [routerLinkActive]=\"['active']\" class=\"nav-item\">\r\n          <a class=\"nav-link\" routerLink=\"/home\">Home</a>\r\n        </li>\r\n        <li [routerLinkActive]=\"['active']\" class=\"nav-item\">\r\n          <a class=\"nav-link\" routerLink=\"/vc_list\">VC List</a>\r\n        </li>\r\n      </ul>\r\n      <!-- <ul class=\"nav navbar-nav navbar-right\">\r\n        <li>\r\n          <a class=\"ml-auto navbar-text\" routerLink=\"/login\">Login</a>\r\n        </li>\r\n      </ul> -->\r\n    </div>\r\n  </div>\r\n</nav>\r\n"
+module.exports = "<nav class=\"navbar navbar-default\">\r\n  <div class=\"container-fluid\">\r\n    <div class=\"navbar-header\">\r\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\">\r\n        <span class=\"sr-only\">Toggle navigation</span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n      </button>\r\n      <a class=\"navbar-brand\" routerLink=\"/home\">Virtual Biotech</a>\r\n    </div>\r\n\r\n    <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\r\n      <ul class=\"nav navbar-nav\">\r\n        <li [routerLinkActive]=\"['active']\" class=\"nav-item\">\r\n          <a class=\"nav-link\" routerLink=\"/home\">Home</a>\r\n        </li>\r\n        <li [routerLinkActive]=\"['active']\" class=\"nav-item\">\r\n          <a class=\"nav-link\" routerLink=\"/vc_list\">VC List</a>\r\n        </li>\r\n      </ul>\r\n      <!-- <ul class=\"nav navbar-nav navbar-right\">\r\n        <li>\r\n          <a class=\"ml-auto navbar-text\" routerLink=\"/login\">Login</a>\r\n        </li>\r\n      </ul> -->\r\n    </div>\r\n  </div>\r\n</nav>\r\n"
 
 /***/ }),
 
@@ -285,6 +282,7 @@ module.exports = module.exports.toString();
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NavbarComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -295,8 +293,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var NavbarComponent = (function () {
-    function NavbarComponent() {
+    function NavbarComponent(metaService) {
+        this.metaService = metaService;
+        this.metaService.addTags([
+            { name: 'Description', content: 'VirtualBiotech is a non-commercial initiative managed by venture capital professionals with the aim to form a free online community for life science investors in Europe.' }
+        ]);
     }
     NavbarComponent.prototype.ngOnInit = function () {
     };
@@ -308,9 +311,10 @@ NavbarComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/navbar/navbar.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/navbar/navbar.component.scss")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["b" /* Meta */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["b" /* Meta */]) === "function" && _a || Object])
 ], NavbarComponent);
 
+var _a;
 //# sourceMappingURL=navbar.component.js.map
 
 /***/ }),
@@ -318,7 +322,7 @@ NavbarComponent = __decorate([
 /***/ "../../../../../src/app/components/vclist/vclist.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngFor=\"let vclist of vclists\" class=\"container list\">\r\n  <div class=\"row card\">\r\n    <div class=\"col-xs-3\">\r\n        <img class=\"sh-styles\" src=\"assets/images/logo.ico\" alt=\"company logo\">\r\n    </div>\r\n    <div class=\"col-xs-6\">\r\n      <a class=\"no-underline\" href=\"{{vclist.Website}}\"><h3 class=\"text-center\">{{vclist['VC Name']}}</h3></a>\r\n    </div>\r\n    <div class=\"col-xs-3\">\r\n      <p class=\"website\">\r\n        <a class=\"website btn btn-primary\" href=\"{{vclist.Website}}\" role=\"button\">visit website &raquo;</a>\r\n      </p>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <table class=\"table\">\r\n      <tr *ngIf=\"vclist['Investment Focus']\">\r\n        <td class=\"vr\">Investment Focus:</td>\r\n        <td>{{vclist['Investment Focus'].split(',').join(' |')}}</td>\r\n      </tr>\r\n      <tr *ngIf=\"vclist['Investment Stage']\">\r\n        <td class=\"vr\">Investment Stage:</td>\r\n        <td>{{vclist['Investment Stage'].split(',').join(' |')}}</td>\r\n      </tr>\r\n      <tr *ngIf=\"vclist.Research[' Industry Partner']\">\r\n        <td class=\"vr\">Research/Industry Partner:</td>\r\n        <td>{{vclist.Research[' Industry Partner'].split(',').join(' |')}}</td>\r\n      </tr>\r\n      <tr *ngIf=\"vclist.Location\">\r\n        <td class=\"vr\">Location:</td>\r\n        <td>{{vclist.Location.split(',').join(' |')}}</td>\r\n      </tr>\r\n    </table>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div *ngFor=\"let vclist of vclists\" class=\"container list\">\r\n  <div class=\"row card\">\r\n    <div class=\"col-xs-3\">\r\n        <img class=\"sh-styles\" src=\"assets/images/logo.ico\" alt=\"company logo\">\r\n    </div>\r\n    <div class=\"col-xs-6\">\r\n      <a class=\"no-underline\" href=\"{{vclist.Website}}\" target=\"_blank\"><h3 class=\"text-center\">{{vclist['VC Name']}}</h3></a>\r\n    </div>\r\n    <div class=\"col-xs-3\">\r\n      <p class=\"website\">\r\n        <a class=\"website btn btn-primary\" href=\"{{vclist.Website}}\" role=\"button\" target=\"_blank\">visit website &raquo;</a>\r\n      </p>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <table class=\"table\">\r\n      <tr *ngIf=\"vclist['Investment Focus']\">\r\n        <td class=\"vr\">Investment Focus:</td>\r\n        <td>{{vclist['Investment Focus'].split(',').join(' |')}}</td>\r\n      </tr>\r\n      <tr *ngIf=\"vclist['Investment Stage']\">\r\n        <td class=\"vr\">Investment Stage:</td>\r\n        <td>{{vclist['Investment Stage'].split(',').join(' |')}}</td>\r\n      </tr>\r\n      <tr *ngIf=\"vclist.Research[' Industry Partner']\">\r\n        <td class=\"vr\">Research/Industry Partner:</td>\r\n        <td>{{vclist.Research[' Industry Partner'].split(',').join(' |')}}</td>\r\n      </tr>\r\n      <tr *ngIf=\"vclist.Location\">\r\n        <td class=\"vr\">Location:</td>\r\n        <td>{{vclist.Location.split(',').join(' |')}}</td>\r\n      </tr>\r\n    </table>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -347,6 +351,7 @@ module.exports = module.exports.toString();
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VclistComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_vclist_service__ = __webpack_require__("../../../../../src/app/services/vclist.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -358,16 +363,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var VclistComponent = (function () {
-    function VclistComponent(vclistService) {
-        this.vclistService = vclistService;
-        this.vclists = [];
-    }
-    VclistComponent.prototype.ngOnInit = function () {
+    function VclistComponent(vclistService, metaService) {
         var _this = this;
+        this.vclistService = vclistService;
+        this.metaService = metaService;
+        this.vclists = [];
         this.vclistService.getVclist().subscribe(function (data) {
             _this.vclists = data;
+            var allowed = ['VC Name'];
+            var vc_name = [];
+            data.filter(function (val) {
+                for (var key in val) {
+                    if (key === 'VC Name') {
+                        vc_name.push(val[key]); // val1 and etc...
+                    }
+                }
+            });
+            _this.metaService.addTags([
+                { name: 'keywords', content: vc_name.toString() }
+            ]);
         });
+    }
+    VclistComponent.prototype.ngOnInit = function () {
     };
     return VclistComponent;
 }());
@@ -377,10 +396,10 @@ VclistComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/vclist/vclist.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/vclist/vclist.component.scss")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_vclist_service__["a" /* VclistService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_vclist_service__["a" /* VclistService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_vclist_service__["a" /* VclistService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_vclist_service__["a" /* VclistService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["b" /* Meta */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["b" /* Meta */]) === "function" && _b || Object])
 ], VclistComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=vclist.component.js.map
 
 /***/ }),
