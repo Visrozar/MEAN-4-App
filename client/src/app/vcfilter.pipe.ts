@@ -1,0 +1,15 @@
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'vcfilter',
+  pure: false
+})
+export class VcfilterPipe implements PipeTransform {
+
+  transform(items: any[], term): any {
+    return term 
+    ? items.filter(item => item.Location.toLowerCase().indexOf(term.toLowerCase()) !== -1)
+    : items;
+  }
+
+}

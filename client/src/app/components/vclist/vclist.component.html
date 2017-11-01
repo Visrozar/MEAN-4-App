@@ -1,4 +1,39 @@
-<div *ngFor="let vclist of vclists" class="container list">
+<!-- <form>
+    <select [(ngModel)]="term" (ngModelChange)="onChange($event)">
+        <option *ngFor="let c of test" [ngValue]="c"> {{c}} </option>
+    </select>
+</form> -->
+
+
+<!-- <tr *ngFor="let vclist of vclists | vcfilter : term ">
+    <td>{{vclist.Location}}</td>
+    <td>{{vclist['VC Name']}}</td>
+</tr> -->
+
+<form>
+    <div class="form-group">
+        <label>Location</label>
+        <select name="term" [(ngModel)]="term">
+            <option *ngFor="let location of country">{{ location }}</option>
+        </select>
+        <label>Investment Focus</label>
+        <select name="term" [(ngModel)]="term">
+            <option *ngFor="let vclist of vclists">{{ vclist['Investment Focus'] }}</option>
+        </select>
+        <label>Prefered Indication</label>
+        <select name="term" [(ngModel)]="term">
+            <option *ngFor="let vclist of vclists">{{ vclist['Prefered Indication'] }}</option>
+        </select>
+        <label>Investment Stage</label>
+        <select name="term" [(ngModel)]="term">
+            <option *ngFor="let vclist of vclists">{{ vclist['Investment Stage'] }}</option>
+        </select>
+    </div>
+</form>
+
+
+
+<div *ngFor="let vclist of vclists | vcfilter : term" class="container list">
   <div class="row card">
     <div class="col-xs-3">
         <img class="sh-styles" src="assets/images/logo.ico" alt="company logo">
