@@ -11,6 +11,8 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
+  showModal: boolean = false;
+
   ngOnInit() {
   }
 
@@ -19,6 +21,12 @@ export class HomeComponent implements OnInit {
       scrollTop: $(".cont-1").offset().top
     },
       'slow');
+  }
+
+  outsideClick(e) {
+    if (e.target.className == "modal") {
+      this.showModal = false;
+    }
   }
 
 }

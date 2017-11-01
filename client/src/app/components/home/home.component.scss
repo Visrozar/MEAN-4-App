@@ -1,12 +1,73 @@
 @import '~scss/_scroll-anchor';
 @import '~scss/_dna';
 @import '~scss/_variables';
-
 .header-img {
   background: $orange;
   background-repeat: no-repeat;
   height: auto;
   border-radius: 0px;
+}
+
+.overlay-buttons {
+  margin: 15px auto;
+}
+
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #f4f4f4;
+  margin: 15% auto;
+  width: 70%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  animation-name: modalopen;
+  animation-duration: 1s;
+}
+
+.modal-header h2,
+.modal-footer h3 {
+  margin: 0;
+}
+
+.modal-header {
+  padding: 15px;
+  color: #fff;
+}
+
+.modal-body {
+  padding: 10px 20px;
+}
+
+.closeBtn {
+  color: $orange;
+  float: right;
+  font-size: 30px;
+  margin-right: -10px;
+  margin-top: -15px;
+}
+
+.closeBtn:hover,
+.closeBtn:focus {
+  color: $green;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
 }
 
 .row {
@@ -36,7 +97,7 @@
 .stake-holders {
   color: $green;
   background: white;
-  h2{
+  h2 {
     margin-top: 0;
   }
 }
@@ -194,7 +255,6 @@
   .sh-styles {
     margin-top: 0;
   }
-
   .jumbotron {
     padding-top: 48px;
     padding-bottom: 48px;
@@ -208,4 +268,3 @@
     margin-top: 20%;
   }
 }
-

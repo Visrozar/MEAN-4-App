@@ -3,8 +3,26 @@
     <div class="container cont-style">
       <h2 class="display-1 heading">Virtual Boitech is the first online community for life science investors in Europe</h2>
       <p style="margin-top:40px;">
-        <a class="btn btn--border btn--primary btn--animated" routerLink="/home" role="button">Join us &raquo;</a>
+        <a class="btn btn--border btn--primary btn--animated" (click)="showModal=true;" routerLink="/home" role="button">Join us &raquo;</a>
       </p>
+
+      <div (click)="outsideClick($event);" *ngIf="showModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-body">
+            
+              <span (click)="showModal=false;" class="closeBtn">&times;</span>
+            <div class="row">
+              <img class="overlay-buttons" src="assets/images/ent.svg" style="width:350px;height:250px;" alt="entrepreneurs">
+            </div>
+            <div class="row">
+              <a class="btn btn--border btn--primary1 btn--animated1 overlay-buttons" style="display:table-cell; vertical-align:middle; text-align:center"
+                href="#" role="button">Join our investor community &raquo;</a>
+              <a class="btn btn--border btn--primary1 btn--animated1 overlay-buttons" style="display:table-cell; vertical-align:middle; text-align:center"
+                href="#" role="button">Submit your business plan &raquo;</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- dna code -->
       <div class='dna'>
