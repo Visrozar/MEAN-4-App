@@ -22,7 +22,7 @@ mongoose.Promise = global.Promise;
 // Static directory for frontend
 app.use(express.static(__dirname + env))
 //Parent autentication route, within this route lies registration and login
-app.use('/authentication', authentication);
+// app.use('/authentication', authentication);
 // Connect server to Angular 4 index.html
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname + env + '/index.html'));
