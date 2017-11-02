@@ -123,6 +123,16 @@
   transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66);
 }
 
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+
 @media only screen and (max-width: 450px) {
   .vr {
     width: 100px;

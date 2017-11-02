@@ -1,5 +1,4 @@
 @import '~scss/_scroll-anchor';
-@import '~scss/_dna';
 @import '~scss/_variables';
 .header-img {
   background: $orange;
@@ -97,6 +96,7 @@
 .stake-holders {
   color: $green;
   background: white;
+  font-size: 16px;
   h2 {
     margin-top: 0;
   }
@@ -104,7 +104,6 @@
 
 .heading {
   text-overflow: ellipsis;
-  max-width: 762px;
   color: white;
   font-size: 40px;
 }
@@ -113,7 +112,7 @@
   background: white;
   border-radius: 0.3rem;
   padding: 15px;
-  font-size: 15px !important;
+  font-size: 20px !important;
 }
 
 .shadow {
