@@ -13,27 +13,25 @@
 <form>
     <div class="form-group">
         <label>Location</label>
-        <select name="term" [(ngModel)]="term">
+        <select name="location" [(ngModel)]="location">
             <option *ngFor="let location of country">{{ location }}</option>
         </select>
         <label>Investment Focus</label>
-        <select name="term" [(ngModel)]="term">
-            <option *ngFor="let vclist of vclists">{{ vclist['Investment Focus'] }}</option>
+        <select name="focus" [(ngModel)]="foc">
+            <option *ngFor="let foc of focus">{{ foc }}</option>
         </select>
         <label>Prefered Indication</label>
-        <select name="term" [(ngModel)]="term">
-            <option *ngFor="let vclist of vclists">{{ vclist['Prefered Indication'] }}</option>
+        <select name="indication" [(ngModel)]="indicat">
+            <option *ngFor="let indicat of indication">{{ indicat }}</option>
         </select>
         <label>Investment Stage</label>
-        <select name="term" [(ngModel)]="term">
-            <option *ngFor="let vclist of vclists">{{ vclist['Investment Stage'] }}</option>
+        <select name="investment" [(ngModel)]="invest">
+            <option *ngFor="let invest of investment">{{ invest }}</option>
         </select>
     </div>
 </form>
 
-
-
-<div *ngFor="let vclist of vclists | vcfilter : term" class="container list">
+<div *ngFor="let vclist of vclists  | vcfilter : location:foc:indicat:invest; let l = count" class="container list">{{l}}
   <div class="row card">
     <div class="col-xs-3">
         <img class="sh-styles" src="assets/images/logo.ico" alt="company logo">

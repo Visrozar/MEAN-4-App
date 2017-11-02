@@ -24,8 +24,10 @@ export class VclistComponent implements OnInit {
       this.vclists = data;
       const allowed = ['VC Name'];
       const vc_name = [];
-      const locat = [];
-      const focus = [];
+      var locat = [];
+      var focus = [];
+      var indication = [];
+      var investment = [];
 
       data.filter(function (val) {
         for (var key in val) {
@@ -33,21 +35,54 @@ export class VclistComponent implements OnInit {
             vc_name.push(val[key]); // val1 and etc...
           } else if (key === 'Location') {
             locat.push(val[key].split(" ").splice(-1)[0]);
-          } else if(key==='Investment Focus'){
+          } else if (key === 'Investment Focus') {
             focus.push(val[key].split(','));
+          } else if (key === 'Prefered Indication') {
+            indication.push(val[key].split(','));
+          } else if (key === 'Investment Stage') {
+            investment.push(val[key].split(','));
           }
         }
 
       });
 
       //filtering unique values from array
-      function onlyUnique(value, index, self) { 
+      function onlyUnique(value, index, self) {
         return self.indexOf(value) === index;
       }
 
-      this.country = locat.filter(onlyUnique);
-      console.log(this.vclists);
+      //country
+      this.country = locat.filter(onlyUnique).filter(Boolean);
 
+      // Investment Focus
+      focus = [].concat.apply([], focus);
+      focus = focus.map(function (el) {
+        return el.trim();
+      });
+      this.focus = focus.filter(onlyUnique).filter(Boolean);
+
+      //Prefered Indication
+      indication = [].concat.apply([], indication);
+      indication = indication.map(function (el) {
+        return el.trim();
+      });
+      indication = indication.filter(onlyUnique);
+      this.indication = indication.filter(Boolean);
+
+      //Investment Stage
+      investment = [].concat.apply([], investment);
+      investment = investment.map(function (el) {
+        return el.trim();
+      });
+      investment = investment.filter(onlyUnique);
+      this.investment = investment.filter(Boolean);
+
+      this.country.unshift("");
+      this.focus.unshift("");
+      this.indication.unshift("");
+      this.investment.unshift("");
+
+      // console.log(this.vclists);
 
       this.metaService.addTags([
         { name: 'keywords', content: vc_name.toString() }
@@ -58,6 +93,9 @@ export class VclistComponent implements OnInit {
 
   vclists: any = [];
   country: any = [];
+  focus: any = [];
+  indication: any = [];
+  investment: any = [];
 
   ngOnInit() {
   }
