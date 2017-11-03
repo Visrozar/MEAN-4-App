@@ -1,7 +1,15 @@
 @import '~scss/_variables';
 
 .navbar-default {
-    background-color: #c34113;
+    background-color: #333333;
+    border-color: #333333;
+}
+
+.navbar-brand{
+    padding:0 5px 0 5px;
+    > img{
+        height: 49px;
+    }
 }
 
 .navbar{
@@ -26,16 +34,23 @@
     color:white;
 }
 
+  #bs-example-navbar-collapse-1>ul>li>a:hover {
+
+   background: #6b6b6b;
+}
+
 .navbar-text{
     margin-top: 0px;
     margin-bottom: 0px;
 }
 
 .navbar-default .navbar-nav > .active{
-   background: #ac3911;
+   background: #6b6b6b;
+
  }
  .navbar-default .navbar-nav > .active > a, 
  .navbar-default .navbar-nav > .active > a:hover, 
  .navbar-default .navbar-nav > .active > a:focus {
-      background: #ac3911;
+      background: #6b6b6b;
+
  }

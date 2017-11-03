@@ -1,8 +1,8 @@
 @import '~scss/_scroll-anchor';
 @import '~scss/_variables';
 .header-img {
-  background: $orange;
-  background-repeat: no-repeat;
+  background-image: url('../../../assets/images/banner.jpg');
+  background-size: cover;
   height: auto;
   border-radius: 0px;
 }
