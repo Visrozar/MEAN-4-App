@@ -3,98 +3,33 @@
     <div class="container cont-style">
       <h2 class="display-1 heading">Virtual Boitech is the first online community for life science investors in Europe</h2>
       <p style="margin-top:40px;">
-        <a class="btn btn--border btn--primary btn--animated" routerLink="/home" role="button">Join us &raquo;</a>
+        <a class="btn btn--border btn--primary btn--animated" (click)="showModal=true;" routerLink="/home" role="button">Join us &raquo;</a>
       </p>
 
-      <!-- dna code -->
-      <div class='dna'>
-        <div class='protein'>
-          <b></b>
-          <b></b>
-        </div>
-        <div class='protein'>
-          <b></b>
-          <b></b>
-        </div>
-        <div class='protein'>
-          <b></b>
-          <b></b>
-        </div>
-        <div class='protein'>
-          <b></b>
-          <b></b>
-        </div>
-        <div class='protein'>
-          <b></b>
-          <b></b>
-        </div>
-        <div class='protein'>
-          <b></b>
-          <b></b>
-        </div>
-        <div class='protein'>
-          <b></b>
-          <b></b>
-        </div>
-        <div class='protein'>
-          <b></b>
-          <b></b>
-        </div>
-        <div class='protein'>
-          <b></b>
-          <b></b>
-        </div>
-        <div class='protein'>
-          <b></b>
-          <b></b>
-        </div>
-        <div class='protein'>
-          <b></b>
-          <b></b>
-        </div>
-        <div class='protein'>
-          <b></b>
-          <b></b>
-        </div>
-        <div class='protein'>
-          <b></b>
-          <b></b>
-        </div>
-        <div class='protein'>
-          <b></b>
-          <b></b>
-        </div>
-        <div class='protein'>
-          <b></b>
-          <b></b>
-        </div>
-        <div class='protein'>
-          <b></b>
-          <b></b>
-        </div>
-        <div class='protein'>
-          <b></b>
-          <b></b>
-        </div>
-        <div class='protein'>
-          <b></b>
-          <b></b>
-        </div>
-        <div class='protein'>
-          <b></b>
-          <b></b>
-        </div>
-        <div class='protein'>
-          <b></b>
-          <b></b>
+      <div (click)="outsideClick($event);" *ngIf="showModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-body">
+            
+              <span (click)="showModal=false;" class="closeBtn">&times;</span>
+            <div class="row">
+              <img class="overlay-buttons" src="assets/images/ent.png" style="width:300px;height:100px;" alt="Join Us">
+            </div>
+            <div class="row">
+              <a class="btn btn--border btn--primary1 btn--animated1 overlay-buttons" style="display:table-cell; vertical-align:middle; text-align:center"
+                href="#" role="button">Join our investor community &raquo;</a>
+              <a class="btn btn--border btn--primary1 btn--animated1 overlay-buttons" style="display:table-cell; vertical-align:middle; text-align:center"
+                href="#" role="button">Submit your business plan &raquo;</a>
+            </div>
+          </div>
         </div>
       </div>
+
       <div class="row">
-        <div class="col-md-5 description">
+        <div class="col-md-6 description">
           <p class="box shadow">VirtualBiotech is a non-commercial initiative managed by venture capital professionals with the aim to form a free
             online community for life science investors in Europe.</p>
         </div>
-        <div class="col-md-5 description">
+        <div class="col-md-6 description">
           <p class="box shadow">VirtualBiotech is NOT a fund raising platform. We solely enable scientists and life science enterpreneurs to introduce
             their projects/companies to our community members.</p>
         </div>
@@ -112,7 +47,7 @@
   <div class="container cont-1">
     <div class="container">
       <div class="row">
-        <div class="col-md-7 stake-holders">
+        <div class="col-md-6 stake-holders">
           <h2>For life science investors:</h2>
           <ul>
             <li>Browse the listed investment opportunities and stay up to date with the life science startup scene in Europe</li>
@@ -127,15 +62,7 @@
               href="#" role="button">Join our investor community &raquo;</a>
           </p>
         </div>
-        <div class="col-md-5" style="display:table-cell; vertical-align:middle; text-align:center">
-          <img class="sh-styles" src="assets/images/investor.svg" style="width:350px;height:250px;" alt="investor">
-        </div>
-      </div>
-      <div class="row" style="margin-top:100px;">
-        <div class="col-md-5" style="display:table-cell; vertical-align:middle; text-align:center">
-          <img class="sh-styles" src="assets/images/ent.svg" style="width:350px;height:250px;" alt="entrepreneurs">
-        </div>
-        <div class="col-md-7 stake-holders">
+        <div class="col-md-6 stake-holders">
           <h2>For life science entrepreneurs:</h2>
           <ul>
             <li>Benefit from our community to reach more life science investors, pave the way for future contact or follow up

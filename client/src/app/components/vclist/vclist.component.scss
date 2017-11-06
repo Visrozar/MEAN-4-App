@@ -1,11 +1,22 @@
 @import '~scss/_variables';
+a {
+  color: blue;
+}
+
+.website-link {
+  color: white;
+  background: lightseagreen;
+}
+
 .table {
   margin-bottom: 0px;
 }
 
-.sh-styles{
+.sh-styles {
   float: left;
   margin: 15px 0;
+  max-height: 45px;
+  max-width: 180px;
 }
 
 .website {
@@ -22,7 +33,7 @@
   border-top: none;
 }
 
-.no-underline{
+.no-underline {
   text-decoration: none;
 }
 
@@ -37,6 +48,7 @@
 .vr {
   border-right: 1px solid $green;
   width: 200px;
+  font-weight: bold;
 }
 
 .list {
@@ -47,7 +59,7 @@
 }
 
 .btn {
-  height: 34px;  
+  height: 34px;
   margin-right: 15px;
   position: relative;
   display: inline-block;
@@ -121,6 +133,34 @@
   transform: scaleX(1);
   -webkit-transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66);
   transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66);
+}
+
+
+/* Dropdown Content (Hidden by Default) */
+
+.dropdown-content {
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.form-group {
+  min-height: 220px;
+  max-width: 750px;
+  margin: 20px auto;
+}
+
+.featured {
+  background: #7aff8d;
+
+}
+
+.feature-logo {
+  height: 30px;
+  margin: 19px 15px -5px 0;
+  float: right;
 }
 
 @media only screen and (max-width: 450px) {
