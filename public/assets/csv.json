@@ -5,6 +5,7 @@
    "Investment Focus": "Therapeutics, Diagnostics, Medical devices, Agrobio",
    "Prefered Indication": "",
    "Investment Stage": "Seed, Early stage",
+   "Featured": "true",
    "Research": {
       " Industry Partner": "VIB"
    },
@@ -143,7 +144,7 @@
    "Website": "http://www.korys.be/"
 },
  {
-   "VC Name": "Agri Investment Fund ",
+   "VC Name": "Agri Investment Fund",
    "Location": "Leuven, Belgium",
    "Investment Focus": "Agrobio",
    "Prefered Indication": "",
@@ -494,7 +495,7 @@
    "Website": "http://www.inkefcapital.com/"
 },
  {
-   "VC Name": "LSP ",
+   "VC Name": "LSP",
    "Location": "Amsterdam, Netherlands",
    "Investment Focus": "Therapeutics",
    "Prefered Indication": "",
@@ -611,7 +612,7 @@
    "Website": "http://www.shs-capital.eu/en/"
 },
  {
-   "VC Name": "LBBW Venture ",
+   "VC Name": "LBBW Venture",
    "Location": "Stuttgart, Germany",
    "Investment Focus": "Therapeutics",
    "Prefered Indication": "",
@@ -754,7 +755,7 @@
    "Website": "http://www.tvm-capital.com/"
 },
  {
-   "VC Name": "Sunstone ",
+   "VC Name": "Sunstone",
    "Location": "Copenhagen, Denmark",
    "Investment Focus": "Therapeutics",
    "Prefered Indication": "",
@@ -884,7 +885,7 @@
    "Website": "http://crbinverbio.com/en/#.WcqF-8hJZPY"
 },
  {
-   "VC Name": "Healthequity ",
+   "VC Name": "Healthequity",
    "Location": "Barcelona, Spain",
    "Investment Focus": "Therapeutics",
    "Prefered Indication": "",
@@ -1274,7 +1275,7 @@
    "Website": "http://www.ucltf.co.uk/"
 },
  {
-   "VC Name": "MVM Partners ",
+   "VC Name": "MVM Partners",
    "Location": "London, UK",
    "Investment Focus": "Therapeutics",
    "Prefered Indication": "",
@@ -1443,7 +1444,7 @@
    "Website": "https://www.albion.capital/"
 },
  {
-   "VC Name": "Amedua Capital",
+   "VC Name": "Amadeus Capital",
    "Location": "London, UK",
    "Investment Focus": "",
    "Prefered Indication": "",
