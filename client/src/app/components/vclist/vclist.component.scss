@@ -1,4 +1,13 @@
 @import '~scss/_variables';
+a {
+  color: blue;
+}
+
+.website-link {
+  color: white;
+  background: lightseagreen;
+}
+
 .table {
   margin-bottom: 0px;
 }
@@ -6,7 +15,8 @@
 .sh-styles {
   float: left;
   margin: 15px 0;
-   height: 49px;
+  max-height: 45px;
+  max-width: 180px;
 }
 
 .website {
@@ -142,8 +152,9 @@
   margin: 20px auto;
 }
 
-.featured{
-  background:#7ed5ff;
+.featured {
+  background: #7aff8d;
+
 }
 
 .feature-logo {

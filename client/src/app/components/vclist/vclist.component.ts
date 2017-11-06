@@ -96,8 +96,14 @@ export class VclistComponent implements OnInit {
   focus: any = [];
   indication: any = [];
   investment: any = [];
+  count: any = {};
 
   ngOnInit() {
+  }
+
+  updateUrl(event) {
+    event.target.src = event.target.currentSrc.slice(0, -3) + 'png';
+    return;
   }
 
 }
