@@ -10,27 +10,28 @@
   </p>
 </div>
 
-<form>
+<div class="row">
+<form class="col-md-3">
   <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-12">
       <label class="control-label">Location</label>
       <select class="form-control form-control-sm" name="location" [(ngModel)]="location">
         <option class="dropdown-content" *ngFor="let location of country">{{ location }}</option>
       </select>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-12">
       <label class="control-label">Investment Focus</label>
       <select class="form-control form-control-sm" name="focus" [(ngModel)]="foc">
         <option class="dropdown-content" *ngFor="let foc of focus">{{ foc }}</option>
       </select>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-12">
       <label class="control-label">Prefered Indication</label>
       <select class="form-control form-control-sm" name="indication" [(ngModel)]="indicat">
         <option class="dropdown-content" *ngFor="let indicat of indication">{{ indicat }}</option>
       </select>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-12">
       <label class="control-label">Investment Stage</label>
       <select class="form-control form-control-sm" name="investment" [(ngModel)]="invest">
         <option class="dropdown-content" *ngFor="let invest of investment">{{ invest }}</option>
@@ -45,7 +46,7 @@
   </div>
 </div>
 
-<div *ngFor="let vclist of vclists  | vcfilter : location:foc:indicat:invest; let l = count" class="container list">
+<div *ngFor="let vclist of vclists  | vcfilter : location:foc:indicat:invest; let l = count" class="container list col-md-9">
   <div [ngClass]="{'featured' : vclist.Featured  }" class="row card">
     <div class="col-xs-3">
     <img class="sh-styles" src="assets/images/company-logos/{{vclist['VC Name']}}.png" (error)="this.error=null; updateUrl($event)" alt="company logo">
@@ -83,4 +84,5 @@
       </tr>
     </table>
   </div>
+</div>
 </div>
