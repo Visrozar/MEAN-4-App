@@ -3,11 +3,6 @@ a {
   color: blue;
 }
 
-.website-link {
-  color: white;
-  background: lightseagreen;
-}
-
 .table {
   margin-bottom: 0px;
 }
@@ -76,66 +71,15 @@ a {
   outline: none;
 }
 
-.btn--primary1 {
-  color: $green;
+.btn-primary {
+  background: cornflowerblue;
+  border-color: cornflowerblue;
+  color:white;
 }
 
-.btn--border {
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 10px;
-  box-sizing: border-box;
+.btn-primary:hover {
+  background: rgb(58, 92, 151);
 }
-
-.btn--animated {
-  -webkit-transition-property: color;
-  transition-property: color;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-}
-
-.btn--animated1.btn--border.btn--primary1 {
-  border: 1px solid $green;
-}
-
-.btn--animated:hover {
-  color: $green;
-}
-
-.btn--animated1:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: $green;
-  -webkit-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transform-origin: 0 50%;
-  transform-origin: 0 50%;
-  -webkit-transition-property: -webkit-transform;
-  transition-property: -webkit-transform;
-  transition-property: transform;
-  transition-property: transform, -webkit-transform;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-  z-index: -1;
-}
-
-.btn--animated1:hover {
-  color: white;
-}
-
-.btn--animated1:hover:before {
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
-  -webkit-transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66);
-  transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66);
-}
-
 
 /* Dropdown Content (Hidden by Default) */
 
