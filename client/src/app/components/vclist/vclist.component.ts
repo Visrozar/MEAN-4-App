@@ -34,7 +34,9 @@ export class VclistComponent implements OnInit {
           if (key === 'VC Name') {
             vc_name.push(val[key]); // val1 and etc...
           } else if (key === 'Location') {
-            locat.push(val[key].split(" ").splice(-1)[0]);
+            val[key].forEach(element => {
+              locat.push(element.split(" ").splice(-1)[0]);
+            });
           } else if (key === 'Investment Focus') {
             focus.push(val[key].split(','));
           } else if (key === 'Prefered Indication') {
@@ -97,6 +99,7 @@ export class VclistComponent implements OnInit {
   indication: any = [];
   investment: any = [];
   count: any = {};
+  reset = true;
 
   ngOnInit() {
   }
@@ -105,5 +108,4 @@ export class VclistComponent implements OnInit {
     event.target.src = event.target.currentSrc.slice(0, -3) + 'png';
     return;
   }
-
 }

@@ -1,4 +1,15 @@
 @import '~scss/_variables';
+
+a:hover{
+  background: white;
+  // border-bottom: 2px solid cornflowerblue;
+}
+
+a:focus{
+  background: white;
+  // text-decoration: underline;
+}
+
 .navbar-default {
   background-color: white;
   border-color: white;
