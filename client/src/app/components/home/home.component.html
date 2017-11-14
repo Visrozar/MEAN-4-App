@@ -2,37 +2,13 @@
   <div id="head" class="jumbotron header-img">
     <div class="container cont-style">
       <h2 class="display-1 heading">Virtual Boitech is the first online community for life science investors in Europe</h2>
-      <p style="margin-top:40px;">
-        <a class="btn btn--border btn--primary btn--animated" (click)="showModal=true;" routerLink="/home" role="button">Join us &raquo;</a>
-      </p>
-
-      <div (click)="outsideClick($event);" *ngIf="showModal" class="modal">
-        <div class="modal-content">
-          <div class="modal-body">
-            
-              <span (click)="showModal=false;" class="closeBtn">&times;</span>
-            <div class="row">
-              <img class="overlay-buttons" src="assets/images/ent.png" style="width:300px;height:100px;" alt="Join Us">
-            </div>
-            <div class="row">
-              <a class="btn btn--border btn--primary1 btn--animated1 overlay-buttons" style="display:table-cell; vertical-align:middle; text-align:center"
-                href="#" role="button">Join our investor community &raquo;</a>
-              <a class="btn btn--border btn--primary1 btn--animated1 overlay-buttons" style="display:table-cell; vertical-align:middle; text-align:center"
-                href="#" role="button">Submit your business plan &raquo;</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
+       <p class="small-heading">VirtualBiotech is a non-commercial initiative managed by venture capital professionals with the aim
+      to form a free online community for life science investors in Europe.</p>
       <div class="row">
-        <div class="col-md-6 description">
-          <p class="box shadow">VirtualBiotech is a non-commercial initiative managed by venture capital professionals with the aim to form a free
-            online community for life science investors in Europe.</p>
-        </div>
-        <div class="col-md-6 description">
-          <p class="box shadow">VirtualBiotech is NOT a fund raising platform. We solely enable scientists and life science enterpreneurs to introduce
-            their projects/companies to our community members.</p>
-        </div>
+        <a class="btn btn-primary overlay-buttons" style="display:table-cell; vertical-align:middle; text-align:center"
+          href="#" role="button">Join our investor community &raquo;</a>
+        <a class="btn btn-primary overlay-buttons" style="display:table-cell; vertical-align:middle; text-align:center"
+          href="#" role="button">Submit your business plan &raquo;</a>
       </div>
       <div class="row">
         <section id="section05" class="col-md-12 text-center demo">
@@ -57,10 +33,9 @@
             <li>By expressing interest, you will be introduced to other interested members to potentially share your due diligence
               and build syndicates</li>
           </ul>
-          <p>
-            <a class="btn btn--border btn--primary1 btn--animated1" style="display:table-cell; vertical-align:middle; text-align:center"
-              href="#" role="button">Join our investor community &raquo;</a>
-          </p>
+          <div class="col-md-12 text-center sh-btn">
+            <a class="btn btn-primary" href="#" role="button">Join our investor community &raquo;</a>
+          </div>
         </div>
         <div class="col-md-6 stake-holders">
           <h2>For life science entrepreneurs:</h2>
@@ -72,10 +47,9 @@
             <li>The investors will be able to check your company profile, contact you directly and share their interest with
               other investors</li>
           </ul>
-          <p>
-            <a class="btn btn--border btn--primary1 btn--animated1" style="display:table-cell; vertical-align:middle; text-align:center"
-              href="#" role="button">Submit your business plan &raquo;</a>
-          </p>
+          <div class="col-md-12 text-center sh-btn">
+            <a class="btn btn-primary" href="#" role="button">Submit your business plan &raquo;</a>
+          </div>
         </div>
       </div>
     </div>

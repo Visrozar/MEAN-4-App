@@ -1,65 +1,123 @@
 @import '~scss/_variables';
 
+a:hover{
+  background: white;
+  // border-bottom: 2px solid cornflowerblue;
+}
+
+a:focus{
+  background: white;
+  // text-decoration: underline;
+}
+
 .navbar-default {
-    background-color: #333333;
-    border-color: #333333;
+  background-color: white;
+  border-color: white;
 }
 
-.nav-item:first-child{
-    margin-left:20px;
+.navbar-nav>li>a {
+  color: #3D85C5;
+  font-size: 17px;
 }
 
-.nav-link{
-    min-height: 70px;
-    padding-top: 25px;
+.navbar-nav>li>a:hover {
+  background: white;
 }
 
-.navbar-brand{
-    padding:0 5px 0 5px;
-    > img{
-        height: 65px;
-    }
+.navbar-right {
+  margin-top: 77px;
 }
 
-.navbar{
-    margin-bottom: 0px;
-    border-radius: 0px;
+hr {
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
+
+.navbar-brand {
+  padding: 10px 5px 0 30px;
+  >img {
+    height: 100px;
+  }
+}
+
+.navbar {
+  margin-bottom: 0px;
+  border-radius: 0px;
+}
+
+.navbar-toggle {
+  border-color: cornflowerblue;
+  background-color: white;
+  .icon-bar {
+    background-color: cornflowerblue;
+  }
+}
+
+.navbar-collapse{
+  border-color: cornflowerblue;
+}
+
+.navbar-toggle:focus{
+  background-color: white;
+}
+
+.navbar-toggle:hover{
+  background: rgb(58, 92, 151);
+
+}
+
 
 /* change the brand and text color */
+
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-text {
-    color: $green;
+  color: $green;
 }
+
 
 /* change the link color */
+
 .navbar-custom .navbar-nav .nav-link {
-    color: $green;
+  color: $green;
 }
+
 
 /* change the color of active or hovered links */
+
 .navbar-custom .nav-item.active .nav-link,
 .navbar-custom .nav-item:hover .nav-link {
-    color:white;
+  color: white;
 }
 
-  #bs-example-navbar-collapse-1>ul>li>a:hover {
-
-   background: #6b6b6b;
+#bs-example-navbar-collapse-1>ul>li>a:hover {
+  color: #333333;
 }
 
-.navbar-text{
+.navbar-text {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.navbar-default .navbar-nav>.active {
+  background: white;
+  color: #333333;
+}
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus {
+  background: white;
+  color: #333333;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar-brand {
+    padding: 0 5px 0 5px;
+    >img {
+      height: 45px;
+    }
+  }
+  .navbar-right {
     margin-top: 0px;
-    margin-bottom: 0px;
+  }
 }
-
-.navbar-default .navbar-nav > .active{
-   background: #6b6b6b;
-
- }
- .navbar-default .navbar-nav > .active > a, 
- .navbar-default .navbar-nav > .active > a:hover, 
- .navbar-default .navbar-nav > .active > a:focus {
-      background: #6b6b6b;
-
- }

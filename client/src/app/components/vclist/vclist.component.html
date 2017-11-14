@@ -1,86 +1,88 @@
-<div class="col-md-12">
+<div class="col-md-12 header-img">
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
     irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
     cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   </p>
-  <p>
-    <a class="btn btn--border btn--primary1 btn--animated1" style="display:table-cell; vertical-align:middle; text-align:center"
-      href="#" role="button">Submit your business plan &raquo;</a>
+  <p class="text-right">
+    <a class="btn btn-primary" href="#" role="button">Submit your business plan &raquo;</a>
   </p>
 </div>
 
-<form>
-  <div class="form-group">
-    <div class="col-md-6">
-      <label class="control-label">Location</label>
-      <select class="form-control form-control-sm" name="location" [(ngModel)]="location">
-        <option class="dropdown-content" *ngFor="let location of country">{{ location }}</option>
-      </select>
+<div class="row body-style">
+  <form class="col-md-3">
+    <div class="form-group">
+      <div class="col-md-12">
+        <label class="control-label">Location</label>
+        <select class="btn btn-primary btn-left form-control form-control-sm" name="location" [(ngModel)]="location">
+          <option class="dropdown-content" *ngFor="let location of country">{{ location==''?'Location':location }}</option>
+        </select>
+      </div>
+      <div class="col-md-12">
+        <label class="control-label">Investment Focus</label>
+        <select class="btn btn-primary btn-left form-control form-control-sm" name="focus" [(ngModel)]="foc">
+          <option class="dropdown-content" *ngFor="let foc of focus">{{ foc==''?'Investment Focus':foc }}</option>
+        </select>
+      </div>
+      <div class="col-md-12">
+        <label class="control-label">Prefered Indication</label>
+        <select class="btn btn-primary btn-left form-control form-control-sm" name="indication" [(ngModel)]="indicat">
+          <option class="dropdown-content" *ngFor="let indicat of indication">{{ indicat==''?'Prefered Indication':indicat }}</option>
+        </select>
+      </div>
+      <div class="col-md-12">
+        <label class="control-label">Investment Stage</label>
+        <select class="btn btn-primary btn-left form-control form-control-sm" name="investment" [(ngModel)]="invest">
+          <option class="dropdown-content" *ngFor="let invest of investment">{{ invest==''?'Investment Stage':invest }}</option>
+        </select>
+      </div>
     </div>
-    <div class="col-md-6">
-      <label class="control-label">Investment Focus</label>
-      <select class="form-control form-control-sm" name="focus" [(ngModel)]="foc">
-        <option class="dropdown-content" *ngFor="let foc of focus">{{ foc }}</option>
-      </select>
-    </div>
-    <div class="col-md-6">
-      <label class="control-label">Prefered Indication</label>
-      <select class="form-control form-control-sm" name="indication" [(ngModel)]="indicat">
-        <option class="dropdown-content" *ngFor="let indicat of indication">{{ indicat }}</option>
-      </select>
-    </div>
-    <div class="col-md-6">
-      <label class="control-label">Investment Stage</label>
-      <select class="form-control form-control-sm" name="investment" [(ngModel)]="invest">
-        <option class="dropdown-content" *ngFor="let invest of investment">{{ invest }}</option>
-      </select>
+  </form>
+  <div class="row filtered-item">
+    <div class="col-xs-12">
+      <h3 class="text-center">Filtered Items({{ (vclists | vcfilter : location:foc:indicat:invest)?.length }})
+      </h3>
     </div>
   </div>
-</form>
-<div class="row">
-  <div class="col-xs-12">
-    <h3 class="text-center">Filtered Items({{ (vclists | vcfilter : location:foc:indicat:invest)?.length }})
-    </h3>
-  </div>
-</div>
 
-<div *ngFor="let vclist of vclists  | vcfilter : location:foc:indicat:invest; let l = count" class="container list">
-  <div [ngClass]="{'featured' : vclist.Featured  }" class="row card">
-    <div class="col-xs-3">
-    <img class="sh-styles" src="assets/images/company-logos/{{vclist['VC Name']}}.png" (error)="this.error=null; updateUrl($event)" alt="company logo">
+  <div [ngClass]="{'featured' : vclist.Featured }" *ngFor="let vclist of vclists  | vcfilter : location:foc:indicat:invest; let l = count"
+    class="container list col-md-9">
+    <div class="row card">
+      <div class="col-xs-3">
+        <img class="feature-logo" *ngIf="vclist.Featured" src="../assets/images/feature1.png">
+        <img class="sh-styles" src="assets/images/company-logos/{{vclist['VC Name']}}.png" (error)="this.error=null; updateUrl($event)"
+          alt="company logo">
+      </div>
+      <div class="col-xs-6 slide-name">
+        <a class="no-underline" href="{{vclist.Website}}" target="_blank">
+          <h3 class="text-center small-name">{{vclist['VC Name']}}</h3>
+        </a>
+      </div>
+      <div class="col-xs-3 show-btn">
+        <p class="website">
+          <a class="website btn btn-primary" href="{{vclist.Website}}" role="button" target="_blank">visit website &raquo;</a>
+        </p>
+      </div>
     </div>
-    <div class="col-xs-6">
-      <a class="no-underline" href="{{vclist.Website}}" target="_blank">
-        <h3 class="text-center">{{vclist['VC Name']}}</h3>
-      </a>
+    <div class="row">
+      <table class="table">
+        <tr *ngIf="vclist['Investment Focus']">
+          <td class="vr">Investment Focus:</td>
+          <td>{{vclist['Investment Focus'].split(',').join(' |')}}</td>
+        </tr>
+        <tr *ngIf="vclist['Investment Stage']">
+          <td class="vr">Investment Stage:</td>
+          <td>{{vclist['Investment Stage'].split(',').join(' |')}}</td>
+        </tr>
+        <tr *ngIf="vclist.Research[' Industry Partner']">
+          <td class="vr">Research/Industry Partner:</td>
+          <td>{{vclist.Research[' Industry Partner'].split(',').join(' |')}}</td>
+        </tr>
+        <tr *ngIf="vclist.Location">
+          <td class="vr">Location:</td>
+          <td>{{vclist.Location.join(' | ')}}</td>
+        </tr>
+      </table>
     </div>
-    <div class="col-xs-3">
-      <img class="feature-logo" *ngIf="vclist.Featured" src="../assets/images/feature1.png">
-
-      <p class="website">
-        <a class="website btn website-link" href="{{vclist.Website}}" role="button" target="_blank">visit website &raquo;</a>
-      </p>
-    </div>
-  </div>
-  <div [ngClass]="{'featured' : vclist.Featured }" class="row">
-    <table class="table">
-      <tr *ngIf="vclist['Investment Focus']">
-        <td class="vr">Investment Focus:</td>
-        <td>{{vclist['Investment Focus'].split(',').join(' |')}}</td>
-      </tr>
-      <tr *ngIf="vclist['Investment Stage']">
-        <td class="vr">Investment Stage:</td>
-        <td>{{vclist['Investment Stage'].split(',').join(' |')}}</td>
-      </tr>
-      <tr *ngIf="vclist.Research[' Industry Partner']">
-        <td class="vr">Research/Industry Partner:</td>
-        <td>{{vclist.Research[' Industry Partner'].split(',').join(' |')}}</td>
-      </tr>
-      <tr *ngIf="vclist.Location">
-        <td class="vr">Location:</td>
-        <td>{{vclist.Location}}</td>
-      </tr>
-    </table>
   </div>
 </div>
