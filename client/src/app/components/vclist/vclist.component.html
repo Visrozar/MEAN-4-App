@@ -14,25 +14,25 @@
     <div class="form-group">
       <div class="col-md-12">
         <label class="control-label">Location</label>
-        <select class="btn btn-primary form-control form-control-sm" name="location" [(ngModel)]="location">
+        <select class="btn btn-primary btn-left form-control form-control-sm" name="location" [(ngModel)]="location">
           <option class="dropdown-content" *ngFor="let location of country">{{ location==''?'Location':location }}</option>
         </select>
       </div>
       <div class="col-md-12">
         <label class="control-label">Investment Focus</label>
-        <select class="btn btn-primary form-control form-control-sm" name="focus" [(ngModel)]="foc">
+        <select class="btn btn-primary btn-left form-control form-control-sm" name="focus" [(ngModel)]="foc">
           <option class="dropdown-content" *ngFor="let foc of focus">{{ foc==''?'Investment Focus':foc }}</option>
         </select>
       </div>
       <div class="col-md-12">
         <label class="control-label">Prefered Indication</label>
-        <select class="btn btn-primary form-control form-control-sm" name="indication" [(ngModel)]="indicat">
+        <select class="btn btn-primary btn-left form-control form-control-sm" name="indication" [(ngModel)]="indicat">
           <option class="dropdown-content" *ngFor="let indicat of indication">{{ indicat==''?'Prefered Indication':indicat }}</option>
         </select>
       </div>
       <div class="col-md-12">
         <label class="control-label">Investment Stage</label>
-        <select class="btn btn-primary form-control form-control-sm" name="investment" [(ngModel)]="invest">
+        <select class="btn btn-primary btn-left form-control form-control-sm" name="investment" [(ngModel)]="invest">
           <option class="dropdown-content" *ngFor="let invest of investment">{{ invest==''?'Investment Stage':invest }}</option>
         </select>
       </div>
