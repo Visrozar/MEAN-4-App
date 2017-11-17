@@ -1,5 +1,20 @@
 @import '~scss/_scroll-anchor';
 @import '~scss/_variables';
+.body-style {
+  background: #f5f5f5;
+}
+
+.point-head{
+  margin-bottom: 20px;
+}
+
+.points {
+  margin-bottom: 10px;
+}
+
+.point-btn {
+  margin-top: 10px;
+}
 
 .header-img {
   background-image: url('../../../assets/images/banner.jpg');
@@ -9,17 +24,22 @@
   border-radius: 0px;
 }
 
-.small-heading{
+.banner-btns {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.small-heading {
   font-size: 20px;
 }
 
-.sh-btn{
-  margin-top:10px;
+.sh-btn {
+  margin-top: 10px;
 }
 
-ul{
-  margin-bottom:0px;
-  margin-left:-39px;
+ul {
+  margin-bottom: 0px;
+  margin-left: -39px;
 }
 
 .overlay-buttons {
@@ -110,9 +130,7 @@ ul{
 
 .stake-holders {
   color: $green;
-  background: white;
   font-size: 18px;
-  line-height: 30px;
   h2 {
     margin-top: 0;
   }
@@ -151,12 +169,12 @@ ul{
   outline: none;
 }
 
-.btn-primary{
-  background: cornflowerblue;
-  border-color: cornflowerblue;
+.btn-primary {
+  background: #7AACD6;
+  border-color: #9EC5E6
 }
 
-.btn-primary:hover{
+.btn-primary:hover {
   background: rgb(58, 92, 151);
 }
 
@@ -193,8 +211,7 @@ ul{
     height: 200px !important;
     margin-top: 20%;
   }
-
-  .stake-holders{
+  .stake-holders {
     margin-bottom: 50px;
   }
 }

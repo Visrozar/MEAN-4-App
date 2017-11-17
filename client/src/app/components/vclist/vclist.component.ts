@@ -30,12 +30,12 @@ export class VclistComponent implements OnInit {
       var investment = [];
 
       data.filter(function (val) {
-        for (var key in val) {
+        for (const key in val) {
           if (key === 'VC Name') {
             vc_name.push(val[key]); // val1 and etc...
           } else if (key === 'Location') {
             val[key].forEach(element => {
-              locat.push(element.split(" ").splice(-1)[0]);
+              locat.push(element.split(' ').splice(-1)[0]);
             });
           } else if (key === 'Investment Focus') {
             focus.push(val[key].split(','));
@@ -48,12 +48,12 @@ export class VclistComponent implements OnInit {
 
       });
 
-      //filtering unique values from array
+      // filtering unique values from array
       function onlyUnique(value, index, self) {
         return self.indexOf(value) === index;
       }
 
-      //country
+      // country
       this.country = locat.filter(onlyUnique).filter(Boolean);
 
       // Investment Focus
@@ -63,7 +63,7 @@ export class VclistComponent implements OnInit {
       });
       this.focus = focus.filter(onlyUnique).filter(Boolean);
 
-      //Prefered Indication
+      // Prefered Indication
       indication = [].concat.apply([], indication);
       indication = indication.map(function (el) {
         return el.trim();
@@ -71,7 +71,7 @@ export class VclistComponent implements OnInit {
       indication = indication.filter(onlyUnique);
       this.indication = indication.filter(Boolean);
 
-      //Investment Stage
+      // Investment Stage
       investment = [].concat.apply([], investment);
       investment = investment.map(function (el) {
         return el.trim();
@@ -79,10 +79,10 @@ export class VclistComponent implements OnInit {
       investment = investment.filter(onlyUnique);
       this.investment = investment.filter(Boolean);
 
-      this.country.unshift("");
-      this.focus.unshift("");
-      this.indication.unshift("");
-      this.investment.unshift("");
+      // this.country.unshift('');
+      // this.focus.unshift('');
+      // this.indication.unshift('');
+      // this.investment.unshift('');
 
       // console.log(this.vclists);
 
@@ -100,6 +100,7 @@ export class VclistComponent implements OnInit {
   investment: any = [];
   count: any = {};
   reset = true;
+  expanded = false;
 
   ngOnInit() {
   }
@@ -107,5 +108,17 @@ export class VclistComponent implements OnInit {
   updateUrl(event) {
     event.target.src = event.target.currentSrc.slice(0, -3) + 'png';
     return;
+  }
+
+
+  showCheckboxes() {
+    const checkboxes = document.getElementById('checkboxes');
+    if (!this.expanded) {
+      checkboxes.style.display = 'block';
+      this.expanded = true;
+    } else {
+      checkboxes.style.display = 'none';
+      this.expanded = false;
+    }
   }
 }
