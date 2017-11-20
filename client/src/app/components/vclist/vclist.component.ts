@@ -159,39 +159,44 @@ export class VclistComponent implements OnInit {
     }
   }
 
-  showfocusCheckboxes() {
+  showCheckboxes(type: string) {
+    const locationCheckboxes = document.getElementById('locationCheckboxes');
     const focusCheckboxes = document.getElementById('focusCheckboxes');
+    const indicationCheckboxes = document.getElementById('indicationCheckboxes');
+    const investmentCheckboxes = document.getElementById('investmentCheckboxes');
 
-    if (!this.focus1) {
+    if (type === 'location' && !this.location) {
+      locationCheckboxes.style.display = 'block';
+      this.location = true;
+    } else {
+      locationCheckboxes.style.display = 'none';
+      this.location = false;
+    }
+
+    if (type === 'focus' && !this.focus1) {
       focusCheckboxes.style.display = 'block';
       this.focus1 = true;
     } else {
       focusCheckboxes.style.display = 'none';
       this.focus1 = false;
     }
-  }
 
-  showindicationCheckboxes() {
-    const indicationCheckboxes = document.getElementById('indicationCheckboxes');
-
-    if (!this.indication1) {
+    if (type === 'indication' && !this.indication1) {
       indicationCheckboxes.style.display = 'block';
       this.indication1 = true;
     } else {
       indicationCheckboxes.style.display = 'none';
       this.indication1 = false;
     }
-  }
-  showinvestmentCheckboxes() {
-    const investmentCheckboxes = document.getElementById('investmentCheckboxes');
 
-    if (!this.investment1) {
+    if (type === 'investment' && !this.investment1) {
       investmentCheckboxes.style.display = 'block';
       this.investment1 = true;
     } else {
       investmentCheckboxes.style.display = 'none';
       this.investment1 = false;
     }
+
   }
 
 }

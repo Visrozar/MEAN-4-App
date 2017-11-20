@@ -6,35 +6,15 @@
   </p>
   <p class="text-center" style="margin-top:30px;">
     <a class="btn btn-primary" href="#" role="button">Join our investor community &raquo;</a>
-    <a class="btn btn-primary" href="#" role="button">Submit your business plan &raquo;</a>
+    <a class="btn btn-primary resp-btn" href="#" role="button">Submit your business plan &raquo;</a>
   </p>
 </div>
 
 <div class="row body-style">
   <form class="col-md-3">
     <div class="form-group sticky">
-      <!-- <div class="col-md-12 flter">
-        <select class="btn btn-primary btn-left form-control form-control-sm" name="location" [(ngModel)]="location">
-          <option class="dropdown-content" *ngFor="let location of country">{{ location==''?'Location':location }}</option>
-        </select>
-      </div>
-      <div class="col-md-12 filter">
-        <select class="btn btn-primary btn-left form-control form-control-sm" name="focus" [(ngModel)]="foc">
-          <option class="dropdown-content" *ngFor="let foc of focus">{{ foc==''?'Investment Focus':foc }}</option>
-        </select>
-      </div>
-      <div class="col-md-12 filter">
-        <select class="btn btn-primary btn-left form-control form-control-sm" name="indication" [(ngModel)]="indicat">
-          <option class="dropdown-content" *ngFor="let indicat of indication">{{ indicat==''?'Prefered Indication':indicat }}</option>
-        </select>
-      </div>
-      <div class="col-md-12 filter">
-        <select class="btn btn-primary btn-left form-control form-control-sm" name="investment" [(ngModel)]="invest">
-          <option class="dropdown-content" *ngFor="let invest of investment">{{ invest==''?'Investment Stage':invest }}</option>
-        </select>
-      </div> -->
       <div class="multiselect col-md-12 filter">
-        <div class="selectBox" (click)="showlocationCheckboxes()">
+        <div class="selectBox" (click)="showCheckboxes('location')">
           <select>
             <option>Location</option>
           </select>
@@ -46,7 +26,7 @@
         </div>
       </div>
       <div class="multiselect col-md-12 filter">
-        <div class="selectBox" (click)="showfocusCheckboxes()">
+        <div class="selectBox" (click)="showCheckboxes('focus')">
           <select>
             <option>Investment Focus</option>
           </select>
@@ -58,7 +38,7 @@
         </div>
       </div>
       <div class="multiselect col-md-12 filter">
-        <div class="selectBox" (click)="showindicationCheckboxes()">
+        <div class="selectBox" (click)="showCheckboxes('indication')">
           <select>
             <option>Prefered Indication</option>
           </select>
@@ -70,7 +50,7 @@
         </div>
       </div>
       <div class="multiselect col-md-12 filter">
-        <div class="selectBox" (click)="showinvestmentCheckboxes()">
+        <div class="selectBox" (click)="showCheckboxes('investment')">
           <select>
             <option>Investment Stage</option>
           </select>
@@ -81,7 +61,7 @@
             <input type="checkbox" name="inves" (click)="filterList(invest, 'inves') " />{{ invest==''?'Investment Stage':invest }}</label>
         </div>
       </div>
-      <div class="col-xs-12">
+      <div class="col-xs-12 filter-label">
         <h3 class="text-center">Filtered Items({{vclists.length}})
         </h3>
         <hr>
