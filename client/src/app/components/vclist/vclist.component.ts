@@ -8,7 +8,8 @@ declare var $: any;
 @Component({
   selector: 'app-vclist',
   templateUrl: './vclist.component.html',
-  styleUrls: ['./vclist.component.scss']
+  styleUrls: ['./vclist.component.scss'],
+  providers: [VcfilterPipe]
 })
 
 @NgModule({
@@ -18,10 +19,11 @@ declare var $: any;
 
 export class VclistComponent implements OnInit {
 
-  constructor(private vclistService: VclistService, private metaService: Meta) {
+  constructor(private vclistService: VclistService, private metaService: Meta, private listFilter: VcfilterPipe) {
 
     this.vclistService.getVclist().subscribe((data) => {
       this.vclists = data;
+      this.saveList = this.vclists;
       const allowed = ['VC Name'];
       const vc_name = [];
       var locat = [];
@@ -79,13 +81,6 @@ export class VclistComponent implements OnInit {
       investment = investment.filter(onlyUnique);
       this.investment = investment.filter(Boolean);
 
-      // this.country.unshift('');
-      // this.focus.unshift('');
-      // this.indication.unshift('');
-      // this.investment.unshift('');
-
-      // console.log(this.vclists);
-
       this.metaService.addTags([
         { name: 'keywords', content: vc_name.toString() }
       ]);
@@ -101,8 +96,26 @@ export class VclistComponent implements OnInit {
   count: any = {};
   reset = true;
   expanded = false;
+  location = false;
+  focus1 = false;
+  indication1 = false;
+  investment1 = false;
+  saveList: any = [];
 
   ngOnInit() {
+
+    const stickyOffset = $('.sticky').offset().top;
+
+    $(window).scroll(function () {
+      const sticky = $('.sticky'),
+        scroll = $(window).scrollTop();
+
+      if (scroll >= stickyOffset) {
+        sticky.addClass('fixed');
+      } else {
+        sticky.removeClass('fixed');
+      }
+    });
   }
 
   updateUrl(event) {
@@ -110,15 +123,75 @@ export class VclistComponent implements OnInit {
     return;
   }
 
-
-  showCheckboxes() {
-    const checkboxes = document.getElementById('checkboxes');
-    if (!this.expanded) {
-      checkboxes.style.display = 'block';
-      this.expanded = true;
+  filterList(ele, type) {
+    const boxes = $(`input[name=${type}]:checked`);
+    this.vclists = this.saveList;
+    if (boxes.length !== 0 && type === 'inves') {
+      for (let i = 0; i < boxes.length; i++) {
+        this.vclists = this.listFilter.transform(this.vclists, '', '', '', boxes[i].nextSibling.data);
+      }
+    } else if (boxes.length !== 0 && type === 'locati') {
+      for (let i = 0; i < boxes.length; i++) {
+        this.vclists = this.listFilter.transform(this.vclists, boxes[i].nextSibling.data, '', '', '');
+      }
+    } else if (boxes.length !== 0 && type === 'focu') {
+      for (let i = 0; i < boxes.length; i++) {
+        this.vclists = this.listFilter.transform(this.vclists, '', boxes[i].nextSibling.data, '', '');
+      }
+    } else if (boxes.length !== 0 && type === 'indica') {
+      for (let i = 0; i < boxes.length; i++) {
+        this.vclists = this.listFilter.transform(this.vclists, '', '', boxes[i].nextSibling.data, '');
+      }
     } else {
-      checkboxes.style.display = 'none';
-      this.expanded = false;
+      this.vclists = this.listFilter.transform(this.saveList, '', '', '', '');
     }
   }
+
+  showlocationCheckboxes() {
+    const locationCheckboxes = document.getElementById('locationCheckboxes');
+
+    if (!this.location) {
+      locationCheckboxes.style.display = 'block';
+      this.location = true;
+    } else {
+      locationCheckboxes.style.display = 'none';
+      this.location = false;
+    }
+  }
+
+  showfocusCheckboxes() {
+    const focusCheckboxes = document.getElementById('focusCheckboxes');
+
+    if (!this.focus1) {
+      focusCheckboxes.style.display = 'block';
+      this.focus1 = true;
+    } else {
+      focusCheckboxes.style.display = 'none';
+      this.focus1 = false;
+    }
+  }
+
+  showindicationCheckboxes() {
+    const indicationCheckboxes = document.getElementById('indicationCheckboxes');
+
+    if (!this.indication1) {
+      indicationCheckboxes.style.display = 'block';
+      this.indication1 = true;
+    } else {
+      indicationCheckboxes.style.display = 'none';
+      this.indication1 = false;
+    }
+  }
+  showinvestmentCheckboxes() {
+    const investmentCheckboxes = document.getElementById('investmentCheckboxes');
+
+    if (!this.investment1) {
+      investmentCheckboxes.style.display = 'block';
+      this.investment1 = true;
+    } else {
+      investmentCheckboxes.style.display = 'none';
+      this.investment1 = false;
+    }
+  }
+
 }
