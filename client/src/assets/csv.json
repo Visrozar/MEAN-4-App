@@ -1,1680 +1,1938 @@
 ﻿[
- {
-   "VC Name": "V-bio Ventures",
-   "Location": "Gent, Belgium",
-   "Investment Focus": "Therapeutics, Diagnostics, Medical devices, Agrobio",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed, Early stage",
-   "Featured": "true",
-   "Research": {
+  {
+    "VC Name": "V-bio Ventures",
+    "Location": [
+      "Gent, Belgium"
+    ],
+    "Investment Focus": "Therapeutics, Diagnostics, Medical devices, Agrobio",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed, Early stage",
+    "Featured": "true",
+    "Research": {
       " Industry Partner": "VIB"
-   },
-   "Fund Status": "Latest raising in 2015",
-   "Special Criteria": "",
-   "Website": "http://v-bio.ventures/"
-},
- {
-   "VC Name": "Capricorn VP",
-   "Location": "Leuven, Belgium",
-   "Investment Focus": "Therapeutics, Diagnostics, Medical devices, Health-tech, Agrobio",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed, Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2015",
+    "Special Criteria": "",
+    "Website": "http://v-bio.ventures/"
+  },
+  {
+    "VC Name": "Capricorn VP",
+    "Location": [
+      "Leuven, Belgium"
+    ],
+    "Investment Focus": "Therapeutics, Diagnostics, Medical devices, Health-tech, Agrobio",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed, Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2014",
-   "Special Criteria": "",
-   "Website": "http://www.capricorn.be/"
-},
- {
-   "VC Name": "Saffelberg Investments",
-   "Location": "Gooik, Belgium",
-   "Investment Focus": "Therapeutics, Diagnostics, Medical devices, Health-tech, Agrobio",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage, Late stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2014",
+    "Special Criteria": "",
+    "Website": "http://www.capricorn.be/"
+  },
+  {
+    "VC Name": "Saffelberg Investments",
+    "Location": [
+      "Gooik, Belgium"
+    ],
+    "Investment Focus": "Therapeutics, Diagnostics, Medical devices, Health-tech, Agrobio",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage, Late stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://www.saffelberg.com/"
-},
- {
-   "VC Name": "Qbic Fund",
-   "Location": "Gent, Belgium",
-   "Investment Focus": "Therapeutics, Diagnostics, Medical devices, Health-tech, Agrobio",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed, Early stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://www.saffelberg.com/"
+  },
+  {
+    "VC Name": "Qbic Fund",
+    "Location": [
+      "Gent, Belgium"
+    ],
+    "Investment Focus": "Therapeutics, Diagnostics, Medical devices, Health-tech, Agrobio",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed, Early stage",
+    "Research": {
       " Industry Partner": "Uni Gent"
-   },
-   "Fund Status": "Latest raising in 2016",
-   "Special Criteria": "Link with Gent University",
-   "Website": "http://qbic.be/"
-},
- {
-   "VC Name": "PMV",
-   "Location": "Brussels, Belgium",
-   "Investment Focus": "Therapeutics, Diagnostics, Medical devices, Health-tech, Agrobio",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2016",
+    "Special Criteria": "Link with Gent University",
+    "Website": "http://qbic.be/"
+  },
+  {
+    "VC Name": "PMV",
+    "Location": [
+      "Brussels, Belgium"
+    ],
+    "Investment Focus": "Therapeutics, Diagnostics, Medical devices, Health-tech, Agrobio",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Ever green",
-   "Special Criteria": "Link with the flemish region",
-   "Website": "http://www.pmv.eu/en"
-},
- {
-   "VC Name": "GIMV",
-   "Location": "Antwerp, Belgium, HT The Hague, Netherlands, Paris, France, Munich, Germany",
-   "Investment Focus": "Therapeutics, Diagnostics, Medical devices, Health-tech, Agrobio",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Ever green",
+    "Special Criteria": "Link with the flemish region",
+    "Website": "http://www.pmv.eu/en"
+  },
+  {
+    "VC Name": "GIMV",
+    "Location": [
+      "Antwerp, Belgium", "HT The Hague, Netherlands", "Paris, France", "Munich, Germany"
+    ],
+    "Investment Focus": "Therapeutics, Diagnostics, Medical devices, Health-tech, Agrobio",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Public",
-   "Special Criteria": "",
-   "Website": "http://www.gimv.com/en"
-},
- {
-   "VC Name": "Fund Plus",
-   "Location": "Leuven, Belgium",
-   "Investment Focus": "Therapeutics, Diagnostics, Medical devices",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage, Late stage",
-   "Research": {
+    },
+    "Fund Status": "Public",
+    "Special Criteria": "",
+    "Website": "http://www.gimv.com/en"
+  },
+  {
+    "VC Name": "Fund Plus",
+    "Location": [
+      "Leuven, Belgium"
+    ],
+    "Investment Focus": "Therapeutics, Diagnostics, Medical devices",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage, Late stage",
+    "Research": {
       " Industry Partner": "LS Research Partners"
-   },
-   "Fund Status": "Latest raising in 2015",
-   "Special Criteria": "",
-   "Website": "http://fundplus.be/"
-},
- {
-   "VC Name": "Cascara Ventures",
-   "Location": "Brussels, Belgium",
-   "Investment Focus": "Therapeutics, Diagnostics, Medical devices, Health-tech",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed, Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2015",
+    "Special Criteria": "",
+    "Website": "http://fundplus.be/"
+  },
+  {
+    "VC Name": "Cascara Ventures",
+    "Location": [
+      "Brussels, Belgium"
+    ],
+    "Investment Focus": "Therapeutics, Diagnostics, Medical devices, Health-tech",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed, Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2016",
-   "Special Criteria": "",
-   "Website": "https://www.cascaraventures.com/"
-},
- {
-   "VC Name": "Vives Fund",
-   "Location": "Louvain, Belgium",
-   "Investment Focus": "Therapeutics, Diagnostics, Medical devices, Agrobio",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed, Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2016",
+    "Special Criteria": "",
+    "Website": "https://www.cascaraventures.com/"
+  },
+  {
+    "VC Name": "Vives Fund",
+    "Location": [
+      "Louvain, Belgium"
+    ],
+    "Investment Focus": "Therapeutics, Diagnostics, Medical devices, Agrobio",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed, Early stage",
+    "Research": {
       " Industry Partner": "UCL-Louvain"
-   },
-   "Fund Status": "Latest raising in 2011",
-   "Special Criteria": "Link with UCL-Louvain",
-   "Website": "http://www.vivesfund.com/en/"
-},
- {
-   "VC Name": "Gemma Frisius Fund",
-   "Location": "Leuven, Belgium",
-   "Investment Focus": "Therapeutics, Diagnostics, Medical devices, Health-tech, Agrobio",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed, Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2011",
+    "Special Criteria": "Link with UCL-Louvain",
+    "Website": "http://www.vivesfund.com/en/"
+  },
+  {
+    "VC Name": "Gemma Frisius Fund",
+    "Location": [
+      "Leuven, Belgium"
+    ],
+    "Investment Focus": "Therapeutics, Diagnostics, Medical devices, Health-tech, Agrobio",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed, Early stage",
+    "Research": {
       " Industry Partner": "KU-Leuven"
-   },
-   "Fund Status": "Ever green",
-   "Special Criteria": "Link with KU-Leuven",
-   "Website": "https://lrd.kuleuven.be/en/spinoff/gemma-frisius-fund"
-},
- {
-   "VC Name": "Korys",
-   "Location": "Brussels, Belgium",
-   "Investment Focus": "Therapeutics, Diagnostics, Medical devices, Health-tech, Agrobio",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage, Late stage",
-   "Research": {
+    },
+    "Fund Status": "Ever green",
+    "Special Criteria": "Link with KU-Leuven",
+    "Website": "https://lrd.kuleuven.be/en/spinoff/gemma-frisius-fund"
+  },
+  {
+    "VC Name": "Korys",
+    "Location": [
+      "Brussels, Belgium"
+    ],
+    "Investment Focus": "Therapeutics, Diagnostics, Medical devices, Health-tech, Agrobio",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage, Late stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Ever green",
-   "Special Criteria": "",
-   "Website": "http://www.korys.be/"
-},
- {
-   "VC Name": "Agri Investment Fund",
-   "Location": "Leuven, Belgium",
-   "Investment Focus": "Agrobio",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Ever green",
+    "Special Criteria": "",
+    "Website": "http://www.korys.be/"
+  },
+  {
+    "VC Name": "Agri Investment Fund",
+    "Location": [
+      "Leuven, Belgium"
+    ],
+    "Investment Focus": "Agrobio",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://www.aifund.be/en"
-},
- {
-   "VC Name": "Droia Oncology Ventures",
-   "Location": "Meise, Belgium, Luxembourg",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "Oncology",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://www.aifund.be/en"
+  },
+  {
+    "VC Name": "Droia Oncology Ventures",
+    "Location": [
+      "Meise, Belgium", "Luxembourg"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "Oncology",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://droia.be/"
-},
- {
-   "VC Name": "Theodorus Fund",
-   "Location": "Brussels, Belgium",
-   "Investment Focus": "Therapeutics, Diagnostics, Medical devices, Health-tech, Agrobio",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed, Early stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://droia.be/"
+  },
+  {
+    "VC Name": "Theodorus Fund",
+    "Location": [
+      "Brussels, Belgium"
+    ],
+    "Investment Focus": "Therapeutics, Diagnostics, Medical devices, Health-tech, Agrobio",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed, Early stage",
+    "Research": {
       " Industry Partner": "ULB University"
-   },
-   "Fund Status": "",
-   "Special Criteria": "Link with ULB University",
-   "Website": "http://www.theodorus.be/en"
-},
- {
-   "VC Name": "Merifin Capital",
-   "Location": "Brussels, Belgium",
-   "Investment Focus": "Therapeutics, Diagnostics, Medical devices, Health-tech",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage, Late stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "Link with ULB University",
+    "Website": "http://www.theodorus.be/en"
+  },
+  {
+    "VC Name": "Merifin Capital",
+    "Location": [
+      "Brussels, Belgium"
+    ],
+    "Investment Focus": "Therapeutics, Diagnostics, Medical devices, Health-tech",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage, Late stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://www.merifin.com/overview-investment.aspx"
-},
- {
-   "VC Name": "CD3 Fund",
-   "Location": "Leuven, Belgium",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed, Early stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://www.merifin.com/overview-investment.aspx"
+  },
+  {
+    "VC Name": "CD3 Fund",
+    "Location": [
+      "Leuven, Belgium"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed, Early stage",
+    "Research": {
       " Industry Partner": "KU Leuven"
-   },
-   "Fund Status": "Latest raising in 2016",
-   "Special Criteria": "",
-   "Website": "http://www.cd3.eu/"
-},
- {
-   "VC Name": "Vesalius Biocapital",
-   "Location": "Luxembourg",
-   "Investment Focus": "Therapeutics, Diagnostics, Medical devices",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed, Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2016",
+    "Special Criteria": "",
+    "Website": "http://www.cd3.eu/"
+  },
+  {
+    "VC Name": "Vesalius Biocapital",
+    "Location": [
+      "Luxembourg"
+    ],
+    "Investment Focus": "Therapeutics, Diagnostics, Medical devices",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed, Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "Located in Europe",
-   "Website": "http://www.vesaliusbiocapital.com/home"
-},
- {
-   "VC Name": "Omnes Capital",
-   "Location": "Paris, France",
-   "Investment Focus": "Therapeutics, Diagnostics, Medical devices, Health-tech",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed, Early stage, Late stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "Located in Europe",
+    "Website": "http://www.vesaliusbiocapital.com/home"
+  },
+  {
+    "VC Name": "Omnes Capital",
+    "Location": [
+      "Paris, France"
+    ],
+    "Investment Focus": "Therapeutics, Diagnostics, Medical devices, Health-tech",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed, Early stage, Late stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Ever green",
-   "Special Criteria": "",
-   "Website": "https://www.omnescapital.com/en"
-},
- {
-   "VC Name": "Seventure",
-   "Location": "Paris, France",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Ever green",
+    "Special Criteria": "",
+    "Website": "https://www.omnescapital.com/en"
+  },
+  {
+    "VC Name": "Seventure",
+    "Location": [
+      "Paris, France"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://www.seventure.fr/en/"
-},
- {
-   "VC Name": "Sofinnova Parteners",
-   "Location": "Paris, France",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://www.seventure.fr/en/"
+  },
+  {
+    "VC Name": "Sofinnova Parteners",
+    "Location": [
+      "Paris, France"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://www.sofinnova.fr/en/"
-},
- {
-   "VC Name": "Edmond De Rothschild",
-   "Location": "Paris, France",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://www.sofinnova.fr/en/"
+  },
+  {
+    "VC Name": "Edmond De Rothschild",
+    "Location": [
+      "Paris, France"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://www.edmond-de-rothschild.com/site/France/en/private-equity/our-expertise/life-sciences"
-},
- {
-   "VC Name": "Kurma Partners",
-   "Location": "Paris, France",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://www.edmond-de-rothschild.com/site/France/en/private-equity/our-expertise/life-sciences"
+  },
+  {
+    "VC Name": "Kurma Partners",
+    "Location": [
+      "Paris, France"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2015",
-   "Special Criteria": "",
-   "Website": "http://www.kurmapartners.com/en/"
-},
- {
-   "VC Name": "Inserm Transfert Initiative",
-   "Location": "Paris, France",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2015",
+    "Special Criteria": "",
+    "Website": "http://www.kurmapartners.com/en/"
+  },
+  {
+    "VC Name": "Inserm Transfert Initiative",
+    "Location": [
+      "Paris, France"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2011",
-   "Special Criteria": "",
-   "Website": "http://www.inserm-transfert-initiative.com/en/?orders[order]=order&tags_id=2&issearch=1"
-},
- {
-   "VC Name": "Advent France Biotech",
-   "Location": "Paris, France",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2011",
+    "Special Criteria": "",
+    "Website": "http://www.inserm-transfert-initiative.com/en/?orders[order]=order&tags_id=2&issearch=1"
+  },
+  {
+    "VC Name": "Advent France Biotech",
+    "Location": [
+      "Paris, France"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2015",
-   "Special Criteria": "",
-   "Website": "http://www.adventfb.com/en/"
-},
- {
-   "VC Name": "CapAgro",
-   "Location": "Paris, France",
-   "Investment Focus": "",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2015",
+    "Special Criteria": "",
+    "Website": "http://www.adventfb.com/en/"
+  },
+  {
+    "VC Name": "CapAgro",
+    "Location": [
+      "Paris, France"
+    ],
+    "Investment Focus": "",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2014",
-   "Special Criteria": "",
-   "Website": "https://www.capagro.fr/copie-de-accueil"
-},
- {
-   "VC Name": "Auriga VC",
-   "Location": "Paris, France",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2014",
+    "Special Criteria": "",
+    "Website": "https://www.capagro.fr/copie-de-accueil"
+  },
+  {
+    "VC Name": "Auriga VC",
+    "Location": [
+      "Paris, France"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://www.auriga.vc/"
-},
- {
-   "VC Name": "Pierre Fabre Fund",
-   "Location": "Paris, France",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "Oncology - Dermatology",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://www.auriga.vc/"
+  },
+  {
+    "VC Name": "Pierre Fabre Fund",
+    "Location": [
+      "Paris, France"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "Oncology - Dermatology",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "https://www.pierre-fabre.com/en/pierre-fabre-fund-innovation"
-},
- {
-   "VC Name": "Truffle Capital",
-   "Location": "Paris, France",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "https://www.pierre-fabre.com/en/pierre-fabre-fund-innovation"
+  },
+  {
+    "VC Name": "Truffle Capital",
+    "Location": [
+      "Paris, France"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2017",
-   "Special Criteria": "",
-   "Website": "http://www.truffle.com/"
-},
- {
-   "VC Name": "Forbion Capital Partners",
-   "Location": "Naarden, Netherlands",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2017",
+    "Special Criteria": "",
+    "Website": "http://www.truffle.com/"
+  },
+  {
+    "VC Name": "Forbion Capital Partners",
+    "Location": [
+      "Naarden, Netherlands"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2016",
-   "Special Criteria": "",
-   "Website": "https://forbion.com/en/"
-},
- {
-   "VC Name": "Biogeneration Ventures",
-   "Location": "Naarden, Netherlands",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2016",
+    "Special Criteria": "",
+    "Website": "https://forbion.com/en/"
+  },
+  {
+    "VC Name": "Biogeneration Ventures",
+    "Location": [
+      "Naarden, Netherlands"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2016",
-   "Special Criteria": "Located in Benelux or Germany",
-   "Website": "http://www.biogenerationventures.com/"
-},
- {
-   "VC Name": "Anterra Capital",
-   "Location": "Amsterdam, Netherlands",
-   "Investment Focus": "",
-   "Prefered Indication": "",
-   "Investment Stage": "Late stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2016",
+    "Special Criteria": "Located in Benelux or Germany",
+    "Website": "http://www.biogenerationventures.com/"
+  },
+  {
+    "VC Name": "Anterra Capital",
+    "Location": [
+      "Amsterdam, Netherlands"
+    ],
+    "Investment Focus": "",
+    "Prefered Indication": "",
+    "Investment Stage": "Late stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2016",
-   "Special Criteria": "",
-   "Website": "http://www.anterracapital.com/"
-},
- {
-   "VC Name": "Merck Ventures",
-   "Location": "Amsterdam, Netherlands",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2016",
+    "Special Criteria": "",
+    "Website": "http://www.anterracapital.com/"
+  },
+  {
+    "VC Name": "Merck Ventures",
+    "Location": [
+      "Amsterdam, Netherlands"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": "Merck KGaA"
-   },
-   "Fund Status": "Ever Green",
-   "Special Criteria": "Match with Merck KGaA strategy",
-   "Website": "http://merck-ventures.com/"
-},
- {
-   "VC Name": "Thuja Capital",
-   "Location": "Utrecht, Netherlands",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Ever Green",
+    "Special Criteria": "Match with Merck KGaA strategy",
+    "Website": "http://merck-ventures.com/"
+  },
+  {
+    "VC Name": "Thuja Capital",
+    "Location": [
+      "Utrecht, Netherlands"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2016",
-   "Special Criteria": "Located  in Benelux",
-   "Website": "http://thujacapital.com/"
-},
- {
-   "VC Name": "Aglaia Biomedical Venntures",
-   "Location": "Bilthoven, Netherlands",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "Oncology",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2016",
+    "Special Criteria": "Located in Benelux",
+    "Website": "http://thujacapital.com/"
+  },
+  {
+    "VC Name": "Aglaia Biomedical Venntures",
+    "Location": [
+      "Bilthoven, Netherlands"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "Oncology",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://www.aglaia-biomedical.com/"
-},
- {
-   "VC Name": "Gilde Healthcare",
-   "Location": "Utrecht, Netherlands",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://www.aglaia-biomedical.com/"
+  },
+  {
+    "VC Name": "Gilde Healthcare",
+    "Location": [
+      "Utrecht, Netherlands"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "https://gildehealthcare.com/"
-},
- {
-   "VC Name": "Swanbridge Capital",
-   "Location": "Rotterdam, Netherlands",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "https://gildehealthcare.com/"
+  },
+  {
+    "VC Name": "Swanbridge Capital",
+    "Location": [
+      "Rotterdam, Netherlands"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://swanbridgecapital.nl/"
-},
- {
-   "VC Name": "BOM Capital",
-   "Location": "De Tilburg, Netherlands",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://swanbridgecapital.nl/"
+  },
+  {
+    "VC Name": "BOM Capital",
+    "Location": [
+      "De Tilburg, Netherlands"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "Link with Noord-Brabant",
-   "Website": "https://www.bom.nl/"
-},
- {
-   "VC Name": "Inkef Capital",
-   "Location": "Amsterdam, Netherlands",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "Link with Noord-Brabant",
+    "Website": "https://www.bom.nl/"
+  },
+  {
+    "VC Name": "Inkef Capital",
+    "Location": [
+      "Amsterdam, Netherlands"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2016",
-   "Special Criteria": "Located in Netherlands",
-   "Website": "http://www.inkefcapital.com/"
-},
- {
-   "VC Name": "LSP",
-   "Location": "Amsterdam, Netherlands",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2016",
+    "Special Criteria": "Located in Netherlands",
+    "Website": "http://www.inkefcapital.com/"
+  },
+  {
+    "VC Name": "LSP",
+    "Location": [
+      "Amsterdam, Netherlands"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2014",
-   "Special Criteria": "",
-   "Website": "https://lspvc.com/"
-},
- {
-   "VC Name": "DSM Venturing",
-   "Location": "TE Heerlen, Netherlands",
-   "Investment Focus": "",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2014",
+    "Special Criteria": "",
+    "Website": "https://lspvc.com/"
+  },
+  {
+    "VC Name": "DSM Venturing",
+    "Location": [
+      "TE Heerlen, Netherlands"
+    ],
+    "Investment Focus": "",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "https://www.dsm.com/corporate/about/business-entities/dsm-venturing.html"
-},
- {
-   "VC Name": "Lupus Ventures",
-   "Location": "Heerenveen, Netherlands",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "Oncology",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "https://www.dsm.com/corporate/about/business-entities/dsm-venturing.html"
+  },
+  {
+    "VC Name": "Lupus Ventures",
+    "Location": [
+      "Heerenveen, Netherlands"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "Oncology",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "Located in Netherlands",
-   "Website": "http://lupusventures.nl/"
-},
- {
-   "VC Name": "Eserante Ventures",
-   "Location": "Hofddorp, Netherlands",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "Located in Netherlands",
+    "Website": "http://lupusventures.nl/"
+  },
+  {
+    "VC Name": "Eserante Ventures",
+    "Location": [
+      "Hofddorp, Netherlands"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://www.esperanteventures.com/"
-},
- {
-   "VC Name": "EMBL Ventures",
-   "Location": "Heidelberg, Germany",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://www.esperanteventures.com/"
+  },
+  {
+    "VC Name": "EMBL Ventures",
+    "Location": [
+      "Heidelberg, Germany"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": "EMBL Heidelberg"
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://www.embl-ventures.com/"
-},
- {
-   "VC Name": "Wellington Partners",
-   "Location": "Munich, Germany",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://www.embl-ventures.com/"
+  },
+  {
+    "VC Name": "Wellington Partners",
+    "Location": [
+      "Munich, Germany"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://www.wellington-partners.com/welcome/"
-},
- {
-   "VC Name": "Fraunhofer Venture",
-   "Location": "Munich, Germany",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://www.wellington-partners.com/welcome/"
+  },
+  {
+    "VC Name": "Fraunhofer Venture",
+    "Location": [
+      "Munich, Germany"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": "Frauenhofer-Gesellschaft"
-   },
-   "Fund Status": "",
-   "Special Criteria": "Frauenhofer Spin-off",
-   "Website": "https://www.fraunhoferventure.de/en.html"
-},
- {
-   "VC Name": "MIG AG",
-   "Location": "Munich, Germany",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "Frauenhofer Spin-off",
+    "Website": "https://www.fraunhoferventure.de/en.html"
+  },
+  {
+    "VC Name": "MIG AG",
+    "Location": [
+      "Munich, Germany"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2014",
-   "Special Criteria": "",
-   "Website": "http://www.mig.ag/de/"
-},
- {
-   "VC Name": "SHS Capital",
-   "Location": "Tubingen, Germany",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2014",
+    "Special Criteria": "",
+    "Website": "http://www.mig.ag/de/"
+  },
+  {
+    "VC Name": "SHS Capital",
+    "Location": [
+      "Tubingen, Germany"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2013",
-   "Special Criteria": "Located in DACH",
-   "Website": "http://www.shs-capital.eu/en/"
-},
- {
-   "VC Name": "LBBW Venture",
-   "Location": "Stuttgart, Germany",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2013",
+    "Special Criteria": "Located in DACH",
+    "Website": "http://www.shs-capital.eu/en/"
+  },
+  {
+    "VC Name": "LBBW Venture",
+    "Location": [
+      "Stuttgart, Germany"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "Link with BW or RLP provinces",
-   "Website": "http://www.lbbw-venture.de/"
-},
- {
-   "VC Name": "High-Tech Gründerfonds",
-   "Location": "Bonn, Germany",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "Link with BW or RLP provinces",
+    "Website": "http://www.lbbw-venture.de/"
+  },
+  {
+    "VC Name": "High-Tech Gründerfonds",
+    "Location": [
+      "Bonn, Germany"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "https://high-tech-gruenderfonds.de/en/#title"
-},
- {
-   "VC Name": "Boehringer Venture Fund",
-   "Location": "Ingelheim, Germany",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "Immuno-Oncology, Regenerative medicine, therpeutic modalities, Microbiome",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "https://high-tech-gruenderfonds.de/en/#title"
+  },
+  {
+    "VC Name": "Boehringer Venture Fund",
+    "Location": [
+      "Ingelheim, Germany"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "Immuno-Oncology, Regenerative medicine, therpeutic modalities, Microbiome",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://www.boehringer-ingelheim-venture.com/"
-},
- {
-   "VC Name": "Dievini",
-   "Location": "Heidelberg, Germany",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "Oncology, Neurology, infectious diseases, cell therapy, drug delivery systems",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://www.boehringer-ingelheim-venture.com/"
+  },
+  {
+    "VC Name": "Dievini",
+    "Location": [
+      "Heidelberg, Germany"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "Oncology, Neurology, infectious diseases, cell therapy, drug delivery systems",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://www.dievini.com/content/index.php?seite=33&sprache=2"
-},
- {
-   "VC Name": "Creathor Venture",
-   "Location": "Bad Homburg, Germany",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://www.dievini.com/content/index.php?seite=33&sprache=2"
+  },
+  {
+    "VC Name": "Creathor Venture",
+    "Location": [
+      "Bad Homburg, Germany"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2011",
-   "Special Criteria": "Located in DACH, France or Nordic countries",
-   "Website": "http://www.creathor.com/en/"
-},
- {
-   "VC Name": "IBB Beteiligungsgesellschaft",
-   "Location": "Berlin, Germany",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2011",
+    "Special Criteria": "Located in DACH, France or Nordic countries",
+    "Website": "http://www.creathor.com/en/"
+  },
+  {
+    "VC Name": "IBB Beteiligungsgesellschaft",
+    "Location": [
+      "Berlin, Germany"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "Based in Berlin",
-   "Website": "http://www.ibb-bet.de/en/home.html"
-},
- {
-   "VC Name": "Peppermint Venture Partners",
-   "Location": "Berlin, Germany",
-   "Investment Focus": "",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "Based in Berlin",
+    "Website": "http://www.ibb-bet.de/en/home.html"
+  },
+  {
+    "VC Name": "Peppermint Venture Partners",
+    "Location": [
+      "Berlin, Germany"
+    ],
+    "Investment Focus": "",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": "Charite Berlin"
-   },
-   "Fund Status": "Latest raising in 2010",
-   "Special Criteria": "",
-   "Website": "http://www.peppermint-vp.com/"
-},
- {
-   "VC Name": "Earlybird Ventures",
-   "Location": "Berlin, Germany",
-   "Investment Focus": "",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2010",
+    "Special Criteria": "",
+    "Website": "http://www.peppermint-vp.com/"
+  },
+  {
+    "VC Name": "Earlybird Ventures",
+    "Location": [
+      "Berlin, Germany"
+    ],
+    "Investment Focus": "",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2016",
-   "Special Criteria": "",
-   "Website": "https://www.earlybird.com/"
-},
- {
-   "VC Name": "BtoV Partners",
-   "Location": "Berlin, Germany",
-   "Investment Focus": "",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2016",
+    "Special Criteria": "",
+    "Website": "https://www.earlybird.com/"
+  },
+  {
+    "VC Name": "BtoV Partners",
+    "Location": [
+      "Berlin, Germany"
+    ],
+    "Investment Focus": "",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "https://btov.vc/"
-},
- {
-   "VC Name": "Medicis Capital",
-   "Location": "Munich, Germany",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "https://btov.vc/"
+  },
+  {
+    "VC Name": "Medicis Capital",
+    "Location": [
+      "Munich, Germany"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "Located in western Europe",
-   "Website": "http://www.medicis.de/About-Us"
-},
- {
-   "VC Name": "TVM Capital",
-   "Location": "Munich, Germany",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "Located in western Europe",
+    "Website": "http://www.medicis.de/About-Us"
+  },
+  {
+    "VC Name": "TVM Capital",
+    "Location": [
+      "Munich, Germany"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2014",
-   "Special Criteria": "",
-   "Website": "http://www.tvm-capital.com/"
-},
- {
-   "VC Name": "Sunstone",
-   "Location": "Copenhagen, Denmark",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2014",
+    "Special Criteria": "",
+    "Website": "http://www.tvm-capital.com/"
+  },
+  {
+    "VC Name": "Sunstone",
+    "Location": [
+      "Copenhagen, Denmark"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2012",
-   "Special Criteria": "",
-   "Website": "http://life.sunstone.eu/"
-},
- {
-   "VC Name": "NOVO Holdings",
-   "Location": "Hellerup, Denmark",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2012",
+    "Special Criteria": "",
+    "Website": "http://life.sunstone.eu/"
+  },
+  {
+    "VC Name": "NOVO Holdings",
+    "Location": [
+      "Hellerup, Denmark"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": "Novo Nordisk"
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://www.novoholdings.dk/novo/novo"
-},
- {
-   "VC Name": "NB Capital",
-   "Location": "Copenhagen, Denmark",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://www.novoholdings.dk/novo/novo"
+  },
+  {
+    "VC Name": "NB Capital",
+    "Location": [
+      "Copenhagen, Denmark"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://nbcapital.net/"
-},
- {
-   "VC Name": "Lundbeck fund",
-   "Location": "Copenhagen, Denmark",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://nbcapital.net/"
+  },
+  {
+    "VC Name": "Lundbeck fund",
+    "Location": [
+      "Copenhagen, Denmark"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": "Lundbeck Foundation"
-   },
-   "Fund Status": "Ever green",
-   "Special Criteria": "",
-   "Website": "https://www.lundbeckfonden.com/en/"
-},
- {
-   "VC Name": "HealthCap",
-   "Location": "Stockholm, Sweden",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "Oncology, Orphan diseases, Genetic diseases",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Ever green",
+    "Special Criteria": "",
+    "Website": "https://www.lundbeckfonden.com/en/"
+  },
+  {
+    "VC Name": "HealthCap",
+    "Location": [
+      "Stockholm, Sweden"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "Oncology, Orphan diseases, Genetic diseases",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://www.healthcap.eu/"
-},
- {
-   "VC Name": "SEB Venture Capital",
-   "Location": "Stockholm, Sweden",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://www.healthcap.eu/"
+  },
+  {
+    "VC Name": "SEB Venture Capital",
+    "Location": [
+      "Stockholm, Sweden"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Ever green",
-   "Special Criteria": "",
-   "Website": "https://sebgroup.com/large-corporates-and-institutions/our-services/seb-venture-capital"
-},
- {
-   "VC Name": "InnovationsKapital",
-   "Location": "Stockholm, Sweden",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Ever green",
+    "Special Criteria": "",
+    "Website": "https://sebgroup.com/large-corporates-and-institutions/our-services/seb-venture-capital"
+  },
+  {
+    "VC Name": "InnovationsKapital",
+    "Location": [
+      "Stockholm, Sweden"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Public",
-   "Special Criteria": "",
-   "Website": "http://www.innkap.se/"
-},
- {
-   "VC Name": "Ysios Capital",
-   "Location": "Barcelona, Spain",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Public",
+    "Special Criteria": "",
+    "Website": "http://www.innkap.se/"
+  },
+  {
+    "VC Name": "Ysios Capital",
+    "Location": [
+      "Barcelona, Spain"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2016",
-   "Special Criteria": "",
-   "Website": "http://www.ysioscapital.com/"
-},
- {
-   "VC Name": "Alta Life Science",
-   "Location": "Barcelona, Spain",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2016",
+    "Special Criteria": "",
+    "Website": "http://www.ysioscapital.com/"
+  },
+  {
+    "VC Name": "Alta Life Science",
+    "Location": [
+      "Barcelona, Spain"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "Located in Spain",
-   "Website": "https://www.altals.com/"
-},
- {
-   "VC Name": "CRB Inverbio",
-   "Location": "Madrid, Spain",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "Located in Spain",
+    "Website": "https://www.altals.com/"
+  },
+  {
+    "VC Name": "CRB Inverbio",
+    "Location": [
+      "Madrid, Spain"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2012",
-   "Special Criteria": "",
-   "Website": "http://crbinverbio.com/en/#.WcqF-8hJZPY"
-},
- {
-   "VC Name": "Healthequity",
-   "Location": "Barcelona, Spain",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2012",
+    "Special Criteria": "",
+    "Website": "http://crbinverbio.com/en/#.WcqF-8hJZPY"
+  },
+  {
+    "VC Name": "Healthequity",
+    "Location": [
+      "Barcelona, Spain"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2012",
-   "Special Criteria": "Located in Catalonia (preferably)",
-   "Website": "http://healthequity.es/index_eng.html"
-},
- {
-   "VC Name": "Inveready",
-   "Location": "Barcelona, Spain",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2012",
+    "Special Criteria": "Located in Catalonia (preferably)",
+    "Website": "http://healthequity.es/index_eng.html"
+  },
+  {
+    "VC Name": "Inveready",
+    "Location": [
+      "Barcelona, Spain"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://inveready.com/venture-capital/"
-},
- {
-   "VC Name": "Caixa Capital Risc",
-   "Location": "Barcelona, Spain",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://inveready.com/venture-capital/"
+  },
+  {
+    "VC Name": "Caixa Capital Risc",
+    "Location": [
+      "Barcelona, Spain"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://www.caixacapitalrisc.es/en/vehiculos-de-inversion/"
-},
- {
-   "VC Name": "Nextech Invest",
-   "Location": "Zurich, Switzerland",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "Oncology",
-   "Investment Stage": "Late stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://www.caixacapitalrisc.es/en/vehiculos-de-inversion/"
+  },
+  {
+    "VC Name": "Nextech Invest",
+    "Location": [
+      "Zurich, Switzerland"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "Oncology",
+    "Investment Stage": "Late stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2017",
-   "Special Criteria": "",
-   "Website": "https://www.nextechinvest.com/en/"
-},
- {
-   "VC Name": "Emerald Technology Ventures",
-   "Location": "Zurich, Switzerland",
-   "Investment Focus": "",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2017",
+    "Special Criteria": "",
+    "Website": "https://www.nextechinvest.com/en/"
+  },
+  {
+    "VC Name": "Emerald Technology Ventures",
+    "Location": [
+      "Zurich, Switzerland"
+    ],
+    "Investment Focus": "",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://www.emerald-ventures.com/#"
-},
- {
-   "VC Name": "HBM Healthcare Investments",
-   "Location": "Zug, Switzerland",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Late stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://www.emerald-ventures.com/#"
+  },
+  {
+    "VC Name": "HBM Healthcare Investments",
+    "Location": [
+      "Zug, Switzerland"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Late stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Public",
-   "Special Criteria": "",
-   "Website": "http://www.hbmhealthcare.com/en/unternehmen/profil.php"
-},
- {
-   "VC Name": "VI Partners",
-   "Location": "Zug, Switzerland",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "Public",
+    "Special Criteria": "",
+    "Website": "http://www.hbmhealthcare.com/en/unternehmen/profil.php"
+  },
+  {
+    "VC Name": "VI Partners",
+    "Location": [
+      "Zug, Switzerland"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Ever green",
-   "Special Criteria": "Located in Switzerland (preferably)",
-   "Website": "http://www.vipartners.ch/"
-},
- {
-   "VC Name": "Biomed Partners",
-   "Location": "Basel, Switzerland",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Ever green",
+    "Special Criteria": "Located in Switzerland (preferably)",
+    "Website": "http://www.vipartners.ch/"
+  },
+  {
+    "VC Name": "Biomed Partners",
+    "Location": [
+      "Basel, Switzerland"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2017",
-   "Special Criteria": "Located in Switzerland and neighbours",
-   "Website": "https://biomedvc.com/en/"
-},
- {
-   "VC Name": "Novartis Venture Fund",
-   "Location": "Basel, Switzerland",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2017",
+    "Special Criteria": "Located in Switzerland and neighbours",
+    "Website": "https://biomedvc.com/en/"
+  },
+  {
+    "VC Name": "Novartis Venture Fund",
+    "Location": [
+      "Basel, Switzerland"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": "Novartis"
-   },
-   "Fund Status": "Ever green",
-   "Special Criteria": "",
-   "Website": "http://www.nvfund.com/#Home"
-},
- {
-   "VC Name": "Roche Venture Fund",
-   "Location": "Basel, Switzerland",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Ever green",
+    "Special Criteria": "",
+    "Website": "http://www.nvfund.com/#Home"
+  },
+  {
+    "VC Name": "Roche Venture Fund",
+    "Location": [
+      "Basel, Switzerland"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": "Roche"
-   },
-   "Fund Status": "Ever green",
-   "Special Criteria": "",
-   "Website": "https://www.roche.com/venturefund.htm"
-},
- {
-   "VC Name": "Endeavour Vision",
-   "Location": "Geneva, Switzerland",
-   "Investment Focus": "",
-   "Prefered Indication": "",
-   "Investment Stage": "Late stage",
-   "Research": {
+    },
+    "Fund Status": "Ever green",
+    "Special Criteria": "",
+    "Website": "https://www.roche.com/venturefund.htm"
+  },
+  {
+    "VC Name": "Endeavour Vision",
+    "Location": [
+      "Geneva, Switzerland"
+    ],
+    "Investment Focus": "",
+    "Prefered Indication": "",
+    "Investment Stage": "Late stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://www.endeavourvision.com/"
-},
- {
-   "VC Name": "Neomed Ventures",
-   "Location": "Geneva, Switzerland",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://www.endeavourvision.com/"
+  },
+  {
+    "VC Name": "Neomed Ventures",
+    "Location": [
+      "Geneva, Switzerland"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2015",
-   "Special Criteria": "",
-   "Website": "http://neomed.net/"
-},
- {
-   "VC Name": "Eclosion Ventures",
-   "Location": "Geneva, Switzerland",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2015",
+    "Special Criteria": "",
+    "Website": "http://neomed.net/"
+  },
+  {
+    "VC Name": "Eclosion Ventures",
+    "Location": [
+      "Geneva, Switzerland"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://eclosionventures.com/"
-},
- {
-   "VC Name": "Aravis Capital",
-   "Location": "Zurich, Switzerland",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "Oncology, Autoimmune diseases, Personalized therapies",
-   "Investment Stage": "Late stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://eclosionventures.com/"
+  },
+  {
+    "VC Name": "Aravis Capital",
+    "Location": [
+      "Zurich, Switzerland"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "Oncology, Autoimmune diseases, Personalized therapies",
+    "Investment Stage": "Late stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2017",
-   "Special Criteria": "",
-   "Website": "https://www.aravis.ch/"
-},
- {
-   "VC Name": "BB Biotech Ventures",
-   "Location": "Zurich, Switzerland",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2017",
+    "Special Criteria": "",
+    "Website": "https://www.aravis.ch/"
+  },
+  {
+    "VC Name": "BB Biotech Ventures",
+    "Location": [
+      "Zurich, Switzerland"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": "Bellevue Asset Management"
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://www.bbbiotechventures.com/en/bb-biotech-ventures/"
-},
- {
-   "VC Name": "BlueOcean Ventures",
-   "Location": "Geneva, Switzerland",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://www.bbbiotechventures.com/en/bb-biotech-ventures/"
+  },
+  {
+    "VC Name": "BlueOcean Ventures",
+    "Location": [
+      "Geneva, Switzerland"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2015",
-   "Special Criteria": "",
-   "Website": "http://blueocean-ventures.com/"
-},
- {
-   "VC Name": "Lifecare Partners",
-   "Location": "Basel, Switzerland",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2015",
+    "Special Criteria": "",
+    "Website": "http://blueocean-ventures.com/"
+  },
+  {
+    "VC Name": "Lifecare Partners",
+    "Location": [
+      "Basel, Switzerland"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://www.lifecarevc.com"
-},
- {
-   "VC Name": "Fountain Healthcare Partners",
-   "Location": "Dublin, Irland",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://www.lifecarevc.com"
+  },
+  {
+    "VC Name": "Fountain Healthcare Partners",
+    "Location": [
+      "Dublin, Irland"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2015",
-   "Special Criteria": "",
-   "Website": "http://www.fh-partners.com/"
-},
- {
-   "VC Name": "Malin PLC",
-   "Location": "Dublin, Irland",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2015",
+    "Special Criteria": "",
+    "Website": "http://www.fh-partners.com/"
+  },
+  {
+    "VC Name": "Malin PLC",
+    "Location": [
+      "Dublin, Irland"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Public",
-   "Special Criteria": "",
-   "Website": "http://www.malinplc.com/"
-},
- {
-   "VC Name": "Seroba Life Sciences",
-   "Location": "Dublin, Irland",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Public",
+    "Special Criteria": "",
+    "Website": "http://www.malinplc.com/"
+  },
+  {
+    "VC Name": "Seroba Life Sciences",
+    "Location": [
+      "Dublin, Irland"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2016",
-   "Special Criteria": "",
-   "Website": "http://www.seroba-lifesciences.com/"
-},
- {
-   "VC Name": "Polaris Partners",
-   "Location": "Dublin, Irland",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2016",
+    "Special Criteria": "",
+    "Website": "http://www.seroba-lifesciences.com/"
+  },
+  {
+    "VC Name": "Polaris Partners",
+    "Location": [
+      "Dublin, Irland"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2017",
-   "Special Criteria": "",
-   "Website": "http://www.polarispartners.com/healthcare/"
-},
- {
-   "VC Name": "Delta Partners",
-   "Location": "Dublin, Irland",
-   "Investment Focus": "",
-   "Prefered Indication": "",
-   "Investment Stage": "",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2017",
+    "Special Criteria": "",
+    "Website": "http://www.polarispartners.com/healthcare/"
+  },
+  {
+    "VC Name": "Delta Partners",
+    "Location": [
+      "Dublin, Irland"
+    ],
+    "Investment Focus": "",
+    "Prefered Indication": "",
+    "Investment Stage": "",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://www.deltapartners.com/"
-},
- {
-   "VC Name": "Joint Polish Investment Fund",
-   "Location": "Warsaw, Poland",
-   "Investment Focus": "",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://www.deltapartners.com/"
+  },
+  {
+    "VC Name": "Joint Polish Investment Fund",
+    "Location": [
+      "Warsaw, Poland"
+    ],
+    "Investment Focus": "",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2015",
-   "Special Criteria": "Link with Poland",
-   "Website": "http://www.jpifund.com/"
-},
- {
-   "VC Name": "Life Science Capital",
-   "Location": "Roma, Italy",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2015",
+    "Special Criteria": "Link with Poland",
+    "Website": "http://www.jpifund.com/"
+  },
+  {
+    "VC Name": "Life Science Capital",
+    "Location": [
+      "Roma, Italy"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://www.lscap.it/eng/index.html"
-},
- {
-   "VC Name": "Panakes Partners",
-   "Location": "Milano, Italy",
-   "Investment Focus": "",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://www.lscap.it/eng/index.html"
+  },
+  {
+    "VC Name": "Panakes Partners",
+    "Location": [
+      "Milano, Italy"
+    ],
+    "Investment Focus": "",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2015",
-   "Special Criteria": "",
-   "Website": "http://www.panakes.it/"
-},
- {
-   "VC Name": "Principia SGR",
-   "Location": "Milano, Italy",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2015",
+    "Special Criteria": "",
+    "Website": "http://www.panakes.it/"
+  },
+  {
+    "VC Name": "Principia SGR",
+    "Location": [
+      "Milano, Italy"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2015",
-   "Special Criteria": "Link with Italy",
-   "Website": "http://principiasgr.it/?lang=en"
-},
- {
-   "VC Name": "Abingworth LLP",
-   "Location": "London, UK",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2015",
+    "Special Criteria": "Link with Italy",
+    "Website": "http://principiasgr.it/?lang=en"
+  },
+  {
+    "VC Name": "Abingworth LLP",
+    "Location": [
+      "London, UK"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2016",
-   "Special Criteria": "",
-   "Website": "https://www.abingworth.com/"
-},
- {
-   "VC Name": "Tate & Lyle Ventures",
-   "Location": "London, UK",
-   "Investment Focus": "",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2016",
+    "Special Criteria": "",
+    "Website": "https://www.abingworth.com/"
+  },
+  {
+    "VC Name": "Tate & Lyle Ventures",
+    "Location": [
+      "London, UK"
+    ],
+    "Investment Focus": "",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://www.tateandlyleventures.com/"
-},
- {
-   "VC Name": "Johnson & Johnson Innovation",
-   "Location": "London, UK",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://www.tateandlyleventures.com/"
+  },
+  {
+    "VC Name": "Johnson & Johnson Innovation",
+    "Location": [
+      "London, UK"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": "Johnson & Johnson"
-   },
-   "Fund Status": "Ever green",
-   "Special Criteria": "",
-   "Website": "https://www.jnjinnovation.com/jjdc"
-},
- {
-   "VC Name": "UCTL Technology Fund",
-   "Location": "London, UK",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "Ever green",
+    "Special Criteria": "",
+    "Website": "https://www.jnjinnovation.com/jjdc"
+  },
+  {
+    "VC Name": "UCTL Technology Fund",
+    "Location": [
+      "London, UK"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": "Managed by Albion Capital"
-   },
-   "Fund Status": "Latest raising in 2016",
-   "Special Criteria": "",
-   "Website": "http://www.ucltf.co.uk/"
-},
- {
-   "VC Name": "MVM Partners",
-   "Location": "London, UK",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2016",
+    "Special Criteria": "",
+    "Website": "http://www.ucltf.co.uk/"
+  },
+  {
+    "VC Name": "MVM Partners",
+    "Location": [
+      "London, UK"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2016",
-   "Special Criteria": "",
-   "Website": "http://www.mvm.com/"
-},
- {
-   "VC Name": "Touchstone Innovation",
-   "Location": "London, UK",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2016",
+    "Special Criteria": "",
+    "Website": "http://www.mvm.com/"
+  },
+  {
+    "VC Name": "Touchstone Innovation",
+    "Location": [
+      "London, UK"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": "Universities of Oxford, Cambridge and College London"
-   },
-   "Fund Status": "Public",
-   "Special Criteria": "Based in London, Cambridge or Oxford",
-   "Website": "https://www.touchstoneinnovations.com/"
-},
- {
-   "VC Name": "Inventages",
-   "Location": "London, UK",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Public",
+    "Special Criteria": "Based in London, Cambridge or Oxford",
+    "Website": "https://www.touchstoneinnovations.com/"
+  },
+  {
+    "VC Name": "Inventages",
+    "Location": [
+      "London, UK"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://www.inventages.com/"
-},
- {
-   "VC Name": "Dementia Discovery Fund",
-   "Location": "London, UK",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "Dementia",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://www.inventages.com/"
+  },
+  {
+    "VC Name": "Dementia Discovery Fund",
+    "Location": [
+      "London, UK"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "Dementia",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": "Alzheimer's research UK, managed by SV Life Science"
-   },
-   "Fund Status": "Latest raising in 2015",
-   "Special Criteria": "",
-   "Website": "http://theddfund.com/"
-},
- {
-   "VC Name": "SV Health Investors",
-   "Location": "London, UK",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2015",
+    "Special Criteria": "",
+    "Website": "http://theddfund.com/"
+  },
+  {
+    "VC Name": "SV Health Investors",
+    "Location": [
+      "London, UK"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2017",
-   "Special Criteria": "",
-   "Website": "http://svhealthinvestors.com/"
-},
- {
-   "VC Name": "SR One",
-   "Location": "London, UK",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2017",
+    "Special Criteria": "",
+    "Website": "http://svhealthinvestors.com/"
+  },
+  {
+    "VC Name": "SR One",
+    "Location": [
+      "London, UK"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": "GSK"
-   },
-   "Fund Status": "Ever green",
-   "Special Criteria": "",
-   "Website": "http://www.srone.com/"
-},
- {
-   "VC Name": "Syncona",
-   "Location": "London, UK",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Ever green",
+    "Special Criteria": "",
+    "Website": "http://www.srone.com/"
+  },
+  {
+    "VC Name": "Syncona",
+    "Location": [
+      "London, UK"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Public",
-   "Special Criteria": "",
-   "Website": "https://www.synconaltd.com/"
-},
- {
-   "VC Name": "Spark Ventures",
-   "Location": "London, UK",
-   "Investment Focus": "",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Public",
+    "Special Criteria": "",
+    "Website": "https://www.synconaltd.com/"
+  },
+  {
+    "VC Name": "Spark Ventures",
+    "Location": [
+      "London, UK"
+    ],
+    "Investment Focus": "",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://www.sparkventuremanagement.com/"
-},
- {
-   "VC Name": "Epidarex",
-   "Location": "Edinburgh, UK",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://www.sparkventuremanagement.com/"
+  },
+  {
+    "VC Name": "Epidarex",
+    "Location": [
+      "Edinburgh, UK"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": "Eli Lilly, King's College London"
-   },
-   "Fund Status": "Latest raising in 2017",
-   "Special Criteria": "",
-   "Website": "http://www.epidarex.com/"
-},
- {
-   "VC Name": "Sixth Element Capital",
-   "Location": "Berkhamsted, UK",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "Oncology",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2017",
+    "Special Criteria": "",
+    "Website": "http://www.epidarex.com/"
+  },
+  {
+    "VC Name": "Sixth Element Capital",
+    "Location": [
+      "Berkhamsted, UK"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "Oncology",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": "Cancer Research UK"
-   },
-   "Fund Status": "Latest raising in 2012",
-   "Special Criteria": "",
-   "Website": "http://www.sixthelementcapital.com/"
-},
- {
-   "VC Name": "Medicxi Ventures",
-   "Location": "London, UK",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2012",
+    "Special Criteria": "",
+    "Website": "http://www.sixthelementcapital.com/"
+  },
+  {
+    "VC Name": "Medicxi Ventures",
+    "Location": [
+      "London, UK"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2016",
-   "Special Criteria": "Centric asset companies",
-   "Website": "https://www.medicxiventures.com/"
-},
- {
-   "VC Name": "Advent Life Sciences",
-   "Location": "London, UK",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2016",
+    "Special Criteria": "Centric asset companies",
+    "Website": "https://www.medicxiventures.com/"
+  },
+  {
+    "VC Name": "Advent Life Sciences",
+    "Location": [
+      "London, UK"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2014",
-   "Special Criteria": "",
-   "Website": "http://www.adventls.com/"
-},
- {
-   "VC Name": "Albion Capital",
-   "Location": "London, UK",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2014",
+    "Special Criteria": "",
+    "Website": "http://www.adventls.com/"
+  },
+  {
+    "VC Name": "Albion Capital",
+    "Location": [
+      "London, UK"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2017",
-   "Special Criteria": "",
-   "Website": "https://www.albion.capital/"
-},
- {
-   "VC Name": "Amadeus Capital",
-   "Location": "London, UK",
-   "Investment Focus": "",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2017",
+    "Special Criteria": "",
+    "Website": "https://www.albion.capital/"
+  },
+  {
+    "VC Name": "Amadeus Capital",
+    "Location": [
+      "London, UK"
+    ],
+    "Investment Focus": "",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "https://www.amadeuscapital.com/#introduction"
-},
- {
-   "VC Name": "ET Capital",
-   "Location": "Cambridge, UK",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "https://www.amadeuscapital.com/#introduction"
+  },
+  {
+    "VC Name": "ET Capital",
+    "Location": [
+      "Cambridge, UK"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "Based in London, Cambridge, Oxford",
-   "Website": "http://www.etcapital.com/"
-},
- {
-   "VC Name": "Longbow Capital",
-   "Location": "Norwich, UK",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Late stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "Based in London, Cambridge, Oxford",
+    "Website": "http://www.etcapital.com/"
+  },
+  {
+    "VC Name": "Longbow Capital",
+    "Location": [
+      "Norwich, UK"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Late stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2013",
-   "Special Criteria": "Located in UK",
-   "Website": "http://www.longbow.co.uk/"
-},
- {
-   "VC Name": "Longwall Venture Partners",
-   "Location": "Oxford, UK",
-   "Investment Focus": "",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2013",
+    "Special Criteria": "Located in UK",
+    "Website": "http://www.longbow.co.uk/"
+  },
+  {
+    "VC Name": "Longwall Venture Partners",
+    "Location": [
+      "Oxford, UK"
+    ],
+    "Investment Focus": "",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "Located in UK",
-   "Website": "http://www.longwallventures.com/"
-},
- {
-   "VC Name": "Mercia Fund Management",
-   "Location": "Henley-in-Arden, UK",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "Located in UK",
+    "Website": "http://www.longwallventures.com/"
+  },
+  {
+    "VC Name": "Mercia Fund Management",
+    "Location": [
+      "Henley-in-Arden, UK"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "Located in UK",
-   "Website": "http://www.merciafund.co.uk/"
-},
- {
-   "VC Name": "MTI Ventures",
-   "Location": "Edinburgh, UK",
-   "Investment Focus": "",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "Located in UK",
+    "Website": "http://www.merciafund.co.uk/"
+  },
+  {
+    "VC Name": "MTI Ventures",
+    "Location": [
+      "Edinburgh, UK"
+    ],
+    "Investment Focus": "",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": "University of Manchester"
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://www.mtiventures.com/"
-},
- {
-   "VC Name": "New Hill Management",
-   "Location": "London, UK",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://www.mtiventures.com/"
+  },
+  {
+    "VC Name": "New Hill Management",
+    "Location": [
+      "London, UK"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "Located in UK",
-   "Website": "http://www.newhillmgt.com/"
-},
- {
-   "VC Name": "Phase4 Partners",
-   "Location": "London, UK",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Late stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "Located in UK",
+    "Website": "http://www.newhillmgt.com/"
+  },
+  {
+    "VC Name": "Phase4 Partners",
+    "Location": [
+      "London, UK"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Late stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://www.phase4-partners.com/"
-},
- {
-   "VC Name": "Spark Impact",
-   "Location": "Liverpool, UK",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://www.phase4-partners.com/"
+  },
+  {
+    "VC Name": "Spark Impact",
+    "Location": [
+      "Liverpool, UK"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Fully invested",
-   "Special Criteria": "",
-   "Website": "http://sparkimpact.co.uk/"
-},
- {
-   "VC Name": "Stage Capital",
-   "Location": "London, UK",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "Fully invested",
+    "Special Criteria": "",
+    "Website": "http://sparkimpact.co.uk/"
+  },
+  {
+    "VC Name": "Stage Capital",
+    "Location": [
+      "London, UK"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://www.stagecap.com/"
-},
- {
-   "VC Name": "Entrepreneurs Fund",
-   "Location": "London, UK",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://www.stagecap.com/"
+  },
+  {
+    "VC Name": "Entrepreneurs Fund",
+    "Location": [
+      "London, UK"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://www.entrepreneursfund.com/"
-},
- {
-   "VC Name": "Aquagro Fund",
-   "Location": "Tel Aviv, Israel",
-   "Investment Focus": "",
-   "Prefered Indication": "",
-   "Investment Stage": "Late stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://www.entrepreneursfund.com/"
+  },
+  {
+    "VC Name": "Aquagro Fund",
+    "Location": [
+      "Tel Aviv, Israel"
+    ],
+    "Investment Focus": "",
+    "Prefered Indication": "",
+    "Investment Stage": "Late stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "https://www.aquagrofund.com/"
-},
- {
-   "VC Name": "Clal Biotechnology Industries",
-   "Location": "Tel Aviv, Israel",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "https://www.aquagrofund.com/"
+  },
+  {
+    "VC Name": "Clal Biotechnology Industries",
+    "Location": [
+      "Tel Aviv, Israel"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Public",
-   "Special Criteria": "",
-   "Website": "http://cbi.co.il/"
-},
- {
-   "VC Name": "Evergreen Venture Partners",
-   "Location": "Tel Aviv, Israel",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "Public",
+    "Special Criteria": "",
+    "Website": "http://cbi.co.il/"
+  },
+  {
+    "VC Name": "Evergreen Venture Partners",
+    "Location": [
+      "Tel Aviv, Israel"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "Located in Israel",
-   "Website": "http://www.evergreen.co.il/"
-},
- {
-   "VC Name": "Israel HealthCare Ventures",
-   "Location": "Tel Aviv, Israel",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Early stage",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "Located in Israel",
+    "Website": "http://www.evergreen.co.il/"
+  },
+  {
+    "VC Name": "Israel HealthCare Ventures",
+    "Location": [
+      "Tel Aviv, Israel"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Early stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2006",
-   "Special Criteria": "Located in Israel",
-   "Website": "http://www.ihcv.co.il/"
-},
- {
-   "VC Name": "Medica Partners",
-   "Location": "Herzeliya, Israel",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Late stage",
-   "Research": {
+    },
+    "Fund Status": "Latest raising in 2006",
+    "Special Criteria": "Located in Israel",
+    "Website": "http://www.ihcv.co.il/"
+  },
+  {
+    "VC Name": "Medica Partners",
+    "Location": [
+      "Herzeliya, Israel"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Late stage",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://www.medicavp.com/#page_1/"
-},
- {
-   "VC Name": "Pontifax Venture Capital",
-   "Location": "Herzeliya, Israel",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://www.medicavp.com/#page_1/"
+  },
+  {
+    "VC Name": "Pontifax Venture Capital",
+    "Location": [
+      "Herzeliya, Israel"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "",
-   "Special Criteria": "",
-   "Website": "http://www.pontifax.com/"
-},
- {
-   "VC Name": "OrbiMed",
-   "Location": "Herzeliya, Israel",
-   "Investment Focus": "Therapeutics",
-   "Prefered Indication": "",
-   "Investment Stage": "Seed",
-   "Research": {
+    },
+    "Fund Status": "",
+    "Special Criteria": "",
+    "Website": "http://www.pontifax.com/"
+  },
+  {
+    "VC Name": "OrbiMed",
+    "Location": [
+      "Herzeliya, Israel"
+    ],
+    "Investment Focus": "Therapeutics",
+    "Prefered Indication": "",
+    "Investment Stage": "Seed",
+    "Research": {
       " Industry Partner": ""
-   },
-   "Fund Status": "Latest raising in 2017",
-   "Special Criteria": "",
-   "Website": "http://www.orbimed.com/"
-}
+    },
+    "Fund Status": "Latest raising in 2017",
+    "Special Criteria": "",
+    "Website": "http://www.orbimed.com/"
+  }
 ]

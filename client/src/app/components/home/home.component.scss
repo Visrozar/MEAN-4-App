@@ -1,10 +1,45 @@
 @import '~scss/_scroll-anchor';
 @import '~scss/_variables';
+.body-style {
+  background: #f5f5f5;
+}
+
+.point-head{
+  margin-bottom: 20px;
+}
+
+.points {
+  margin-bottom: 10px;
+}
+
+.point-btn {
+  margin-top: 10px;
+}
+
 .header-img {
   background-image: url('../../../assets/images/banner.jpg');
   background-size: cover;
+  background-position: center;
   height: auto;
   border-radius: 0px;
+}
+
+.banner-btns {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.small-heading {
+  font-size: 20px;
+}
+
+.sh-btn {
+  margin-top: 10px;
+}
+
+ul {
+  margin-bottom: 0px;
+  margin-left: -39px;
 }
 
 .overlay-buttons {
@@ -95,8 +130,7 @@
 
 .stake-holders {
   color: $green;
-  background: white;
-  font-size: 16px;
+  font-size: 18px;
   h2 {
     margin-top: 0;
   }
@@ -135,102 +169,13 @@
   outline: none;
 }
 
-.btn--primary {
-  color: white;
+.btn-primary {
+  background: #7AACD6;
+  border-color: #9EC5E6
 }
 
-.btn--primary1 {
-  color: $green;
-}
-
-.btn--border {
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 10px;
-  box-sizing: border-box;
-}
-
-.btn--animated {
-  -webkit-transition-property: color;
-  transition-property: color;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-}
-
-.btn--animated.btn--border.btn--primary {
-  border: 1px solid white;
-}
-
-.btn--animated1.btn--border.btn--primary1 {
-  border: 1px solid $green;
-}
-
-.btn--animated:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: white;
-  -webkit-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transform-origin: 0 50%;
-  transform-origin: 0 50%;
-  -webkit-transition-property: -webkit-transform;
-  transition-property: -webkit-transform;
-  transition-property: transform;
-  transition-property: transform, -webkit-transform;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-  z-index: -1;
-}
-
-.btn--animated:hover {
-  color: $green;
-}
-
-.btn--animated1:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: $green;
-  -webkit-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transform-origin: 0 50%;
-  transform-origin: 0 50%;
-  -webkit-transition-property: -webkit-transform;
-  transition-property: -webkit-transform;
-  transition-property: transform;
-  transition-property: transform, -webkit-transform;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-  z-index: -1;
-}
-
-.btn--animated1:hover {
-  color: white;
-}
-
-.btn--animated:hover:before {
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
-  -webkit-transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66);
-  transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66);
-}
-
-.btn--animated1:hover:before {
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
-  -webkit-transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66);
-  transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66);
+.btn-primary:hover {
+  background: rgb(58, 92, 151);
 }
 
 .jumbotron {
@@ -265,5 +210,8 @@
     width: 250px !important;
     height: 200px !important;
     margin-top: 20%;
+  }
+  .stake-holders {
+    margin-bottom: 50px;
   }
 }
