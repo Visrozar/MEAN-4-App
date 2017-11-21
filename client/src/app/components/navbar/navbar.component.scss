@@ -16,8 +16,8 @@ a:focus{
 }
 
 .navbar-nav>li>a {
-  color: #3D85C5;
-  font-size: 17px;
+  color: darkblue;
+  font-size: 21px;
 }
 
 .navbar-nav>li>a:hover {
@@ -90,7 +90,8 @@ hr {
 }
 
 #bs-example-navbar-collapse-1>ul>li>a:hover {
-  color: #333333;
+  color: #3C85C5;
+
 }
 
 .navbar-text {
@@ -100,14 +101,16 @@ hr {
 
 .navbar-default .navbar-nav>.active {
   background: white;
-  color: #333333;
+  color: #3C85C5;
+
 }
 
 .navbar-default .navbar-nav>.active>a,
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>.active>a:focus {
   background: white;
-  color: #333333;
+  color: #3C85C5;
+
 }
 
 @media only screen and (max-width: 768px) {
