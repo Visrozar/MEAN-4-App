@@ -61,11 +61,15 @@
             <input type="checkbox" name="inves" (click)="filterList(invest, 'inves') " />{{ invest==''?'Investment Stage':invest }}</label>
         </div>
       </div>
+<div class="col-xs-12 filter-label">
+  <button class="btn btn-primary" style="margin-top:10px;" (click)="clearFilter()">Clear Filter</button>
+</div>
+
       <div class="col-xs-12 filter-label">
-        <h3 class="text-center">Filtered Items({{vclists.length}})
+        <h3 class="text-center">Filtered VCs {{vclists.length}}
         </h3>
         <hr>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
           aliqua.
         </p>
       </div>

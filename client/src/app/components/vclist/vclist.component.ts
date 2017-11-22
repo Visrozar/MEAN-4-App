@@ -124,27 +124,76 @@ export class VclistComponent implements OnInit {
   }
 
   filterList(ele, type) {
-    const boxes = $(`input[name=${type}]:checked`);
-    this.vclists = this.saveList;
-    if (boxes.length !== 0 && type === 'inves') {
-      for (let i = 0; i < boxes.length; i++) {
-        this.vclists = this.listFilter.transform(this.vclists, '', '', '', boxes[i].nextSibling.data);
+    const location = $(`input[name=locati]:checked`);
+    const focus = $(`input[name=focu]:checked`);
+    const indication = $(`input[name=indica]:checked`);
+    const investment = $(`input[name=inves]:checked`);
+
+    const temp = [];
+
+    if (investment.length !== 0) {
+      for (let i = 0; i < investment.length; i++) {
+        temp.push(this.listFilter.transform(this.saveList, '', '', '', investment[i].nextSibling.data));
       }
-    } else if (boxes.length !== 0 && type === 'locati') {
-      for (let i = 0; i < boxes.length; i++) {
-        this.vclists = this.listFilter.transform(this.vclists, boxes[i].nextSibling.data, '', '', '');
-      }
-    } else if (boxes.length !== 0 && type === 'focu') {
-      for (let i = 0; i < boxes.length; i++) {
-        this.vclists = this.listFilter.transform(this.vclists, '', boxes[i].nextSibling.data, '', '');
-      }
-    } else if (boxes.length !== 0 && type === 'indica') {
-      for (let i = 0; i < boxes.length; i++) {
-        this.vclists = this.listFilter.transform(this.vclists, '', '', boxes[i].nextSibling.data, '');
-      }
-    } else {
-      this.vclists = this.listFilter.transform(this.saveList, '', '', '', '');
     }
+
+    if (location.length !== 0) {
+      for (let i = 0; i < location.length; i++) {
+        temp.push(this.listFilter.transform(this.saveList, location[i].nextSibling.data, '', '', ''));
+      }
+    }
+
+    if (focus.length !== 0) {
+      for (let i = 0; i < focus.length; i++) {
+        temp.push(this.listFilter.transform(this.saveList, '', focus[i].nextSibling.data, '', ''));
+      }
+    }
+
+    if (indication.length !== 0) {
+      for (let i = 0; i < indication.length; i++) {
+        temp.push(this.listFilter.transform(this.saveList, '', '', indication[i].nextSibling.data, ''));
+      }
+    }
+    // let tempor = tempo;
+    temp.forEach(function(tempo, i) {
+      if (temp.indexOf(tempo) > i) {
+        console.log('yupp');
+      }
+    });
+    // temp.filter(tempo => {
+    //   if(indexOf())
+    // })
+
+    // this.vclists = temp[0];
+  }
+
+  clearFilter() {
+    const location = $(`input[name=locati]:checked`);
+    const focus = $(`input[name=focu]:checked`);
+    const indication = $(`input[name=indica]:checked`);
+    const investment = $(`input[name=inves]:checked`);
+
+    if (location) {
+      for (let i = 0; i < location.length; i++) {
+        location[i].checked = false;
+      }
+    }
+    if (focus) {
+      for (let i = 0; i < focus.length; i++) {
+        focus[i].checked = false;
+      }
+    }
+    if (indication) {
+      for (let i = 0; i < indication.length; i++) {
+        indication[i].checked = false;
+      }
+    }
+    if (investment) {
+      for (let i = 0; i < investment.length; i++) {
+        investment[i].checked = false;
+      }
+    }
+    this.vclists = this.saveList;
   }
 
   showlocationCheckboxes() {
