@@ -8,13 +8,15 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { VclistComponent } from './components/vclist/vclist.component';
 import { VclistService } from './services/vclist.service';
+import { VcfilterPipe } from './vcfilter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    VclistComponent
+    VclistComponent,
+    VcfilterPipe
   ],
   imports: [
     BrowserModule,
