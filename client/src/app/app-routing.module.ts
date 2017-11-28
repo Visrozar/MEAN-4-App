@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { VclistComponent } from './components/vclist/vclist.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const appRoutes: Routes = [
   { 
@@ -11,6 +12,10 @@ const appRoutes: Routes = [
   { 
     path: 'vc_list', 
     component: VclistComponent
+  },
+  { 
+    path: 'register', 
+    component: RegisterComponent
   },
   { 
     path: '**', 
