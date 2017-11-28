@@ -3,15 +3,75 @@ a {
   color: #3C84C4;
 }
 
-input{
+.close{
+  margin-right: 5px;
+}
+
+.location-labels {
+  display: inline-block;
+  border: 1px solid grey;
+  border-radius: 5px;
+  height: 35px !important;
+  margin-right: 15px;
+  letter-spacing: 1.2px;
+  padding: 6px 6px;
+  overflow: hidden;
+  background: #cccccc;
+  margin-top: 10px;
+}
+
+.focus-labels {
+  display: inline-block;
+  border: 1px solid grey;
+  border-radius: 5px;
+  height: 35px !important;
+  margin-right: 15px;
+  letter-spacing: 1.2px;
+  padding: 6px 6px;
+  overflow: hidden;
+  background: #cccccc;
+  margin-top: 10px;
+}
+
+.indication-labels {
+  display: inline-block;
+  border: 1px solid grey;
+  border-radius: 5px;
+  height: 35px !important;
+  margin-right: 15px;
+  letter-spacing: 1.2px;
+  padding: 6px 6px;
+  overflow: hidden;
+  background: #cccccc;
+  margin-top: 10px;
+}
+
+.investment-labels {
+  display: inline-block;
+  border: 1px solid grey;
+  border-radius: 5px;
+  height: 35px !important;
+  margin-right: 15px;
+  letter-spacing: 1.2px;
+  padding: 6px 6px;
+  overflow: hidden;
+  background: #cccccc;
+  margin-top: 10px;
+}
+
+input {
   margin: 4px 8px 0;
 }
 
-.overSelect{
+.clear-filter {
+  z-index: 0 !important;
+}
+
+.overSelect {
   cursor: pointer;
 }
 
-.selectBox select{
+.selectBox select {
   width: 108%;
   height: 40px;
   margin-right: 15px;
@@ -27,7 +87,7 @@ input{
   border-color: cornflowerblue;
 }
 
-.container{
+.container {
   border-left: 4px solid darkblue;
   float: right;
 }
@@ -286,7 +346,7 @@ hr {
 }
 
 @media only screen and (max-width: 1000px) {
-  .filter{
+  .filter {
     margin: 10px auto;
   }
   .form-group {
@@ -300,20 +360,19 @@ hr {
   .sticky {
     position: relative !important;
   }
-  .container{
+  .container {
     float: none;
   }
-  .filter-label{
+  .filter-label {
     float: none;
   }
 }
 
 @media only screen and (max-width: 552px) {
-  .resp-btn{
+  .resp-btn {
     margin-top: 20px;
   }
 }
-
 
 @media only screen and (max-width: 450px) {
   .vr {
@@ -334,4 +393,8 @@ hr {
   .sh-styles {
     max-width: 140px;
   }
+}
+
+.location-labels {
+  height: 25px;
 }
