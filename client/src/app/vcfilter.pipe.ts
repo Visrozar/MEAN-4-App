@@ -5,23 +5,23 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class VcfilterPipe implements PipeTransform {
 
-    transform(items: any[], location: string, focus: string, indication: string, investment: string): any {
+    transform(items: any[], location: any[], focus: any[], indication: any[], investment: any[]): any {
 
         if (items && items.length) {
             return items.filter(item => {
-                if ((location && !item.Location.find(b => b.includes(location))) && location !== 'Location') {
+                if (item.Featured) {
+                    return true;
+                }
+                if ((location.length && !location.find(b => item.Location[0].includes(b)))) {
                     return false;
                 }
-                if ((focus && item['Investment Focus'].toLowerCase().indexOf(focus.toString().toLowerCase()) === -1)
-                && focus !== 'Investment Focus') {
+                if ((focus.length && !focus.find(b => item['Investment Focus'].includes(b)))) {
                     return false;
                 }
-                if ((indication && item['Prefered Indication'].toLowerCase().indexOf(indication.toLowerCase()) === -1)
-                && indication !== 'Prefered Indication') {
+                if ((indication.length && !indication.find(b => item['Prefered Indication'].includes(b)))) {
                     return false;
                 }
-                if ((investment && item['Investment Stage'].toLowerCase().indexOf(investment.toLowerCase()) === -1)
-                && investment !== 'Investment Stage') {
+                if ((investment.length && !investment.find(b => item['Investment Stage'].includes(b)))) {
                     return false;
                 }
                 return true;

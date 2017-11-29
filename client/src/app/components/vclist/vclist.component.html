@@ -13,16 +13,16 @@
 <div class="row body-style">
   <form class="col-md-3">
     <div class="form-group sticky">
-      <div class="multiselect col-md-12 filter">
-        <div class="selectBox" (click)="showCheckboxes('location')">
+      <div class="multiselect col-md-12 filter hide-box">
+        <div class="selectBox hide-box" (click)="showCheckboxes('location')">
           <select>
             <option>Location</option>
           </select>
           <div class="overSelect"></div>
         </div>
-        <div id="locationCheckboxes">
-          <label *ngFor="let location of country">
-            <input type="checkbox" name="locati" (click)="filterList(location, 'locati') " />{{ location==''?'Location':location }}</label>
+        <div class="hide-box" id="locationCheckboxes">
+          <label class="hide-box" *ngFor="let location of country">
+            <input class="hide-box" type="checkbox" name="locati" (click)="filterList() " />{{ location==''?'Location':location }}</label>
         </div>
       </div>
       <div class="multiselect col-md-12 filter">
@@ -32,9 +32,9 @@
           </select>
           <div class="overSelect"></div>
         </div>
-        <div id="focusCheckboxes">
-          <label *ngFor="let foc of focus">
-            <input type="checkbox" name="focu" (click)="filterList(foc, 'focu') " />{{ foc==''?'Investment Focus':foc }}</label>
+        <div class="hide-box" id="focusCheckboxes">
+          <label class="hide-box" *ngFor="let foc of focus">
+            <input class="hide-box" type="checkbox" name="focu" (click)="filterList() " />{{ foc==''?'Investment Focus':foc }}</label>
         </div>
       </div>
       <div class="multiselect col-md-12 filter">
@@ -44,9 +44,9 @@
           </select>
           <div class="overSelect"></div>
         </div>
-        <div id="indicationCheckboxes">
-          <label *ngFor="let indicat of indication">
-            <input type="checkbox" name="indica" (click)="filterList(indicat, 'indica') " />{{ indicat==''?'Prefered Indication':indicat }}</label>
+        <div class="hide-box" id="indicationCheckboxes">
+          <label class="hide-box" *ngFor="let indicat of indication">
+            <input class="hide-box" type="checkbox" name="indica" (click)="filterList() " />{{ indicat==''?'Prefered Indication':indicat }}</label>
         </div>
       </div>
       <div class="multiselect col-md-12 filter">
@@ -56,16 +56,34 @@
           </select>
           <div class="overSelect"></div>
         </div>
-        <div id="investmentCheckboxes">
-          <label *ngFor="let invest of investment">
-            <input type="checkbox" name="inves" (click)="filterList(invest, 'inves') " />{{ invest==''?'Investment Stage':invest }}</label>
+        <div class="hide-box" id="investmentCheckboxes">
+          <label class="hide-box" *ngFor="let invest of investment">
+            <input class="hide-box" type="checkbox" name="inves" (click)="filterList() " />{{ invest==''?'Investment Stage':invest }}</label>
         </div>
       </div>
+      <div class="display-filter-labels">
+        <div class="location-labels" *ngFor="let location of locationLabels">{{location}}
+          <button type="button" class="close left" (click)="clearSpecificFilter(location);">&times;</button>
+        </div>
+        <div class="focus-labels" *ngFor="let focus of focusLabels">{{focus}}
+          <button type="button" class="close left" (click)="clearSpecificFilter(focus);">&times;</button>
+        </div>
+        <div class="indication-labels" *ngFor="let indication of indicationLabels">{{indication}}
+          <button type="button" class="close left" (click)="clearSpecificFilter(indication);">&times;</button>
+        </div>
+        <div class="investment-labels" *ngFor="let investment of investmentLabels">{{investment}}
+          <button type="button" class="close left" (click)="clearSpecificFilter(investment);">&times;</button>
+        </div>
+      </div>
+      <div class="col-xs-12 filter-label text-center">
+        <button class="btn btn-primary clear-filter" style="margin-top:10px;" (click)="clearFilter()">Clear Filter</button>
+      </div>
+
       <div class="col-xs-12 filter-label">
-        <h3 class="text-center">Filtered Items({{vclists.length}})
+        <h3 class="text-center">Filtered VCs {{vclists.length}}
         </h3>
         <hr>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
           aliqua.
         </p>
       </div>
@@ -74,57 +92,57 @@
 
   <div class="wrap">
 
-    <div *ngFor="let vclist of vclists" >
+    <div *ngFor="let vclist of vclists">
       <div [ngClass]="{'background-change' : vclist.Featured }" class="container col-md-9">
         <div [ngClass]="{'featured' : vclist.Featured }" class="list">
-      <div class="row card">
-        <div class="col-xs-3">
-          <img class="feature-logo" *ngIf="vclist.Featured" src="../assets/images/feature1.png">
-          <img class="sh-styles" src="assets/images/company-logos/{{vclist['VC Name']}}.png" (error)="this.error=null; updateUrl($event)"
-            alt="company logo">
+          <div class="row card">
+            <div class="col-xs-3">
+              <img class="feature-logo" *ngIf="vclist.Featured" src="../assets/images/feature1.png">
+              <img class="sh-styles" src="assets/images/company-logos/{{vclist['VC Name']}}.png" (error)="this.error=null; updateUrl($event)"
+                alt="company logo">
+            </div>
+            <div class="col-xs-6 slide-name">
+              <a class="no-underline" href="{{vclist.Website}}" target="_blank">
+                <h3 class="text-center small-name">{{vclist['VC Name']}}</h3>
+              </a>
+            </div>
+            <div class="col-xs-3 show-btn">
+              <p class="website">
+                <a class="website btn btn-primary" href="{{vclist.Website}}" role="button" target="_blank">visit website &raquo;</a>
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <table class="table">
+              <tr *ngIf="vclist['Investment Focus']">
+                <td class="vr">Investment Focus:</td>
+                <td>{{vclist['Investment Focus'].split(',').join(' |')}}</td>
+              </tr>
+              <tr *ngIf="vclist['Investment Stage']">
+                <td class="vr">Investment Stage:</td>
+                <td>{{vclist['Investment Stage'].split(',').join(' |')}}</td>
+              </tr>
+              <tr *ngIf="vclist['Fund Status']">
+                <td class="vr">Fund Status:</td>
+                <td>{{vclist['Fund Status']}}</td>
+              </tr>
+              <tr *ngIf="vclist['Special Criteria']">
+                <td class="vr">Special Criteria:</td>
+                <td>{{vclist['Special Criteria']}}</td>
+              </tr>
+              <tr *ngIf="vclist.Research[' Industry Partner']">
+                <td class="vr">Research/Industry Partner:</td>
+                <td>{{vclist.Research[' Industry Partner'].split(',').join(' |')}}</td>
+              </tr>
+              <tr *ngIf="vclist.Location">
+                <td class="vr">Location:</td>
+                <td>{{vclist.Location.join(' | ')}}</td>
+              </tr>
+            </table>
+          </div>
         </div>
-        <div class="col-xs-6 slide-name">
-          <a class="no-underline" href="{{vclist.Website}}" target="_blank">
-            <h3 class="text-center small-name">{{vclist['VC Name']}}</h3>
-          </a>
-        </div>
-        <div class="col-xs-3 show-btn">
-          <p class="website">
-            <a class="website btn btn-primary" href="{{vclist.Website}}" role="button" target="_blank">visit website &raquo;</a>
-          </p>
-        </div>
-      </div>
-      <div class="row">
-        <table class="table">
-          <tr *ngIf="vclist['Investment Focus']">
-            <td class="vr">Investment Focus:</td>
-            <td>{{vclist['Investment Focus'].split(',').join(' |')}}</td>
-          </tr>
-          <tr *ngIf="vclist['Investment Stage']">
-            <td class="vr">Investment Stage:</td>
-            <td>{{vclist['Investment Stage'].split(',').join(' |')}}</td>
-          </tr>
-          <tr *ngIf="vclist['Fund Status']">
-            <td class="vr">Fund Status:</td>
-            <td>{{vclist['Fund Status']}}</td>
-          </tr>
-          <tr *ngIf="vclist['Special Criteria']">
-            <td class="vr">Special Criteria:</td>
-            <td>{{vclist['Special Criteria']}}</td>
-          </tr>
-          <tr *ngIf="vclist.Research[' Industry Partner']">
-            <td class="vr">Research/Industry Partner:</td>
-            <td>{{vclist.Research[' Industry Partner'].split(',').join(' |')}}</td>
-          </tr>
-          <tr *ngIf="vclist.Location">
-            <td class="vr">Location:</td>
-            <td>{{vclist.Location.join(' | ')}}</td>
-          </tr>
-        </table>
-      </div>
       </div>
     </div>
-  </div>
-    
+
   </div>
 </div>

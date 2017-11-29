@@ -47,7 +47,6 @@ export class VclistComponent implements OnInit {
             investment.push(val[key].split(','));
           }
         }
-
       });
 
       // filtering unique values from array
@@ -102,6 +101,13 @@ export class VclistComponent implements OnInit {
   investment1 = false;
   saveList: any = [];
 
+  locationLabels: any = [];
+  indicationLabels: any = [];
+  focusLabels: any = [];
+  investmentLabels: any = [];
+
+  listOpen = false;
+
   ngOnInit() {
 
     const stickyOffset = $('.sticky').offset().top;
@@ -116,6 +122,28 @@ export class VclistComponent implements OnInit {
         sticky.removeClass('fixed');
       }
     });
+    const self = this;
+    document.addEventListener('click', function (event) {
+      if (event.srcElement.className.toString() !== 'overSelect' && event.srcElement.className.toString() !== 'hide-box') {
+        self.onBlur();
+      }
+    });
+  }
+
+  onBlur() {
+    const locationCheckboxes = document.getElementById('locationCheckboxes');
+    const focusCheckboxes = document.getElementById('focusCheckboxes');
+    const indicationCheckboxes = document.getElementById('indicationCheckboxes');
+    const investmentCheckboxes = document.getElementById('investmentCheckboxes');
+
+    locationCheckboxes.style.display = 'none';
+    this.location = false;
+    focusCheckboxes.style.display = 'none';
+    this.focus1 = false;
+    indicationCheckboxes.style.display = 'none';
+    this.indication1 = false;
+    investmentCheckboxes.style.display = 'none';
+    this.investment1 = false;
   }
 
   updateUrl(event) {
@@ -123,43 +151,127 @@ export class VclistComponent implements OnInit {
     return;
   }
 
-  filterList(ele, type) {
-    const boxes = $(`input[name=${type}]:checked`);
-    this.vclists = this.saveList;
-    if (boxes.length !== 0 && type === 'inves') {
-      for (let i = 0; i < boxes.length; i++) {
-        this.vclists = this.listFilter.transform(this.vclists, '', '', '', boxes[i].nextSibling.data);
+  filterList() {
+    const location = $(`input[name=locati]:checked`);
+    const focus = $(`input[name=focu]:checked`);
+    const indication = $(`input[name=indica]:checked`);
+    const investment = $(`input[name=inves]:checked`);
+
+    const locationArray = [];
+    const investmentArray = [];
+    const indicationArray = [];
+    const focusArray = [];
+
+    if (investment.length !== 0) {
+      for (let i = 0; i < investment.length; i++) {
+        investmentArray.push(investment[i].nextSibling.data);
       }
-    } else if (boxes.length !== 0 && type === 'locati') {
-      for (let i = 0; i < boxes.length; i++) {
-        this.vclists = this.listFilter.transform(this.vclists, boxes[i].nextSibling.data, '', '', '');
-      }
-    } else if (boxes.length !== 0 && type === 'focu') {
-      for (let i = 0; i < boxes.length; i++) {
-        this.vclists = this.listFilter.transform(this.vclists, '', boxes[i].nextSibling.data, '', '');
-      }
-    } else if (boxes.length !== 0 && type === 'indica') {
-      for (let i = 0; i < boxes.length; i++) {
-        this.vclists = this.listFilter.transform(this.vclists, '', '', boxes[i].nextSibling.data, '');
-      }
-    } else {
-      this.vclists = this.listFilter.transform(this.saveList, '', '', '', '');
     }
+
+    if (location.length !== 0) {
+      for (let i = 0; i < location.length; i++) {
+        locationArray.push(location[i].nextSibling.data);
+      }
+    }
+
+    if (focus.length !== 0) {
+      for (let i = 0; i < focus.length; i++) {
+        focusArray.push(focus[i].nextSibling.data);
+      }
+    }
+
+    if (indication.length !== 0) {
+      for (let i = 0; i < indication.length; i++) {
+        indicationArray.push(indication[i].nextSibling.data);
+      }
+    }
+    this.indicationLabels = indicationArray;
+    this.focusLabels = focusArray;
+    this.locationLabels = locationArray;
+    this.investmentLabels = investmentArray;
+    this.vclists = this.listFilter.transform(this.saveList, locationArray, focusArray, indicationArray, investmentArray);
   }
 
-  showlocationCheckboxes() {
-    const locationCheckboxes = document.getElementById('locationCheckboxes');
+  clearFilter() {
+    const location = $(`input[name=locati]:checked`);
+    const focus = $(`input[name=focu]:checked`);
+    const indication = $(`input[name=indica]:checked`);
+    const investment = $(`input[name=inves]:checked`);
 
-    if (!this.location) {
-      locationCheckboxes.style.display = 'block';
-      this.location = true;
-    } else {
-      locationCheckboxes.style.display = 'none';
-      this.location = false;
+    if (location) {
+      for (let i = 0; i < location.length; i++) {
+        location[i].checked = false;
+      }
     }
+    if (focus) {
+      for (let i = 0; i < focus.length; i++) {
+        focus[i].checked = false;
+      }
+    }
+    if (indication) {
+      for (let i = 0; i < indication.length; i++) {
+        indication[i].checked = false;
+      }
+    }
+    if (investment) {
+      for (let i = 0; i < investment.length; i++) {
+        investment[i].checked = false;
+      }
+    }
+    this.indicationLabels = [];
+    this.focusLabels = [];
+    this.locationLabels = [];
+    this.investmentLabels = [];
+    this.vclists = this.saveList;
+  }
+
+  clearSpecificFilter(value) {
+    const location = $(`input[name=locati]:checked`);
+    const focus = $(`input[name=focu]:checked`);
+    const indication = $(`input[name=indica]:checked`);
+    const investment = $(`input[name=inves]:checked`);
+
+    if (location) {
+      const locationIndex = this.locationLabels.indexOf(value);
+      for (let i = 0; i < location.length; i++) {
+        if (location[i].nextSibling.data === value) {
+          location[i].checked = false;
+          this.locationLabels.splice(locationIndex, 1);
+        }
+      }
+    }
+    if (focus) {
+      const focusIndex = this.focusLabels.indexOf(value);
+      for (let i = 0; i < focus.length; i++) {
+        if (focus[i].nextSibling.data === value) {
+          focus[i].checked = false;
+          this.focusLabels.splice(focusIndex, 1);
+        }
+      }
+    }
+    if (indication) {
+      const indicationIndex = this.indicationLabels.indexOf(value);
+      for (let i = 0; i < indication.length; i++) {
+        if (indication[i].nextSibling.data === value) {
+          indication[i].checked = false;
+          this.indicationLabels.splice(indicationIndex, 1);
+        }
+      }
+    }
+    if (investment) {
+      const investmentIndex = this.investmentLabels.indexOf(value);
+      for (let i = 0; i < investment.length; i++) {
+        if (investment[i].nextSibling.data === value) {
+          investment[i].checked = false;
+          this.investmentLabels.splice(investmentIndex, 1);
+        }
+      }
+    }
+    this.filterList();
   }
 
   showCheckboxes(type: string) {
+    this.listOpen = true;
     const locationCheckboxes = document.getElementById('locationCheckboxes');
     const focusCheckboxes = document.getElementById('focusCheckboxes');
     const indicationCheckboxes = document.getElementById('indicationCheckboxes');
