@@ -9,9 +9,15 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { VclistComponent } from './components/vclist/vclist.component';
 import { VclistService } from './services/vclist.service';
+import { FormService } from './services/form.service';
+import { WorkflowService } from './services/workflow.service';
 import { VcfilterPipe } from './vcfilter.pipe';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthService } from './services/auth.service';
+import { ProjectFormComponent } from './components/project-form/project-form.component';
+import { ContactPersonComponent } from './components/project-form/contact-person/contact-person.component';
+import { DealDescriptionComponent } from './components/project-form/deal-description/deal-description.component';
+import { FormResultComponent } from './components/project-form/form-result/form-result.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +26,11 @@ import { AuthService } from './services/auth.service';
     HomeComponent,
     VclistComponent,
     VcfilterPipe,
-    RegisterComponent
+    RegisterComponent,
+    ProjectFormComponent,
+    ContactPersonComponent,
+    DealDescriptionComponent,
+    FormResultComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +39,8 @@ import { AuthService } from './services/auth.service';
     FormsModule,
     HttpModule
   ],
-  providers: [VclistService, AuthService],
+  providers: [VclistService, AuthService, FormService,
+              { provide: WorkflowService, useClass: WorkflowService }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
