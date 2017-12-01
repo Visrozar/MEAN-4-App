@@ -1,34 +1,61 @@
 export class FormData {
     name: string = '';
-    role : string = '';
+    role: string = '';
+    organization: string = '';
+    telephone: number;
     email: string = '';
+    website: string = '';
     work: string = '';
-    street: string = '';
-    city: string = '';
-    state: string = '';
-    zip: string = '';
+    dealName: string = '';
+    location: string = '';
+    sector: string = '';
+    indication: string = '';
+    stageLead: string = '';
+    financing: string = '';
+    investment: string = '';
+    techonology: string = '';
+    programDescription: string = '';
+    comments: string = '';
 
     clear() {
         this.name = '';
+        this.organization = '';
+        this.telephone = 0;
+        this.website = '';
         this.role = '';
         this.email = '';
         this.work = '';
-        this.street = '';
-        this.city = '';
-        this.state = '';
-        this.zip = '';
+        this.dealName = '';
+        this.location = '';
+        this.sector = '';
+        this.indication = '';
+        this.stageLead = '';
+        this.financing = '';
+        this.investment = '';
+        this.techonology = '';
+        this.programDescription = '';
+        this.comments = '';
     }
 }
 
 export class Personal {
     name: string = '';
-    role : string = '';
+    role: string = '';
+    organization: string = '';
+    telephone: number;
+    website: string = '';
     email: string = '';
 }
 
-export class Address {
-    street: string = '';
-    city: string = '';
-    state: string = '';
-    zip: string = '';
+export class Deal {
+    dealName: string = '';
+    location: string = '';
+    sector: string = '';
+    indication: string = '';
+    stageLead: string = '';
+    financing: string = '';
+    investment: string = '';
+    techonology: string = '';
+    programDescription: string = '';
+    comments: string = '';
 }

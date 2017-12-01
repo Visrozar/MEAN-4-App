@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormData, Personal, Address } from '../formData.model';
+import { FormData, Personal, Deal } from '../formData.model';
 import { WorkflowService }                   from './workflow.service';
 import { STEPS }                             from '../workflow.model';
 import { Http, Response } from '@angular/http';
@@ -24,6 +24,9 @@ export class FormService {
       var personal: Personal = {
           name: this.formData.name,
           role: this.formData.role,
+          organization: this.formData.organization,
+          telephone: this.formData.telephone,
+          website: this.formData.website,
           email: this.formData.email
       };
       return personal;
@@ -34,6 +37,9 @@ export class FormService {
       this.isPersonalFormValid = true;
       this.formData.name = data.name;
       this.formData.role = data.role;
+      this.formData.organization = data.organization; 
+      this.formData.telephone = data.telephone;      
+      this.formData.website = data.website;           
       this.formData.email = data.email;
       this.workflowService.validateStep(STEPS.contact_person);
   }
@@ -50,24 +56,37 @@ export class FormService {
       this.workflowService.validateStep(STEPS.deal_discription);
   }
 
-  getAddress() : Address {
+  getAddress() : Deal {
       // Return the Address data
-      var address: Address = {
-          street: this.formData.street,
-          city: this.formData.city,
-          state: this.formData.state,
-          zip: this.formData.zip
+      var deal: Deal = {
+          dealName: this.formData.dealName,
+          location: this.formData.location,
+          sector: this.formData.sector,
+          indication: this.formData.indication,
+          stageLead: this.formData.stageLead,
+          financing: this.formData.financing,
+          investment: this.formData.investment,
+          techonology: this.formData.techonology,
+          programDescription: this.formData.programDescription,
+          comments: this.formData.comments
       };
-      return address;
+      return deal;
   }
 
-  setAddress(data: Address) {
+  setAddress(data: Deal) {
       // Update the Address data only when the Address Form had been validated successfully
       this.isAddressFormValid = true;
-      this.formData.street = data.street;
-      this.formData.city = data.city;
-      this.formData.state = data.state;
-      this.formData.zip = data.zip;
+      this.formData.dealName = data.dealName;
+      this.formData.location = data.location;
+      this.formData.sector = data.sector;
+      this.formData.indication = data.indication;
+      this.formData.stageLead = data.stageLead;
+      this.formData.financing = data.financing;
+      this.formData.investment = data.investment;
+      this.formData.techonology = data.techonology;
+      this.formData.programDescription = data.programDescription;
+      this.formData.comments = data.comments;
+      this.workflowService.validateStep(STEPS.deal_discription);
   }
 
   getFormData(): FormData {

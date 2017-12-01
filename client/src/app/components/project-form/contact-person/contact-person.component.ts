@@ -10,14 +10,14 @@ import { FormService }     from '../../../services/form.service';
 })
 
 export class ContactPersonComponent implements OnInit {
-  title = 'Please tell us about yourself.';
   personal: Personal;
   form: any;
   
   constructor(private router: Router, private FormService: FormService) {
     this.FormService.getSelectData().subscribe((data) => {
         this.roleList = data.role;
-        console.log(data.role);
+        this.roleList.unshift("");
+        console.log(this.roleList);
       });
   }
 
@@ -25,9 +25,7 @@ export class ContactPersonComponent implements OnInit {
 
   ngOnInit() {
       this.personal = this.FormService.getPersonal();
-      console.log('Personal feature loaded!');
-      console.log(this.roleList);
-      
+      console.log('Personal feature loaded!');      
   }
 
   save(form: any): boolean {
