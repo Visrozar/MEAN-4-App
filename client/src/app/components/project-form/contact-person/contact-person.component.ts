@@ -15,11 +15,19 @@ export class ContactPersonComponent implements OnInit {
   form: any;
   
   constructor(private router: Router, private FormService: FormService) {
+    this.FormService.getSelectData().subscribe((data) => {
+        this.roleList = data.role;
+        console.log(data.role);
+      });
   }
+
+  roleList: any = [];
 
   ngOnInit() {
       this.personal = this.FormService.getPersonal();
       console.log('Personal feature loaded!');
+      console.log(this.roleList);
+      
   }
 
   save(form: any): boolean {

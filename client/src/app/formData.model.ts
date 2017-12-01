@@ -1,6 +1,6 @@
 export class FormData {
-    firstName: string = '';
-    lastName : string = '';
+    name: string = '';
+    role : string = '';
     email: string = '';
     work: string = '';
     street: string = '';
@@ -9,8 +9,8 @@ export class FormData {
     zip: string = '';
 
     clear() {
-        this.firstName = '';
-        this.lastName = '';
+        this.name = '';
+        this.role = '';
         this.email = '';
         this.work = '';
         this.street = '';
@@ -21,8 +21,8 @@ export class FormData {
 }
 
 export class Personal {
-    firstName: string = '';
-    lastName : string = '';
+    name: string = '';
+    role : string = '';
     email: string = '';
 }
 

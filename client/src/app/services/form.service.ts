@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { FormData, Personal, Address } from '../formData.model';
 import { WorkflowService }                   from './workflow.service';
 import { STEPS }                             from '../workflow.model';
+import { Http, Response } from '@angular/http';
 
 @Injectable()
 export class FormService {
@@ -10,14 +11,19 @@ export class FormService {
   private isWorkFormValid: boolean = false;
   private isAddressFormValid: boolean = false;
 
-  constructor(private workflowService: WorkflowService) { 
+  constructor(private workflowService: WorkflowService, public http: Http) { 
+  }
+
+  getSelectData(){
+    return this.http.get("../assets/form.json")
+    .map((res: Response) => res.json());
   }
 
   getPersonal(): Personal {
       // Return the Personal data
       var personal: Personal = {
-          firstName: this.formData.firstName,
-          lastName: this.formData.lastName,
+          name: this.formData.name,
+          role: this.formData.role,
           email: this.formData.email
       };
       return personal;
@@ -26,8 +32,8 @@ export class FormService {
   setPersonal(data: Personal) {
       // Update the Personal data only when the Personal Form had been validated successfully
       this.isPersonalFormValid = true;
-      this.formData.firstName = data.firstName;
-      this.formData.lastName = data.lastName;
+      this.formData.name = data.name;
+      this.formData.role = data.role;
       this.formData.email = data.email;
       this.workflowService.validateStep(STEPS.contact_person);
   }
