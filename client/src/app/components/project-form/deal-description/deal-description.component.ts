@@ -37,6 +37,18 @@ export class DealDescriptionComponent implements OnInit {
         console.log('Work feature loaded!');
     }
 
+    public fileEvent($event) {
+        const fileSelected: File = $event.target.files[0];
+        const _formData = new FormData();
+        _formData.append('file', fileSelected, fileSelected.name)
+        this.FormService.upload(_formData,fileSelected.name).subscribe( success => {
+            console.log(success)
+          },
+          error => {
+            console.log(error);
+          });
+     }
+
     save(form: any): boolean {
         if (!form.valid) {
             return false;

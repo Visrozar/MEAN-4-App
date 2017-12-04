@@ -15,6 +15,8 @@ export class FormResultComponent implements OnInit {
   constructor(private FormService: FormService) {
   }
 
+  showThanks = false;
+
   ngOnInit() {
       this.formData = this.FormService.getFormData();
       this.isFormValid = this.FormService.isFormValid();
@@ -22,7 +24,8 @@ export class FormResultComponent implements OnInit {
   }
 
   submit() {
-      alert('Excellent Job!');
+      // alert('Excellent Job!');
+      this.showThanks = true;
       this.formData = this.FormService.resetFormData();
       this.isFormValid = false;
   }

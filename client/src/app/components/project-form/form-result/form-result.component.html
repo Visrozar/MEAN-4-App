@@ -1,4 +1,4 @@
-<div class="tab-pane fade in active">
+<div [hidden]="showThanks" class="tab-pane fade in active">
     <p class="narrow text-center">
         Here is a copy of the information you have entered:
     </p>
@@ -172,3 +172,4 @@
         </button>
     </div>
 </div>
+<div [hidden]="!showThanks" class="text-center"><h4>Thank you for submitting your investment opportunity. The deal will be reviewed shortly and you will be notified when the deal is added to our deal flow.</h4></div>

@@ -3,6 +3,7 @@ import { FormData, Personal, Deal } from '../formData.model';
 import { WorkflowService }                   from './workflow.service';
 import { STEPS }                             from '../workflow.model';
 import { Http, Response } from '@angular/http';
+import { Observable } from 'rxjs/Rx';
 
 @Injectable()
 export class FormService {
@@ -17,6 +18,12 @@ export class FormService {
   getSelectData(){
     return this.http.get("../assets/form.json")
     .map((res: Response) => res.json());
+  }
+
+  upload(formData,name) {
+    return  this.http.post('https://upload.uploadcare.com/base/'+ name, formData)
+    .map(response => response.json())
+    .catch(error => Observable.throw(error));
   }
 
   getPersonal(): Personal {
@@ -98,14 +105,14 @@ export class FormService {
       // Return the form data after all this.* members had been reset
       this.workflowService.resetSteps();
       this.formData.clear();
-      this.isPersonalFormValid = this.isWorkFormValid = this.isAddressFormValid = false;
+      this.isPersonalFormValid = this.isAddressFormValid = false;
       return this.formData;
   }
 
   isFormValid() {
       // Return true if all forms had been validated successfully; otherwise, return false
       return this.isPersonalFormValid &&
-              this.isWorkFormValid
+              this.isAddressFormValid
   }
 
  
