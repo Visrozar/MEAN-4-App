@@ -9,7 +9,6 @@ import { FormService }     from '../../../services/form.service';
 })
 
 export class FormResultComponent implements OnInit {
-  title = 'Thanks for staying tuned!';
   @Input() formData: FormData;
   isFormValid: boolean = false;
   
