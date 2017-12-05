@@ -173,8 +173,8 @@ userSchema.pre('save', function(next) {
 });
 
 // Methods to compare password to encrypted password upon login
-userSchema.methods.comparePassword = (password) => {
-  return bcrypt.compareSync(password, this.password); // Return comparison of login password to password in database (true or false)
+userSchema.methods.comparePassword = (password, validPassword) => {
+  return bcrypt.compareSync(password, validPassword); // Return comparison of login password to password in database (true or false)
 };
 
 // Export Module/Schema

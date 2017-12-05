@@ -72,7 +72,7 @@
     <label for="role">Role</label>
     <div [ngClass]="{'has-error': (form.controls.role.errors && form.controls.role.dirty), 'has-success': !form.controls.role.errors}">
       <!-- <input type="password" name="password" class="form-control" autocomplete="off" placeholder="*Password" formControlName="password" /> -->
-      <select class="form-control" id="role" formControlName="role" required>
+      <select placeholder="*Role" class="form-control" id="role" formControlName="role" required>
         <option value="investor">Investor</option>
         <option value="enterpreneur">Enterpreneur</option>
       </select>

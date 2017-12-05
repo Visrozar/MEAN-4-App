@@ -12,6 +12,7 @@ import { VclistService } from './services/vclist.service';
 import { VcfilterPipe } from './vcfilter.pipe';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthService } from './services/auth.service';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AuthService } from './services/auth.service';
     HomeComponent,
     VclistComponent,
     VcfilterPipe,
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
