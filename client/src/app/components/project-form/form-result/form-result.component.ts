@@ -16,6 +16,7 @@ export class FormResultComponent implements OnInit {
   }
 
   showThanks = false;
+  showFile = this.FormService.file;
 
   ngOnInit() {
       this.formData = this.FormService.getFormData();
@@ -25,6 +26,15 @@ export class FormResultComponent implements OnInit {
 
   submit() {
       // alert('Excellent Job!');
+      if(this.showFile !== ''){
+        this.FormService.upload(this.FormService.fileData,this.showFile).subscribe( success => {
+          console.log(success)
+        },
+        error => {
+          console.log(error);
+        });  
+      }
+      
       this.showThanks = true;
       this.formData = this.FormService.resetFormData();
       this.isFormValid = false;

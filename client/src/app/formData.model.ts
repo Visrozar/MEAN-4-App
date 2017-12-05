@@ -20,7 +20,7 @@ export class FormData {
     clear() {
         this.name = '';
         this.organization = '';
-        this.telephone = 0;
+        delete this.telephone;
         this.website = '';
         this.role = '';
         this.email = '';

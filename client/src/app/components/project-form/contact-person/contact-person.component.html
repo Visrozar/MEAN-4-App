@@ -1,3 +1,4 @@
+<h2 class="page-header text-center">Contact Person</h2>
 <form #personalForm="ngForm" class="editForm" novalidate>
     <div class="tab-pane fade in active">
         <!-- <h4 class="head text-center">{{title}}</h4> -->
@@ -16,7 +17,7 @@
                         <div class="form-group">
                             <label class="control-label" for="role">Role in the Deal</label>
                             <select class="form-control select-md" #role="ngModel" required name="role" type="text" placeholder="role" [(ngModel)]="personal.role">
-                                <option *ngFor="let rolel of roleList">{{rolel}}</option>
+                                <option *ngFor="let rolel of roleList" value="{{rolel}}">{{rolel}}</option>
                             </select>
                             <div class="alert alert-danger" [hidden]="role.valid">Role is required</div>
                         </div>

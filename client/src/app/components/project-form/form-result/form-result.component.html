@@ -1,7 +1,5 @@
 <div [hidden]="showThanks" class="tab-pane fade in active">
-    <p class="narrow text-center">
-        Here is a copy of the information you have entered:
-    </p>
+    <h4 class="page-header text-center">Here is a copy of the information you have entered:</h4>
     <div class='row'>
         <div class='col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-8 col-md-offset-4 col-md-8'>
             <div class="row">
@@ -164,6 +162,16 @@
                     {{formData.comments}}
                 </div>
             </div>
+            <div *ngIf="showFile" class="row">
+                <div class='col-xs-3 col-sm-2'>
+                    <div class="form-group">
+                        <label class="control-label" for="name">File to upload: </label>
+                    </div>
+                </div>
+                <div class='col-xs-9 col-sm-10'>
+                    {{showFile}}
+                </div>
+            </div>
         </div>
     </div>
     <div class="text-center">
@@ -172,4 +180,9 @@
         </button>
     </div>
 </div>
-<div [hidden]="!showThanks" class="text-center"><h4>Thank you for submitting your investment opportunity. The deal will be reviewed shortly and you will be notified when the deal is added to our deal flow.</h4></div>
+<div [hidden]="!showThanks">
+    <div class='row text-center thanks'>
+        <h4 class="text-center">Thank you for submitting your investment opportunity. The deal will be reviewed shortly and you will be notified
+            when the deal is added to our deal flow.</h4>
+    </div>
+</div>

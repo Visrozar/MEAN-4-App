@@ -11,17 +11,19 @@ export class FormService {
   private isPersonalFormValid: boolean = false;
   private isWorkFormValid: boolean = false;
   private isAddressFormValid: boolean = false;
+  public file: any;
+  public fileData: any;
 
   constructor(private workflowService: WorkflowService, public http: Http) { 
   }
 
-  getSelectData(){
+  getSelectData() {
     return this.http.get("../assets/form.json")
     .map((res: Response) => res.json());
   }
 
   upload(formData,name) {
-    return  this.http.post('https://upload.uploadcare.com/base/'+ name, formData)
+    return  this.http.post('https://file.io', formData)
     .map(response => response.json())
     .catch(error => Observable.throw(error));
   }
