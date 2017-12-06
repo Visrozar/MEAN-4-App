@@ -23,7 +23,7 @@ export class FormService {
   }
 
   upload(formData,name) {
-    return  this.http.post('https://file.io', formData)
+      return this.http.post('https://upload.uploadcare.com/base/'+name, formData)
     .map(response => response.json())
     .catch(error => Observable.throw(error));
   }

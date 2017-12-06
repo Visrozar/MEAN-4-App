@@ -49,14 +49,11 @@ export class DealDescriptionComponent implements OnInit {
     }
 
     goToPrevious(form: any) {
-        if (this.save(form)) {
-            // Navigate to the personal page
-            this.router.navigate(['/project_form']);
-        }
+        this.router.navigate(['/project_form']);
     }
 
     goToNext(form: any) {
-        if(this.elem.nativeElement.querySelector('#selectFile').files[0]){
+        if (this.elem.nativeElement.querySelector('#selectFile').files[0]) {
             const fileSelected: File = this.elem.nativeElement.querySelector('#selectFile').files[0];
             console.log(fileSelected);
             const _formData = new FormData();
@@ -68,7 +65,7 @@ export class DealDescriptionComponent implements OnInit {
             this.FormService.file = '';
             this.FormService.fileData = '';
         }
-        
+
         if (this.save(form)) {
             // Navigate to the address page
             this.router.navigate(['/form_result']);

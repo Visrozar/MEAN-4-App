@@ -109,7 +109,7 @@ export class VclistComponent implements OnInit {
 
   listOpen = false;
 
-  ngOnInit() { 
+  ngOnInit() {
 
     const stickyOffset = $('.sticky').offset().top;
 
@@ -125,7 +125,8 @@ export class VclistComponent implements OnInit {
     });
     const self = this;
     document.addEventListener('click', function (event) {
-      if (event.srcElement.className.toString() !== 'overSelect' && event.srcElement.className.toString() !== 'hide-box' && self.router.url.toString() === '/vc_list') {
+      if (event.srcElement.className.toString() !== 'overSelect' &&
+        event.srcElement.className.toString() !== 'hide-box' && self.router.url.toString() === '/vc_list') {
         self.onBlur();
       }
     });
@@ -323,5 +324,5 @@ export class VclistComponent implements OnInit {
     }
 
   }
-  
+
 }

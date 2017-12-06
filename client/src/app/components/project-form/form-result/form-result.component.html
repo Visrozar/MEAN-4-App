@@ -175,6 +175,8 @@
         </div>
     </div>
     <div class="text-center">
+        <button type="button" class="btn btn-outline-rounded btn-primary" (click)="goToPrevious(isFormValid)">
+            <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span> Deal Discripton</button>
         <button class="btn btn-success btn-outline-rounded" [disabled]="!isFormValid" (click)="submit()"> Submit
             <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span>
         </button>
@@ -182,7 +184,7 @@
 </div>
 <div [hidden]="!showThanks">
     <div class='row text-center thanks'>
-        <h4 class="text-center">Thank you for submitting your investment opportunity. The deal will be reviewed shortly and you will be notified
+        <h4 class="text-center thank">Thank you for submitting your investment opportunity. The deal will be reviewed shortly and you will be notified
             when the deal is added to our deal flow.</h4>
     </div>
 </div>
