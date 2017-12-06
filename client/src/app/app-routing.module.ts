@@ -5,6 +5,8 @@ import { VclistComponent } from './components/vclist/vclist.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AuthGuard } from './guards/auth.guard';
+import { NotAuthGuard } from './guards/notAuth.guard';
 
 const appRoutes: Routes = [
   { 
@@ -17,15 +19,18 @@ const appRoutes: Routes = [
   },
   { 
     path: 'register', 
-    component: RegisterComponent
+    component: RegisterComponent,
+    canActivate: [NotAuthGuard]
   },
   { 
     path: 'login', 
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate: [NotAuthGuard]
   },
   { 
     path: 'dashboard', 
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate: [AuthGuard]
   },
   { 
     path: '**', 

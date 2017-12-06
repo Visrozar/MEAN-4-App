@@ -117,7 +117,7 @@ module.exports = (router) => {
           if (user) {
             res.json({ success: false, message: 'Username is already taken' }); // Return as taken username
           } else {
-            res.json({ success: true, message: 'Username is available' }); // Return as vailable username
+            res.json({ success: true, message: 'Username is available' }); // Return as available username
           }
         }
       });
