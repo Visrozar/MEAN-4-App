@@ -99,6 +99,11 @@
           <div class='col-xs-12 col-sm-12'>
             <div class="form-group">
               <label class="control-label" for="comments">Upload non-confidential presentation</label>
+              <div *ngIf="currentFileUpload" class="progress" style="width:400px">
+                <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+                  aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width:progress.percentage+'%'}">
+                  {{progress.percentage}}%</div>
+              </div>
               <input id="selectFile" type="file" name="myFile" placeholder="Upload File">
             </div>
           </div>

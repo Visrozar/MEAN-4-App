@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormData } from '../../../formData.model';
 import { FormService } from '../../../services/form.service';
 import { Router } from '@angular/router';
+import { UploadFileService } from '../../../services/upload-file.service';
+import { FileUpload } from '../../../fileupload';
 
 @Component({
   selector: 'app-form-result',
@@ -12,8 +14,11 @@ import { Router } from '@angular/router';
 export class FormResultComponent implements OnInit {
   @Input() formData: FormData;
   isFormValid = false;
+  selectedFiles: FileList;
+  currentFileUpload: FileUpload;
+  progress: { percentage: number } = { percentage: 0 }
 
-  constructor(private FormService: FormService, private router: Router) {
+  constructor(private FormService: FormService, private router: Router, private uploadService: UploadFileService) {
   }
 
   showThanks = false;
@@ -33,12 +38,15 @@ export class FormResultComponent implements OnInit {
   submit() {
     // alert('Excellent Job!');
     if (this.showFile !== '') {
-      this.FormService.upload(this.FormService.fileData, this.showFile).subscribe(success => {
-        console.log(success);
-      },
-        error => {
-          console.log(error);
-        });
+      // const file = this.selectedFiles.item(0);
+      this.currentFileUpload = new FileUpload(this.FormService.fileData);
+      this.uploadService.pushFileToStorage(this.currentFileUpload, this.progress);
+      // this.FormService.upload(this.FormService.fileData, this.showFile).subscribe(success => {
+      //   console.log(success);
+      // },
+      //   error => {
+      //     console.log(error);
+      //   });
     }
 
     this.showThanks = true;

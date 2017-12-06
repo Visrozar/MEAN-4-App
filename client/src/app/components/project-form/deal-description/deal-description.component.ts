@@ -56,11 +56,11 @@ export class DealDescriptionComponent implements OnInit {
         if (this.elem.nativeElement.querySelector('#selectFile').files[0]) {
             const fileSelected: File = this.elem.nativeElement.querySelector('#selectFile').files[0];
             console.log(fileSelected);
-            const _formData = new FormData();
-            _formData.append('file', fileSelected, fileSelected.name);
+            // const _formData = new FormData();
+            // _formData.append('file', fileSelected, fileSelected.name);
             this.FormService.file = fileSelected.name;
-            this.FormService.fileData = _formData;
-            console.log(_formData);
+            this.FormService.fileData = fileSelected;
+            // console.log(_formData);
         } else {
             this.FormService.file = '';
             this.FormService.fileData = '';
