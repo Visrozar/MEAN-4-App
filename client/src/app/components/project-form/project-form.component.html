@@ -1,1 +1,9 @@
-<app-contact-person></app-contact-person>
+<div class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" (click)="closeModal();">&times;</span>
+    <app-contact-person [hidden]="!this.formService.showContactForm"></app-contact-person>
+    <app-deal-description [hidden]="!this.formService.showDealForm"></app-deal-description>
+    <app-form-result [hidden]="!this.formService.showResultForm"></app-form-result>
+  </div>
+</div>

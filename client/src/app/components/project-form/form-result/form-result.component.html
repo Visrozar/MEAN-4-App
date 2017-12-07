@@ -1,4 +1,4 @@
-<div [hidden]="showThanks" class="tab-pane fade in active">
+<div [hidden]="this.FormService.showThanks" class="tab-pane fade in active">
     <h4 class="page-header text-center">Here is a copy of the information you have entered:</h4>
     <div class='row'>
         <div class='col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-8 col-md-offset-4 col-md-8'>
@@ -162,14 +162,14 @@
                     {{formData.comments}}
                 </div>
             </div>
-            <div *ngIf="showFile" class="row">
+            <div *ngIf="this.FormService.file" class="row">
                 <div class='col-xs-3 col-sm-2'>
                     <div class="form-group">
                         <label class="control-label" for="name">File to upload: </label>
                     </div>
                 </div>
                 <div class='col-xs-9 col-sm-10'>
-                    {{showFile}}
+                    {{this.FormService.file}}
                 </div>
             </div>
         </div>
@@ -177,12 +177,12 @@
     <div class="text-center">
         <button type="button" class="btn btn-outline-rounded btn-primary" (click)="goToPrevious(isFormValid)">
             <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span> Deal Discripton</button>
-        <button class="btn btn-success btn-outline-rounded" [disabled]="!isFormValid" (click)="submit()"> Submit
-            <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span>
-        </button>
+        <button class="btn btn-success btn-outline-rounded" (click)="submit()"> Submit</button>
+            <!-- <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span> -->
+        <!-- </button> -->
     </div>
 </div>
-<div [hidden]="!showThanks">
+<div [hidden]="!this.FormService.showThanks">
     <div class='row text-center thanks'>
         <h4 class="text-center thank">Thank you for submitting your investment opportunity. The deal will be reviewed shortly and you will be notified
             when the deal is added to our deal flow.</h4>

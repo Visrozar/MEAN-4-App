@@ -3,3 +3,11 @@
   <li class="list-group-item">Username: {{ username }}</li>
   <li class="list-group-item">Email: {{ email }}</li>
 </ul>
+
+<div class="row text-right">
+  <button type="button" class="btn btn-primary btn-outline-rounded" (click)="this.formService.showProjectForm = true;">
+    Add Project
+  </button>
+</div>
+
+<app-project-form [hidden]="!this.formService.showProjectForm"></app-project-form>

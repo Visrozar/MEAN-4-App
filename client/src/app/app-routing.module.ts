@@ -16,24 +16,6 @@ import { NotAuthGuard } from './guards/notAuth.guard';
 
 const appRoutes: Routes = [
   {
-    path: 'form_result',
-    component: FormResultComponent,
-    canActivate: [WorkflowGuard]
-  },
-  {
-    path: 'contact_person',
-    component: ContactPersonComponent
-  },
-  {
-    path: 'deal_discription',
-    component: DealDescriptionComponent,
-    canActivate: [WorkflowGuard]
-  },
-  {
-    path: 'project_form',
-    component: ProjectFormComponent
-  },
-  {
     path: 'home',
     component: HomeComponent
   },
@@ -53,8 +35,8 @@ const appRoutes: Routes = [
   },
   {
     path: 'dashboard',
-    component: DashboardComponent,
-    canActivate: [AuthGuard]
+    component: DashboardComponent//,
+    // canActivate: [AuthGuard]
   },
   {
     path: '**',

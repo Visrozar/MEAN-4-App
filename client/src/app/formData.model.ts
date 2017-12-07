@@ -2,7 +2,7 @@ export class FormData {
     name: string = '';
     role: string = '';
     organization: string = '';
-    telephone: number;
+    telephone: number = null;
     email: string = '';
     website: string = '';
     work: string = '';
@@ -16,6 +16,7 @@ export class FormData {
     techonology: string = '';
     programDescription: string = '';
     comments: string = '';
+    fileUrl: string = '';
 
     clear() {
         this.name = '';
@@ -35,6 +36,7 @@ export class FormData {
         this.techonology = '';
         this.programDescription = '';
         this.comments = '';
+        this.fileUrl = '';
     }
 }
 

@@ -10,7 +10,7 @@ export const environment = {
     authDomain: 'virtual-biotech.firebaseapp.com',
     databaseURL: 'https://virtual-biotech.firebaseio.com',
     projectId: 'virtual-biotech',
-    storageBucket: '',
+    storageBucket: 'gs://virtual-biotech.appspot.com',
     messagingSenderId: '1067100368417'
   }
 };

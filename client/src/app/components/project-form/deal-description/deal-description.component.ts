@@ -17,13 +17,13 @@ export class DealDescriptionComponent implements OnInit {
     constructor(private router: Router, private FormService: FormService, private elem: ElementRef) {
         this.FormService.getSelectData().subscribe((data) => {
             this.sectorList = data.sector;
-            this.sectorList.unshift("");
+            this.sectorList.unshift('');
             this.indicationList = data.indication;
-            this.indicationList.unshift("");
+            this.indicationList.unshift('');
             this.stageProgramList = data.stage;
-            this.stageProgramList.unshift("");
+            this.stageProgramList.unshift('');
             this.financingList = data.financing;
-            this.financingList.unshift("");
+            this.financingList.unshift('');
         });
     }
 
@@ -32,6 +32,7 @@ export class DealDescriptionComponent implements OnInit {
     stageProgramList: any = [];
     financingList: any = [];
     fileSelected: any;
+    hideIndication = false;
 
     ngOnInit() {
         this.deal = this.FormService.getAddress();
@@ -48,8 +49,18 @@ export class DealDescriptionComponent implements OnInit {
         return true;
     }
 
+    onChange(deviceValue) {
+        if (deviceValue.toString() === 'Agro') {
+            this.hideIndication = true;
+        } else {
+            this.hideIndication = false;
+        }
+    }
+
     goToPrevious(form: any) {
-        this.router.navigate(['/project_form']);
+        // this.router.navigate(['/project_form']);
+        this.FormService.showDealForm = false;
+        this.FormService.showContactForm = true;
     }
 
     goToNext(form: any) {
@@ -68,7 +79,9 @@ export class DealDescriptionComponent implements OnInit {
 
         if (this.save(form)) {
             // Navigate to the address page
-            this.router.navigate(['/form_result']);
+            // this.router.navigate(['/form_result']);
+            this.FormService.showDealForm = false;
+            this.FormService.showResultForm = true;
         }
     }
 }

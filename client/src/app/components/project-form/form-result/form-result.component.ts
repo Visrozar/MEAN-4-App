@@ -16,15 +16,13 @@ export class FormResultComponent implements OnInit {
   isFormValid = false;
   selectedFiles: FileList;
   currentFileUpload: FileUpload;
-  progress: { percentage: number } = { percentage: 0 }
+  progress: { percentage: number } = { percentage: 0 };
 
   constructor(private FormService: FormService, private router: Router, private uploadService: UploadFileService) {
   }
 
-  showThanks = false;
-  showFile = this.FormService.file;
-
   ngOnInit() {
+    this.FormService.showThanks = false;
     this.formData = this.FormService.getFormData();
     this.isFormValid = this.FormService.isFormValid();
     console.log('Result feature loaded!');
@@ -32,15 +30,18 @@ export class FormResultComponent implements OnInit {
 
   goToPrevious(form: any) {
     // Navigate to the Deal discription
-    this.router.navigate(['/deal_discription']);
+    // this.router.navigate(['/deal_discription']);
+    this.FormService.showDealForm = true;
+    this.FormService.showResultForm = false;
   }
 
   submit() {
     // alert('Excellent Job!');
-    if (this.showFile !== '') {
+    if (this.FormService.file !== '') {
       // const file = this.selectedFiles.item(0);
       this.currentFileUpload = new FileUpload(this.FormService.fileData);
       this.uploadService.pushFileToStorage(this.currentFileUpload, this.progress);
+      // this.formData.fileUrl = this.fileUpload.url;
       // this.FormService.upload(this.FormService.fileData, this.showFile).subscribe(success => {
       //   console.log(success);
       // },
@@ -48,9 +49,10 @@ export class FormResultComponent implements OnInit {
       //     console.log(error);
       //   });
     }
-
-    this.showThanks = true;
-    this.formData = this.FormService.resetFormData();
+    console.log(this.formData);
+    this.FormService.showThanks = true;
+    this.FormService.submited = true;
+    // this.formData = this.FormService.resetFormData();
     this.isFormValid = false;
   }
 }

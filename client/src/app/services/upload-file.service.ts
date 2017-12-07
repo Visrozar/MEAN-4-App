@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import * as firebase from 'firebase';
-
 import { FileUpload } from '../fileupload';
 
 @Injectable()
@@ -15,7 +14,7 @@ export class UploadFileService {
     const storageRef = firebase.storage().ref();
     const uploadTask = storageRef.child(`${this.basePath}/${fileUpload.file.name}`).put(fileUpload.file);
 
-    uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
+    const fileUrl = uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
       (snapshot) => {
         // in progress
         const snap = snapshot as firebase.storage.UploadTaskSnapshot;
@@ -32,6 +31,7 @@ export class UploadFileService {
         this.saveFileData(fileUpload);
       }
     );
+    console.log(fileUpload.url);
   }
 
   private saveFileData(fileUpload: FileUpload) {
