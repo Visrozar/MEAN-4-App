@@ -25,6 +25,10 @@ import { ContactPersonComponent } from './components/project-form/contact-person
 import { DealDescriptionComponent } from './components/project-form/deal-description/deal-description.component';
 import { FormResultComponent } from './components/project-form/form-result/form-result.component';
 import { UploadFileService } from './services/upload-file.service';
+import { LoginComponent } from './components/login/login.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AuthGuard } from './guards/auth.guard';
+import { NotAuthGuard } from './guards/notAuth.guard';
 
 @NgModule({
   declarations: [
@@ -37,7 +41,9 @@ import { UploadFileService } from './services/upload-file.service';
     ProjectFormComponent,
     ContactPersonComponent,
     DealDescriptionComponent,
-    FormResultComponent
+    FormResultComponent,
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -48,8 +54,8 @@ import { UploadFileService } from './services/upload-file.service';
     AngularFireDatabaseModule,
     HttpModule
   ],
-  providers: [VclistService, AuthService, FormService, UploadFileService,
-              { provide: WorkflowService, useClass: WorkflowService }],
+  providers: [VclistService, AuthService, AuthGuard, NotAuthGuard, FormService, UploadFileService,
+    { provide: WorkflowService, useClass: WorkflowService }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

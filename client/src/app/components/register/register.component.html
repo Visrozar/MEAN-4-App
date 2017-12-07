@@ -93,10 +93,36 @@
 
       <!-- Submit Input -->
       <div class="row text-center">
-      <input [disabled]="!form.valid || processing || !emailValid || !usernameValid" type="submit" class="btn btn-primary" value="Submit"
-      /></div>
+        <input [disabled]="!form.valid || processing || !emailValid || !usernameValid" type="submit" class="btn btn-primary" value="Submit"
+        />
+      </div>
     </div>
   </div>
+
+  <!-- Role Input -->
+  <div class="row">
+    <div class='col-xs-12 col-sm-12'>
+      <div class="form-group">
+        <label for="role">Role</label>
+        <div [ngClass]="{'has-error': (form.controls.role.errors && form.controls.role.dirty), 'has-success': !form.controls.role.errors}">
+          <!-- <input type="password" name="password" class="form-control" autocomplete="off" placeholder="*Password" formControlName="password" /> -->
+          <select placeholder="*Role" class="form-control" id="role" formControlName="role" required>
+            <option value="investor">Investor</option>
+            <option value="enterpreneur">Enterpreneur</option>
+          </select>
+          <!-- Validation -->
+          <ul class="help-block">
+            <li *ngIf="form.controls.role.errors?.required && form.controls.role.dirty">This field is required</li>
+            <li *ngIf="form.controls.role.errors?.validateRole && form.controls.role.dirty">Must be Valid Role</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Submit Input -->
+  <input [disabled]="!form.valid || processing || !emailValid || !usernameValid" type="submit" class="btn btn-primary" value="Submit"
+  />
 
 </form>
 <!-- Registration Form /-->

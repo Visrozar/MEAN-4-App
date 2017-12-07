@@ -7,42 +7,57 @@ import { ProjectFormComponent } from './components/project-form/project-form.com
 import { ContactPersonComponent } from './components/project-form/contact-person/contact-person.component';
 import { DealDescriptionComponent } from './components/project-form/deal-description/deal-description.component';
 import { FormResultComponent } from './components/project-form/form-result/form-result.component';
-import { WorkflowGuard }        from './services/workflow-guard.service';
-import { WorkflowService }      from './services/workflow.service';
+import { WorkflowGuard } from './services/workflow-guard.service';
+import { WorkflowService } from './services/workflow.service';
+import { LoginComponent } from './components/login/login.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AuthGuard } from './guards/auth.guard';
+import { NotAuthGuard } from './guards/notAuth.guard';
 
 const appRoutes: Routes = [
-  { 
-    path: 'form_result', 
+  {
+    path: 'form_result',
     component: FormResultComponent,
     canActivate: [WorkflowGuard]
   },
-  { 
-    path: 'contact_person', 
+  {
+    path: 'contact_person',
     component: ContactPersonComponent
   },
-  { 
-    path: 'deal_discription', 
+  {
+    path: 'deal_discription',
     component: DealDescriptionComponent,
     canActivate: [WorkflowGuard]
   },
-  { 
-    path: 'project_form', 
+  {
+    path: 'project_form',
     component: ProjectFormComponent
   },
-  { 
-    path: 'home', 
+  {
+    path: 'home',
     component: HomeComponent
   },
-  { 
-    path: 'vc_list', 
+  {
+    path: 'vc_list',
     component: VclistComponent
   },
-  { 
-    path: 'register', 
-    component: RegisterComponent
+  {
+    path: 'register',
+    component: RegisterComponent,
+    canActivate: [NotAuthGuard]
   },
-  { 
-    path: '**', 
+  {
+    path: 'login',
+    component: LoginComponent,
+    canActivate: [NotAuthGuard]
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: '**',
     redirectTo: '/home',
     pathMatch: 'full'
   }
@@ -50,9 +65,9 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [],
-  imports: [ RouterModule.forRoot(appRoutes) ],
-  providers: [ WorkflowGuard ],
+  imports: [RouterModule.forRoot(appRoutes)],
+  providers: [WorkflowGuard],
   bootstrap: [],
-  exports: [ RouterModule ]
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }
