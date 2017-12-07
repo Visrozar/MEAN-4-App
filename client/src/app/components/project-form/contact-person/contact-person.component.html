@@ -9,8 +9,8 @@
                     <div class='col-xs-12 col-sm-6'>
                         <div class="form-group">
                             <label class="control-label" for="name">Name</label>
-                            <input class="form-control input-md" #name="ngModel" required name="name" type="text" placeholder="Name" [(ngModel)]="personal.name">
-                            <div class="alert alert-danger" [hidden]="name.valid">Name is required</div>
+                            <input class="form-control input-md" #name="ngModel" required pattern="^[a-zA-Z ]{2,20}$" name="name" type="text" placeholder="Name" [(ngModel)]="personal.name">
+                            <div class="alert alert-danger" [hidden]="name.valid">Name is required and must be valid</div>
                         </div>
                     </div>
                     <div class='col-xs-12 col-sm-6'>
@@ -27,7 +27,8 @@
                     <div class='col-xs-12 col-sm-6'>
                         <div class="form-group">
                             <label class="control-label" for="organization">Organization</label>
-                            <input class="form-control input-md" #organization="ngModel" name="organization" type="text" placeholder="Organization" [(ngModel)]="personal.organization">
+                            <input class="form-control input-md" #organization="ngModel" pattern="^[a-zA-Z ]{2,50}$" name="organization" type="text" placeholder="Organization" [(ngModel)]="personal.organization">
+                            <div class="alert alert-danger" [hidden]="organization.valid">Invalid organization name</div>
                         </div>
                     </div>
                     <div class='col-xs-12 col-sm-6'>

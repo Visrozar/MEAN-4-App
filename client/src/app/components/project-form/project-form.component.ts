@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormService } from '../../services/form.service';
 import { FormData } from '../../formData.model';
+declare var $: any;
 
 @Component({
   selector: 'app-project-form',
@@ -23,6 +24,9 @@ export class ProjectFormComponent implements OnInit {
   closeModal() {
     this.formService.showProjectForm = false;
     if (this.formService.submited === true) {
+      for (var i = 0; i < document.getElementsByTagName('form').length; i++) {
+        document.getElementsByTagName('form')[i].reset();
+      }
       this.formService.showContactForm = true;
       this.formService.showDealForm = false;
       this.formService.showResultForm = false;
