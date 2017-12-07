@@ -44,6 +44,30 @@ const emailValidators = [
   }
 ];
 
+// Validate Function to check if valid role
+let validRoleChecker = (role) => {
+  // Check if e-mail exists
+  if (!role) {
+    return false; // Return error
+  } else {
+  // Test for a valid role
+  if (role === 'investor' || role === 'enterpreneur'){
+    return true;
+  }
+  return false;
+  // Return test results (true or false)
+  }
+};
+
+// Array of Role Validators
+const roleValidators = [
+  // First Email Validator
+  {
+    validator: validRoleChecker,
+    message: 'Role must be either investor or enterpreneur'
+  }
+];
+
 // Validate Function to check username length
 let usernameLengthChecker = (username) => {
   // Check if username exists
@@ -130,7 +154,8 @@ const passwordValidators = [
 const userSchema = new Schema({
   email: { type: String, required: true, unique: true, lowercase: true, validate: emailValidators },
   username: { type: String, required: true, unique: true, lowercase: true, validate: usernameValidators },
-  password: { type: String, required: true, validate: passwordValidators }
+  password: { type: String, required: true, validate: passwordValidators },
+  role: { type: String, required: true, validate: roleValidators },
 });
 
 // Schema Middleware to Encrypt Password
@@ -148,8 +173,8 @@ userSchema.pre('save', function(next) {
 });
 
 // Methods to compare password to encrypted password upon login
-userSchema.methods.comparePassword = (password) => {
-  return bcrypt.compareSync(password, this.password); // Return comparison of login password to password in database (true or false)
+userSchema.methods.comparePassword = (password, validPassword) => {
+  return bcrypt.compareSync(password, validPassword); // Return comparison of login password to password in database (true or false)
 };
 
 // Export Module/Schema

@@ -12,6 +12,10 @@ import { VclistService } from './services/vclist.service';
 import { VcfilterPipe } from './vcfilter.pipe';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthService } from './services/auth.service';
+import { LoginComponent } from './components/login/login.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AuthGuard } from './guards/auth.guard';
+import { NotAuthGuard } from './guards/notAuth.guard';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,9 @@ import { AuthService } from './services/auth.service';
     HomeComponent,
     VclistComponent,
     VcfilterPipe,
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +35,7 @@ import { AuthService } from './services/auth.service';
     FormsModule,
     HttpModule
   ],
-  providers: [VclistService, AuthService],
+  providers: [VclistService, AuthService, AuthGuard, NotAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
