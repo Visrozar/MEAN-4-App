@@ -40,7 +40,7 @@ export class FormResultComponent implements OnInit {
     if (this.FormService.file !== '') {
       // const file = this.selectedFiles.item(0);
       this.currentFileUpload = new FileUpload(this.FormService.fileData);
-      this.uploadService.pushFileToStorage(this.currentFileUpload, this.progress);
+      const isaac = this.uploadService.pushFileToStorage(this.currentFileUpload, this.progress, this.formData);
       // this.formData.fileUrl = this.fileUpload.url;
       // this.FormService.upload(this.FormService.fileData, this.showFile).subscribe(success => {
       //   console.log(success);
@@ -49,7 +49,6 @@ export class FormResultComponent implements OnInit {
       //     console.log(error);
       //   });
     }
-    console.log(this.formData);
     this.FormService.showThanks = true;
     this.FormService.submited = true;
     // this.formData = this.FormService.resetFormData();
