@@ -9,8 +9,8 @@ import { AuthService } from '../../services/auth.service';
 })
 export class DashboardComponent implements OnInit {
 
-  username = '';
-  email = '';
+  projects:any = [];
+  username;
 
   constructor(
     private authService: AuthService
@@ -18,9 +18,14 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     // Once component loads, get user's data to display on profile
-    this.authService.getDashboard().subscribe(profile => {
-      this.username = profile.user.username; // Set username
-      this.email = profile.user.email; // Set e-mail
+    this.authService.getProfile().subscribe(profile => {
+      this.username = profile.user.username;
+      console.log(this.username);
+    });
+
+    this.authService.getDashboard().subscribe(dashboard => {
+      this.projects = dashboard.projects;
+      console.log(this.projects);
     });
   }
 

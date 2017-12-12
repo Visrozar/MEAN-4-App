@@ -1,4 +1,5 @@
 const User = require('../models/user'); // Import User Model Schema
+const Project = require('../models/project'); // Import Project Model Schema
 const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 
@@ -166,29 +167,29 @@ module.exports = (router) => {
   /* ================================================
   MIDDLEWARE - Used to grab user's token from headers
   ================================================ */
-  router.use((req, res, next) => {
-    const token = req.headers['authorization']; // Create token found in headers
-    // Check if token was found in headers
-    if (!token) {
-      res.json({ success: false, message: 'No token provided' }); // Return error
-    } else {
-      // Verify the token is valid
-      jwt.verify(token, config.secret, (err, decoded) => {
-        // Check if error is expired or invalid
-        if (err) {
-          res.json({ success: false, message: 'Token invalid: ' + err }); // Return error for token validation
-        } else {
-          req.decoded = decoded; // Create global variable to use in any request beyond
-          next(); // Exit middleware
-        }
-      });
-    }
-  });
+  // router.use((req, res, next) => {
+  //   const token = req.headers['authorization']; // Create token found in headers
+  //   // Check if token was found in headers
+  //   if (!token) {
+  //     res.json({ success: false, message: 'No token provided' }); // Return error
+  //   } else {
+  //     // Verify the token is valid
+  //     jwt.verify(token, config.secret, (err, decoded) => {
+  //       // Check if error is expired or invalid
+  //       if (err) {
+  //         res.json({ success: false, message: 'Token invalid: ' + err }); // Return error for token validation
+  //       } else {
+  //         req.decoded = decoded; // Create global variable to use in any request beyond
+  //         next(); // Exit middleware
+  //       }
+  //     });
+  //   }
+  // });
 
   /* ===============================================================
      Route to get user's profile data
   =============================================================== */
-  router.get('/dashboard', (req, res) => {
+  router.get('/profile', (req, res) => {
     // Search for user in database
     User.findOne({ _id: req.decoded.userId }).select('username email').exec((err, user) => {
       // Check if error connecting
@@ -200,6 +201,54 @@ module.exports = (router) => {
           res.json({ success: false, message: 'User not found' }); // Return error, user was not found in db
         } else {
           res.json({ success: true, user: user }); // Return success, send user object to frontend for profile
+        }
+      }
+    });
+  });
+
+  router.get('/dashboard', (req, res) => {
+    // Search for user in database
+    User.findOne({ _id: req.decoded.userId }).select('username role').exec((err, user) => {
+      // Check if error connecting
+      if (err) {
+        res.json({ success: false, message: err }); // Return error
+      } else {
+        // Check if user was found in database
+        if (!user) {
+          res.json({ success: false, message: 'User not found' }); // Return error, user was not found in db
+        } else {
+          if (user.role === 'enterpreneur') {
+            Project.find({ createdBy: user.username}).exec((err, projects) => {
+              if (err) {
+                res.json({ success: false, message: err }); // Return error
+              }
+              else {
+                if (!projects) {
+                  res.json({ success: false, message: 'No Projects found' }); // Return error, user was not found in db
+                } else {
+                  res.json({ success: true, projects: projects }); // Return success, send project object to frontend for profile
+                }
+              }
+          });
+          } else {
+            if (user.role === 'investor') {
+              Project.find({}).exec((err, projects) => {
+                if (err) {
+                  res.json({ success: false, message: err }); // Return error
+                }
+                else {
+                  if (!projects) {
+                    res.json({ success: false, message: 'No Projects found' }); // Return error, user was not found in db
+                  } else {
+                    res.json({ success: true, projects: projects }); // Return success, send project object to frontend for profile
+                  }
+                }
+            });
+            } else {
+              res.json({ success: false, message: 'No Role found' });
+            }
+          }
+          
         }
       }
     });

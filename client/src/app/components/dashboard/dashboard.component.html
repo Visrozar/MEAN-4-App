@@ -1,5 +1,16 @@
-<h2 class="page-header">Profile Page</h2>
-<ul class="list-group">
-  <li class="list-group-item">Username: {{ username }}</li>
-  <li class="list-group-item">Email: {{ email }}</li>
-</ul>
+<h2 class="page-header">Dashboard Page</h2>
+<div class="panel panel-primary" *ngFor="let project of projects">
+  <li class="list-group-item">Name: {{ project.name }}</li>
+  <div *ngIf="username === project.createdBy">
+    <li class="list-group-item">
+      <a [routerLink]="['/edit-project/', project._id]">
+        <button type="button" name="button" class="btn btn-sm btn-info">Edit</button>
+      </a>
+    </li>
+    <li class="list-group-item">
+      <a [routerLink]="['/delete-project/', project._id]">
+        <button type="button" name="button" class="btn btn-sm btn-danger">Delete</button>
+      </a>
+    </li>
+  </div>
+</div>
