@@ -67,65 +67,65 @@ module.exports = (router) => {
         }
     });
 
-router.put('/editProject', (req, res) => {
-    if (!req.body._id) {
-        res.json({ success: false, message: 'No ID provided'});
-    } else {
-        Project.findOne({ _id: req.body._id}, (err, project) => {
-            if (err) {
-                res.json({ success: false, message: 'Not a valid Project ID'});
-            } else {
-                if (!project) {
-                    res.json({ success: false, message: 'Project ID was not found'});
+    router.put('/editProject', (req, res) => {
+        if (!req.body._id) {
+            res.json({ success: false, message: 'No ID provided' });
+        } else {
+            Project.findOne({ _id: req.body._id }, (err, project) => {
+                if (err) {
+                    res.json({ success: false, message: 'Not a valid Project ID' });
                 } else {
-                    User.findOne({ _id: req.decoded.userId }, (err, user) => {
-                        if (err) {
-                            res.json({ success: false, message: err });
-                        } else {
-                            if (!user) {
-                                res.json({ success: false, message: 'Unable to authenticate user' });
+                    if (!project) {
+                        res.json({ success: false, message: 'Project ID was not found' });
+                    } else {
+                        User.findOne({ _id: req.decoded.userId }, (err, user) => {
+                            if (err) {
+                                res.json({ success: false, message: err });
                             } else {
-                                if (user.username !== project.createdBy) {
-                                    res.json({ success: false, message: 'You are not authorized to edit this project' });
+                                if (!user) {
+                                    res.json({ success: false, message: 'Unable to authenticate user' });
                                 } else {
-                                    project.name = req.body.name;
-                                    project.role = req.body.role;
-                                    project.organization = req.body.organization;
-                                    project.telephone = req.body.telephone;
-                                    project.email = req.body.email;
-                                    project.website = req.body.website;
-                                    project.work = req.body.work;
-                                    project.dealName = req.body.dealName;
-                                    project.location = req.body.location;
-                                    project.sector = req.body.sector;
-                                    project.indication = req.body.indication;
-                                    project.stageLead = req.body.stageLead;
-                                    project.financing = req.body.financing;
-                                    project.investment = req.body.investment;
-                                    project.technology = req.body.technology;
-                                    project.programDescription = req.body.programDescription;
-                                    project.comments = req.body.comments;
-                                    project.fileUrl = req.body.fileUrl;
-                                    project.save((err) => {
-                                        if (err) {
-                                            if (err.errors) {
-                                                res.json({ success: false, message: err.errmsg });
+                                    if (user.username !== project.createdBy) {
+                                        res.json({ success: false, message: 'You are not authorized to edit this project' });
+                                    } else {
+                                        project.name = req.body.name;
+                                        project.role = req.body.role;
+                                        project.organization = req.body.organization;
+                                        project.telephone = req.body.telephone;
+                                        project.email = req.body.email;
+                                        project.website = req.body.website;
+                                        project.work = req.body.work;
+                                        project.dealName = req.body.dealName;
+                                        project.location = req.body.location;
+                                        project.sector = req.body.sector;
+                                        project.indication = req.body.indication;
+                                        project.stageLead = req.body.stageLead;
+                                        project.financing = req.body.financing;
+                                        project.investment = req.body.investment;
+                                        project.technology = req.body.technology;
+                                        project.programDescription = req.body.programDescription;
+                                        project.comments = req.body.comments;
+                                        project.fileUrl = req.body.fileUrl;
+                                        project.save((err) => {
+                                            if (err) {
+                                                if (err.errors) {
+                                                    res.json({ success: false, message: err.errmsg });
+                                                } else {
+                                                    res.json({ success: false, message: err });
+                                                }
                                             } else {
-                                                res.json({ success: false, message: err });
+                                                res.json({ success: true, message: 'Project Updated' });
                                             }
-                                        } else {
-                                            res.json({ success: true, message: 'Project Updated' });
-                                        }
-                                    });
+                                        });
+                                    }
                                 }
                             }
-                        }
-                    });
+                        });
+                    }
                 }
-            }
-        })
-    }
-})
+            })
+        }
+    })
 
     return router; // Return router object to main index.js
 }
