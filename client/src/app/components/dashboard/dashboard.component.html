@@ -4,27 +4,39 @@
   <li class="list-group-item">Email: {{ email }}</li>
 </ul> -->
 <div class="container">
-  <div class="card" *ngFor="let dash of dashboardData">
+  <div class="card" *ngFor="let project of projects">
     <div class="card-body">
       <div class="row">
-      <h4 class="card-title text-center">{{dash.dealName}}</h4>
-      <button class="btn danger-btn text-right" (click)="removeEntry(dash)">Delete</button>
-      <button class="btn danger-btn text-right" (click)="editEntry(dash); this.formService.showProjectForm = true;">Edit</button>
+      <h4 class="card-title text-center">{{project.dealName}}</h4>
+      <div *ngIf="username === project.createdBy">
+        <li class="list-group-item">
+          <a [routerLink]="['/edit-project/', project._id]">
+            <button type="button" name="button" class="btn btn-sm btn-info">Edit</button>
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a [routerLink]="['/delete-project/', project._id]">
+            <button type="button" name="button" class="btn btn-sm btn-danger">Delete</button>
+          </a>
+        </li>
+      </div>
+      <!-- <button class="btn danger-btn text-right" (click)="removeEntry(project)">Delete</button> -->
+      <!-- <button class="btn danger-btn text-right" (click)="editEntry(project); this.formService.showProjectForm = true;">Edit</button> -->
       </div>
       <table class="table">
-        <tr *ngIf="dash.name">
+        <tr *ngIf="project.name">
           <td class="vr">Name:</td>
-          <td>{{dash.name}}</td>
+          <td>{{project.name}}</td>
         </tr>
 
-        <tr *ngIf="dash.name">
+        <tr *ngIf="project.name">
           <td class="vr">Role:</td>
-          <td>{{dash.role}}</td>
+          <td>{{project.role}}</td>
         </tr>
 
-        <tr *ngIf="dash.name">
+        <tr *ngIf="project.name">
           <td class="vr">E-mail:</td>
-          <td>{{dash.email}}</td>
+          <td>{{project.email}}</td>
         </tr>
       </table>
       <!-- <p class="card-text">Some example text. Some example text.</p>

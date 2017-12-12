@@ -10,8 +10,8 @@ import { FormService } from '../../services/form.service';
 })
 export class DashboardComponent implements OnInit {
 
-  username = '';
-  email = '';
+  projects:any = [];
+  username;
 
   constructor(
     private authService: AuthService, private formService: FormService
@@ -83,9 +83,15 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.formService.showProjectForm = false;
     // Once component loads, get user's data to display on profile
-    // this.authService.getDashboard().subscribe(dashboard => {
-    //   this.dashboardData = dashboard;
-    // });
+    this.authService.getProfile().subscribe(profile => {
+      this.username = profile.user.username;
+      console.log(this.username);
+    });
+
+    this.authService.getDashboard().subscribe(dashboard => {
+      this.projects = dashboard.projects;
+      console.log(this.projects);
+    });
   }
 
   removeEntry(dash) {
