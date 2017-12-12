@@ -1,14 +1,33 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { AuthService } from './auth.service';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import * as firebase from 'firebase';
 import { FileUpload } from '../fileupload';
 
 @Injectable()
-export class UploadFileService {
-  domain = 'http://localhost:8000;';    // Development Domain - Not Needed in Production
+export class UploadFileService {   // Development Domain - Not Needed in Production
+  authToken;
+  options;
 
-  constructor(private db: AngularFireDatabase, private http: Http) { }
+  constructor(private db: AngularFireDatabase, private http: Http, private authService: AuthService) { }
+  
+    // Function to create headers, add token, to be used in HTTP requests
+    createAuthenticationHeaders() {
+      this.loadToken(); // Get token so it can be attached to headers
+      // Headers configuration options
+      this.options = new RequestOptions({
+        headers: new Headers({
+          'Content-Type': 'application/json', // Format set to JSON
+          'authorization': this.authToken // Attach token
+        })
+      });
+    }
+    
+      // Function to get token from client local storage
+      loadToken() {
+        this.authToken = localStorage.getItem('token'); // Get token and asssign to variable to be used elsewhere
+      }
 
   private basePath = '/uploads';
 
@@ -32,15 +51,17 @@ export class UploadFileService {
         console.log(uploadTask.snapshot);
         fileUpload.name = fileUpload.file.name;
         formData.fileUrl = fileUpload.url;
-        this.uploadFormdata(formData);
+        // const formResponse = this.uploadFormdata(formData);
+        // console.log(formResponse);
         this.saveFileData(fileUpload);
         formData.clear();
       }
     );
   }
 
-  private uploadFormdata(data) {
-    return this.http.post(this.domain + '/projects/newProject', data).map(res => res.json());
+  newProject(data) {
+    this.createAuthenticationHeaders(); // Create headers before sending to API
+    return this.http.post(this.authService.domain + '/projects/newProject', data, this.options).map(res => res.json());
   }
 
   private saveFileData(fileUpload: FileUpload) {

@@ -62,6 +62,8 @@ export class DealDescriptionComponent implements OnInit {
     }
 
     goToNext(form: any) {
+        this.formService.showDealForm = false;
+        this.formService.showResultForm = true;
         if (this.elem.nativeElement.querySelector('#selectFile').files[0]) {
             const fileSelected: File = this.elem.nativeElement.querySelector('#selectFile').files[0];
             this.formService.file = fileSelected.name;

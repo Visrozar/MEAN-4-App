@@ -72,12 +72,18 @@ export class AuthService {
     this.createAuthenticationHeaders(); // Create headers before sending to API
     return this.http.get(this.domain + '/authentication/dashboard', this.options).map(res => res.json());
   }
-  
-    // Function to get user's Profile data
-    getProfile() {
-      this.createAuthenticationHeaders(); // Create headers before sending to API
-      return this.http.get(this.domain + '/authentication/profile', this.options).map(res => res.json());
-    }
+
+  // Function to get user's Profile data
+  getProfile() {
+    this.createAuthenticationHeaders(); // Create headers before sending to API
+    return this.http.get(this.domain + '/authentication/profile', this.options).map(res => res.json());
+  }
+
+  // Function to delete a Project
+  deleteProject(id) {
+    this.createAuthenticationHeaders(); // Create headers before sending to API
+    return this.http.delete(this.domain + '/projects/deleteProject/' + id, this.options).map(res => res.json());
+  }
 
   // Function to check if user is logged in
   loggedIn() {

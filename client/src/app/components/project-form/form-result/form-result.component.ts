@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormData } from '../../../formData.model';
 import { FormService } from '../../../services/form.service';
+import { AuthService } from '../../../services/auth.service';
 import { Router } from '@angular/router';
 import { UploadFileService } from '../../../services/upload-file.service';
 import { FileUpload } from '../../../fileupload';
@@ -15,15 +16,31 @@ export class FormResultComponent implements OnInit {
   @Input() formData: FormData;
   isFormValid = false;
   selectedFiles: FileList;
+  profile;
   currentFileUpload: FileUpload;
   progress: { percentage: number } = { percentage: 0 };
+  username;
+  email;
 
-  constructor(private formService: FormService, private router: Router, private uploadService: UploadFileService) {
+  constructor(
+    private formService: FormService, 
+    private router: Router, 
+    private uploadService: UploadFileService, 
+    private authService: AuthService
+  ) {
   }
 
   ngOnInit() {
     this.formService.showThanks = false;
     this.formData = this.formService.getFormData();
+
+    // get profile data
+    this.authService.getProfile().subscribe(profile => {
+      this.username = profile.user.username;
+    });
+
+
+    
     this.isFormValid = this.formService.isFormValid();
   }
 
@@ -33,10 +50,20 @@ export class FormResultComponent implements OnInit {
   }
 
   submit() {
+
+    this.formData.createdBy = this.username;
+
     if (this.formService.file !== '') {
       this.currentFileUpload = new FileUpload(this.formService.fileData);
-      const isaac = this.uploadService.pushFileToStorage(this.currentFileUpload, this.progress, this.formData);
+      this.uploadService.pushFileToStorage(this.currentFileUpload, this.progress, this.formData);
     }
+    this.uploadService.newProject(this.formData).subscribe(data => {
+      if (!data.success) {
+        console.log(data.message); // Return error message
+      } else {
+        console.log(data.message); // Return success message
+      }
+    });
     this.formService.showThanks = true;
     this.formService.submited = true;
     this.isFormValid = false;

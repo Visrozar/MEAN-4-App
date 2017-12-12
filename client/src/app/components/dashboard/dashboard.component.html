@@ -15,9 +15,7 @@
           </a>
         </li>
         <li class="list-group-item">
-          <a [routerLink]="['/delete-project/', project._id]">
-            <button type="button" name="button" class="btn btn-sm btn-danger">Delete</button>
-          </a>
+            <button type="button" name="button" (click)="removeEntry(project._id)" class="btn btn-sm btn-danger">Delete</button>
         </li>
       </div>
       <!-- <button class="btn danger-btn text-right" (click)="removeEntry(project)">Delete</button> -->
@@ -46,6 +44,12 @@
 <div class="row text-center">
   <button type="button" class="btn btn-primary btn-outline-rounded" (click)="this.formService.showProjectForm = true;">
     Add Project
+  </button>
+</div>
+
+<div class="row text-center">
+  <button type="button" class="btn btn-primary btn-outline-rounded" (onModalClose)="getDashboard()">
+    Refresh
   </button>
 </div>
 

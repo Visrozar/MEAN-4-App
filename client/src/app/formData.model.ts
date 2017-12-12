@@ -17,6 +17,7 @@ export class FormData {
     programDescription: string = '';
     comments: string = '';
     fileUrl: string = '';
+    createdBy: string = '';
 
     clear() {
         this.name = '';
@@ -37,6 +38,7 @@ export class FormData {
         this.programDescription = '';
         this.comments = '';
         this.fileUrl = '';
+        this.createdBy = '';
     }
 }
 

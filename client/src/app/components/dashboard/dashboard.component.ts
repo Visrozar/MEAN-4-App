@@ -12,6 +12,7 @@ export class DashboardComponent implements OnInit {
 
   projects: any = [];
   username;
+  message;
 
   constructor(
     private authService: AuthService, private formService: FormService
@@ -87,14 +88,20 @@ export class DashboardComponent implements OnInit {
       this.username = profile.user.username;
     });
 
+    this.getDashboard();
+  }
+
+  getDashboard(){
     this.authService.getDashboard().subscribe(dashboard => {
       this.projects = dashboard.projects;
-      console.log(this.projects);
     });
   }
 
-  removeEntry(dash) {
-    this.projects.splice(this.projects.indexOf(dash), 1);
+  removeEntry(projectId) {
+    this.authService.deleteProject(projectId).subscribe(data => {
+        this.message = data.message;
+    });
+    this.getDashboard();
   }
 
   editEntry(dash){
