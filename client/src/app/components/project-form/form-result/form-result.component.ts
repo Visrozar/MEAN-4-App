@@ -18,40 +18,27 @@ export class FormResultComponent implements OnInit {
   currentFileUpload: FileUpload;
   progress: { percentage: number } = { percentage: 0 };
 
-  constructor(private FormService: FormService, private router: Router, private uploadService: UploadFileService) {
+  constructor(private formService: FormService, private router: Router, private uploadService: UploadFileService) {
   }
 
   ngOnInit() {
-    this.FormService.showThanks = false;
-    this.formData = this.FormService.getFormData();
-    this.isFormValid = this.FormService.isFormValid();
-    console.log('Result feature loaded!');
+    this.formService.showThanks = false;
+    this.formData = this.formService.getFormData();
+    this.isFormValid = this.formService.isFormValid();
   }
 
   goToPrevious(form: any) {
-    // Navigate to the Deal discription
-    // this.router.navigate(['/deal_discription']);
-    this.FormService.showDealForm = true;
-    this.FormService.showResultForm = false;
+    this.formService.showDealForm = true;
+    this.formService.showResultForm = false;
   }
 
   submit() {
-    // alert('Excellent Job!');
-    if (this.FormService.file !== '') {
-      // const file = this.selectedFiles.item(0);
-      this.currentFileUpload = new FileUpload(this.FormService.fileData);
+    if (this.formService.file !== '') {
+      this.currentFileUpload = new FileUpload(this.formService.fileData);
       const isaac = this.uploadService.pushFileToStorage(this.currentFileUpload, this.progress, this.formData);
-      // this.formData.fileUrl = this.fileUpload.url;
-      // this.FormService.upload(this.FormService.fileData, this.showFile).subscribe(success => {
-      //   console.log(success);
-      // },
-      //   error => {
-      //     console.log(error);
-      //   });
     }
-    this.FormService.showThanks = true;
-    this.FormService.submited = true;
-    // this.formData = this.FormService.resetFormData();
+    this.formService.showThanks = true;
+    this.formService.submited = true;
     this.isFormValid = false;
   }
 }

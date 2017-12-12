@@ -13,19 +13,17 @@ export class ContactPersonComponent implements OnInit {
     personal: Personal;
     form: any;
 
-    constructor(private router: Router, private FormService: FormService) {
-        this.FormService.getSelectData().subscribe((data) => {
+    constructor(private router: Router, private formService: FormService) {
+        this.formService.getSelectData().subscribe((data) => {
             this.roleList = data.role;
             this.roleList.unshift('');
-            console.log(this.roleList);
         });
     }
 
     roleList: any = [];
 
     ngOnInit() {
-        this.personal = this.FormService.getPersonal();
-        console.log('Personal feature loaded!');
+        this.personal = this.formService.getPersonal();
     }
 
     save(form: any): boolean {
@@ -33,16 +31,15 @@ export class ContactPersonComponent implements OnInit {
             return false;
         }
 
-        this.FormService.setPersonal(this.personal);
+        this.formService.setPersonal(this.personal);
         return true;
     }
 
     goToNext(form: any) {
         if (this.save(form)) {
             // Navigate to the work page
-            this.FormService.showContactForm = false;
-            this.FormService.showDealForm = true;
-                // this.router.navigate(['/deal_discription']);
+            this.formService.showContactForm = false;
+            this.formService.showDealForm = true;
         }
     }
 }

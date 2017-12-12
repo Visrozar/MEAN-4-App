@@ -17,8 +17,6 @@ export class ProjectFormComponent implements OnInit {
   ngOnInit() {
     this.formData = this.formService.getFormData();
     this.formService.showContactForm = true;
-    console.log(this.formData);
-    console.log(this.title + ' loaded!');
   }
 
   closeModal() {

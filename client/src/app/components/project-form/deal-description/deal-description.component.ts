@@ -14,8 +14,8 @@ export class DealDescriptionComponent implements OnInit {
     deal: Deal;
     form: any;
 
-    constructor(private router: Router, private FormService: FormService, private elem: ElementRef) {
-        this.FormService.getSelectData().subscribe((data) => {
+    constructor(private router: Router, private formService: FormService, private elem: ElementRef) {
+        this.formService.getSelectData().subscribe((data) => {
             this.sectorList = data.sector;
             this.sectorList.unshift('');
             this.indicationList = data.indication;
@@ -35,9 +35,8 @@ export class DealDescriptionComponent implements OnInit {
     hideIndication = false;
 
     ngOnInit() {
-        this.deal = this.FormService.getAddress();
-        console.log('Work feature loaded!');
-        this.FormService.file = '';
+        this.deal = this.formService.getAddress();
+        this.formService.file = '';
     }
 
     save(form: any): boolean {
@@ -45,7 +44,7 @@ export class DealDescriptionComponent implements OnInit {
             return false;
         }
 
-        this.FormService.setAddress(this.deal);
+        this.formService.setAddress(this.deal);
         return true;
     }
 
@@ -58,30 +57,22 @@ export class DealDescriptionComponent implements OnInit {
     }
 
     goToPrevious(form: any) {
-        // this.router.navigate(['/project_form']);
-        this.FormService.showDealForm = false;
-        this.FormService.showContactForm = true;
+        this.formService.showDealForm = false;
+        this.formService.showContactForm = true;
     }
 
     goToNext(form: any) {
         if (this.elem.nativeElement.querySelector('#selectFile').files[0]) {
             const fileSelected: File = this.elem.nativeElement.querySelector('#selectFile').files[0];
-            console.log(fileSelected);
-            // const _formData = new FormData();
-            // _formData.append('file', fileSelected, fileSelected.name);
-            this.FormService.file = fileSelected.name;
-            this.FormService.fileData = fileSelected;
-            // console.log(_formData);
+            this.formService.file = fileSelected.name;
+            this.formService.fileData = fileSelected;
         } else {
-            this.FormService.file = '';
-            this.FormService.fileData = '';
+            this.formService.file = '';
+            this.formService.fileData = '';
         }
 
         if (this.save(form)) {
-            // Navigate to the address page
-            // this.router.navigate(['/form_result']);
-            this.FormService.showDealForm = false;
-            this.FormService.showResultForm = true;
+            this.formService.showResultForm = true;
         }
     }
 }
