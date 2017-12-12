@@ -40,7 +40,7 @@ export class UploadFileService {
   }
 
   private uploadFormdata(data) {
-    return this.http.post(this.domain + '/project/addProject', data).map(res => res.json());
+    return this.http.post(this.domain + '/projects/newProject', data).map(res => res.json());
   }
 
   private saveFileData(fileUpload: FileUpload) {

@@ -93,4 +93,8 @@ export class DashboardComponent implements OnInit {
     this.dashboardData.splice(this.dashboardData.indexOf(dash), 1);
   }
 
+  editEntry(dash){
+    
+  }
+
 }

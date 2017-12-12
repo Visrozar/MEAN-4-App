@@ -6,14 +6,17 @@
 <div class="container">
   <div class="card" *ngFor="let dash of dashboardData">
     <div class="card-body">
+      <div class="row">
       <h4 class="card-title text-center">{{dash.dealName}}</h4>
-      <button class="btn danger-btn" (click)="removeEntry(dash)">Delete</button>
+      <button class="btn danger-btn text-right" (click)="removeEntry(dash)">Delete</button>
+      <button class="btn danger-btn text-right" (click)="editEntry(dash); this.formService.showProjectForm = true;">Edit</button>
+      </div>
       <table class="table">
         <tr *ngIf="dash.name">
           <td class="vr">Name:</td>
           <td>{{dash.name}}</td>
         </tr>
-        
+
         <tr *ngIf="dash.name">
           <td class="vr">Role:</td>
           <td>{{dash.role}}</td>
@@ -22,7 +25,7 @@
         <tr *ngIf="dash.name">
           <td class="vr">E-mail:</td>
           <td>{{dash.email}}</td>
-        </tr>  
+        </tr>
       </table>
       <!-- <p class="card-text">Some example text. Some example text.</p>
       <a href="#" class="card-link">Card link</a>
