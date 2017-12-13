@@ -11,7 +11,7 @@ export class UploadFileService {   // Development Domain - Not Needed in Product
   options;
 
   constructor(private db: AngularFireDatabase, private http: Http, private authService: AuthService) { }
-  
+
     // Function to create headers, add token, to be used in HTTP requests
     createAuthenticationHeaders() {
       this.loadToken(); // Get token so it can be attached to headers
@@ -23,7 +23,7 @@ export class UploadFileService {   // Development Domain - Not Needed in Product
         })
       });
     }
-    
+
       // Function to get token from client local storage
       loadToken() {
         this.authToken = localStorage.getItem('token'); // Get token and asssign to variable to be used elsewhere
@@ -48,12 +48,8 @@ export class UploadFileService {   // Development Domain - Not Needed in Product
       () => {
         // success
         fileUpload.url = uploadTask.snapshot.downloadURL;
-        console.log(uploadTask.snapshot);
         fileUpload.name = fileUpload.file.name;
         formData.fileUrl = fileUpload.url;
-        // const formResponse = this.uploadFormdata(formData);
-        // console.log(formResponse);
-        this.saveFileData(fileUpload);
         formData.clear();
       }
     );
@@ -62,6 +58,11 @@ export class UploadFileService {   // Development Domain - Not Needed in Product
   newProject(data) {
     this.createAuthenticationHeaders(); // Create headers before sending to API
     return this.http.post(this.authService.domain + '/projects/newProject', data, this.options).map(res => res.json());
+  }
+
+  editProject(data) {
+    this.createAuthenticationHeaders(); // Create headers before sending to API
+    return this.http.put(this.authService.domain + '/projects/editProject', data, this.options).map(res => res.json());
   }
 
   private saveFileData(fileUpload: FileUpload) {

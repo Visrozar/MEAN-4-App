@@ -19,6 +19,10 @@ export class FormService {
     public showResultForm = false;
     public submited = false;
     public showThanks = false;
+    public contact: any;
+    public deal: any;
+    public editClick = false;
+    public id: any;
 
     constructor(private workflowService: WorkflowService, public http: Http) {
     }
@@ -37,6 +41,7 @@ export class FormService {
     getPersonal(): Personal {
         // Return the Personal data
         var personal: Personal = {
+            _id: this.formData._id,
             name: this.formData.name,
             role: this.formData.role,
             organization: this.formData.organization,
@@ -50,6 +55,7 @@ export class FormService {
     setPersonal(data: Personal) {
         // Update the Personal data only when the Personal Form had been validated successfully
         this.isPersonalFormValid = true;
+        this.formData._id = data._id;
         this.formData.name = data.name;
         this.formData.role = data.role;
         this.formData.organization = data.organization;

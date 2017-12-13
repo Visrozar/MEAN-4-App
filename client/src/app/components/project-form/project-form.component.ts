@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormService } from '../../services/form.service';
 import { FormData } from '../../formData.model';
 declare var $: any;
@@ -9,11 +10,9 @@ declare var $: any;
   styleUrls: ['./project-form.component.scss']
 })
 export class ProjectFormComponent implements OnInit {
-  title = 'Multi-Step Wizard';
   @Input() formData;
-  @Output() onModalClose: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(private formService: FormService) { }
+  constructor(private formService: FormService, private router: Router) { }
 
   ngOnInit() {
     this.formData = this.formService.getFormData();
@@ -21,7 +20,10 @@ export class ProjectFormComponent implements OnInit {
   }
 
   closeModal() {
-    this.formService.showProjectForm = false;
+    this.formService.editClick = false;
+    this.formService.resetFormData();
+    this.router.navigate(['/dashboard']);
+    // this.formService.showProjectForm = false;
     if (this.formService.submited === true) {
       for (var i = 0; i < document.getElementsByTagName('form').length; i++) {
         document.getElementsByTagName('form')[i].reset();
@@ -31,7 +33,6 @@ export class ProjectFormComponent implements OnInit {
       this.formService.showResultForm = false;
       this.formService.submited = false;
       this.formService.showThanks = false;
-      this.onModalClose.emit();
     }
   }
 

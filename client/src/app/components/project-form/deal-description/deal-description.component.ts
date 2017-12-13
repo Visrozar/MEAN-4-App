@@ -35,7 +35,11 @@ export class DealDescriptionComponent implements OnInit {
     hideIndication = false;
 
     ngOnInit() {
-        this.deal = this.formService.getAddress();
+        if (this.formService.editClick === true) {
+            this.deal = this.formService.deal;
+        } else {
+            this.deal = this.formService.getAddress();
+        }
         this.formService.file = '';
     }
 

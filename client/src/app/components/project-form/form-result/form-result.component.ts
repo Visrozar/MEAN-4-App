@@ -23,9 +23,9 @@ export class FormResultComponent implements OnInit {
   email;
 
   constructor(
-    private formService: FormService, 
-    private router: Router, 
-    private uploadService: UploadFileService, 
+    private formService: FormService,
+    private router: Router,
+    private uploadService: UploadFileService,
     private authService: AuthService
   ) {
   }
@@ -33,14 +33,14 @@ export class FormResultComponent implements OnInit {
   ngOnInit() {
     this.formService.showThanks = false;
     this.formData = this.formService.getFormData();
+    if (this.formService.editClick === true) {
+      this.formData._id = this.formService.contact._id;
+    }
 
     // get profile data
     this.authService.getProfile().subscribe(profile => {
       this.username = profile.user.username;
     });
-
-
-    
     this.isFormValid = this.formService.isFormValid();
   }
 
@@ -57,13 +57,24 @@ export class FormResultComponent implements OnInit {
       this.currentFileUpload = new FileUpload(this.formService.fileData);
       this.uploadService.pushFileToStorage(this.currentFileUpload, this.progress, this.formData);
     }
-    this.uploadService.newProject(this.formData).subscribe(data => {
-      if (!data.success) {
-        console.log(data.message); // Return error message
-      } else {
-        console.log(data.message); // Return success message
-      }
-    });
+    if (this.formService.editClick === true) {
+      this.formData._id = this.formService.id;
+      this.uploadService.editProject(this.formData).subscribe(data => {
+        if (!data.success) {
+          console.log(data.message); // Return error message
+        } else {
+          console.log(data.message); // Return success message
+        }
+      });
+    } else {
+      this.uploadService.newProject(this.formData).subscribe(data => {
+        if (!data.success) {
+          console.log(data.message); // Return error message
+        } else {
+          console.log(data.message); // Return success message
+        }
+      });
+    }
     this.formService.showThanks = true;
     this.formService.submited = true;
     this.isFormValid = false;

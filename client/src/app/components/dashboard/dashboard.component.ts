@@ -9,7 +9,6 @@ import { FormService } from '../../services/form.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
   projects: any = [];
   username;
   message;
@@ -18,72 +17,7 @@ export class DashboardComponent implements OnInit {
     private authService: AuthService, private formService: FormService
   ) { }
 
-  // dashboardData: any = [
-  //   {
-  //     'name': 'Isaac',
-  //     'role': 'Founder',
-  //     'organization': 'Izac',
-  //     'telephone': '123456789',
-  //     'email': 'isaac@isaac.com',
-  //     'website': '',
-  //     'work': '',
-  //     'dealName': 'Isaacs dynamic deal',
-  //     'location': 'Isaacnation',
-  //     'sector': 'Agro',
-  //     'indication': '',
-  //     'stageLead': '',
-  //     'financing': '',
-  //     'investment': '',
-  //     'techonology': '',
-  //     'programDescription': '',
-  //     'comments': '',
-  //     'fileUrl': ''
-  //   },
-  //   {
-  //     'name': 'Elvish',
-  //     'role': 'Advisor',
-  //     'organization': 'Elven works',
-  //     'telephone': '',
-  //     'email': 'elvis@eleven.com',
-  //     'website': '',
-  //     'work': '',
-  //     'dealName': 'Elvis Elvis',
-  //     'location': 'Elven Kingdom',
-  //     'sector': 'Health tech',
-  //     'indication': '',
-  //     'stageLead': '',
-  //     'financing': '',
-  //     'investment': '',
-  //     'techonology': '',
-  //     'programDescription': '',
-  //     'comments': '',
-  //     'fileUrl': ''
-  //   },
-  //   {
-  //     'name': 'Niven',
-  //     'role': 'Placement agent',
-  //     'organization': 'Nadar Nofear Syndicate',
-  //     'telephone': '',
-  //     'email': 'nitesh@navin.com',
-  //     'website': '',
-  //     'work': '',
-  //     'dealName': 'Nilesh murder agreement',
-  //     'location': 'sector-17, vashi',
-  //     'sector': 'Medical devices',
-  //     'indication': '',
-  //     'stageLead': '',
-  //     'financing': '',
-  //     'investment': '',
-  //     'techonology': '',
-  //     'programDescription': '',
-  //     'comments': '',
-  //     'fileUrl': ''
-  //   }
-  // ];
-
   ngOnInit() {
-    this.formService.showProjectForm = false;
-    // Once component loads, get user's data to display on profile
     this.authService.getProfile().subscribe(profile => {
       this.username = profile.user.username;
     });
@@ -91,7 +25,7 @@ export class DashboardComponent implements OnInit {
     this.getDashboard();
   }
 
-  getDashboard(){
+  getDashboard() {
     this.authService.getDashboard().subscribe(dashboard => {
       this.projects = dashboard.projects;
     });
@@ -99,13 +33,28 @@ export class DashboardComponent implements OnInit {
 
   removeEntry(projectId) {
     this.authService.deleteProject(projectId).subscribe(data => {
-        this.message = data.message;
+      this.message = data.message;
     });
     this.getDashboard();
   }
 
-  editEntry(dash){
-    
+  editEntry(dash) {
+    this.formService.editClick = true;
+    this.formService.id = dash._id;
+    const picked = (({ _id, name, role, organization, telephone, email, website }) =>
+      ({ name, role, organization, telephone, email, website }))(dash);
+    this.formService.contact = picked;
+
+    const picked1 = (({ dealName, location, sector, indication, stageLead, financing, investment,
+      techonology, programDescription, comments }) =>
+      ({
+        dealName, location, sector, indication, stageLead, financing, investment,
+        techonology, programDescription, comments
+      }))(dash);
+    this.formService.deal = picked1;
+  }
+
+  clearModel() {
   }
 
 }

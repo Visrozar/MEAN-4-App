@@ -1,25 +1,19 @@
 <h2 class="page-header text-center">Dashboard</h2>
-<!-- <ul class="list-group">
-  <li class="list-group-item">Username: {{ username }}</li>
-  <li class="list-group-item">Email: {{ email }}</li>
-</ul> -->
 <div class="container">
   <div class="card" *ngFor="let project of projects">
     <div class="card-body">
       <div class="row">
-      <h4 class="card-title text-center">{{project.dealName}}</h4>
-      <div *ngIf="username === project.createdBy">
-        <li class="list-group-item">
-          <a [routerLink]="['/edit-project/', project._id]">
-            <button type="button" name="button" class="btn btn-sm btn-info">Edit</button>
-          </a>
-        </li>
-        <li class="list-group-item">
+        <h4 class="card-title text-center">{{project.dealName}}</h4>
+        <div *ngIf="username === project.createdBy">
+          <li class="list-group-item">
+            <a routerLink="/project_form">
+              <button type="button" name="button" (click)="editEntry(project);" class="btn btn-sm btn-info">Edit</button>
+            </a>
+          </li>
+          <li class="list-group-item">
             <button type="button" name="button" (click)="removeEntry(project._id)" class="btn btn-sm btn-danger">Delete</button>
-        </li>
-      </div>
-      <!-- <button class="btn danger-btn text-right" (click)="removeEntry(project)">Delete</button> -->
-      <!-- <button class="btn danger-btn text-right" (click)="editEntry(project); this.formService.showProjectForm = true;">Edit</button> -->
+          </li>
+        </div>
       </div>
       <table class="table">
         <tr *ngIf="project.name">
@@ -42,15 +36,9 @@
 </div>
 
 <div class="row text-center">
-  <button type="button" class="btn btn-primary btn-outline-rounded" (click)="this.formService.showProjectForm = true;">
-    Add Project
-  </button>
+  <a routerLink="/project_form">
+    <button type="button" class="btn btn-primary btn-outline-rounded" (click)="clearModel">
+      Add Project
+    </button>
+  </a>
 </div>
-
-<div class="row text-center">
-  <button type="button" class="btn btn-primary btn-outline-rounded" (onModalClose)="getDashboard()">
-    Refresh
-  </button>
-</div>
-
-<app-project-form [hidden]="!this.formService.showProjectForm"></app-project-form>

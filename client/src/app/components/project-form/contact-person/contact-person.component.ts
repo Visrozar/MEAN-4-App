@@ -23,7 +23,11 @@ export class ContactPersonComponent implements OnInit {
     roleList: any = [];
 
     ngOnInit() {
-        this.personal = this.formService.getPersonal();
+        if (this.formService.editClick === true) {
+            this.personal = this.formService.contact;
+        } else {
+            this.personal = this.formService.getPersonal();
+        }
     }
 
     save(form: any): boolean {

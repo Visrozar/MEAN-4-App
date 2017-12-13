@@ -16,6 +16,10 @@ import { NotAuthGuard } from './guards/notAuth.guard';
 
 const appRoutes: Routes = [
   {
+    path: 'project_form',
+    component: ProjectFormComponent
+  },
+  {
     path: 'home',
     component: HomeComponent
   },

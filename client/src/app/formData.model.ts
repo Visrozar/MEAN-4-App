@@ -1,4 +1,5 @@
 export class FormData {
+    _id: number;
     name: string = '';
     role: string = '';
     organization: string = '';
@@ -20,6 +21,7 @@ export class FormData {
     createdBy: string = '';
 
     clear() {
+        delete this._id;
         this.name = '';
         this.organization = '';
         delete this.telephone;
@@ -43,6 +45,7 @@ export class FormData {
 }
 
 export class Personal {
+    _id: number;
     name: string = '';
     role: string = '';
     organization: string = '';
