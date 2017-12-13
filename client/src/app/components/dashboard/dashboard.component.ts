@@ -11,6 +11,7 @@ import { FormService } from '../../services/form.service';
 export class DashboardComponent implements OnInit {
   projects: any = [];
   username;
+  role;
   message;
 
   constructor(
@@ -20,6 +21,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.authService.getProfile().subscribe(profile => {
       this.username = profile.user.username;
+      this.role = profile.user.role;
     });
 
     this.getDashboard();

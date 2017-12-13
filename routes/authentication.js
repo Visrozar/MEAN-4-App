@@ -191,7 +191,7 @@ module.exports = (router) => {
   =============================================================== */
   router.get('/profile', (req, res) => {
     // Search for user in database
-    User.findOne({ _id: req.decoded.userId }).select('username email').exec((err, user) => {
+    User.findOne({ _id: req.decoded.userId }).select('username email role').exec((err, user) => {
       // Check if error connecting
       if (err) {
         res.json({ success: false, message: err }); // Return error

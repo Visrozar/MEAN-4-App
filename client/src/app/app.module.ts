@@ -29,6 +29,7 @@ import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AuthGuard } from './guards/auth.guard';
 import { NotAuthGuard } from './guards/notAuth.guard';
+import { ProjectDetailComponent } from './components/project-detail/project-detail.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { NotAuthGuard } from './guards/notAuth.guard';
     DealDescriptionComponent,
     FormResultComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    ProjectDetailComponent
   ],
   imports: [
     BrowserModule,
