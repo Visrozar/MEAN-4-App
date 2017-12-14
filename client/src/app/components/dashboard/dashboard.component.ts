@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { FormService } from '../../services/form.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,12 +11,13 @@ import { FormService } from '../../services/form.service';
 })
 export class DashboardComponent implements OnInit {
   projects: any = [];
+  style = 'glyphicon-heart-empty';
   username;
   role;
   message;
 
   constructor(
-    private authService: AuthService, private formService: FormService
+    private authService: AuthService, private formService: FormService, private router: Router
   ) { }
 
   ngOnInit() {
@@ -30,6 +32,7 @@ export class DashboardComponent implements OnInit {
   getDashboard() {
     this.authService.getDashboard().subscribe(dashboard => {
       this.projects = dashboard.projects;
+      console.log(this.projects);
     });
   }
 
@@ -56,7 +59,13 @@ export class DashboardComponent implements OnInit {
     this.formService.deal = picked1;
   }
 
-  clearModel() {
+  viewEntry(dash) {
+    this.formService.detailData = dash;
+    this.router.navigate(['/project_details']);
+  }
+
+  changeStyle($event) {
+    this.style = $event.type === 'mouseover' ? 'glyphicon-heart' : 'glyphicon-heart-empty';
   }
 
 }

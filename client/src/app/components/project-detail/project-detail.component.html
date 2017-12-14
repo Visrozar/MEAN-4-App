@@ -1,3 +1,165 @@
-<p>
-  project-detail works!
-</p>
+<h2 class="page-header text-center">{{this.projectDetail.dealName}}</h2>
+<div class='row'>
+    <div class='col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-8 col-md-offset-4 col-md-8'>
+        <div class="row">
+            <div class='col-xs-3 col-sm-2'>
+                <div class="form-group">
+                    <label class="control-label" for="name">Name: </label>
+                </div>
+            </div>
+            <div class='col-xs-9 col-sm-10'>
+                {{this.projectDetail.name}}
+            </div>
+        </div>
+        <div class="row">
+            <div class='col-xs-3 col-sm-2'>
+                <div class="form-group">
+                    <label class="control-label" for="name">Role: </label>
+                </div>
+            </div>
+            <div class='col-xs-9 col-sm-10'>
+                {{this.projectDetail.role}}
+            </div>
+        </div>
+        <div *ngIf="this.projectDetail.organization" class="row">
+            <div class='col-xs-3 col-sm-2'>
+                <div class="form-group">
+                    <label class="control-label" for="name">Organization: </label>
+                </div>
+            </div>
+            <div class='col-xs-9 col-sm-10'>
+                {{this.projectDetail.organization}}
+            </div>
+        </div>
+        <div *ngIf="this.projectDetail.telephone" class="row">
+            <div class='col-xs-3 col-sm-2'>
+                <div class="form-group">
+                    <label class="control-label" for="name">Telephone: </label>
+                </div>
+            </div>
+            <div class='col-xs-9 col-sm-10'>
+                {{this.projectDetail.telephone}}
+            </div>
+        </div>
+        <div *ngIf="this.projectDetail.website" class="row">
+            <div class='col-xs-3 col-sm-2'>
+                <div class="form-group">
+                    <label class="control-label" for="name">Website: </label>
+                </div>
+            </div>
+            <div class='col-xs-9 col-sm-10'>
+                {{this.projectDetail.website}}
+            </div>
+        </div>
+        <div class="row">
+            <div class='col-xs-3 col-sm-2'>
+                <div class="form-group">
+                    <label class="control-label" for="email">Email: </label>
+                </div>
+            </div>
+            <div class='col-xs-9 col-sm-10'>
+                {{this.projectDetail.email}}
+            </div>
+        </div>
+        <div class="row">
+            <div class='col-xs-3 col-sm-2'>
+                <div class="form-group">
+                    <label class="control-label" for="email">Location: </label>
+                </div>
+            </div>
+            <div class='col-xs-9 col-sm-10'>
+                {{this.projectDetail.location}}
+            </div>
+        </div>
+        <div class="row">
+            <div class='col-xs-3 col-sm-2'>
+                <div class="form-group">
+                    <label class="control-label" for="email">Sector: </label>
+                </div>
+            </div>
+            <div class='col-xs-9 col-sm-10'>
+                {{this.projectDetail.sector}}
+            </div>
+        </div>
+        <div *ngIf="this.projectDetail.indication" class="row">
+            <div class='col-xs-3 col-sm-2'>
+                <div class="form-group">
+                    <label class="control-label" for="name">Indication: </label>
+                </div>
+            </div>
+            <div class='col-xs-9 col-sm-10'>
+                {{this.projectDetail.indication}}
+            </div>
+        </div>
+        <div *ngIf="this.projectDetail.stageLead" class="row">
+            <div class='col-xs-3 col-sm-2'>
+                <div class="form-group">
+                    <label class="control-label" for="name">Stage of lead program: </label>
+                </div>
+            </div>
+            <div class='col-xs-9 col-sm-10'>
+                {{this.projectDetail.stageLead}}
+            </div>
+        </div>
+        <div *ngIf="this.projectDetail.financing" class="row">
+            <div class='col-xs-3 col-sm-2'>
+                <div class="form-group">
+                    <label class="control-label" for="name">Financing round: </label>
+                </div>
+            </div>
+            <div class='col-xs-9 col-sm-10'>
+                {{this.projectDetail.financing}}
+            </div>
+        </div>
+        <div *ngIf="this.projectDetail.investment" class="row">
+            <div class='col-xs-3 col-sm-2'>
+                <div class="form-group">
+                    <label class="control-label" for="name">Investment amount: </label>
+                </div>
+            </div>
+            <div class='col-xs-9 col-sm-10'>
+                {{this.projectDetail.investment}}
+            </div>
+        </div>
+        <div *ngIf="this.projectDetail.techonology" class="row">
+            <div class='col-xs-3 col-sm-2'>
+                <div class="form-group">
+                    <label class="control-label" for="name">Technology Description: </label>
+                </div>
+            </div>
+            <div class='col-xs-9 col-sm-10'>
+                {{this.projectDetail.techonology}}
+            </div>
+        </div>
+        <div *ngIf="this.projectDetail.techonology" class="row">
+            <div class='col-xs-3 col-sm-2'>
+                <div class="form-group">
+                    <label class="control-label" for="name">Lead program description: </label>
+                </div>
+            </div>
+            <div class='col-xs-9 col-sm-10'>
+                {{this.projectDetail.programDescription}}
+            </div>
+        </div>
+        <div *ngIf="this.projectDetail.comments" class="row">
+            <div class='col-xs-3 col-sm-2'>
+                <div class="form-group">
+                    <label class="control-label" for="name">Other comments: </label>
+                </div>
+            </div>
+            <div class='col-xs-9 col-sm-10'>
+                {{this.projectDetail.comments}}
+            </div>
+        </div>
+        <div *ngIf="this.formService.file" class="row">
+            <div class='col-xs-3 col-sm-2'>
+                <div class="form-group">
+                    <label class="control-label" for="name">File to upload: </label>
+                </div>
+            </div>
+            <div class='col-xs-9 col-sm-10'>
+                {{this.formService.file}}
+            </div>
+        </div>
+    </div>
+</div>

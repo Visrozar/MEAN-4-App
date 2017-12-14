@@ -23,6 +23,7 @@ export class FormService {
     public deal: any;
     public editClick = false;
     public id: any;
+    public detailData: any;
 
     constructor(private workflowService: WorkflowService, public http: Http) {
     }
