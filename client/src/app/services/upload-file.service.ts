@@ -50,6 +50,7 @@ export class UploadFileService {   // Development Domain - Not Needed in Product
         fileUpload.url = uploadTask.snapshot.downloadURL;
         fileUpload.name = fileUpload.file.name;
         formData.fileUrl = fileUpload.url;
+        formData.fileName = fileUpload.name;
         formData.clear();
       }
     );

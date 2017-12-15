@@ -1,13 +1,13 @@
 <h2 class="page-header text-center">Dashboard</h2>
 <div class="container">
   <div class="card" *ngFor="let project of projects">
-    <div class="card-body" (click)="viewEntry(project);">
-      <div class="row">
+    <div class="card-body">
+      <div class="row" style="cursor: pointer;" (click)="viewEntry(project);">
         <h4 class="card-title text-center">{{project.dealName}}</h4>
       </div>
       <div class='col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8'>
-        <div class="row">
-          <div class="col-xs-3 text-center padd" *ngIf="username === project.createdBy">
+        <div class="row" *ngIf="username === project.createdBy">
+          <div class="col-xs-3 text-center padd">
             <a routerLink="/project_form">
               <button type="button" name="button" (click)="editEntry(project);" class="btn btn-sm btn-info">Edit</button>
             </a>
@@ -17,17 +17,26 @@
 
           </div>
           <div class="col-xs-3 text-center padd">
-            <div class="glyphicon glyphicon-heart-empty" >
-                <span class="views">{{project.likes}}</span>
+            <div class="glyphicon glyphicon-thumbs-up">
+              <span class="views">{{project.likes}}</span>
             </div>
-
           </div>
-          <div class="col-xs-3 glyphicon glyphicon-eye-open padd">
+          <div class="col-xs-3 glyphicon glyphicon-eye-open padd text-center">
+            <span class="views">{{project.views}}</span>
+          </div>
+        </div>
+        <div class="row" *ngIf="username !== project.createdBy">
+          <div class="col-xs-6 text-center padd">
+            <div class="glyphicon glyphicon-heart-empty">
+              <span class="views">{{project.likes}}</span>
+            </div>
+          </div>
+          <div class="col-xs-6 glyphicon glyphicon-eye-open padd text-center">
             <span class="views">{{project.views}}</span>
           </div>
         </div>
       </div>
-      <table class="table">
+      <table class="table" (click)="viewEntry(project);" style="cursor: pointer;">
         <tr *ngIf="project.name">
           <td class="vr">Name:</td>
           <td>{{project.name}}</td>

@@ -18,6 +18,7 @@ export class FormData {
     programDescription: string = '';
     comments: string = '';
     fileUrl: string = '';
+    fileName: string = '';
     createdBy: string = '';
 
     clear() {
@@ -40,6 +41,7 @@ export class FormData {
         this.programDescription = '';
         this.comments = '';
         this.fileUrl = '';
+        this.fileName = '';
         this.createdBy = '';
     }
 }

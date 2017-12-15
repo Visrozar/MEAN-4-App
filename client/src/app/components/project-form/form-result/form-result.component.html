@@ -1,4 +1,4 @@
-<div [hidden]="this.formService.showThanks" class="tab-pane fade in active">
+<div [hidden]="this.formService.showThanks || this.showError" class="tab-pane fade in active">
     <h4 class="page-header text-center">Here is a copy of the information you have entered:</h4>
     <div class='row'>
         <div class='col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-8 col-md-offset-4 col-md-8'>
@@ -178,8 +178,6 @@
         <button type="button" class="btn btn-outline-rounded btn-primary" (click)="goToPrevious(isFormValid)">
             <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span> Deal Discripton</button>
         <button class="btn btn-success btn-outline-rounded" (click)="submit()"> Submit</button>
-        <!-- <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span> -->
-        <!-- </button> -->
     </div>
 </div>
 <div [hidden]="!this.formService.showThanks">
@@ -187,4 +185,13 @@
         <h4 class="text-center thank">Thank you for submitting your investment opportunity. The deal will be reviewed shortly and you will be notified
             when the deal is added to our deal flow.</h4>
     </div>
+</div>
+
+<div [hidden]="!this.showError">
+    <div class='row text-center thanks'>
+        <h4 class="text-center thank">Oops something was not right, try resubmitting with proper details.</h4>
+    </div>
+    <button type="button" class="btn btn-outline-rounded btn-primary" (click)="goToStart()">
+        <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span>Go back
+    </button>
 </div>

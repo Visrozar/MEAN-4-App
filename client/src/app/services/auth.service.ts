@@ -42,6 +42,11 @@ export class AuthService {
     return this.http.get(this.domain + '/authentication/checkUsername/' + username.toLowerCase()).map(res => res.json());
   }
 
+   // Function to check if dealname is taken
+   checkDealname(dealname) {
+    return this.http.get(this.domain + '/authentication/checkDealname/' + dealname.toLowerCase()).map(res => res.json());
+  }
+
   // Function to check if e-mail is taken
   checkEmail(email) {
     return this.http.get(this.domain + '/authentication/checkEmail/' + email.toLowerCase()).map(res => res.json());

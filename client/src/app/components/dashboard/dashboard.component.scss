@@ -47,7 +47,6 @@
 }
 
 .card-body {
-  cursor: pointer;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   padding: 1.25rem;
@@ -80,12 +79,18 @@ h4 {
 
 
 .glyphicon-heart-empty {
+  cursor: pointer;
   font-size: 20px;
   color: cornflowerblue;
 }
 
 .glyphicon-heart-empty:hover:before {
   content: "\e005";
+}
+
+.glyphicon-thumbs-up{
+  font-size: 20px;
+  color: cornflowerblue;
 }
 
 .glyphicon-eye-open {
@@ -98,6 +103,7 @@ h4 {
 }
 
 .glyphicon-heart {
+  cursor: pointer;
   font-size: 20px;
   color: cornflowerblue;
 }

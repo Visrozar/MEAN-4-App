@@ -21,6 +21,7 @@ export class FormResultComponent implements OnInit {
   progress: { percentage: number } = { percentage: 0 };
   username;
   email;
+  showError = false;
 
   constructor(
     private formService: FormService,
@@ -49,6 +50,14 @@ export class FormResultComponent implements OnInit {
     this.formService.showResultForm = false;
   }
 
+  goToStart() {
+    this.formService.showContactForm = true;
+    this.formService.showDealForm = false;
+    this.formService.showResultForm = false;
+    this.showError = false;
+    this.formService.showThanks = false;
+  }
+
   submit() {
 
     this.formData.createdBy = this.username;
@@ -61,21 +70,26 @@ export class FormResultComponent implements OnInit {
       this.formData._id = this.formService.id;
       this.uploadService.editProject(this.formData).subscribe(data => {
         if (!data.success) {
+          this.formService.showThanks = false;
+          this.showError = true;
           console.log(data.message); // Return error message
         } else {
+          this.formService.showThanks = true;
           console.log(data.message); // Return success message
         }
       });
     } else {
-      this.uploadService.newProject(this.formData).subscribe(data => {
-        if (!data.success) {
-          console.log(data.message); // Return error message
-        } else {
-          console.log(data.message); // Return success message
-        }
-      });
+      // this.uploadService.newProject(this.formData).subscribe(data => {
+      //   if (!data.success) {
+      //     this.formService.showThanks = false;
+      //     this.showError = true;
+      //     console.log(data.message); // Return error message
+      //   } else {
+      //     this.formService.showThanks = true;
+      //     console.log(data.message); // Return success message
+      //   }
+      // });
     }
-    this.formService.showThanks = true;
     this.formService.submited = true;
     this.isFormValid = false;
   }

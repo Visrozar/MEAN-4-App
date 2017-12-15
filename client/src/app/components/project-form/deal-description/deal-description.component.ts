@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { Deal } from '../../../formData.model';
 import { FormService } from '../../../services/form.service';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
     selector: 'app-deal-description',
@@ -14,7 +15,7 @@ export class DealDescriptionComponent implements OnInit {
     deal: Deal;
     form: any;
 
-    constructor(private router: Router, private formService: FormService, private elem: ElementRef) {
+    constructor(private router: Router, private formService: FormService, private elem: ElementRef, private authService: AuthService) {
         this.formService.getSelectData().subscribe((data) => {
             this.sectorList = data.sector;
             this.sectorList.unshift('');
@@ -33,6 +34,7 @@ export class DealDescriptionComponent implements OnInit {
     financingList: any = [];
     fileSelected: any;
     hideIndication = false;
+    showAlready = false;
 
     ngOnInit() {
         if (this.formService.editClick === true) {
@@ -80,5 +82,17 @@ export class DealDescriptionComponent implements OnInit {
         if (this.save(form)) {
             this.formService.showResultForm = true;
         }
+    }
+
+    checkDealName(test) {
+        // Function from authentication file to check if username is taken
+        this.authService.checkDealname(test.toString()).subscribe(data => {
+            // Check if success true or success false was returned from API
+            if (!data.success) {
+                // this.showAlready = true;
+            } else {
+
+            }
+        });
     }
 }
