@@ -24,6 +24,9 @@ export class FormService {
     public editClick = false;
     public id: any;
     public detailData: any;
+    public showError = false;
+    public fileName;
+    public fileUrl;
 
     constructor(private workflowService: WorkflowService, public http: Http) {
     }

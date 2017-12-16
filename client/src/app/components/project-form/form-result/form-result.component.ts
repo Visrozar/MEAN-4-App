@@ -79,16 +79,19 @@ export class FormResultComponent implements OnInit {
         }
       });
     } else {
-      // this.uploadService.newProject(this.formData).subscribe(data => {
-      //   if (!data.success) {
-      //     this.formService.showThanks = false;
-      //     this.showError = true;
-      //     console.log(data.message); // Return error message
-      //   } else {
-      //     this.formService.showThanks = true;
-      //     console.log(data.message); // Return success message
-      //   }
-      // });
+      this.formData.fileName = this.formService.fileName;
+      this.formData.fileUrl = this.formService.fileUrl;
+      console.log(this.formService.fileName, this.formService.fileUrl);
+      this.uploadService.newProject(this.formData).subscribe(data => {
+        if (!data.success) {
+          this.formService.showThanks = false;
+          this.showError = true;
+          console.log(data.message); // Return error message
+        } else {
+          this.formService.showThanks = true;
+          console.log(data.message); // Return success message
+        }
+      });
     }
     this.formService.submited = true;
     this.isFormValid = false;
