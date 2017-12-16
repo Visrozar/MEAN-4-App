@@ -24,7 +24,7 @@ export class ProjectFormComponent implements OnInit {
     this.formService.resetFormData();
     this.router.navigate(['/dashboard']);
     if (this.formService.submited === true) {
-      for (var i = 0; i < document.getElementsByTagName('form').length; i++) {
+      for (let i = 0; i < document.getElementsByTagName('form').length; i++) {
         document.getElementsByTagName('form')[i].reset();
       }
     }
