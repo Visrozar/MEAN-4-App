@@ -23,19 +23,6 @@ export class ProjectDetailComponent implements OnInit {
       this.username = profile.user.username;
       this.role = profile.user.role;
     });
-
-    if (this.username !== this.formService.detailData.createdBy) {
-    this.formService.detailData.views = this.formService.detailData.views++;
-    }
-
-    this.uploadService.editProject(this.formService.detailData).subscribe(data => {
-      if (!data.success) {
-        console.log(data.message); // Return error message
-      } else {
-        console.log(data.message); // Return success message
-      }
-    });
-    console.log(this.formService.detailData);
     this.projectDetail = this.formService.detailData;
   }
 

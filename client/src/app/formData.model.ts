@@ -20,6 +20,9 @@ export class FormData {
     fileUrl: string = '';
     fileName: string = '';
     createdBy: string = '';
+    views: number = null;
+    likedBy: any = [];
+    viewedBy: any = [];
 
     clear() {
         delete this._id;
@@ -43,6 +46,9 @@ export class FormData {
         this.fileUrl = '';
         this.fileName = '';
         this.createdBy = '';
+        delete this.views;
+        this.likedBy = [];
+        this.viewedBy = [];
     }
 }
 

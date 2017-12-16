@@ -45,6 +45,7 @@ module.exports = (router) => {
                                         programDescription: req.body.programDescription,
                                         comments: req.body.comments,
                                         fileUrl: req.body.fileUrl,
+                                        fileName: req.body.fileName,
                                         createdBy: req.body.createdBy
                                     });
                                     project.save((err) => {
@@ -85,7 +86,7 @@ module.exports = (router) => {
                                 if (!user) {
                                     res.json({ success: false, message: 'Unable to authenticate user' });
                                 } else {
-                                    if (user.username !== project.createdBy) {
+                                    if (user.username !== project.createdBy && project.likeClick === false) {
                                         res.json({ success: false, message: 'You are not authorized to edit this project' });
                                     } else {
                                         project.name = req.body.name;
@@ -106,6 +107,9 @@ module.exports = (router) => {
                                         project.programDescription = req.body.programDescription;
                                         project.comments = req.body.comments;
                                         project.fileUrl = req.body.fileUrl;
+                                        project.fileName = req.body.fileName;
+                                        project.likedBy = req.body.likedBy;
+                                        project.views = req.body.views;
                                         project.save((err) => {
                                             if (err) {
                                                 if (err.errors) {

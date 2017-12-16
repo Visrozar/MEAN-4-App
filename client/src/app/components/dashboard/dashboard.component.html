@@ -18,7 +18,7 @@
           </div>
           <div class="col-xs-3 text-center padd">
             <div class="glyphicon glyphicon-thumbs-up">
-              <span class="views">{{project.likes}}</span>
+              <span class="views">{{project.likedBy.length}}</span>
             </div>
           </div>
           <div class="col-xs-3 glyphicon glyphicon-eye-open padd text-center">
@@ -27,8 +27,11 @@
         </div>
         <div class="row" *ngIf="username !== project.createdBy">
           <div class="col-xs-6 text-center padd">
-            <div class="glyphicon glyphicon-heart-empty">
-              <span class="views">{{project.likes}}</span>
+            <div *ngIf="!project.likedBy.includes(username);" class="glyphicon glyphicon-heart-empty" (click)="addToLiked(project);">
+              <span class="views">{{project.likedBy.length}}</span>
+            </div>
+            <div *ngIf="project.likedBy.includes(username);" class="glyphicon glyphicon-heart" (click)="addToLiked(project);">
+              <span class="views">{{project.likedBy.length}}</span>
             </div>
           </div>
           <div class="col-xs-6 glyphicon glyphicon-eye-open padd text-center">
