@@ -62,12 +62,10 @@ export class FormResultComponent implements OnInit {
 
     this.formData.createdBy = this.username;
 
-    if (this.formService.file !== '') {
-      this.currentFileUpload = new FileUpload(this.formService.fileData);
-      this.uploadService.pushFileToStorage(this.currentFileUpload, this.progress, this.formData);
-    }
     if (this.formService.editClick === true) {
       this.formData._id = this.formService.id;
+      this.formData.fileName = this.formService.fileName;
+      this.formData.fileUrl = this.formService.fileUrl;
       this.uploadService.editProject(this.formData).subscribe(data => {
         if (!data.success) {
           this.formService.showThanks = false;

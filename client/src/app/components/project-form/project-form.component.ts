@@ -23,17 +23,16 @@ export class ProjectFormComponent implements OnInit {
     this.formService.editClick = false;
     this.formService.resetFormData();
     this.router.navigate(['/dashboard']);
-    // this.formService.showProjectForm = false;
     if (this.formService.submited === true) {
       for (var i = 0; i < document.getElementsByTagName('form').length; i++) {
         document.getElementsByTagName('form')[i].reset();
       }
-      this.formService.showContactForm = true;
-      this.formService.showDealForm = false;
-      this.formService.showResultForm = false;
-      this.formService.submited = false;
-      this.formService.showThanks = false;
     }
+    this.formService.showContactForm = true;
+    this.formService.showDealForm = false;
+    this.formService.showResultForm = false;
+    this.formService.submited = false;
+    this.formService.showThanks = false;
   }
 
 }

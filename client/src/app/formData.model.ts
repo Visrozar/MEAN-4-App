@@ -73,4 +73,5 @@ export class Deal {
     techonology: string = '';
     programDescription: string = '';
     comments: string = '';
+    fileName: string = '';
 }

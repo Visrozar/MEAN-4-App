@@ -93,7 +93,8 @@ export class FormService {
             investment: this.formData.investment,
             techonology: this.formData.techonology,
             programDescription: this.formData.programDescription,
-            comments: this.formData.comments
+            comments: this.formData.comments,
+            fileName: this.formData.fileName
         };
         return deal;
     }
@@ -111,6 +112,7 @@ export class FormService {
         this.formData.techonology = data.techonology;
         this.formData.programDescription = data.programDescription;
         this.formData.comments = data.comments;
+        this.formData.fileName = data.fileName;
         this.workflowService.validateStep(STEPS.deal_discription);
     }
 

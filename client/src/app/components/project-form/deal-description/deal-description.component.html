@@ -98,21 +98,23 @@
         </div>
         <div class="row">
           <div class='col-xs-12 col-sm-12'>
-            <div class="form-group">
+            <div class="form-group text-center">
               <label class="control-label" for="comments">Upload non-confidential presentation</label>
+              <div *ngIf="!this.alreadyFileUpload">Uploaded file: {{this.deal.fileName}}</div>
               <div *ngIf="currentFileUpload" class="progress" style="width:400px">
                 <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
                   aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width:progress.percentage+'%'}">
                   {{progress.percentage}}%</div>
               </div>
-              <input id="selectFile" type="file" name="myFile" placeholder="Upload File">
+              <input style="margin: 0 auto;" id="selectFile" type="file" name="myFile" placeholder="Upload File">
+              <button style="margin-top:5px;" class="btn btn-info btn-outline-rounded" (click)="uploadFile()"> Upload File</button>
             </div>
           </div>
         </div>
         <div class="form-group text-center space-20">
           <button type="button" class="btn btn-outline-rounded btn-primary" (click)="goToPrevious(workForm)">
             <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span> Contact Person</button>
-          <button type="button" class="btn btn-outline-rounded btn-primary" [disabled]="!workForm.valid" (click)="goToNext(workForm)">
+          <button type="button" class="btn btn-outline-rounded btn-primary" [disabled]="!workForm.valid || (progress.percentage !== 100 && progress.percentage !== 0)" (click)="goToNext(workForm)">
             Next
             <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span>
           </button>

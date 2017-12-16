@@ -53,10 +53,10 @@ export class DashboardComponent implements OnInit {
     this.formService.contact = picked;
 
     const picked1 = (({ dealName, location, sector, indication, stageLead, financing, investment,
-      techonology, programDescription, comments }) =>
+      techonology, programDescription, comments, fileName }) =>
       ({
         dealName, location, sector, indication, stageLead, financing, investment,
-        techonology, programDescription, comments
+        techonology, programDescription, comments, fileName
       }))(dash);
     this.formService.deal = picked1;
   }
@@ -76,7 +76,6 @@ export class DashboardComponent implements OnInit {
         }
       });
     }
-    console.log(dash.fileName);
   }
 
   changeStyle($event) {

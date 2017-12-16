@@ -32,7 +32,7 @@ export class UploadFileService {   // Development Domain - Not Needed in Product
 
   private basePath = '/uploads';
 
-  pushFileToStorage(fileUpload: FileUpload, progress: { percentage: number }, formData) {
+  pushFileToStorage(fileUpload: FileUpload, progress: { percentage: number }) {
     const storageRef = firebase.storage().ref();
     const uploadTask = storageRef.child(`${this.basePath}/${fileUpload.file.name}`).put(fileUpload.file);
 
@@ -52,7 +52,6 @@ export class UploadFileService {   // Development Domain - Not Needed in Product
         fileUpload.name = fileUpload.file.name;
         this.formService.fileUrl = fileUpload.url;
         this.formService.fileName = fileUpload.name;
-        formData.clear();
       }
     );
   }
