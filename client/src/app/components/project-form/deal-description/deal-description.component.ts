@@ -115,8 +115,12 @@ export class DealDescriptionComponent implements OnInit {
             const fileSelected: File = this.elem.nativeElement.querySelector('#selectFile').files[0];
             this.currentFileUpload = new FileUpload(fileSelected);
             this.uploadService.pushFileToStorage(this.currentFileUpload, this.progress);
-            // this.formService.file = fileSelected.name;
-            // this.formService.fileData = fileSelected;
+            this.formService.file = fileSelected.name;
         }
+    }
+
+    removeFile() {
+        this.alreadyFileUpload = false;
+        this.formService.file = '';
     }
 }

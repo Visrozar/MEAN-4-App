@@ -64,6 +64,10 @@ export class FormResultComponent implements OnInit {
 
     if (this.formService.editClick === true) {
       this.formData._id = this.formService.id;
+      if (this.formService.file === '') {
+        this.formService.fileName = '';
+        this.formService.fileUrl = '';
+      }
       this.formData.fileName = this.formService.fileName;
       this.formData.fileUrl = this.formService.fileUrl;
       this.uploadService.editProject(this.formData).subscribe(data => {
@@ -77,9 +81,12 @@ export class FormResultComponent implements OnInit {
         }
       });
     } else {
+      if (this.formService.file === '') {
+        this.formService.fileName = '';
+        this.formService.fileUrl = '';
+      }
       this.formData.fileName = this.formService.fileName;
       this.formData.fileUrl = this.formService.fileUrl;
-      console.log(this.formService.fileName, this.formService.fileUrl);
       this.uploadService.newProject(this.formData).subscribe(data => {
         if (!data.success) {
           this.formService.showThanks = false;

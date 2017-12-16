@@ -34,7 +34,6 @@ export class DashboardComponent implements OnInit {
   getDashboard() {
     this.authService.getDashboard().subscribe(dashboard => {
       this.projects = dashboard.projects;
-      console.log(this.projects);
     });
   }
 
@@ -101,7 +100,6 @@ export class DashboardComponent implements OnInit {
         console.log(data.message); // Return success message
       }
     });
-    console.log(dash);
   }
 
 }
