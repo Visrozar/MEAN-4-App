@@ -1,4 +1,5 @@
 import { Component, OnInit, NgModule } from '@angular/core';
+import { Router } from '@angular/router';
 import { VclistService } from '../../services/vclist.service';
 import { Meta } from '@angular/platform-browser';
 import { VcfilterPipe } from '../../vcfilter.pipe';
@@ -19,7 +20,7 @@ declare var $: any;
 
 export class VclistComponent implements OnInit {
 
-  constructor(private vclistService: VclistService, private metaService: Meta, private listFilter: VcfilterPipe) {
+  constructor(private vclistService: VclistService, private metaService: Meta, private listFilter: VcfilterPipe, private router: Router) {
 
     this.vclistService.getVclist().subscribe((data) => {
       this.vclists = data;
@@ -124,7 +125,8 @@ export class VclistComponent implements OnInit {
     });
     const self = this;
     document.addEventListener('click', function (event) {
-      if (event.srcElement.className.toString() !== 'overSelect' && event.srcElement.className.toString() !== 'hide-box') {
+      if (event.srcElement.className.toString() !== 'overSelect' &&
+        event.srcElement.className.toString() !== 'hide-box' && self.router.url.toString() === '/vc_list') {
         self.onBlur();
       }
     });
@@ -136,14 +138,26 @@ export class VclistComponent implements OnInit {
     const indicationCheckboxes = document.getElementById('indicationCheckboxes');
     const investmentCheckboxes = document.getElementById('investmentCheckboxes');
 
-    locationCheckboxes.style.display = 'none';
-    this.location = false;
-    focusCheckboxes.style.display = 'none';
-    this.focus1 = false;
-    indicationCheckboxes.style.display = 'none';
-    this.indication1 = false;
-    investmentCheckboxes.style.display = 'none';
-    this.investment1 = false;
+    if (locationCheckboxes.style.display) {
+      locationCheckboxes.style.display = 'none';
+      this.location = false;
+    }
+
+    if (focusCheckboxes.style.display) {
+      focusCheckboxes.style.display = 'none';
+      this.focus1 = false;
+    }
+
+    if (indicationCheckboxes.style.display) {
+      indicationCheckboxes.style.display = 'none';
+      this.indication1 = false;
+    }
+
+    if (investmentCheckboxes.style.display) {
+      investmentCheckboxes.style.display = 'none';
+      this.investment1 = false;
+    }
+
   }
 
   updateUrl(event) {

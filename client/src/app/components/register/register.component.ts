@@ -87,7 +87,7 @@ export class RegisterComponent implements OnInit {
     if (regExp.test(controls.value)) {
       return null; // Return as valid email
     } else {
-      return { 'validateEmail': true } // Return as invalid email
+      return { 'validateEmail': true }; // Return as invalid email
     }
   }
 
@@ -99,7 +99,7 @@ export class RegisterComponent implements OnInit {
     if (regExp.test(controls.value)) {
       return null; // Return as valid username
     } else {
-      return { 'validateUsername': true } // Return as invalid username
+      return { 'validateUsername': true }; // Return as invalid username
     }
   }
 
@@ -111,7 +111,7 @@ export class RegisterComponent implements OnInit {
     if (regExp.test(controls.value)) {
       return null; // Return as valid password
     } else {
-      return { 'validatePassword': true } // Return as invalid password
+      return { 'validatePassword': true }; // Return as invalid password
     }
   }
 
@@ -121,7 +121,7 @@ export class RegisterComponent implements OnInit {
     if (controls.value === 'investor' || controls.value === 'enterpreneur') {
       return null; // Return as valid role
     } else {
-      return { 'validateRole': true } // Return as invalid role
+      return { 'validateRole': true }; // Return as invalid role
     }
   }
 
@@ -132,7 +132,7 @@ export class RegisterComponent implements OnInit {
       if (group.controls[password].value === group.controls[confirm].value) {
         return null; // Return as a match
       } else {
-        return { 'matchingPasswords': true } // Return as error: do not match
+        return { 'matchingPasswords': true }; // Return as error: do not match
       }
     }
   }

@@ -1,0 +1,13 @@
+.thanks{
+    padding: 100px;
+}
+
+.thank{
+    line-height: 25px;    
+}
+
+@media only screen and (max-width: 700px) {
+    .thanks{
+        padding: 100px 50px;
+    }
+}
