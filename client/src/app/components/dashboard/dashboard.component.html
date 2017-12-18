@@ -22,7 +22,7 @@
             </div>
           </div>
           <div class="col-xs-3 glyphicon glyphicon-eye-open padd text-center">
-            <span class="views">{{project.views}}</span>
+            <span class="views">{{project.viewedBy.length}}</span>
           </div>
         </div>
         <div class="row" *ngIf="username !== project.createdBy">
@@ -35,7 +35,7 @@
             </div>
           </div>
           <div class="col-xs-6 glyphicon glyphicon-eye-open padd text-center">
-            <span class="views">{{project.views}}</span>
+            <span class="views">{{project.viewedBy.length}}</span>
           </div>
         </div>
       </div>

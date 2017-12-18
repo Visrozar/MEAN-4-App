@@ -109,6 +109,7 @@ module.exports = (router) => {
                                         project.fileUrl = req.body.fileUrl;
                                         project.fileName = req.body.fileName;
                                         project.likedBy = req.body.likedBy;
+                                        project.viewedBy = req.body.viewedBy;
                                         project.views = req.body.views;
                                         project.save((err) => {
                                             if (err) {

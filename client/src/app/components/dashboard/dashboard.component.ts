@@ -61,10 +61,14 @@ export class DashboardComponent implements OnInit {
   }
 
   viewEntry(dash) {
+    const a = $.inArray(this.username, dash.viewedBy);
     this.formService.detailData = dash;
     this.router.navigate(['/project_details']);
     if (this.username !== dash.createdBy) {
-      dash.views = dash.views + 1;
+      if (a === -1) {
+        dash.viewedBy.push(this.username);
+      }
+      // dash.views = dash.views + 1;
       dash.likeClick = true;
       this.uploadService.editProject(dash).subscribe(data => {
         if (!data.success) {
