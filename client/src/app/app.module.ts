@@ -17,7 +17,7 @@ import { VclistComponent } from './components/vclist/vclist.component';
 import { VclistService } from './services/vclist.service';
 import { FormService } from './services/form.service';
 import { WorkflowService } from './services/workflow.service';
-import { VcfilterPipe } from './vcfilter.pipe';
+import { VcfilterPipe } from './pipes/vcfilter.pipe';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthService } from './services/auth.service';
 import { ProjectFormComponent } from './components/project-form/project-form.component';
@@ -30,6 +30,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AuthGuard } from './guards/auth.guard';
 import { NotAuthGuard } from './guards/notAuth.guard';
 import { ProjectDetailComponent } from './components/project-detail/project-detail.component';
+import { DashboardPipe } from './pipes/dashboard.pipe';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ProjectDetailComponent } from './components/project-detail/project-deta
     FormResultComponent,
     LoginComponent,
     DashboardComponent,
-    ProjectDetailComponent
+    ProjectDetailComponent,
+    DashboardPipe
   ],
   imports: [
     BrowserModule,

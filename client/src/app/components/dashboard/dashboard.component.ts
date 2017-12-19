@@ -3,13 +3,15 @@ import { AuthService } from '../../services/auth.service';
 import { FormService } from '../../services/form.service';
 import { UploadFileService } from '../../services/upload-file.service';
 import { Router } from '@angular/router';
+import { DashboardPipe } from '../../pipes/dashboard.pipe';
 declare var $: any;
 
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
+  providers: [DashboardPipe]
 })
 export class DashboardComponent implements OnInit {
   projects: any = [];

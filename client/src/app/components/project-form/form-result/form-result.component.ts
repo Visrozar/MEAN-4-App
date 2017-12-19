@@ -24,7 +24,7 @@ export class FormResultComponent implements OnInit {
   showError = false;
 
   constructor(
-    private formService: FormService,
+    public formService: FormService,
     private router: Router,
     private uploadService: UploadFileService,
     private authService: AuthService
