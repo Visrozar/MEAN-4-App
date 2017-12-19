@@ -14,7 +14,7 @@ export class FormData {
     stageLead: string = '';
     financing: string = '';
     investment: string = '';
-    techonology: string = '';
+    technology: string = '';
     programDescription: string = '';
     comments: string = '';
     fileUrl: string = '';
@@ -40,7 +40,7 @@ export class FormData {
         this.stageLead = '';
         this.financing = '';
         this.investment = '';
-        this.techonology = '';
+        this.technology = '';
         this.programDescription = '';
         this.comments = '';
         this.fileUrl = '';
@@ -70,7 +70,7 @@ export class Deal {
     stageLead: string = '';
     financing: string = '';
     investment: string = '';
-    techonology: string = '';
+    technology: string = '';
     programDescription: string = '';
     comments: string = '';
     fileName: string = '';

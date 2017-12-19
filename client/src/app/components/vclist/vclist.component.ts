@@ -2,7 +2,7 @@ import { Component, OnInit, NgModule } from '@angular/core';
 import { Router } from '@angular/router';
 import { VclistService } from '../../services/vclist.service';
 import { Meta } from '@angular/platform-browser';
-import { VcfilterPipe } from '../../vcfilter.pipe';
+import { VcfilterPipe } from '../../pipes/vcfilter.pipe';
 declare var $: any;
 
 
@@ -11,10 +11,6 @@ declare var $: any;
   templateUrl: './vclist.component.html',
   styleUrls: ['./vclist.component.scss'],
   providers: [VcfilterPipe]
-})
-
-@NgModule({
-  declarations: [VcfilterPipe],
 })
 
 

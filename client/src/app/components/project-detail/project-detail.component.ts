@@ -14,7 +14,7 @@ export class ProjectDetailComponent implements OnInit {
   role;
 
   constructor(private authService: AuthService, private router: Router,
-    private uploadService: UploadFileService, private formService: FormService) { }
+    private uploadService: UploadFileService, public formService: FormService) { }
 
   projectDetail: any;
 

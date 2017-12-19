@@ -91,7 +91,7 @@ export class FormService {
             stageLead: this.formData.stageLead,
             financing: this.formData.financing,
             investment: this.formData.investment,
-            techonology: this.formData.techonology,
+            technology: this.formData.technology,
             programDescription: this.formData.programDescription,
             comments: this.formData.comments,
             fileName: this.formData.fileName
@@ -109,7 +109,7 @@ export class FormService {
         this.formData.stageLead = data.stageLead;
         this.formData.financing = data.financing;
         this.formData.investment = data.investment;
-        this.formData.techonology = data.techonology;
+        this.formData.technology = data.technology;
         this.formData.programDescription = data.programDescription;
         this.formData.comments = data.comments;
         this.formData.fileName = data.fileName;

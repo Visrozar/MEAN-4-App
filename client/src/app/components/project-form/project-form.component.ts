@@ -12,7 +12,7 @@ declare var $: any;
 export class ProjectFormComponent implements OnInit {
   @Input() formData;
 
-  constructor(private formService: FormService, private router: Router) { }
+  constructor(public formService: FormService, private router: Router) { }
 
   ngOnInit() {
     this.formData = this.formService.getFormData();
