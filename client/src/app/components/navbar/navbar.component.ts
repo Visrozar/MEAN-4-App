@@ -9,12 +9,12 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(    
-    private authService: AuthService,
+  constructor(
+    public authService: AuthService,
     private router: Router
   ) { }
 
-  onLogoutClick(){
+  onLogoutClick() {
     this.authService.logout();
     this.router.navigate(['/']);
   }
