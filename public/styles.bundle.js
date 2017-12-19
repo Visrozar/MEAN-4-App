@@ -35,7 +35,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n.row {\n  margin-left: 0px;\n  margin-right: 0px; }\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n.row {\n  margin-left: 0px;\n  margin-right: 0px; }\n\n.btn-primary {\n  background: #7AACD6;\n  border-color: #9EC5E6; }\n\n.btn-primary[disabled]:hover {\n  background: #1f66a5;\n  border-color: #7AACD6; }\n\n.btn-primary:hover {\n  background: #1f66a5;\n  border-color: #7AACD6; }\n\n.btn-primary:focus {\n  background: #1f66a5;\n  border-color: #7AACD6; }\n", ""]);
 
 // exports
 
