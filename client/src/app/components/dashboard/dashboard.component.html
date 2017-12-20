@@ -1,6 +1,6 @@
 <h2 class="page-header text-center">Dashboard</h2>
 <div class="row body-style">
-  <form class="col-md-3">
+  <form>
     <div class="form-group sticky">
       <div class="multiselect col-md-12 filter hide-box">
         <div class="selectBox hide-box" (click)="showCheckboxes('role')">
@@ -9,7 +9,7 @@
           </select>
           <div class="overSelect"></div>
         </div>
-        <div class="hide-box" id="roleCheckboxes">
+        <div class="hide-box" [ngClass]="{'active': roleActive, 'disable': roleDisabled}">
           <label class="hide-box" *ngFor="let role of roleList">
             <input class="hide-box" type="checkbox" name="role2" (click)="filterList() " />{{ role }}</label>
         </div>
@@ -21,7 +21,7 @@
           </select>
           <div class="overSelect"></div>
         </div>
-        <div class="hide-box" id="sectorCheckboxes">
+        <div class="hide-box" [ngClass]="{'active': sectorActive, 'disable': sectorDisabled}">
           <label class="hide-box" *ngFor="let sector of sectorList">
             <input class="hide-box" type="checkbox" name="sector2" (click)="filterList() " />{{ sector }}</label>
         </div>
@@ -33,7 +33,7 @@
           </select>
           <div class="overSelect"></div>
         </div>
-        <div class="hide-box" id="indicationCheckboxes">
+        <div class="hide-box" [ngClass]="{'active': indicationActive, 'disable': indicationDisabled}">
           <label class="hide-box" *ngFor="let indication of indicationList">
             <input class="hide-box" type="checkbox" name="indication2" (click)="filterList() " />{{ indication }}</label>
         </div>
@@ -45,7 +45,7 @@
           </select>
           <div class="overSelect"></div>
         </div>
-        <div class="hide-box" id="stageCheckboxes">
+        <div class="hide-box" [ngClass]="{'active': stageActive, 'disable': stageDisabled}">
           <label class="hide-box" *ngFor="let stage of stageProgramList">
             <input class="hide-box" type="checkbox" name="stage2" (click)="filterList() " />{{ stage }}</label>
         </div>
@@ -57,7 +57,7 @@
           </select>
           <div class="overSelect"></div>
         </div>
-        <div class="hide-box" id="financingtCheckboxes">
+        <div class="hide-box" [ngClass]="{'active': financingActive, 'disable': financingDisabled}">
           <label class="hide-box" *ngFor="let financing of financingList">
             <input class="hide-box" type="checkbox" name="financing2" (click)="filterList() " />{{ financing }}</label>
         </div>
@@ -80,6 +80,12 @@
         <button class="btn btn-primary clear-filter" style="margin-top:10px;" (click)="clearFilter()">Clear Filter</button>
       </div>
 
+      <div class="col-xs-12 filter-label text-center">
+        <button class="btn btn-info clear-filter" style="margin-top:10px;" (click)="saveFilter()">Save Filter</button>
+        <input class="form-control input-md" style="margin-top:5px;" name="filterName" type="text" placeholder="Filter Name">
+        <div class="alert alert-danger" [hidden]="!isEmpty">Name cannot be empty</div>
+      </div>
+
       <!-- <div class="col-xs-12 filter-label">
         <h3 class="text-center">Filtered VCs {{vclists.length}}
         </h3>
@@ -90,7 +96,8 @@
       </div> -->
     </div>
   </form>
-  </div>
+</div>
+<hr>
 <div class="container">
   <div class="card" *ngFor="let project of projects">
     <div class="card-body">

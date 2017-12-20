@@ -24,7 +24,8 @@ export class DashboardComponent implements OnInit {
     private uploadService: UploadFileService,
     private authService: AuthService,
     private formService: FormService,
-    private router: Router
+    private router: Router,
+    private dashFilter: DashboardPipe
   ) {
     this.formService.getSelectData().subscribe((data) => {
       this.roleList = data.role;
@@ -40,17 +41,31 @@ export class DashboardComponent implements OnInit {
     });
   }
 
+  saveList: any = [];
   roleList: any = [];
   sectorList: any = [];
   indicationList: any = [];
   stageProgramList: any = [];
   financingList: any = [];
-  role1 = false;
-  sector = false;
-  indication = false;
-  stage = false;
-  finnacing = false;
-  listOpen = false;
+  roleActive = false;
+  sectorActive = false;
+  indicationActive = false;
+  stageActive = false;
+  financingActive = false;
+  listOpenActive = false;
+  roleDisabled = true;
+  sectorDisabled = true;
+  indicationDisabled = true;
+  stageDisabled = true;
+  financingDisabled = true;
+
+  roleLabels: any = [];
+  sectorLabels: any = [];
+  indicationLabels: any = [];
+  stageLabels: any = [];
+  financingLabels: any = [];
+
+  isEmpty = false;
 
   ngOnInit() {
     this.authService.getProfile().subscribe(profile => {
@@ -62,50 +77,20 @@ export class DashboardComponent implements OnInit {
     document.addEventListener('click', function (event) {
       if (event.srcElement.className.toString() !== 'overSelect' &&
         event.srcElement.className.toString() !== 'hide-box' && self.router.url.toString() === '/dashboard') {
-        self.onBlur();
+        self.roleDisabled = true;
+        self.sectorDisabled = true;
+        self.indicationDisabled = true;
+        self.stageDisabled = true;
+        self.financingDisabled = true;
       }
     });
-
     this.getDashboard();
-  }
-
-  onBlur() {
-    const roleCheckboxes = document.getElementById('roleCheckboxes');
-    const sectorCheckboxes = document.getElementById('sectorCheckboxes');
-    const indicationCheckboxes = document.getElementById('indicationCheckboxes');
-    const stageCheckboxes = document.getElementById('stageCheckboxes');
-    const finnacingCheckboxes = document.getElementById('finnacingCheckboxes');
-
-    if (roleCheckboxes.style.display) {
-      roleCheckboxes.style.display = 'none';
-      this.role1 = false;
-    }
-
-    if (sectorCheckboxes.style.display) {
-      sectorCheckboxes.style.display = 'none';
-      this.sector = false;
-    }
-
-    if (indicationCheckboxes.style.display) {
-      indicationCheckboxes.style.display = 'none';
-      this.indication = false;
-    }
-
-    if (stageCheckboxes.style.display) {
-      stageCheckboxes.style.display = 'none';
-      this.stage = false;
-    }
-
-    if (finnacingCheckboxes.style.display) {
-      finnacingCheckboxes.style.display = 'none';
-      this.finnacing = false;
-    }
-
   }
 
   getDashboard() {
     this.authService.getDashboard().subscribe(dashboard => {
       this.projects = dashboard.projects;
+      this.saveList = this.projects;
     });
   }
 
@@ -179,51 +164,210 @@ export class DashboardComponent implements OnInit {
   }
 
   showCheckboxes(type: string) {
-    this.listOpen = true;
-    const roleCheckboxes = document.getElementById('roleCheckboxes');
-    const sectorCheckboxes = document.getElementById('sectorCheckboxes');
-    const indicationCheckboxes = document.getElementById('indicationCheckboxes');
-    const stageCheckboxes = document.getElementById('stageCheckboxes');
-    const finnacingCheckboxes = document.getElementById('finnacingCheckboxes');
+    // this.listOpen = true;
+    // const roleCheckboxes = document.getElementById('roleCheckboxes');
+    // const sectorCheckboxes = document.getElementById('sectorCheckboxes');
+    // const indicationCheckboxes = document.getElementById('indicationCheckboxes');
+    // const stageCheckboxes = document.getElementById('stageCheckboxes');
+    // const financingCheckboxes = document.getElementById('financingCheckboxes');
 
-    if (type === 'role' && !this.role1) {
-      roleCheckboxes.style.display = 'block';
-      this.role1 = true;
+    if (type === 'role' && this.roleDisabled === true) {
+      this.roleDisabled = false;
+      this.roleActive = true;
     } else {
-      roleCheckboxes.style.display = 'none';
-      this.role1 = false;
+      this.roleDisabled = true;
+      this.roleActive = false;
     }
 
-    if (type === 'sector' && !this.sector) {
-      sectorCheckboxes.style.display = 'block';
-      this.sector = true;
+    if (type === 'sector' && this.sectorDisabled === true) {
+      this.sectorActive = true;
+      this.sectorDisabled = false;
     } else {
-      sectorCheckboxes.style.display = 'none';
-      this.sector = false;
+      this.sectorActive = false;
+      this.sectorDisabled = true;
     }
 
-    if (type === 'indication' && !this.indication) {
-      indicationCheckboxes.style.display = 'block';
-      this.indication = true;
+    if (type === 'indication' && this.indicationDisabled === true) {
+      this.indicationActive = true;
+      this.indicationDisabled = false;
     } else {
-      indicationCheckboxes.style.display = 'none';
-      this.indication = false;
+      this.indicationActive = false;
+      this.indicationDisabled = true;
     }
 
-    if (type === 'stage' && !this.stage) {
-      stageCheckboxes.style.display = 'block';
-      this.stage = true;
+    if (type === 'stage' && this.stageDisabled === true) {
+      this.stageActive = true;
+      this.stageDisabled = false;
     } else {
-      stageCheckboxes.style.display = 'none';
-      this.stage = false;
+      this.stageActive = false;
+      this.stageDisabled = true;
     }
 
-    if (type === 'finnacing' && !this.finnacing) {
-      finnacingCheckboxes.style.display = 'block';
-      this.finnacing = true;
+    if (type === 'financing' && this.financingDisabled === true) {
+      this.financingActive = true;
+      this.financingDisabled = false;
     } else {
-      finnacingCheckboxes.style.display = 'none';
-      this.finnacing = false;
+      this.financingActive = false;
+      this.financingDisabled = true;
+    }
+
+  }
+
+  filterList() {
+    const role = $(`input[name=role2]:checked`);
+    const sector = $(`input[name=sector2]:checked`);
+    const indication = $(`input[name=indication2]:checked`);
+    const stage = $(`input[name=stage2]:checked`);
+    const financing = $(`input[name=financing2]:checked`);
+
+    const roleArray = [];
+    const sectorArray = [];
+    const indicationArray = [];
+    const stageArray = [];
+    const financingArray = [];
+
+    if (role.length !== 0) {
+      for (let i = 0; i < role.length; i++) {
+        roleArray.push(role[i].nextSibling.data);
+      }
+    }
+
+    if (sector.length !== 0) {
+      for (let i = 0; i < sector.length; i++) {
+        sectorArray.push(sector[i].nextSibling.data);
+      }
+    }
+
+    if (indication.length !== 0) {
+      for (let i = 0; i < indication.length; i++) {
+        indicationArray.push(indication[i].nextSibling.data);
+      }
+    }
+
+    if (stage.length !== 0) {
+      for (let i = 0; i < stage.length; i++) {
+        stageArray.push(stage[i].nextSibling.data);
+      }
+    }
+
+    if (financing.length !== 0) {
+      for (let i = 0; i < financing.length; i++) {
+        financingArray.push(financing[i].nextSibling.data);
+      }
+    }
+
+    // this.roleLabels = roleArray;
+    // this.sectorLabels = sectorArray;
+    // this.indicationLabels = indicationArray;
+    // this.stageLabels = stageArray;
+    // this.financingLabels = financingArray;
+    this.projects = this.dashFilter.transform(this.saveList, roleArray, sectorArray, indicationArray, stageArray, financingArray);
+  }
+
+  clearFilter() {
+    const role = $(`input[name=role2]:checked`);
+    const sector = $(`input[name=sector2]:checked`);
+    const indication = $(`input[name=indication2]:checked`);
+    const stage = $(`input[name=stage2]:checked`);
+    const financing = $(`input[name=financing2]:checked`);
+
+    if (role) {
+      for (let i = 0; i < role.length; i++) {
+        role[i].checked = false;
+      }
+    }
+    if (sector) {
+      for (let i = 0; i < sector.length; i++) {
+        sector[i].checked = false;
+      }
+    }
+    if (indication) {
+      for (let i = 0; i < indication.length; i++) {
+        indication[i].checked = false;
+      }
+    }
+    if (stage) {
+      for (let i = 0; i < stage.length; i++) {
+        stage[i].checked = false;
+      }
+    }
+    if (financing) {
+      for (let i = 0; i < financing.length; i++) {
+        financing[i].checked = false;
+      }
+    }
+
+    this.roleLabels = [];
+    this.sectorLabels = [];
+    this.indicationLabels = [];
+    this.stageLabels = [];
+    this.financingLabels = [];
+    this.projects = this.saveList;
+  }
+
+  saveFilter() {
+    const filterName = $('input[name=filterName]').val();
+    if (filterName.toString() === '') {
+      this.isEmpty = true;
+    } else {
+      const object = {};
+      this.isEmpty = false;
+      const role = $(`input[name=role2]:checked`);
+      const sector = $(`input[name=sector2]:checked`);
+      const indication = $(`input[name=indication2]:checked`);
+      const stage = $(`input[name=stage2]:checked`);
+      const financing = $(`input[name=financing2]:checked`);
+
+      const roleArray = [];
+      const sectorArray = [];
+      const indicationArray = [];
+      const stageArray = [];
+      const financingArray = [];
+
+      if (role.length !== 0) {
+        for (let i = 0; i < role.length; i++) {
+          roleArray.push(role[i].nextSibling.data);
+        }
+      }
+
+      if (sector.length !== 0) {
+        for (let i = 0; i < sector.length; i++) {
+          sectorArray.push(sector[i].nextSibling.data);
+        }
+      }
+
+      if (indication.length !== 0) {
+        for (let i = 0; i < indication.length; i++) {
+          indicationArray.push(indication[i].nextSibling.data);
+        }
+      }
+
+      if (stage.length !== 0) {
+        for (let i = 0; i < stage.length; i++) {
+          stageArray.push(stage[i].nextSibling.data);
+        }
+      }
+
+      if (financing.length !== 0) {
+        for (let i = 0; i < financing.length; i++) {
+          financingArray.push(financing[i].nextSibling.data);
+        }
+      }
+
+      object[filterName.toString()] = {
+        role: roleArray, sector: sectorArray, indication: indicationArray,
+        stage: stageArray, financing: financingArray
+      };
+
+      this.authService.saveFilter(object).subscribe(data => {
+        // Check if response was a success or error
+        if (!data.success) {
+          // error
+        } else {
+          // success
+        }
+      });
+
     }
 
   }

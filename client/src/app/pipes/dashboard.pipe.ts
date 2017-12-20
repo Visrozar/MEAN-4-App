@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class DashboardPipe implements PipeTransform {
 
-  transform(items: any[], role: any[], sector: any[], indication: any[], stage: any[], finnacing: any[]): any {
+  transform(items: any[], role: any[], sector: any[], indication: any[], stageLead: any[], financing: any[]): any {
 
     if (items && items.length) {
         return items.filter(item => {
@@ -21,9 +21,9 @@ export class DashboardPipe implements PipeTransform {
             if ((indication.length && !indication.find(b => item.indication.includes(b)))) {
                 return false;
             }
-            if ((stage.length && !stage.find(b => item.stage.includes(b)))) {
+            if ((stageLead.length && !stageLead.find(b => item.stageLead.includes(b)))) {
                 return false;
-            }if ((finnacing.length && !finnacing.find(b => item.finnacing.includes(b)))) {
+            }if ((financing.length && !financing.find(b => item.financing.includes(b)))) {
                 return false;
             }
             return true;

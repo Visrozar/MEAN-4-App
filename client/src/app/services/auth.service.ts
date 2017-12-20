@@ -90,6 +90,11 @@ export class AuthService {
     return this.http.delete(this.domain + '/projects/deleteProject/' + id, this.options).map(res => res.json());
   }
 
+  saveFilter(obj) {
+    this.createAuthenticationHeaders(); // Create headers before sending to API
+    return this.http.post(this.domain + '/filter/savedFilter/', obj).map(res => res.json());
+  }
+
   // Function to check if user is logged in
   loggedIn() {
     return tokenNotExpired();
