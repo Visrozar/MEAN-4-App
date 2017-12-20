@@ -1,4 +1,96 @@
 <h2 class="page-header text-center">Dashboard</h2>
+<div class="row body-style">
+  <form class="col-md-3">
+    <div class="form-group sticky">
+      <div class="multiselect col-md-12 filter hide-box">
+        <div class="selectBox hide-box" (click)="showCheckboxes('role')">
+          <select>
+            <option>Role</option>
+          </select>
+          <div class="overSelect"></div>
+        </div>
+        <div class="hide-box" id="roleCheckboxes">
+          <label class="hide-box" *ngFor="let role of roleList">
+            <input class="hide-box" type="checkbox" name="role2" (click)="filterList() " />{{ role }}</label>
+        </div>
+      </div>
+      <div class="multiselect col-md-12 filter">
+        <div class="selectBox" (click)="showCheckboxes('sector')">
+          <select>
+            <option>Sector</option>
+          </select>
+          <div class="overSelect"></div>
+        </div>
+        <div class="hide-box" id="sectorCheckboxes">
+          <label class="hide-box" *ngFor="let sector of sectorList">
+            <input class="hide-box" type="checkbox" name="sector2" (click)="filterList() " />{{ sector }}</label>
+        </div>
+      </div>
+      <div class="multiselect col-md-12 filter">
+        <div class="selectBox" (click)="showCheckboxes('indication')">
+          <select>
+            <option>Indication</option>
+          </select>
+          <div class="overSelect"></div>
+        </div>
+        <div class="hide-box" id="indicationCheckboxes">
+          <label class="hide-box" *ngFor="let indication of indicationList">
+            <input class="hide-box" type="checkbox" name="indication2" (click)="filterList() " />{{ indication }}</label>
+        </div>
+      </div>
+      <div class="multiselect col-md-12 filter">
+        <div class="selectBox" (click)="showCheckboxes('stage')">
+          <select>
+            <option>Stage of lead program</option>
+          </select>
+          <div class="overSelect"></div>
+        </div>
+        <div class="hide-box" id="stageCheckboxes">
+          <label class="hide-box" *ngFor="let stage of stageProgramList">
+            <input class="hide-box" type="checkbox" name="stage2" (click)="filterList() " />{{ stage }}</label>
+        </div>
+      </div>
+      <div class="multiselect col-md-12 filter">
+        <div class="selectBox" (click)="showCheckboxes('financing')">
+          <select>
+            <option>Financing round</option>
+          </select>
+          <div class="overSelect"></div>
+        </div>
+        <div class="hide-box" id="financingtCheckboxes">
+          <label class="hide-box" *ngFor="let financing of financingList">
+            <input class="hide-box" type="checkbox" name="financing2" (click)="filterList() " />{{ financing }}</label>
+        </div>
+      </div>
+      <!-- <div class="display-filter-labels">
+        <div class="location-labels" *ngFor="let location of locationLabels">{{location}}
+          <button type="button" class="close left" (click)="clearSpecificFilter(location);">&times;</button>
+        </div>
+        <div class="focus-labels" *ngFor="let focus of focusLabels">{{focus}}
+          <button type="button" class="close left" (click)="clearSpecificFilter(focus);">&times;</button>
+        </div>
+        <div class="indication-labels" *ngFor="let indication of indicationLabels">{{indication}}
+          <button type="button" class="close left" (click)="clearSpecificFilter(indication);">&times;</button>
+        </div>
+        <div class="investment-labels" *ngFor="let investment of investmentLabels">{{investment}}
+          <button type="button" class="close left" (click)="clearSpecificFilter(investment);">&times;</button>
+        </div>
+      </div> -->
+      <div class="col-xs-12 filter-label text-center">
+        <button class="btn btn-primary clear-filter" style="margin-top:10px;" (click)="clearFilter()">Clear Filter</button>
+      </div>
+
+      <!-- <div class="col-xs-12 filter-label">
+        <h3 class="text-center">Filtered VCs {{vclists.length}}
+        </h3>
+        <hr>
+        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+          aliqua.
+        </p>
+      </div> -->
+    </div>
+  </form>
+  </div>
 <div class="container">
   <div class="card" *ngFor="let project of projects">
     <div class="card-body">

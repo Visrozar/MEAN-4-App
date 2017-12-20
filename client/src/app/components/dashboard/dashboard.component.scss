@@ -107,3 +107,57 @@ h4 {
   font-size: 20px;
   color: cornflowerblue;
 }
+
+
+.multiselect {
+  width: 200px;
+}
+
+.filter {
+  margin-top: 10px;
+}
+
+.selectBox select {
+  width: 108%;
+  height: 40px;
+  margin-right: 15px;
+  display: inline-block;
+  letter-spacing: 1.2px;
+  padding: 6px 6px;
+  overflow: hidden;
+  z-index: 1;
+  cursor: pointer;
+  border-radius: 5px;
+  color: cornflowerblue;
+  background: white;
+  border-color: cornflowerblue;
+}
+
+.selectBox {
+  position: relative;
+}
+
+.selectBox select {
+  font-family: arial;
+}
+
+.overSelect {
+  width: 108%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+
+.hide-box {
+  cursor: pointer;
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .filter {
+    margin: 10px auto;
+  }
+}

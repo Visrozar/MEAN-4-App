@@ -21,8 +21,36 @@ export class DashboardComponent implements OnInit {
   message;
 
   constructor(
-    private uploadService: UploadFileService, private authService: AuthService, private formService: FormService, private router: Router
-  ) { }
+    private uploadService: UploadFileService,
+    private authService: AuthService,
+    private formService: FormService,
+    private router: Router
+  ) {
+    this.formService.getSelectData().subscribe((data) => {
+      this.roleList = data.role;
+      // this.roleList.unshift('');
+      this.sectorList = data.sector;
+      // this.sectorList.unshift('');
+      this.indicationList = data.indication;
+      // this.indicationList.unshift('');
+      this.stageProgramList = data.stage;
+      // this.stageProgramList.unshift('');
+      this.financingList = data.financing;
+      // this.financingList.unshift('');
+    });
+  }
+
+  roleList: any = [];
+  sectorList: any = [];
+  indicationList: any = [];
+  stageProgramList: any = [];
+  financingList: any = [];
+  role1 = false;
+  sector = false;
+  indication = false;
+  stage = false;
+  finnacing = false;
+  listOpen = false;
 
   ngOnInit() {
     this.authService.getProfile().subscribe(profile => {
@@ -30,7 +58,49 @@ export class DashboardComponent implements OnInit {
       this.role = profile.user.role;
     });
 
+    const self = this;
+    document.addEventListener('click', function (event) {
+      if (event.srcElement.className.toString() !== 'overSelect' &&
+        event.srcElement.className.toString() !== 'hide-box' && self.router.url.toString() === '/dashboard') {
+        self.onBlur();
+      }
+    });
+
     this.getDashboard();
+  }
+
+  onBlur() {
+    const roleCheckboxes = document.getElementById('roleCheckboxes');
+    const sectorCheckboxes = document.getElementById('sectorCheckboxes');
+    const indicationCheckboxes = document.getElementById('indicationCheckboxes');
+    const stageCheckboxes = document.getElementById('stageCheckboxes');
+    const finnacingCheckboxes = document.getElementById('finnacingCheckboxes');
+
+    if (roleCheckboxes.style.display) {
+      roleCheckboxes.style.display = 'none';
+      this.role1 = false;
+    }
+
+    if (sectorCheckboxes.style.display) {
+      sectorCheckboxes.style.display = 'none';
+      this.sector = false;
+    }
+
+    if (indicationCheckboxes.style.display) {
+      indicationCheckboxes.style.display = 'none';
+      this.indication = false;
+    }
+
+    if (stageCheckboxes.style.display) {
+      stageCheckboxes.style.display = 'none';
+      this.stage = false;
+    }
+
+    if (finnacingCheckboxes.style.display) {
+      finnacingCheckboxes.style.display = 'none';
+      this.finnacing = false;
+    }
+
   }
 
   getDashboard() {
@@ -106,6 +176,56 @@ export class DashboardComponent implements OnInit {
         console.log(data.message); // Return success message
       }
     });
+  }
+
+  showCheckboxes(type: string) {
+    this.listOpen = true;
+    const roleCheckboxes = document.getElementById('roleCheckboxes');
+    const sectorCheckboxes = document.getElementById('sectorCheckboxes');
+    const indicationCheckboxes = document.getElementById('indicationCheckboxes');
+    const stageCheckboxes = document.getElementById('stageCheckboxes');
+    const finnacingCheckboxes = document.getElementById('finnacingCheckboxes');
+
+    if (type === 'role' && !this.role1) {
+      roleCheckboxes.style.display = 'block';
+      this.role1 = true;
+    } else {
+      roleCheckboxes.style.display = 'none';
+      this.role1 = false;
+    }
+
+    if (type === 'sector' && !this.sector) {
+      sectorCheckboxes.style.display = 'block';
+      this.sector = true;
+    } else {
+      sectorCheckboxes.style.display = 'none';
+      this.sector = false;
+    }
+
+    if (type === 'indication' && !this.indication) {
+      indicationCheckboxes.style.display = 'block';
+      this.indication = true;
+    } else {
+      indicationCheckboxes.style.display = 'none';
+      this.indication = false;
+    }
+
+    if (type === 'stage' && !this.stage) {
+      stageCheckboxes.style.display = 'block';
+      this.stage = true;
+    } else {
+      stageCheckboxes.style.display = 'none';
+      this.stage = false;
+    }
+
+    if (type === 'finnacing' && !this.finnacing) {
+      finnacingCheckboxes.style.display = 'block';
+      this.finnacing = true;
+    } else {
+      finnacingCheckboxes.style.display = 'none';
+      this.finnacing = false;
+    }
+
   }
 
 }
