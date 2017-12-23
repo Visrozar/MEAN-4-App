@@ -132,7 +132,6 @@ export class DashboardComponent implements OnInit {
       this.username = profile.user.username;
       this.role = profile.user.role;
     });
-
     const self = this;
     document.addEventListener('click', function (event) {
       if (event.srcElement.className.toString() !== 'overSelect' &&
@@ -458,6 +457,19 @@ export class DashboardComponent implements OnInit {
   clearProjectdata() {
     this.projectId = '';
     this.projectoverlayActive = false;
+  }
+
+  approveEntry(dash) {
+    dash.approvestatus = 1;
+    this.uploadService.editProject(dash).subscribe(data => {
+      if (!data.success) {
+        this.getDashboard();
+        console.log(data.message); // Return error message
+      } else {
+        console.log(data.message); // Return success message
+        this.getDashboard();
+      }
+    });
   }
 
 }
