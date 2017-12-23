@@ -42,8 +42,8 @@ export class AuthService {
     return this.http.get(this.domain + '/authentication/checkUsername/' + username.toLowerCase()).map(res => res.json());
   }
 
-   // Function to check if dealname is taken
-   checkDealname(dealname) {
+  // Function to check if dealname is taken
+  checkDealname(dealname) {
     return this.http.get(this.domain + '/authentication/checkDealname/' + dealname.toLowerCase()).map(res => res.json());
   }
 
@@ -78,6 +78,11 @@ export class AuthService {
     return this.http.get(this.domain + '/authentication/dashboard', this.options).map(res => res.json());
   }
 
+  getFilterList() {
+    this.createAuthenticationHeaders(); // Create headers before sending to API
+    return this.http.get(this.domain + '/filters/getFilters', this.options).map(res => res.json());
+  }
+
   // Function to get user's Profile data
   getProfile() {
     this.createAuthenticationHeaders(); // Create headers before sending to API
@@ -93,6 +98,11 @@ export class AuthService {
   saveFilter(obj) {
     this.createAuthenticationHeaders(); // Create headers before sending to API
     return this.http.post(this.domain + '/filter/savedFilter/', obj).map(res => res.json());
+  }
+
+  deleteFilter(name) {
+    this.createAuthenticationHeaders(); // Create headers before sending to API
+    return this.http.delete(this.domain + '/filter/savedFilter/', name).map(res => res.json());
   }
 
   // Function to check if user is logged in

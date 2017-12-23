@@ -27,6 +27,13 @@ export class DashboardComponent implements OnInit {
     private router: Router,
     private dashFilter: DashboardPipe
   ) {
+
+    $('.close').click(e => {
+      e.preventDefault();
+      e.stopPropogation();
+    });
+
+
     this.formService.getSelectData().subscribe((data) => {
       this.roleList = data.role;
       // this.roleList.unshift('');
@@ -58,14 +65,67 @@ export class DashboardComponent implements OnInit {
   indicationDisabled = true;
   stageDisabled = true;
   financingDisabled = true;
-
-  roleLabels: any = [];
-  sectorLabels: any = [];
-  indicationLabels: any = [];
-  stageLabels: any = [];
-  financingLabels: any = [];
+  overlayActive = false;
+  projectoverlayActive = false;
+  projectId: any;
+  deleteData: any;
 
   isEmpty = false;
+
+  filterLabels = [{
+    'name': 'isaac',
+    'role': [
+      'Placement agent',
+      'Business developer'
+    ],
+    'sector': [
+      'Health tech',
+      'Agro'
+    ],
+    'indication': [
+      'Nutrition and weight loss',
+      'Gynecology and Obstetrics Oncology'
+    ],
+    'stage': [
+      'Greenhouse',
+      'Field trials'
+    ],
+    'financing': [
+      'Series C',
+      'Series D'
+    ]
+  }, {
+    'name': 'elvis',
+    'role': [
+      'Advisor'
+    ],
+    'sector': [
+    ],
+    'indication': [
+    ],
+    'stage': [
+
+    ],
+    'financing': [
+
+    ]
+
+  }, {
+    'name': 'niven',
+    'role': [
+      'Placement agent'
+    ],
+    'sector': [
+    ],
+    'indication': [
+    ],
+    'stage': [
+    ],
+    'financing': [
+    ]
+
+  }];
+
 
   ngOnInit() {
     this.authService.getProfile().subscribe(profile => {
@@ -85,6 +145,7 @@ export class DashboardComponent implements OnInit {
       }
     });
     this.getDashboard();
+    // this.getFilterList();
   }
 
   getDashboard() {
@@ -94,10 +155,11 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  removeEntry(projectId) {
-    this.authService.deleteProject(projectId).subscribe(data => {
+  removeEntry() {
+    this.authService.deleteProject(this.projectId).subscribe(data => {
       this.message = data.message;
     });
+    this.clearProjectdata();
     this.getDashboard();
   }
 
@@ -124,17 +186,16 @@ export class DashboardComponent implements OnInit {
     if (this.username !== dash.createdBy) {
       if (a === -1) {
         dash.viewedBy.push(this.username);
+        this.uploadService.editProject(dash).subscribe(data => {
+          if (!data.success) {
+            this.getDashboard();
+            console.log(data.message); // Return error message
+          } else {
+            console.log(data.message); // Return success message
+          }
+        });
       }
-      // dash.views = dash.views + 1;
       dash.likeClick = true;
-      this.uploadService.editProject(dash).subscribe(data => {
-        if (!data.success) {
-          this.getDashboard();
-          console.log(data.message); // Return error message
-        } else {
-          console.log(data.message); // Return success message
-        }
-      });
     }
   }
 
@@ -164,12 +225,6 @@ export class DashboardComponent implements OnInit {
   }
 
   showCheckboxes(type: string) {
-    // this.listOpen = true;
-    // const roleCheckboxes = document.getElementById('roleCheckboxes');
-    // const sectorCheckboxes = document.getElementById('sectorCheckboxes');
-    // const indicationCheckboxes = document.getElementById('indicationCheckboxes');
-    // const stageCheckboxes = document.getElementById('stageCheckboxes');
-    // const financingCheckboxes = document.getElementById('financingCheckboxes');
 
     if (type === 'role' && this.roleDisabled === true) {
       this.roleDisabled = false;
@@ -255,12 +310,6 @@ export class DashboardComponent implements OnInit {
         financingArray.push(financing[i].nextSibling.data);
       }
     }
-
-    // this.roleLabels = roleArray;
-    // this.sectorLabels = sectorArray;
-    // this.indicationLabels = indicationArray;
-    // this.stageLabels = stageArray;
-    // this.financingLabels = financingArray;
     this.projects = this.dashFilter.transform(this.saveList, roleArray, sectorArray, indicationArray, stageArray, financingArray);
   }
 
@@ -296,12 +345,6 @@ export class DashboardComponent implements OnInit {
         financing[i].checked = false;
       }
     }
-
-    this.roleLabels = [];
-    this.sectorLabels = [];
-    this.indicationLabels = [];
-    this.stageLabels = [];
-    this.financingLabels = [];
     this.projects = this.saveList;
   }
 
@@ -310,7 +353,6 @@ export class DashboardComponent implements OnInit {
     if (filterName.toString() === '') {
       this.isEmpty = true;
     } else {
-      const object = {};
       this.isEmpty = false;
       const role = $(`input[name=role2]:checked`);
       const sector = $(`input[name=sector2]:checked`);
@@ -354,22 +396,68 @@ export class DashboardComponent implements OnInit {
         }
       }
 
-      object[filterName.toString()] = {
-        role: roleArray, sector: sectorArray, indication: indicationArray,
+      const object = {
+        name: filterName.toString(), role: roleArray, sector: sectorArray, indication: indicationArray,
         stage: stageArray, financing: financingArray
       };
-
-      this.authService.saveFilter(object).subscribe(data => {
-        // Check if response was a success or error
-        if (!data.success) {
-          // error
-        } else {
-          // success
-        }
-      });
+      // this.authService.saveFilter(object).subscribe(data => {
+      //   // Check if response was a success or error
+      //   if (!data.success) {
+      //     // error
+      //   } else {
+      //     // success
+      //   }
+      // });
 
     }
 
+  }
+
+  getFilterList() {
+    this.authService.getFilterList().subscribe(data => {
+      this.filterLabels = data;
+    });
+  }
+
+  clearSpecificFilter() {
+    // this.authService.deleteFilter(this.deleteData.name).subscribe(data => {
+    //     // Check if response was a success or error
+    //     if (!data.success) {
+    //       // error
+    //     } else {
+    //       // success
+    //       this.getFilterList();
+    //       this.projects = this.saveList;
+    //     }
+    //   });
+    this.clearDeletedata();
+  }
+
+  useFilter(filter) {
+    if (event.srcElement.className.toString() === 'filter-labels') {
+      this.projects = this.dashFilter.transform(this.saveList, filter.role, filter.sector, filter.indication, filter.stage,
+        filter.financing);
+    }
+  }
+
+  toggleModal(filter) {
+    this.deleteData = filter;
+    this.overlayActive = true;
+  }
+
+  clearDeletedata() {
+    this.deleteData = '';
+    this.overlayActive = false;
+  }
+
+  activateOverlay(id) {
+    this.projectId = id;
+    this.projectoverlayActive = true;
+  }
+
+  clearProjectdata() {
+    this.projectId = '';
+    this.projectoverlayActive = false;
   }
 
 }
