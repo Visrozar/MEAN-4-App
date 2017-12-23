@@ -18,7 +18,7 @@ mongoose.connect(config.uri, { useMongoClient: true }, (err) => {
     if(err){
         console.log('Could not connect to database: ' + err);
     } else {
-        console.log('Connected to database');
+        console.log('Connected to ' + config.db); // Return success message
     }
 });
 mongoose.Promise = global.Promise;
