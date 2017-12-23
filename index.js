@@ -23,6 +23,8 @@ mongoose.connect(config.uri, { useMongoClient: true }, (err) => {
 });
 mongoose.Promise = global.Promise;
 
+app.use(bodyParser.urlencoded({ extended: false })); // parse application/x-www-form-urlencoded
+app.use(bodyParser.json()); // parse application/json
 // Static directory for frontend
 app.use(express.static(__dirname + env))
 //Parent autentication route, within this route lies registration and login
