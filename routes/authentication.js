@@ -168,6 +168,14 @@ module.exports = (router) => {
   MIDDLEWARE - Used to grab user's token from headers
   ================================================ */
   router.use((req, res, next) => {
+    if (req.path == '/register') {
+      console.log('Used Token Route for Register');
+      return next();
+    } 
+    if (req.path == '/login') {
+      console.log('Used Token Route for Login');
+      return next();
+    }
     const token = req.headers['authorization']; // Create token found in headers
     // Check if token was found in headers
     if (!token) {
