@@ -150,8 +150,43 @@ export class DashboardComponent implements OnInit {
   getDashboard() {
     this.authService.getDashboard().subscribe(dashboard => {
       this.projects = dashboard.projects;
+      this.projects = this.transform(this.projects);
       this.saveList = this.projects;
     });
+
+  }
+
+  transform(arr) {
+    if (arr && arr.length) {
+      return arr.filter(ar => {
+        if (this.role === 'enterpreneur') {
+          if (this.username === ar.createdBy) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+
+        if (this.role === 'investor') {
+          if (ar.approvestatus === 1) {
+            return true;
+          } else if (this.username === ar.createdBy) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+
+        if (this.role === 'admin') {
+          if (ar.approvestatus === 0) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+
+      });
+    }
   }
 
   removeEntry() {
