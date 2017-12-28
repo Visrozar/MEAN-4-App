@@ -434,17 +434,16 @@ export class DashboardComponent implements OnInit {
         name: filterName.toString(), role: roleArray, sector: sectorArray, indication: indicationArray,
         stage: stageArray, financing: financingArray
       };
-      // this.authService.saveFilter(object).subscribe(data => {
-      //   // Check if response was a success or error
-      //   if (!data.success) {
-      //     // error
-      //   } else {
-      //     // success
-      //   }
-      // });
+      this.authService.saveFilter(object).subscribe(data => {
+        // Check if response was a success or error
+        if (!data.success) {
+          // error
+        } else {
+          // success
+        }
+      });
 
     }
-
   }
 
   getFilterList() {
@@ -471,6 +470,26 @@ export class DashboardComponent implements OnInit {
     if (event.srcElement.className.toString() === 'filter-labels') {
       this.projects = this.dashFilter.transform(this.saveList, filter.role, filter.sector, filter.indication, filter.stage,
         filter.financing);
+
+      // for (let i = 0; i < filter.role.length; i++) {
+      //   $('input:contains("' + filter.role[i] + '")').prop('checked', true);
+      // }
+
+      // for (let i = 0; i < filter.sector.length; i++) {
+      //   $('label').find('input').filter(':contains("' + filter.sector[i] + '")').prop('checked', true);
+      // }
+
+      // for (let i = 0; i < filter.indication.length; i++) {
+      //   $('label').find('input').filter(':contains("' + filter.indication[i] + '")').prop('checked', true);
+      // }
+
+      // for (let i = 0; i < filter.stage.length; i++) {
+      //   $('label').find('input').filter(':contains("' + filter.stage[i] + '")').prop('checked', true);
+      // }
+
+      // for (let i = 0; i < filter.financing.length; i++) {
+      //   $('label').find('input').filter(':contains("' + filter.financing[i] + '")').prop('checked', true);
+      // }
     }
   }
 
