@@ -47,7 +47,8 @@ module.exports = (router) => {
                                         fileUrl: req.body.fileUrl,
                                         fileName: req.body.fileName,
                                         createdBy: req.body.createdBy,
-                                        approvestatus: req.body.approvestatus
+                                        approvestatus: req.body.approvestatus,
+                                        message: req.body.message
                                     });
                                     project.save((err) => {
                                         if (err) {
@@ -95,6 +96,7 @@ module.exports = (router) => {
                                         project.organization = req.body.organization;
                                         project.telephone = req.body.telephone;
                                         project.approvestatus = req.body.approvestatus;
+                                        project.message = req.body.message;
                                         project.email = req.body.email;
                                         project.website = req.body.website;
                                         project.work = req.body.work;

@@ -158,8 +158,17 @@
           </div>
         </div>
         <div class="row" *ngIf="this.role==='admin'">
+          <div class="col-xs-6 text-center">
+            <button type="button" name="button" (click)="approveEntry(project);" class="btn btn-sm btn-success approve-btn">Approve</button>
+          </div>
+          <div class="col-xs-6 text-center">
+            <button type="button" name="button" (click)="rejectEntry(project);" class="btn btn-sm btn-info approve-btn">Reject</button>
+          </div>
+        </div>
+        <div class="row" *ngIf="this.role==='admin'">
           <div class="col-xs-12 text-center">
-              <button type="button" name="button" (click)="approveEntry(project);" class="btn btn-sm btn-success approve-btn">Approve</button>
+            <input class="form-control input-md" style="margin-bottom:10px;" name="entryName" type="text" placeholder="Add message">
+            <div class="alert alert-danger" [hidden]="!isMessageEmpty">Message cannot be empty</div>
           </div>
         </div>
       </div>
