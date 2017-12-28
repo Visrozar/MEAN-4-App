@@ -71,60 +71,61 @@ export class DashboardComponent implements OnInit {
   deleteData: any;
 
   isEmpty = false;
+  filterLabels: any = [];
 
-  filterLabels = [{
-    'name': 'isaac',
-    'role': [
-      'Placement agent',
-      'Business developer'
-    ],
-    'sector': [
-      'Health tech',
-      'Agro'
-    ],
-    'indication': [
-      'Nutrition and weight loss',
-      'Gynecology and Obstetrics Oncology'
-    ],
-    'stage': [
-      'Greenhouse',
-      'Field trials'
-    ],
-    'financing': [
-      'Series C',
-      'Series D'
-    ]
-  }, {
-    'name': 'elvis',
-    'role': [
-      'Advisor'
-    ],
-    'sector': [
-    ],
-    'indication': [
-    ],
-    'stage': [
+  // filterLabels = [{
+  //   'name': 'isaac',
+  //   'role': [
+  //     'Placement agent',
+  //     'Business developer'
+  //   ],
+  //   'sector': [
+  //     'Health tech',
+  //     'Agro'
+  //   ],
+  //   'indication': [
+  //     'Nutrition and weight loss',
+  //     'Gynecology and Obstetrics Oncology'
+  //   ],
+  //   'stage': [
+  //     'Greenhouse',
+  //     'Field trials'
+  //   ],
+  //   'financing': [
+  //     'Series C',
+  //     'Series D'
+  //   ]
+  // }, {
+  //   'name': 'elvis',
+  //   'role': [
+  //     'Advisor'
+  //   ],
+  //   'sector': [
+  //   ],
+  //   'indication': [
+  //   ],
+  //   'stage': [
 
-    ],
-    'financing': [
+  //   ],
+  //   'financing': [
 
-    ]
+  //   ]
 
-  }, {
-    'name': 'niven',
-    'role': [
-      'Placement agent'
-    ],
-    'sector': [
-    ],
-    'indication': [
-    ],
-    'stage': [
-    ],
-    'financing': [
-    ]
+  // }, {
+  //   'name': 'niven',
+  //   'role': [
+  //     'Placement agent'
+  //   ],
+  //   'sector': [
+  //   ],
+  //   'indication': [
+  //   ],
+  //   'stage': [
+  //   ],
+  //   'financing': [
+  //   ]
 
-  }];
+  // }];
 
 
   ngOnInit() {
@@ -453,16 +454,16 @@ export class DashboardComponent implements OnInit {
   }
 
   clearSpecificFilter() {
-    // this.authService.deleteFilter(this.deleteData.name).subscribe(data => {
-    //     // Check if response was a success or error
-    //     if (!data.success) {
-    //       // error
-    //     } else {
-    //       // success
-    //       this.getFilterList();
-    //       this.projects = this.saveList;
-    //     }
-    //   });
+    this.authService.deleteFilter(this.deleteData.name).subscribe(data => {
+        // Check if response was a success or error
+        if (!data.success) {
+          // error
+        } else {
+          // success
+          this.getFilterList();
+          this.projects = this.saveList;
+        }
+      });
     this.clearDeletedata();
   }
 
