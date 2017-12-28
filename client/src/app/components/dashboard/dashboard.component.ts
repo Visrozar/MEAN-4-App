@@ -71,60 +71,61 @@ export class DashboardComponent implements OnInit {
   deleteData: any;
 
   isEmpty = false;
+  filterLabels: any = [];
 
-  filterLabels = [{
-    'name': 'isaac',
-    'role': [
-      'Placement agent',
-      'Business developer'
-    ],
-    'sector': [
-      'Health tech',
-      'Agro'
-    ],
-    'indication': [
-      'Nutrition and weight loss',
-      'Gynecology and Obstetrics Oncology'
-    ],
-    'stage': [
-      'Greenhouse',
-      'Field trials'
-    ],
-    'financing': [
-      'Series C',
-      'Series D'
-    ]
-  }, {
-    'name': 'elvis',
-    'role': [
-      'Advisor'
-    ],
-    'sector': [
-    ],
-    'indication': [
-    ],
-    'stage': [
+  // filterLabels = [{
+  //   'name': 'isaac',
+  //   'role': [
+  //     'Placement agent',
+  //     'Business developer'
+  //   ],
+  //   'sector': [
+  //     'Health tech',
+  //     'Agro'
+  //   ],
+  //   'indication': [
+  //     'Nutrition and weight loss',
+  //     'Gynecology and Obstetrics Oncology'
+  //   ],
+  //   'stage': [
+  //     'Greenhouse',
+  //     'Field trials'
+  //   ],
+  //   'financing': [
+  //     'Series C',
+  //     'Series D'
+  //   ]
+  // }, {
+  //   'name': 'elvis',
+  //   'role': [
+  //     'Advisor'
+  //   ],
+  //   'sector': [
+  //   ],
+  //   'indication': [
+  //   ],
+  //   'stage': [
 
-    ],
-    'financing': [
+  //   ],
+  //   'financing': [
 
-    ]
+  //   ]
 
-  }, {
-    'name': 'niven',
-    'role': [
-      'Placement agent'
-    ],
-    'sector': [
-    ],
-    'indication': [
-    ],
-    'stage': [
-    ],
-    'financing': [
-    ]
+  // }, {
+  //   'name': 'niven',
+  //   'role': [
+  //     'Placement agent'
+  //   ],
+  //   'sector': [
+  //   ],
+  //   'indication': [
+  //   ],
+  //   'stage': [
+  //   ],
+  //   'financing': [
+  //   ]
 
-  }];
+  // }];
 
 
   ngOnInit() {
@@ -150,8 +151,43 @@ export class DashboardComponent implements OnInit {
   getDashboard() {
     this.authService.getDashboard().subscribe(dashboard => {
       this.projects = dashboard.projects;
+      this.projects = this.transform(this.projects);
       this.saveList = this.projects;
     });
+
+  }
+
+  transform(arr) {
+    if (arr && arr.length) {
+      return arr.filter(ar => {
+        if (this.role === 'enterpreneur') {
+          if (this.username === ar.createdBy) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+
+        if (this.role === 'investor') {
+          if (ar.approvestatus === 1) {
+            return true;
+          } else if (this.username === ar.createdBy) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+
+        if (this.role === 'admin') {
+          if (ar.approvestatus === 0) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+
+      });
+    }
   }
 
   removeEntry() {
@@ -399,17 +435,16 @@ export class DashboardComponent implements OnInit {
         name: filterName.toString(), role: roleArray, sector: sectorArray, indication: indicationArray,
         stage: stageArray, financing: financingArray
       };
-      // this.authService.saveFilter(object).subscribe(data => {
-      //   // Check if response was a success or error
-      //   if (!data.success) {
-      //     // error
-      //   } else {
-      //     // success
-      //   }
-      // });
+      this.authService.saveFilter(object).subscribe(data => {
+        // Check if response was a success or error
+        if (!data.success) {
+          // error
+        } else {
+          // success
+        }
+      });
 
     }
-
   }
 
   getFilterList() {
@@ -419,16 +454,16 @@ export class DashboardComponent implements OnInit {
   }
 
   clearSpecificFilter() {
-    // this.authService.deleteFilter(this.deleteData.name).subscribe(data => {
-    //     // Check if response was a success or error
-    //     if (!data.success) {
-    //       // error
-    //     } else {
-    //       // success
-    //       this.getFilterList();
-    //       this.projects = this.saveList;
-    //     }
-    //   });
+    this.authService.deleteFilter(this.deleteData.name).subscribe(data => {
+        // Check if response was a success or error
+        if (!data.success) {
+          // error
+        } else {
+          // success
+          this.getFilterList();
+          this.projects = this.saveList;
+        }
+      });
     this.clearDeletedata();
   }
 
@@ -436,6 +471,26 @@ export class DashboardComponent implements OnInit {
     if (event.srcElement.className.toString() === 'filter-labels') {
       this.projects = this.dashFilter.transform(this.saveList, filter.role, filter.sector, filter.indication, filter.stage,
         filter.financing);
+
+      // for (let i = 0; i < filter.role.length; i++) {
+      //   $('input:contains("' + filter.role[i] + '")').prop('checked', true);
+      // }
+
+      // for (let i = 0; i < filter.sector.length; i++) {
+      //   $('label').find('input').filter(':contains("' + filter.sector[i] + '")').prop('checked', true);
+      // }
+
+      // for (let i = 0; i < filter.indication.length; i++) {
+      //   $('label').find('input').filter(':contains("' + filter.indication[i] + '")').prop('checked', true);
+      // }
+
+      // for (let i = 0; i < filter.stage.length; i++) {
+      //   $('label').find('input').filter(':contains("' + filter.stage[i] + '")').prop('checked', true);
+      // }
+
+      // for (let i = 0; i < filter.financing.length; i++) {
+      //   $('label').find('input').filter(':contains("' + filter.financing[i] + '")').prop('checked', true);
+      // }
     }
   }
 
