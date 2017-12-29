@@ -483,7 +483,9 @@ export class DashboardComponent implements OnInit {
   }
 
   approveEntry(dash) {
+    const entryName = $('input[name=entryName]').val();
     dash.approvestatus = 1;
+    dash.message = entryName;
     this.uploadService.editProject(dash).subscribe(data => {
       if (!data.success) {
         this.getDashboard();
