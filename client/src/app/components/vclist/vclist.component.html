@@ -13,6 +13,9 @@
 <div class="row body-style">
   <form class="col-md-3">
     <div class="form-group sticky">
+      <div class="col-xs-12 filter-label text-center">
+        <button class="btn btn-primary clear-filter">Add VC</button>
+      </div>
       <div class="multiselect col-md-12 filter hide-box">
         <div class="selectBox hide-box" (click)="showCheckboxes('location')">
           <select>
@@ -98,12 +101,12 @@
           <div class="row card">
             <div class="col-xs-3">
               <img class="feature-logo" *ngIf="vclist.Featured" src="../assets/images/feature1.png">
-              <img class="sh-styles" src="assets/images/company-logos/{{vclist['VC Name']}}.png" (error)="this.error=null; updateUrl($event)"
+              <img class="sh-styles" src="assets/images/company-logos/{{vclist.VCName}}.png" (error)="this.error=null; updateUrl($event)"
                 alt="company logo">
             </div>
             <div class="col-xs-6 slide-name">
               <a class="no-underline" href="{{vclist.Website}}" target="_blank">
-                <h3 class="text-center small-name">{{vclist['VC Name']}}</h3>
+                <h3 class="text-center small-name">{{vclist.VCName}}</h3>
               </a>
             </div>
             <div class="col-xs-3 show-btn">
@@ -114,25 +117,25 @@
           </div>
           <div class="row">
             <table class="table">
-              <tr *ngIf="vclist['Investment Focus']">
+              <tr *ngIf="vclist.InvestmentFocus">
                 <td class="vr">Investment Focus:</td>
-                <td>{{vclist['Investment Focus'].split(',').join(' |')}}</td>
+                <td>{{vclist.InvestmentFocus.split(',').join(' |')}}</td>
               </tr>
-              <tr *ngIf="vclist['Investment Stage']">
+              <tr *ngIf="vclist.InvestmentStage">
                 <td class="vr">Investment Stage:</td>
-                <td>{{vclist['Investment Stage'].split(',').join(' |')}}</td>
+                <td>{{vclist.InvestmentStage.split(',').join(' |')}}</td>
               </tr>
-              <tr *ngIf="vclist['Fund Status']">
+              <tr *ngIf="vclist.FundStatus">
                 <td class="vr">Fund Status:</td>
-                <td>{{vclist['Fund Status']}}</td>
+                <td>{{vclist.FundStatus}}</td>
               </tr>
-              <tr *ngIf="vclist['Special Criteria']">
+              <tr *ngIf="vclist.SpecialCriteria">
                 <td class="vr">Special Criteria:</td>
-                <td>{{vclist['Special Criteria']}}</td>
+                <td>{{vclist.SpecialCriteria}}</td>
               </tr>
-              <tr *ngIf="vclist.Research[' Industry Partner']">
+              <tr *ngIf="vclist.Research.IndustryPartner">
                 <td class="vr">Research/Industry Partner:</td>
-                <td>{{vclist.Research[' Industry Partner'].split(',').join(' |')}}</td>
+                <td>{{vclist.Research.IndustryPartner.split(',').join(' |')}}</td>
               </tr>
               <tr *ngIf="vclist.Location">
                 <td class="vr">Location:</td>

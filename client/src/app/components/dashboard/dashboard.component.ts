@@ -6,13 +6,13 @@ import { Router } from '@angular/router';
 import { DashboardPipe } from '../../pipes/dashboard.pipe';
 declare var $: any;
 
-
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
   providers: [DashboardPipe]
 })
+
 export class DashboardComponent implements OnInit {
   projects: any = [];
   style = 'glyphicon-heart-empty';
@@ -33,18 +33,12 @@ export class DashboardComponent implements OnInit {
       e.stopPropogation();
     });
 
-
     this.formService.getSelectData().subscribe((data) => {
       this.roleList = data.role;
-      // this.roleList.unshift('');
       this.sectorList = data.sector;
-      // this.sectorList.unshift('');
       this.indicationList = data.indication;
-      // this.indicationList.unshift('');
       this.stageProgramList = data.stage;
-      // this.stageProgramList.unshift('');
       this.financingList = data.financing;
-      // this.financingList.unshift('');
     });
   }
 
@@ -75,7 +69,6 @@ export class DashboardComponent implements OnInit {
 
   filterLabels: any = [];
 
-
   ngOnInit() {
     this.authService.getProfile().subscribe(profile => {
       this.username = profile.user.username;
@@ -102,7 +95,6 @@ export class DashboardComponent implements OnInit {
       this.projects = this.transform(this.projects);
       this.saveList = this.projects;
     });
-
   }
 
   transform(arr) {
@@ -404,15 +396,11 @@ export class DashboardComponent implements OnInit {
         stage: stageArray, financing: financingArray
       };
       this.authService.saveFilter(object).subscribe(data => {
-        // Check if response was a success or error
         if (!data.success) {
-          // error
         } else {
-          // success
         }
       });
     }
-
   }
 
   getFilterList() {

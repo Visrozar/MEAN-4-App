@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { VclistService } from '../../services/vclist.service';
 import { Meta } from '@angular/platform-browser';
 import { VcfilterPipe } from '../../pipes/vcfilter.pipe';
+import { AuthService } from '../../services/auth.service';
 declare var $: any;
 
 
@@ -15,13 +16,20 @@ declare var $: any;
 
 
 export class VclistComponent implements OnInit {
+  username;
+  role;
 
-  constructor(private vclistService: VclistService, private metaService: Meta, private listFilter: VcfilterPipe, private router: Router) {
+  constructor(private vclistService: VclistService,
+    private metaService: Meta,
+    private listFilter: VcfilterPipe,
+    private router: Router,
+    private authService: AuthService,
+  ) {
 
     this.vclistService.getVclist().subscribe((data) => {
       this.vclists = data;
       this.saveList = this.vclists;
-      const allowed = ['VC Name'];
+      const allowed = ['VCName'];
       const vc_name = [];
       var locat = [];
       var focus = [];
@@ -30,17 +38,17 @@ export class VclistComponent implements OnInit {
 
       data.filter(function (val) {
         for (const key in val) {
-          if (key === 'VC Name') {
+          if (key === 'VCName') {
             vc_name.push(val[key]); // val1 and etc...
           } else if (key === 'Location') {
             val[key].forEach(element => {
               locat.push(element.split(' ').splice(-1)[0]);
             });
-          } else if (key === 'Investment Focus') {
+          } else if (key === 'InvestmentFocus') {
             focus.push(val[key].split(','));
-          } else if (key === 'Prefered Indication') {
+          } else if (key === 'PreferedIndication') {
             indication.push(val[key].split(','));
-          } else if (key === 'Investment Stage') {
+          } else if (key === 'InvestmentStage') {
             investment.push(val[key].split(','));
           }
         }
@@ -106,6 +114,14 @@ export class VclistComponent implements OnInit {
   listOpen = false;
 
   ngOnInit() {
+    this.authService.getProfile().subscribe(profile => {
+      if (profile.user) {
+        this.username = profile.user.username;
+      }
+      if (profile.user) {
+        this.role = profile.user.role;
+      }
+    });
 
     const stickyOffset = $('.sticky').offset().top;
 
