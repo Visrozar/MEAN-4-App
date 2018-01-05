@@ -9,4 +9,21 @@ export class VcData {
     FundStatus: string = '';
     SpecialCriteria: string = '';
     Website: string = '';
+    fileUrl: string = '';
+    fileName: string = '';
+
+    clear() {
+        this.VCName = '';
+        this.Location = '';
+        this.InvestmentFocus = '';
+        this.PreferedIndication = '';
+        this.InvestmentStage = '';
+        this.Featured = '';
+        this.Research = {};
+        this.FundStatus = '';
+        this.SpecialCriteria = '';
+        this.Website = '';
+        this.fileUrl = '';
+        this.fileName = '';
+    }
 }

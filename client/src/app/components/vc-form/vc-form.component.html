@@ -1,3 +1,156 @@
-<p>
-  vc-form works!
-</p>
+<div class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" (click)="closeModal();">&times;</span>
+    <h2 class="page-header text-center">Add VC</h2>
+    <form #vcForm="ngForm" class="editForm" novalidate>
+      <div class="tab-pane fade in active">
+        <br/>
+        <div class='row'>
+          <div class='col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8'>
+            <div class="row">
+              <div class='col-xs-12 col-sm-6'>
+                <div class="form-group">
+                  <label class="control-label" for="vcname">VC Name</label>
+                  <input class="form-control input-md" #vcname="ngModel" required pattern="^[a-zA-Z ]{2,20}$" name="vcname" type="text" placeholder="VC Name"
+                    [(ngModel)]="vcData.VCName">
+                  <!-- <div class="alert alert-danger" [hidden]="vcname.valid">Name is required and must be valid</div> -->
+                </div>
+              </div>
+              <div class='col-xs-12 col-sm-6'>
+                <div class="form-group">
+                  <label class="control-label" for="location">Location</label>
+                  <input class="form-control input-md" #location="ngModel" required pattern="^[a-zA-Z ]{2,20}$" name="location" type="text" placeholder="Location"
+                    [(ngModel)]="vcData.Location">
+                  <!-- <div class="alert alert-danger" [hidden]="role.valid">Role is required</div> -->
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <!-- <div class='col-xs-12 col-sm-6'>
+                <div class="form-group">
+                  <label class="control-label" for="investmentFocus">Investment Focus</label>
+                  <select class="form-control select-md" #investmentFocus="ngModel" required name="investmentFocus" type="text" placeholder="Investment Focus" [(ngModel)]="vcData.InvestmentFocus">
+                    <option *ngFor="let rolel of roleList" value="{{rolel}}">{{rolel}}</option>
+                  </select>
+                  <div class="alert alert-danger" [hidden]="role.valid">Role is required</div>
+                </div>
+              </div>
+              <div class='col-xs-12 col-sm-6'>
+                <div class="form-group">
+                  <label class="control-label" for="preferedIndication">Prefered Indication</label>
+                  <select class="form-control select-md" #preferedIndication="ngModel" required name="preferedIndication" type="text" placeholder="Prefered Indication" [(ngModel)]="vcData.PreferedIndication">
+                    <option *ngFor="let rolel of roleList" value="{{rolel}}">{{rolel}}</option>
+                  </select>
+                  <div class="alert alert-danger" [hidden]="role.valid">Role is required</div>
+                </div>
+              </div> -->
+
+              <div class="multiselect col-xs-12 col-sm-6 filter">
+                <div class="selectBox" (click)="showCheckboxes('focus')">
+                  <select>
+                    <option>Investment Focus</option>
+                  </select>
+                  <div class="overSelect"></div>
+                </div>
+                <div class="hide-box" [ngClass]="{'active1': focusActive, 'disable': focusDisabled}">
+                  <label class="hide-box" *ngFor="let foc of focus">
+                    <input class="hide-box" type="checkbox" name="focu" (click)="filterList() " />{{ foc==''?'Investment Focus':foc }}</label>
+                </div>
+              </div>
+              <div class="multiselect col-xs-12 col-sm-6 filter">
+                <div class="selectBox" (click)="showCheckboxes('indication')">
+                  <select>
+                    <option>Prefered Indication</option>
+                  </select>
+                  <div class="overSelect"></div>
+                </div>
+                <div class="hide-box" [ngClass]="{'active12': indicationActive, 'disable': indicationDisabled}">
+                  <label class="hide-box" *ngFor="let indicat of indication">
+                    <input class="hide-box" type="checkbox" name="indica" (click)="filterList() " />{{ indicat==''?'Prefered Indication':indicat }}</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <!-- <div class='col-xs-12 col-sm-6'>
+                <div class="form-group">
+                  <label class="control-label" for="investmentStage">Investment Stage</label>
+                  <select class="form-control select-md" #investmentStage="ngModel" required name="investmentStage" type="text" placeholder="Investment Stage" [(ngModel)]="vcData.InvestmentStage">
+                    <option *ngFor="let rolel of roleList" value="{{rolel}}">{{rolel}}</option>
+                  </select>
+                  <div class="alert alert-danger" [hidden]="role.valid">Role is required</div>
+                </div>
+              </div> -->
+              <div class="multiselect col-xs-12 col-sm-6 filter">
+                <div class="selectBox" (click)="showCheckboxes('stage')">
+                  <select>
+                    <option>Investment Stage</option>
+                  </select>
+                  <div class="overSelect"></div>
+                </div>
+                <div class="hide-box" [ngClass]="{'active1': stageActive, 'disable': stageDisabled}">
+                  <label class="hide-box" *ngFor="let invest of investment">
+                    <input class="hide-box" type="checkbox" name="inves" (click)="filterList() " />{{ invest==''?'Investment Stage':invest }}</label>
+                </div>
+              </div>
+
+              <div class='col-xs-12 col-sm-6'>
+                <div class="form-group">
+                  <label class="control-label" for="featured">Featured</label>
+                  <select class="form-control select-md" #featured="ngModel" required name="featured" type="text" placeholder="Featured" [(ngModel)]="vcData.Featured">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                  <!-- <div class="alert alert-danger" [hidden]="role.valid">Role is required</div> -->
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class='col-xs-12 col-sm-6'>
+                <div class="form-group">
+                  <label class="control-label" for="research">Research</label>
+                  <input class="form-control input-md" #research="ngModel" required pattern="^[a-zA-Z ]{2,20}$" name="research" type="text" placeholder="Research"
+                    [(ngModel)]="vcData.Research">
+                  <!-- <div class="alert alert-danger" [hidden]="vcname.valid">Name is required and must be valid</div> -->
+                </div>
+              </div>
+              <div class='col-xs-12 col-sm-6'>
+                <div class="form-group">
+                  <label class="control-label" for="fundStatus">Fund Status</label>
+                  <input class="form-control input-md" #fundStatus="ngModel" required pattern="^[a-zA-Z ]{2,20}$" name="fundStatus" type="text" placeholder="Fund Status"
+                    [(ngModel)]="vcData.FundStatus">
+                  <!-- <div class="alert alert-danger" [hidden]="vcname.valid">Name is required and must be valid</div> -->
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class='col-xs-12 col-sm-6'>
+                <div class="form-group">
+                  <label class="control-label" for="specialCriteria">Special Criteria</label>
+                  <input class="form-control input-md" #specialCriteria="ngModel" required pattern="^[a-zA-Z ]{2,20}$" name="specialCriteria" type="text" placeholder="Special Criteria"
+                    [(ngModel)]="vcData.SpecialCriteria">
+                  <!-- <div class="alert alert-danger" [hidden]="vcname.valid">Name is required and must be valid</div> -->
+                </div>
+              </div>
+              <div class='col-xs-12 col-sm-6'>
+                <div class="form-group">
+                  <label class="control-label" for="website">Website</label>
+                  <input class="form-control input-md" #website="ngModel" pattern="^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$"
+                    name="website" type="text" placeholder="Website" [(ngModel)]="vcData.website">
+                  <!-- <div class="alert alert-danger" [hidden]="website.valid">Website must be valid</div> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group text-center">
+              <button type="button" class="btn btn-primary btn-outline-rounded" [disabled]="!vcForm.valid" (click)="submit()">
+                Submit
+                <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

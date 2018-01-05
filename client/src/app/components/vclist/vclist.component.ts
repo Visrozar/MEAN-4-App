@@ -67,7 +67,7 @@ export class VclistComponent implements OnInit {
       focus = focus.map(function (el) {
         return el.trim();
       });
-      this.focus = focus.filter(onlyUnique).filter(Boolean);
+      this.focus = this.vclistService.focus = focus.filter(onlyUnique).filter(Boolean);
 
       // Prefered Indication
       indication = [].concat.apply([], indication);
@@ -75,7 +75,7 @@ export class VclistComponent implements OnInit {
         return el.trim();
       });
       indication = indication.filter(onlyUnique);
-      this.indication = indication.filter(Boolean);
+      this.indication = this.vclistService.indication = indication.filter(Boolean);
 
       // Investment Stage
       investment = [].concat.apply([], investment);
@@ -83,13 +83,12 @@ export class VclistComponent implements OnInit {
         return el.trim();
       });
       investment = investment.filter(onlyUnique);
-      this.investment = investment.filter(Boolean);
+      this.investment = this.vclistService.investment = investment.filter(Boolean);
 
       this.metaService.addTags([
         { name: 'keywords', content: vc_name.toString() }
       ]);
     });
-
   }
 
   vclists: any = [];

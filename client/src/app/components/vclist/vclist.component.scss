@@ -72,10 +72,6 @@ input {
   z-index: 0 !important;
 }
 
-.overSelect {
-  cursor: pointer;
-}
-
 .hide-box {
   cursor: pointer;
 }
@@ -126,6 +122,7 @@ input {
   right: 0;
   top: 0;
   bottom: 0;
+  cursor: pointer;
 }
 
 #investmentCheckboxes,
