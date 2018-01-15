@@ -66,6 +66,16 @@ export class UploadFileService {   // Development Domain - Not Needed in Product
     return this.http.put(this.authService.domain + '/projects/editProject', data, this.options).map(res => res.json());
   }
 
+  newVC(data) {
+    this.createAuthenticationHeaders(); // Create headers before sending to API
+    return this.http.post(this.authService.domain + '/vcs/newVC', data, this.options).map(res => res.json());
+  }
+
+  editVC(data) {
+    this.createAuthenticationHeaders(); // Create headers before sending to API
+    return this.http.put(this.authService.domain + '/vcs/editVC', data, this.options).map(res => res.json());
+  }
+
   private saveFileData(fileUpload: FileUpload) {
     this.db.list(`${this.basePath}/`).push(fileUpload);
   }

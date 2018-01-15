@@ -7,6 +7,7 @@ export class VcData {
     Featured: string = '';
     Research: any = {};
     FundStatus: string = '';
+    IndustryPartner: string = '';
     SpecialCriteria: string = '';
     Website: string = '';
     fileUrl: string = '';
@@ -20,6 +21,7 @@ export class VcData {
         this.InvestmentStage = '';
         this.Featured = '';
         this.Research = {};
+        this.IndustryPartner = '';
         this.FundStatus = '';
         this.SpecialCriteria = '';
         this.Website = '';

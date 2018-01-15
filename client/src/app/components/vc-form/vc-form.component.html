@@ -14,51 +14,92 @@
                   <label class="control-label" for="vcname">VC Name</label>
                   <input class="form-control input-md" #vcname="ngModel" required pattern="^[a-zA-Z ]{2,20}$" name="vcname" type="text" placeholder="VC Name"
                     [(ngModel)]="vcData.VCName">
-                  <!-- <div class="alert alert-danger" [hidden]="vcname.valid">Name is required and must be valid</div> -->
+                  <div class="alert alert-danger" [hidden]="vcname.valid">VC Name is required and must be valid</div>
                 </div>
               </div>
               <div class='col-xs-12 col-sm-6'>
                 <div class="form-group">
                   <label class="control-label" for="location">Location</label>
-                  <input class="form-control input-md" #location="ngModel" required pattern="^[a-zA-Z ]{2,20}$" name="location" type="text" placeholder="Location"
-                    [(ngModel)]="vcData.Location">
-                  <!-- <div class="alert alert-danger" [hidden]="role.valid">Role is required</div> -->
+                  <input class="form-control input-md" #location="ngModel" required pattern="^[a-zA-Z ]{2,20}$" name="location" type="text"
+                    placeholder="Location" [(ngModel)]="vcData.Location">
+                  <div class="alert alert-danger" [hidden]="location.valid">Location is required</div>
                 </div>
               </div>
             </div>
             <div class="row">
-              <!-- <div class='col-xs-12 col-sm-6'>
+              <div class='col-xs-12 col-sm-6'>
                 <div class="form-group">
-                  <label class="control-label" for="investmentFocus">Investment Focus</label>
-                  <select class="form-control select-md" #investmentFocus="ngModel" required name="investmentFocus" type="text" placeholder="Investment Focus" [(ngModel)]="vcData.InvestmentFocus">
-                    <option *ngFor="let rolel of roleList" value="{{rolel}}">{{rolel}}</option>
+                  <label class="control-label" for="featured">Featured</label>
+                  <select class="form-control select-md" #featured="ngModel" required name="featured" type="text" placeholder="Featured" [(ngModel)]="vcData.Featured">
+                    <option value=""></option>
+                    <option value="yes">Yes</option>
+                    <option selected="selected" value="no">No</option>
                   </select>
-                  <div class="alert alert-danger" [hidden]="role.valid">Role is required</div>
+                  <div class="alert alert-danger" [hidden]="featured.valid">Featured is required</div>
                 </div>
               </div>
               <div class='col-xs-12 col-sm-6'>
                 <div class="form-group">
-                  <label class="control-label" for="preferedIndication">Prefered Indication</label>
-                  <select class="form-control select-md" #preferedIndication="ngModel" required name="preferedIndication" type="text" placeholder="Prefered Indication" [(ngModel)]="vcData.PreferedIndication">
-                    <option *ngFor="let rolel of roleList" value="{{rolel}}">{{rolel}}</option>
-                  </select>
-                  <div class="alert alert-danger" [hidden]="role.valid">Role is required</div>
-                </div>
-              </div> -->
-
-              <div class="multiselect col-xs-12 col-sm-6 filter">
-                <div class="selectBox" (click)="showCheckboxes('focus')">
-                  <select>
-                    <option>Investment Focus</option>
-                  </select>
-                  <div class="overSelect"></div>
-                </div>
-                <div class="hide-box" [ngClass]="{'active1': focusActive, 'disable': focusDisabled}">
-                  <label class="hide-box" *ngFor="let foc of focus">
-                    <input class="hide-box" type="checkbox" name="focu" (click)="filterList() " />{{ foc==''?'Investment Focus':foc }}</label>
+                  <label class="control-label" for="research">Research</label>
+                  <input class="form-control input-md" #research="ngModel" required pattern="^[a-zA-Z ]{2,20}$" name="research" type="text"
+                    placeholder="Research" [(ngModel)]="vcData.IndustryPartner">
+                  <div class="alert alert-danger" [hidden]="research.valid">Industry partner is required</div>
                 </div>
               </div>
-              <div class="multiselect col-xs-12 col-sm-6 filter">
+            </div>
+            <div class="row">
+
+              <div class='col-xs-12 col-sm-6'>
+                <div class="form-group">
+                  <label class="control-label" for="fundStatus">Fund Status</label>
+                  <input class="form-control input-md" #fundStatus="ngModel" required pattern="^[a-zA-Z ]{2,20}$" name="fundStatus" type="text"
+                    placeholder="Fund Status" [(ngModel)]="vcData.FundStatus">
+                  <div class="alert alert-danger" [hidden]="fundStatus.valid">Fund status is required</div>
+                </div>
+              </div>
+              <div class='col-xs-12 col-sm-6'>
+                <div class="form-group">
+                  <label class="control-label" for="specialCriteria">Special Criteria</label>
+                  <input class="form-control input-md" #specialCriteria="ngModel" required pattern="^[a-zA-Z ]{2,20}$" name="specialCriteria"
+                    type="text" placeholder="Special Criteria" [(ngModel)]="vcData.SpecialCriteria">
+                  <div class="alert alert-danger" [hidden]="specialCriteria.valid">Special Criteria is required</div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class='col-xs-12 col-sm-6'>
+                <div class="form-group">
+                  <label class="control-label" for="preferedIndication">Prefered Indication</label>
+                  <input class="form-control input-md" #preferedIndication="ngModel" required pattern="^[a-zA-Z ]{2,20}$" name="preferedIndication"
+                    type="text" placeholder="Prefered Indication" [(ngModel)]="vcData.PreferedIndication">
+                  <div class="alert alert-danger" [hidden]="preferedIndication.valid">Prefered Indication is required</div>
+                </div>
+              </div>
+              <div class='col-xs-12 col-sm-6'>
+                <div class="form-group">
+                  <label class="control-label" for="website">Website</label>
+                  <input class="form-control input-md" #website="ngModel" pattern="^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$"
+                    name="website" type="text" placeholder="Website" [(ngModel)]="vcData.Website">
+                  <div class="alert alert-danger" [hidden]="website.valid">Website must be valid</div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 multiselect-div">
+                <div class="multiselect filter form-group">
+                  <div class="selectBox" (click)="showCheckboxes('focus')">
+                    <select>
+                      <option>Investment Focus</option>
+                    </select>
+                    <div class="overSelect"></div>
+                  </div>
+                  <div class="hide-box" [ngClass]="{'active1': focusActive, 'disable': focusDisabled}">
+                    <label class="hide-box" *ngFor="let foc of focus">
+                      <input class="hide-box" type="checkbox" name="focu" (click)="filterList() " />{{ foc==''?'Investment Focus':foc }}</label>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="multiselect col-xs-12 col-sm-6 filter form-group">
                 <div class="selectBox" (click)="showCheckboxes('indication')">
                   <select>
                     <option>Prefered Indication</option>
@@ -69,78 +110,39 @@
                   <label class="hide-box" *ngFor="let indicat of indication">
                     <input class="hide-box" type="checkbox" name="indica" (click)="filterList() " />{{ indicat==''?'Prefered Indication':indicat }}</label>
                 </div>
-              </div>
-            </div>
-            <div class="row">
-              <!-- <div class='col-xs-12 col-sm-6'>
-                <div class="form-group">
-                  <label class="control-label" for="investmentStage">Investment Stage</label>
-                  <select class="form-control select-md" #investmentStage="ngModel" required name="investmentStage" type="text" placeholder="Investment Stage" [(ngModel)]="vcData.InvestmentStage">
-                    <option *ngFor="let rolel of roleList" value="{{rolel}}">{{rolel}}</option>
-                  </select>
-                  <div class="alert alert-danger" [hidden]="role.valid">Role is required</div>
-                </div>
               </div> -->
-              <div class="multiselect col-xs-12 col-sm-6 filter">
-                <div class="selectBox" (click)="showCheckboxes('stage')">
-                  <select>
-                    <option>Investment Stage</option>
-                  </select>
-                  <div class="overSelect"></div>
-                </div>
-                <div class="hide-box" [ngClass]="{'active1': stageActive, 'disable': stageDisabled}">
-                  <label class="hide-box" *ngFor="let invest of investment">
-                    <input class="hide-box" type="checkbox" name="inves" (click)="filterList() " />{{ invest==''?'Investment Stage':invest }}</label>
-                </div>
-              </div>
-
-              <div class='col-xs-12 col-sm-6'>
-                <div class="form-group">
-                  <label class="control-label" for="featured">Featured</label>
-                  <select class="form-control select-md" #featured="ngModel" required name="featured" type="text" placeholder="Featured" [(ngModel)]="vcData.Featured">
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                  </select>
-                  <!-- <div class="alert alert-danger" [hidden]="role.valid">Role is required</div> -->
+              <div class="col-xs-12 col-sm-6 multiselect-div">
+                <div class="multiselect filter form-group">
+                  <div class="selectBox" (click)="showCheckboxes('stage')">
+                    <select>
+                      <option>Investment Stage</option>
+                    </select>
+                    <div class="overSelect"></div>
+                  </div>
+                  <div class="hide-box" [ngClass]="{'active1': stageActive, 'disable': stageDisabled}">
+                    <label class="hide-box" *ngFor="let invest of investment">
+                      <input class="hide-box" type="checkbox" name="inves" (click)="filterList() " />{{ invest==''?'Investment Stage':invest }}</label>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="row">
-              <div class='col-xs-12 col-sm-6'>
-                <div class="form-group">
-                  <label class="control-label" for="research">Research</label>
-                  <input class="form-control input-md" #research="ngModel" required pattern="^[a-zA-Z ]{2,20}$" name="research" type="text" placeholder="Research"
-                    [(ngModel)]="vcData.Research">
-                  <!-- <div class="alert alert-danger" [hidden]="vcname.valid">Name is required and must be valid</div> -->
+                <div class='col-xs-12 col-sm-12'>
+                  <div class="form-group text-center">
+                    <label class="control-label" for="pic">Upload company logo</label>
+                    <div *ngIf="this.alreadyFileUpload">Uploaded file: {{this.vcData.fileName}}</div>
+                    <div *ngIf="currentFileUpload" class="progress" style="width:400px">
+                      <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+                        aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width:progress.percentage+'%'}">
+                        {{progress.percentage}}%</div>
+                    </div>
+                    <input style="margin: 0 auto;" id="selectFile" type="file" name="myFile" placeholder="Upload File">
+                    
+                    <button style="margin-top:5px;" class="btn btn-info btn-outline-rounded" (click)="uploadFile()"> Upload File</button>
+                    <button style="margin-top:5px;" class="btn btn-default btn-outline-rounded" (click)="removeFile()"> Remove File</button>
+                  </div>
                 </div>
               </div>
-              <div class='col-xs-12 col-sm-6'>
-                <div class="form-group">
-                  <label class="control-label" for="fundStatus">Fund Status</label>
-                  <input class="form-control input-md" #fundStatus="ngModel" required pattern="^[a-zA-Z ]{2,20}$" name="fundStatus" type="text" placeholder="Fund Status"
-                    [(ngModel)]="vcData.FundStatus">
-                  <!-- <div class="alert alert-danger" [hidden]="vcname.valid">Name is required and must be valid</div> -->
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class='col-xs-12 col-sm-6'>
-                <div class="form-group">
-                  <label class="control-label" for="specialCriteria">Special Criteria</label>
-                  <input class="form-control input-md" #specialCriteria="ngModel" required pattern="^[a-zA-Z ]{2,20}$" name="specialCriteria" type="text" placeholder="Special Criteria"
-                    [(ngModel)]="vcData.SpecialCriteria">
-                  <!-- <div class="alert alert-danger" [hidden]="vcname.valid">Name is required and must be valid</div> -->
-                </div>
-              </div>
-              <div class='col-xs-12 col-sm-6'>
-                <div class="form-group">
-                  <label class="control-label" for="website">Website</label>
-                  <input class="form-control input-md" #website="ngModel" pattern="^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$"
-                    name="website" type="text" placeholder="Website" [(ngModel)]="vcData.website">
-                  <!-- <div class="alert alert-danger" [hidden]="website.valid">Website must be valid</div> -->
-                </div>
-              </div>
-            </div>
 
             <div class="form-group text-center">
               <button type="button" class="btn btn-primary btn-outline-rounded" [disabled]="!vcForm.valid" (click)="submit()">

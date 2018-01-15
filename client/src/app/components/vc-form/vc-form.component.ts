@@ -35,6 +35,7 @@ export class VcFormComponent implements OnInit {
   focusDisabled = true;
   indicationDisabled = true;
   stageDisabled = true;
+  alreadyFileUpload = false;
   focus: any = [];
   indication: any = [];
   investment: any = [];
@@ -46,6 +47,17 @@ export class VcFormComponent implements OnInit {
     } else {
       this.vcData = this.formService.getVcFormData();
     }
+
+    if (this.formService.vceditClick === true) {
+      this.vcData = this.formService.vcdata;
+      if (this.vcData.fileName) {
+        this.alreadyFileUpload = true;
+      }
+    } else {
+      this.vcData = this.formService.getVcFormData();
+      this.alreadyFileUpload = false;
+    }
+
     const self = this;
     document.addEventListener('click', function (event) {
       if (event.srcElement.className.toString() !== 'overSelect' &&
@@ -62,9 +74,16 @@ export class VcFormComponent implements OnInit {
       const fileSelected: File = this.elem.nativeElement.querySelector('#selectFile').files[0];
       this.currentFileUpload = new FileUpload(fileSelected);
       this.uploadService.pushFileToStorage(this.currentFileUpload, this.progress);
-      this.formService.file = fileSelected.name;
+      // this.formService.file = fileSelected.name;
     }
   }
+
+  removeFile() {
+    this.alreadyFileUpload = false;
+    // document.getElementById('selectFile').value = '';
+    $('#selectFile').val('');
+    // this.formService.file = '';
+}
 
   closeModal() {
     this.formService.vceditClick = false;
@@ -89,7 +108,7 @@ export class VcFormComponent implements OnInit {
       }
       this.vcData.fileName = this.formService.fileName;
       this.vcData.fileUrl = this.formService.fileUrl;
-      this.uploadService.editProject(this.vcData).subscribe(data => {
+      this.uploadService.editVC(this.vcData).subscribe(data => {
         if (!data.success) {
           this.formService.showThanks = false;
           this.showError = true;
@@ -106,7 +125,7 @@ export class VcFormComponent implements OnInit {
       }
       this.vcData.fileName = this.formService.fileName;
       this.vcData.fileUrl = this.formService.fileUrl;
-      this.uploadService.newProject(this.vcData).subscribe(data => {
+      this.uploadService.newVC(this.vcData).subscribe(data => {
         if (!data.success) {
           this.formService.showThanks = false;
           this.showError = true;
