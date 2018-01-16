@@ -42,14 +42,14 @@ export class RegisterComponent implements OnInit {
         Validators.required, // Field is required
         Validators.minLength(3), // Minimum length is 3 characters
         Validators.maxLength(15), // Maximum length is 15 characters
-        this.validateUsername // Custom validation
+        // this.validateUsername // Custom validation
       ])],
       // Password Input
       password: ['', Validators.compose([
         Validators.required, // Field is required
         Validators.minLength(8), // Minimum length is 8 characters
         Validators.maxLength(35), // Maximum length is 35 characters
-        this.validatePassword // Custom validation
+        // this.validatePassword // Custom validation
       ])],
       // Confirm Password Input
       confirm: ['', Validators.required] // Field is required
@@ -85,28 +85,28 @@ export class RegisterComponent implements OnInit {
   }
 
   // Function to validate username is proper format
-  validateUsername(controls) {
-    // Create a regular expression
-    const regExp = new RegExp(/^[a-zA-Z0-9]+$/);
-    // Test username against regular expression
-    if (regExp.test(controls.value)) {
-      return null; // Return as valid username
-    } else {
-      return { 'validateUsername': true } // Return as invalid username
-    }
-  }
+  // validateUsername(controls) {
+  //   // Create a regular expression
+  //   const regExp = new RegExp(/^[a-zA-Z0-9]+$/);
+  //   // Test username against regular expression
+  //   if (regExp.test(controls.value)) {
+  //     return null; // Return as valid username
+  //   } else {
+  //     return { 'validateUsername': true } // Return as invalid username
+  //   }
+  // }
 
   // Function to validate password
-  validatePassword(controls) {
-    // Create a regular expression
-    const regExp = new RegExp(/^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[\d])(?=.*?[\W]).{8,35}$/);
-    // Test password against regular expression
-    if (regExp.test(controls.value)) {
-      return null; // Return as valid password
-    } else {
-      return { 'validatePassword': true } // Return as invalid password
-    }
-  }
+  // validatePassword(controls) {
+  //   // Create a regular expression
+  //   const regExp = new RegExp(/^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[\d])(?=.*?[\W]).{8,35}$/);
+  //   // Test password against regular expression
+  //   if (regExp.test(controls.value)) {
+  //     return null; // Return as valid password
+  //   } else {
+  //     return { 'validatePassword': true } // Return as invalid password
+  //   }
+  // }
 
   // Funciton to ensure passwords match
   matchingPasswords(password, confirm) {

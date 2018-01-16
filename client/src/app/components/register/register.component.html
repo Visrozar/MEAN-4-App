@@ -19,7 +19,7 @@
       <ul class="help-block">
         <li *ngIf="form.controls.username.errors?.required && form.controls.username.dirty">This field is required</li>
         <li *ngIf="form.controls.username.errors?.minlength && form.controls.username.dirty || form.controls.username.errors?.maxlength && form.controls.username.dirty ">Minimum characters: 3, Maximum characters: 15</li>
-        <li *ngIf="form.controls.username.errors?.validateUsername && form.controls.username.dirty">Username must not have any special characters</li>
+        <!-- <li *ngIf="form.controls.username.errors?.validateUsername && form.controls.username.dirty">Username must not have any special characters</li> -->
         <li *ngIf="usernameMessage">{{ usernameMessage }}</li>
       </ul>
     </div>
@@ -49,7 +49,7 @@
       <ul class="help-block">
         <li *ngIf="form.controls.password.errors?.required && form.controls.password.dirty">This field is required</li>
         <li *ngIf="form.controls.password.errors?.minlength && form.controls.password.dirty || form.controls.password.errors?.maxlength && form.controls.password.dirty ">Minimum characters: 8, Maximum characters: 35</li>
-        <li *ngIf="form.controls.password.errors?.validatePassword && form.controls.password.dirty">Password must have at least one uppercase, lowercase, special character, and number</li>
+        <!-- <li *ngIf="form.controls.password.errors?.validatePassword && form.controls.password.dirty">Password must have at least one uppercase, lowercase, special character, and number</li> -->
       </ul>
     </div>
   </div>
