@@ -39,15 +39,16 @@ export class VcFormComponent implements OnInit {
 
   ngOnInit() {
 
-    if (this.formService.vceditClick === true) {
-      this.vcData = this.formService.vcdata;
-    } else {
-      this.vcData = this.formService.getVcFormData();
-    }
+    // if (this.formService.vceditClick === true) {
+    //   this.vcData = this.formService.vcdata;
+    // } else {
+    //   this.vcData = this.formService.getVcFormData();
+    // }
 
     if (this.formService.vceditClick === true) {
       this.vcData = this.formService.vcdata;
-      if (this.vcData.fileName) {
+      this.vcData.Research = {IndustryPartner: this.formService.vcdata.IndustryPartner};
+      if (this.vcData.fileName !== '') {
         this.alreadyFileUpload = true;
       }
     } else {
@@ -134,8 +135,7 @@ export class VcFormComponent implements OnInit {
     const stageArray = [];
     const focus = $(`input[name=focu]:checked`);
     const stage = $(`input[name=inves]:checked`);
-    this.vcData.InvestmentFocus = focusArray;
-    this.vcData.InvestmentStage = stageArray;
+
     if (focus.length !== 0) {
       for (let i = 0; i < focus.length; i++) {
         focusArray.push(focus[i].nextSibling.data);
@@ -153,6 +153,8 @@ export class VcFormComponent implements OnInit {
     } else {
       this.stageValid = false;
     }
+    this.vcData.InvestmentFocus = focusArray.join(', ');
+    this.vcData.InvestmentStage = stageArray.join(', ');
   }
 
 }

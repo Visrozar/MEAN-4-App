@@ -32,6 +32,7 @@ export class FormService {
     public showError = false;
     public fileName;
     public fileUrl;
+    public vcId;
 
     constructor(private workflowService: WorkflowService, public http: Http) {
     }

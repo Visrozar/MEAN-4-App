@@ -12,6 +12,22 @@ a {
   margin-right: 5px;
 }
 
+.padd {
+  padding: 10px;
+}
+
+.close1 {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: -15px;
+}
+
+.delete-head {
+  padding-bottom: 20px;
+}
+
 .location-labels {
   display: inline-block;
   border: 1px solid grey;
@@ -202,7 +218,7 @@ hr {
 }
 
 .wrap {
-  border-left: 2px solid darkblue;
+  // border-left: 2px solid darkblue;
   position: relative;
   height: 100%;
 }

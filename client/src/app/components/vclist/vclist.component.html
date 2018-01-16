@@ -117,6 +117,30 @@
               </p>
             </div>
           </div>
+          <div class="row card" *ngIf="this.role!=='admin'">
+            <div class="col-xs-3 text-center padd">
+              <a routerLink="/vc_form">
+                <button type="button" name="button" (click)="editEntry(vclist);" class="btn btn-sm btn-info">Edit</button>
+              </a>
+            </div>
+            <div class="col-xs-3 text-center padd">
+              <button type="button" name="button" (click)="activateOverlay(vclist._id)" class="btn btn-sm btn-danger">Delete</button>
+            </div>
+            <div class="modal" *ngIf="projectoverlayActive === true">
+              <div class="modal-content">
+                <span class="close1" (click)="clearProjectdata();">&times;</span>
+                <h4 class="text-center delete-head">Are you sure you want to delete this project?</h4>
+                <div class="row">
+                  <div class="col-md-6 text-center">
+                    <button class="btn btn-danger" (click)="removeEntry();">Delete</button>
+                  </div>
+                  <div class="col-md-6 text-center">
+                    <button class="btn btn-default" (click)="clearProjectdata();">Cancel</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="row">
             <table class="table">
               <tr *ngIf="vclist.InvestmentFocus">

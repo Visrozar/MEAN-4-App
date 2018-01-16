@@ -75,12 +75,12 @@ export class UploadFileService {   // Development Domain - Not Needed in Product
     this.createAuthenticationHeaders(); // Create headers before sending to API
     return this.http.put(this.authService.domain + '/vcs/editVc', data, this.options).map(res => res.json());
   }
-  
-    // Function to delete a VC
-    deleteVC(id) {
-      this.createAuthenticationHeaders(); // Create headers before sending to API
-      return this.http.delete(this.authService.domain + '/vcs/deleteVc/' + id, this.options).map(res => res.json());
-    }
+
+  // Function to delete a VC
+  deleteVC(id) {
+    this.createAuthenticationHeaders(); // Create headers before sending to API
+    return this.http.delete(this.authService.domain + '/vcs/deleteVc/' + id, this.options).map(res => res.json());
+  }
 
   private saveFileData(fileUpload: FileUpload) {
     this.db.list(`${this.basePath}/`).push(fileUpload);

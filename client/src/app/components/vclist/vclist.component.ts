@@ -4,6 +4,7 @@ import { VclistService } from '../../services/vclist.service';
 import { Meta } from '@angular/platform-browser';
 import { VcfilterPipe } from '../../pipes/vcfilter.pipe';
 import { AuthService } from '../../services/auth.service';
+import { FormService } from '../../services/form.service';
 declare var $: any;
 
 
@@ -24,6 +25,7 @@ export class VclistComponent implements OnInit {
     private listFilter: VcfilterPipe,
     private router: Router,
     private authService: AuthService,
+    private formService: FormService,
   ) {
 
     this.vclistService.getVclist().subscribe((data) => {
@@ -104,6 +106,8 @@ export class VclistComponent implements OnInit {
   indication1 = false;
   investment1 = false;
   saveList: any = [];
+  vcId: any;
+  message: any;
 
   locationLabels: any = [];
   indicationLabels: any = [];
@@ -111,6 +115,7 @@ export class VclistComponent implements OnInit {
   investmentLabels: any = [];
 
   listOpen = false;
+  projectoverlayActive = false;
 
   ngOnInit() {
     this.authService.getProfile().subscribe(profile => {
@@ -140,6 +145,42 @@ export class VclistComponent implements OnInit {
         event.srcElement.className.toString() !== 'hide-box' && self.router.url.toString() === '/vc_list') {
         self.onBlur();
       }
+    });
+  }
+
+  editEntry(dash) {
+    this.formService.vceditClick = true;
+    this.formService.vcId = dash._id;
+    const vcpicked = (({ _id, VCName, Location, InvestmentFocus, PreferedIndication, InvestmentStage,
+      Featured, Research, FundStatus, IndustryPartner, SpecialCriteria, Website, fileUrl, fileName }) =>
+      ({
+        _id, VCName, Location, InvestmentFocus, PreferedIndication, InvestmentStage,
+        Featured, Research, FundStatus, IndustryPartner, SpecialCriteria, Website, fileUrl, fileName
+      }))(dash);
+    this.formService.vcdata = vcpicked;
+  }
+
+  activateOverlay(id) {
+    this.vcId = id;
+    this.projectoverlayActive = true;
+  }
+
+  clearProjectdata() {
+    this.vcId = '';
+    this.projectoverlayActive = false;
+  }
+
+  removeEntry() {
+    this.authService.deleteVC(this.vcId).subscribe(data => {
+      this.message = data.message;
+    });
+    this.clearProjectdata();
+    this.getVclist();
+  }
+
+  getVclist() {
+    this.vclistService.getVclist().subscribe((data) => {
+      this.vclists = data;
     });
   }
 

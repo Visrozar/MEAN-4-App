@@ -7,8 +7,8 @@ const bcrypt = require('bcrypt-nodejs');
 const vcSchema = new Schema({
     VCName: { type: String, required: true},
     Location: { type: String, required: true},
-    InvestmentStage: { type: Array, required: true},
-    InvestmentFocus: { type: Array, required: true},
+    InvestmentStage: { type: String, required: true},
+    InvestmentFocus: { type: String, required: true},
     PreferedIndication: { type: String},
     Featured: { type: String},
     FundStatus: { type: String},
