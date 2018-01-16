@@ -392,7 +392,7 @@ export class DashboardComponent implements OnInit {
       }
 
       const object = {
-        name: filterName.toString(), role: roleArray, sector: sectorArray, indication: indicationArray,
+        name: filterName.toString(), createdBy: this.username, role: roleArray, sector: sectorArray, indication: indicationArray,
         stage: stageArray, financing: financingArray
       };
       this.authService.saveFilter(object).subscribe(data => {

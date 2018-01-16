@@ -1,9 +1,9 @@
 export class VcData {
     VCName: string = '';
     Location: string = '';
-    InvestmentFocus: string = '';
+    InvestmentFocus: any = [];
     PreferedIndication: string = '';
-    InvestmentStage: string = '';
+    InvestmentStage: any = [];
     Featured: string = '';
     Research: any = {};
     FundStatus: string = '';
@@ -16,9 +16,9 @@ export class VcData {
     clear() {
         this.VCName = '';
         this.Location = '';
-        this.InvestmentFocus = '';
+        this.InvestmentFocus = [];
         this.PreferedIndication = '';
-        this.InvestmentStage = '';
+        this.InvestmentStage = [];
         this.Featured = '';
         this.Research = {};
         this.IndustryPartner = '';

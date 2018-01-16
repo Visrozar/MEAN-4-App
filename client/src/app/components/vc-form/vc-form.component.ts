@@ -18,6 +18,7 @@ export class VcFormComponent implements OnInit {
   currentFileUpload: FileUpload;
   progress: { percentage: number } = { percentage: 0 };
   showError = false;
+  showThanks = false;
 
   constructor(private uploadService: UploadFileService,
     public formService: FormService,
@@ -29,12 +30,6 @@ export class VcFormComponent implements OnInit {
     this.investment = this.vclistService.investment;
   }
 
-  focusActive = false;
-  indicationActive = false;
-  stageActive = false;
-  focusDisabled = true;
-  indicationDisabled = true;
-  stageDisabled = true;
   alreadyFileUpload = false;
   focusValid = false;
   stageValid = false;
@@ -59,16 +54,6 @@ export class VcFormComponent implements OnInit {
       this.vcData = this.formService.getVcFormData();
       this.alreadyFileUpload = false;
     }
-
-    const self = this;
-    document.addEventListener('click', function (event) {
-      if (event.srcElement.className.toString() !== 'overSelect' &&
-        event.srcElement.className.toString() !== 'hide-box' && self.router.url.toString() === '/vc_form') {
-        self.focusDisabled = true;
-        self.indicationDisabled = true;
-        self.stageDisabled = true;
-      }
-    });
   }
 
   uploadFile() {
@@ -85,11 +70,10 @@ export class VcFormComponent implements OnInit {
     // document.getElementById('selectFile').value = '';
     $('#selectFile').val('');
     // this.formService.file = '';
-}
+  }
 
   closeModal() {
     this.formService.vceditClick = false;
-    this.formService.resetVcData();
     this.router.navigate(['/vc_list']);
     if (this.formService.vcsubmited === true) {
       for (let i = 0; i < document.getElementsByTagName('form').length; i++) {
@@ -101,6 +85,7 @@ export class VcFormComponent implements OnInit {
   }
 
   submit() {
+    this.vcData.Research = { IndustryPartner: this.vcData.IndustryPartner };
     // this.formData.createdBy = this.username;
     if (this.formService.vceditClick === true) {
       // this.formData._id = this.formService.id;
@@ -112,11 +97,12 @@ export class VcFormComponent implements OnInit {
       this.vcData.fileUrl = this.formService.fileUrl;
       this.uploadService.editVC(this.vcData).subscribe(data => {
         if (!data.success) {
-          this.formService.showThanks = false;
+          this.showThanks = false;
           this.showError = true;
           console.log(data.message); // Return error message
         } else {
-          this.formService.showThanks = true;
+          this.formService.resetVcData();
+          this.showThanks = true;
           console.log(data.message); // Return success message
         }
       });
@@ -129,11 +115,12 @@ export class VcFormComponent implements OnInit {
       this.vcData.fileUrl = this.formService.fileUrl;
       this.uploadService.newVC(this.vcData).subscribe(data => {
         if (!data.success) {
-          this.formService.showThanks = false;
+          this.showThanks = false;
           this.showError = true;
           console.log(data.message); // Return error message
         } else {
-          this.formService.showThanks = true;
+          this.formService.resetVcData();
+          this.showThanks = true;
           console.log(data.message); // Return success message
         }
       });
@@ -142,44 +129,26 @@ export class VcFormComponent implements OnInit {
     // this.isFormValid = false;
   }
 
-  showCheckboxes(type: string) {
-
-    if (type === 'focus' && this.focusDisabled === true) {
-      this.focusDisabled = false;
-      this.focusActive = true;
-    } else {
-      this.focusDisabled = true;
-      this.focusActive = false;
-    }
-
-    if (type === 'indication' && this.indicationDisabled === true) {
-      this.indicationActive = true;
-      this.indicationDisabled = false;
-    } else {
-      this.indicationActive = false;
-      this.indicationDisabled = true;
-    }
-
-    if (type === 'stage' && this.stageDisabled === true) {
-      this.stageActive = true;
-      this.stageDisabled = false;
-    } else {
-      this.stageActive = false;
-      this.stageDisabled = true;
-    }
-  }
-
   checkClicked() {
+    const focusArray = [];
+    const stageArray = [];
     const focus = $(`input[name=focu]:checked`);
     const stage = $(`input[name=inves]:checked`);
-
+    this.vcData.InvestmentFocus = focusArray;
+    this.vcData.InvestmentStage = stageArray;
     if (focus.length !== 0) {
+      for (let i = 0; i < focus.length; i++) {
+        focusArray.push(focus[i].nextSibling.data);
+      }
       this.focusValid = true;
     } else {
       this.focusValid = false;
     }
 
     if (stage.length !== 0) {
+      for (let i = 0; i < stage.length; i++) {
+        stageArray.push(stage[i].nextSibling.data);
+      }
       this.stageValid = true;
     } else {
       this.stageValid = false;

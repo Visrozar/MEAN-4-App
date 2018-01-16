@@ -2,8 +2,8 @@
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close" (click)="closeModal();">&times;</span>
-    <h2 class="page-header text-center">Add VC</h2>
-    <form #vcForm="ngForm" class="editForm" novalidate>
+    <h2 [hidden]="this.showThanks || this.showError" class="page-header text-center">Add VC</h2>
+    <form [hidden]="this.showThanks || this.showError" #vcForm="ngForm" class="editForm" novalidate>
       <div class="tab-pane fade in active">
         <br/>
         <div class='row'>
@@ -130,5 +130,19 @@
         </div>
       </div>
     </form>
+    <div [hidden]="!this.showThanks">
+      <div class='row text-center thanks'>
+        <h4 class="text-center thank">VC added successfully.</h4>
+      </div>
+    </div>
+    
+    <div [hidden]="!this.showError">
+      <div class='row text-center thanks'>
+        <h4 class="text-center thank">Oops something was not right, try resubmitting with proper details.</h4>
+      </div>
+      <button type="button" class="btn btn-outline-rounded btn-primary" (click)="goToStart()">
+        <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span>Go back
+      </button>
+    </div>
   </div>
 </div>
