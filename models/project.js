@@ -75,6 +75,7 @@ const projectSchema = new Schema({
   organization: { type: String},
   telephone: { type: Number},
   approvestatus: { type: Number },
+  message: { type: String },
   email: { type: String, required: true, lowercase: true, validate: emailValidators },
   website: { type: String},
   work: { type: String},

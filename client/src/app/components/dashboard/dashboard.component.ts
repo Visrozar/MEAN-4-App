@@ -6,13 +6,13 @@ import { Router } from '@angular/router';
 import { DashboardPipe } from '../../pipes/dashboard.pipe';
 declare var $: any;
 
-
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
   providers: [DashboardPipe]
 })
+
 export class DashboardComponent implements OnInit {
   projects: any = [];
   style = 'glyphicon-heart-empty';
@@ -33,18 +33,12 @@ export class DashboardComponent implements OnInit {
       e.stopPropogation();
     });
 
-
     this.formService.getSelectData().subscribe((data) => {
       this.roleList = data.role;
-      // this.roleList.unshift('');
       this.sectorList = data.sector;
-      // this.sectorList.unshift('');
       this.indicationList = data.indication;
-      // this.indicationList.unshift('');
       this.stageProgramList = data.stage;
-      // this.stageProgramList.unshift('');
       this.financingList = data.financing;
-      // this.financingList.unshift('');
     });
   }
 
@@ -71,62 +65,9 @@ export class DashboardComponent implements OnInit {
   deleteData: any;
 
   isEmpty = false;
+  isMessageEmpty = false;
+
   filterLabels: any = [];
-
-  // filterLabels = [{
-  //   'name': 'isaac',
-  //   'role': [
-  //     'Placement agent',
-  //     'Business developer'
-  //   ],
-  //   'sector': [
-  //     'Health tech',
-  //     'Agro'
-  //   ],
-  //   'indication': [
-  //     'Nutrition and weight loss',
-  //     'Gynecology and Obstetrics Oncology'
-  //   ],
-  //   'stage': [
-  //     'Greenhouse',
-  //     'Field trials'
-  //   ],
-  //   'financing': [
-  //     'Series C',
-  //     'Series D'
-  //   ]
-  // }, {
-  //   'name': 'elvis',
-  //   'role': [
-  //     'Advisor'
-  //   ],
-  //   'sector': [
-  //   ],
-  //   'indication': [
-  //   ],
-  //   'stage': [
-
-  //   ],
-  //   'financing': [
-
-  //   ]
-
-  // }, {
-  //   'name': 'niven',
-  //   'role': [
-  //     'Placement agent'
-  //   ],
-  //   'sector': [
-  //   ],
-  //   'indication': [
-  //   ],
-  //   'stage': [
-  //   ],
-  //   'financing': [
-  //   ]
-
-  // }];
-
 
   ngOnInit() {
     this.authService.getProfile().subscribe(profile => {
@@ -145,7 +86,7 @@ export class DashboardComponent implements OnInit {
       }
     });
     this.getDashboard();
-    // this.getFilterList();
+    this.getFilterList();
   }
 
   getDashboard() {
@@ -154,7 +95,6 @@ export class DashboardComponent implements OnInit {
       this.projects = this.transform(this.projects);
       this.saveList = this.projects;
     });
-
   }
 
   transform(arr) {
@@ -383,6 +323,26 @@ export class DashboardComponent implements OnInit {
     this.projects = this.saveList;
   }
 
+  rejectEntry(dash) {
+    const entryName = $('input[name=entryName]').val();
+    if (entryName.toString() === '') {
+      this.isMessageEmpty = true;
+    } else {
+      this.isMessageEmpty = false;
+      dash.approvestatus = 2;
+      dash.message = entryName;
+      this.uploadService.editProject(dash).subscribe(data => {
+        if (!data.success) {
+          this.getDashboard();
+          console.log(data.message); // Return error message
+        } else {
+          console.log(data.message); // Return success message
+          this.getDashboard();
+        }
+      });
+    }
+  }
+
   saveFilter() {
     const filterName = $('input[name=filterName]').val();
     if (filterName.toString() === '') {
@@ -436,14 +396,10 @@ export class DashboardComponent implements OnInit {
         stage: stageArray, financing: financingArray
       };
       this.authService.saveFilter(object).subscribe(data => {
-        // Check if response was a success or error
         if (!data.success) {
-          // error
         } else {
-          // success
         }
       });
-
     }
   }
 
@@ -455,15 +411,15 @@ export class DashboardComponent implements OnInit {
 
   clearSpecificFilter() {
     this.authService.deleteFilter(this.deleteData.name).subscribe(data => {
-        // Check if response was a success or error
-        if (!data.success) {
-          // error
-        } else {
-          // success
-          this.getFilterList();
-          this.projects = this.saveList;
-        }
-      });
+      // Check if response was a success or error
+      if (!data.success) {
+        // error
+      } else {
+        // success
+        this.getFilterList();
+        this.projects = this.saveList;
+      }
+    });
     this.clearDeletedata();
   }
 
@@ -515,7 +471,9 @@ export class DashboardComponent implements OnInit {
   }
 
   approveEntry(dash) {
+    const entryName = $('input[name=entryName]').val();
     dash.approvestatus = 1;
+    dash.message = entryName;
     this.uploadService.editProject(dash).subscribe(data => {
       if (!data.success) {
         this.getDashboard();

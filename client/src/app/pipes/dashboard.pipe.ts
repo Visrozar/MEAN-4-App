@@ -9,9 +9,6 @@ export class DashboardPipe implements PipeTransform {
 
     if (items && items.length) {
         return items.filter(item => {
-            if (item.Featured) {
-                return true;
-            }
             if ((role.length && !role.find(b => item.role.includes(b)))) {
                 return false;
             }

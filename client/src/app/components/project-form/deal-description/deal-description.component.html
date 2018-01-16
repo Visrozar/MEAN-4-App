@@ -1,4 +1,33 @@
 <h2 class="page-header text-center">Deal Discription</h2>
+<p class="text-center">List your investment deal, company or research project in two simple steps and reach out automatically to our growing investors community. These information will be available freely and exclusively to our registered investors.</p>
+
+  <div class="row bs-wizard" style="border-bottom:0;">
+
+    <div class="col-xs-4 bs-wizard-step complete">
+      <div class="text-center bs-wizard-stepnum">Contact person</div>
+      <div class="progress">
+        <div class="progress-bar"></div>
+      </div>
+      <a class="bs-wizard-dot"></a>
+    </div>
+
+    <div class="col-xs-4 bs-wizard-step active">
+      <div class="text-center bs-wizard-stepnum">Deal description</div>
+      <div class="progress">
+        <div class="progress-bar"></div>
+      </div>
+      <a class="bs-wizard-dot"></a>
+    </div>
+
+    <div class="col-xs-4 bs-wizard-step disabled">
+      <div class="text-center bs-wizard-stepnum">Review</div>
+      <div class="progress">
+        <div class="progress-bar"></div>
+      </div>
+      <a class="bs-wizard-dot"></a>
+    </div>
+  </div>
+
 <form #workForm="ngForm" class="editForm" novalidate>
   <div class="tab-pane fade in active">
     <br/>
@@ -116,12 +145,12 @@
             </div>
           </div>
         </div>
-        <div class="form-group text-center space-20">
-          <button type="button" class="btn btn-outline-rounded btn-primary" (click)="goToPrevious(workForm)">
+        <div class="form-group space-20">
+          <button type="button" class="btn btn-outline-rounded btn-primary left" (click)="goToPrevious(workForm)">
             <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span> Contact Person</button>
-          <button type="button" class="btn btn-outline-rounded btn-primary" [disabled]="!workForm.valid || (progress.percentage !== 100 && progress.percentage !== 0)"
+          <button type="button" class="btn btn-outline-rounded btn-primary right" [disabled]="!workForm.valid || (progress.percentage !== 100 && progress.percentage !== 0)"
             (click)="goToNext(workForm)">
-            Next
+            Review
             <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span>
           </button>
         </div>
