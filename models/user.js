@@ -90,8 +90,9 @@ let validUsername = (username) => {
     return false; // Return error
   } else {
     // Regular expression to test if username format is valid
-    const regExp = new RegExp(/^[a-zA-Z0-9]+$/);
-    return regExp.test(username); // Return regular expression test result (true or false)
+    // const regExp = new RegExp(/^[a-zA-Z0-9]+$/);
+    // return regExp.test(username); // Return regular expression test result (true or false)
+    return true;
   }
 };
 
@@ -131,8 +132,9 @@ let validPassword = (password) => {
     return false; // Return error
   } else {
     // Regular Expression to test if password is valid format
-    const regExp = new RegExp(/^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[\d])(?=.*?[\W]).{8,35}$/);
-    return regExp.test(password); // Return regular expression test result (true or false)
+    // const regExp = new RegExp(/^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[\d])(?=.*?[\W]).{8,35}$/);
+    // return regExp.test(password); // Return regular expression test result (true or false)
+    return true;
   }
 };
 
