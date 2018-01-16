@@ -1,0 +1,160 @@
+<h2 class="page-header text-center">Deal Discription</h2>
+<p class="text-center">List your investment deal, company or research project in two simple steps and reach out automatically to our growing investors community. These information will be available freely and exclusively to our registered investors.</p>
+
+  <div class="row bs-wizard" style="border-bottom:0;">
+
+    <div class="col-xs-4 bs-wizard-step complete">
+      <div class="text-center bs-wizard-stepnum">Contact person</div>
+      <div class="progress">
+        <div class="progress-bar"></div>
+      </div>
+      <a class="bs-wizard-dot"></a>
+    </div>
+
+    <div class="col-xs-4 bs-wizard-step active">
+      <div class="text-center bs-wizard-stepnum">Deal description</div>
+      <div class="progress">
+        <div class="progress-bar"></div>
+      </div>
+      <a class="bs-wizard-dot"></a>
+    </div>
+
+    <div class="col-xs-4 bs-wizard-step disabled">
+      <div class="text-center bs-wizard-stepnum">Review</div>
+      <div class="progress">
+        <div class="progress-bar"></div>
+      </div>
+      <a class="bs-wizard-dot"></a>
+    </div>
+  </div>
+
+<form #workForm="ngForm" class="editForm" novalidate>
+  <div class="tab-pane fade in active">
+    <br/>
+    <div class='row'>
+      <div class='col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8'>
+        <div class="row">
+          <div class='col-xs-12 col-sm-6'>
+            <div class="form-group">
+              <label class="control-label" for="dealName">Deal Name</label>
+              <input class="form-control input-md" #dealName="ngModel" required pattern="^[a-zA-Z0-9 ]{2,50}$" name="dealName" type="text"
+                placeholder="Deal Name" [(ngModel)]="deal.dealName" (blur)="checkDealName(deal.dealName)">
+              <div class="alert alert-danger" [hidden]="dealName.valid">Deal Name is required or Invalid deal name</div>
+              <div class="alert alert-danger" [hidden]="!this.showAlready">Deal Name already exists</div>
+            </div>
+          </div>
+          <div class='col-xs-12 col-sm-6'>
+            <div class="form-group">
+              <label class="control-label" for="location">Location</label>
+              <input class="form-control select-md" #location="ngModel" required pattern="^[a-zA-Z ]{2,30}$" name="location" type="text"
+                placeholder="Location" [(ngModel)]="deal.location">
+              <div class="alert alert-danger" [hidden]="location.valid">Location is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class='col-xs-12 col-sm-6'>
+            <div class="form-group">
+              <label class="control-label" for="sector">Sector</label>
+              <select (change)="onChange($event.target.value)" class="form-control select-md" #sector="ngModel" required name="sector"
+                type="text" placeholder="Sector" [(ngModel)]="deal.sector">
+                <option *ngFor="let sector of sectorList" value="{{sector}}">{{sector}}</option>
+              </select>
+              <div class="alert alert-danger" [hidden]="sector.valid">Sector is required</div>
+            </div>
+          </div>
+          <div [hidden]="this.hideIndication" class='col-xs-12 col-sm-6'>
+            <div class="form-group">
+              <label class="control-label" for="indication">Indication</label>
+              <select class="form-control select-md" #indication="ngModel" name="indication" type="text" placeholder="Indication" [(ngModel)]="deal.indication">
+                <option *ngFor="let indication of indicationList" value="{{indication}}">{{indication}}</option>
+              </select>
+              <div class="alert alert-danger" [hidden]="indication.valid">Indication is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class='col-xs-12 col-sm-6'>
+            <div class="form-group">
+              <label class="control-label" for="stageLead">Stage of lead program</label>
+              <select class="form-control select-md" #stageLead="ngModel" name="stageLead" type="text" placeholder="Stage of lead program"
+                [(ngModel)]="deal.stageLead">
+                <option *ngFor="let stage of stageProgramList" value="{{stage}}">{{stage}}</option>
+              </select>
+            </div>
+          </div>
+          <div class='col-xs-12 col-sm-6'>
+            <div class="form-group">
+              <label class="control-label" for="financing">Financing round</label>
+              <select class="form-control select-md" #financing="ngModel" name="financing" type="text" placeholder="Financing" [(ngModel)]="deal.financing">
+                <option *ngFor="let financing of financingList" value="{{financing}}">{{financing}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class='col-xs-12 col-sm-6'>
+            <div class="form-group">
+              <label class="control-label" for="investment">Investment amount</label>
+              <input class="form-control select-md" #investment="ngModel" pattern="^.*[^+-.*/].*$" name="investment" type="number" placeholder="Investment amount"
+                [(ngModel)]="deal.investment">
+              <div class="alert alert-danger" [hidden]="investment.valid">Invalid amount</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class='col-xs-12 col-sm-12'>
+            <div class="form-group">
+              <label class="control-label" for="technology">Technology Description</label>
+              <textarea class="form-control select-md" #technology="ngModel" name="technology" type="text-box" placeholder="Technology Description"
+                [(ngModel)]="deal.technology"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class='col-xs-12 col-sm-12'>
+            <div class="form-group">
+              <label class="control-label" for="programDescription">Lead program description</label>
+              <textarea class="form-control select-md" #programDescription="ngModel" name="programDescription" type="text-box" placeholder="Lead program description"
+                [(ngModel)]="deal.programDescription"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class='col-xs-12 col-sm-12'>
+            <div class="form-group">
+              <label class="control-label" for="comments">Other comments</label>
+              <textarea class="form-control select-md" #comments="ngModel" name="comments" type="text-box" [(ngModel)]="deal.comments"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class='col-xs-12 col-sm-12'>
+            <div class="form-group text-center">
+              <label class="control-label" for="comments">Upload non-confidential presentation</label>
+              <div *ngIf="this.alreadyFileUpload">Uploaded file: {{this.deal.fileName}}</div>
+              <div *ngIf="currentFileUpload" class="progress" style="width:400px">
+                <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+                  aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width:progress.percentage+'%'}">
+                  {{progress.percentage}}%</div>
+              </div>
+              <input style="margin: 0 auto;" id="selectFile" type="file" name="myFile" placeholder="Upload File">
+              
+              <button style="margin-top:5px;" class="btn btn-info btn-outline-rounded" (click)="uploadFile()"> Upload File</button>
+              <button style="margin-top:5px;" class="btn btn-default btn-outline-rounded" (click)="removeFile()"> Remove File</button>
+            </div>
+          </div>
+        </div>
+        <div class="form-group space-20">
+          <button type="button" class="btn btn-outline-rounded btn-primary left" (click)="goToPrevious(workForm)">
+            <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span> Contact Person</button>
+          <button type="button" class="btn btn-outline-rounded btn-primary right" [disabled]="!workForm.valid || (progress.percentage !== 100 && progress.percentage !== 0)"
+            (click)="goToNext(workForm)">
+            Review
+            <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

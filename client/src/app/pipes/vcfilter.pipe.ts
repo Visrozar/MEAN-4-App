@@ -9,19 +9,19 @@ export class VcfilterPipe implements PipeTransform {
 
         if (items && items.length) {
             return items.filter(item => {
-                if (item.Featured) {
+                if (item.Featured === 'true') {
                     return true;
                 }
                 if ((location.length && !location.find(b => item.Location[0].includes(b)))) {
                     return false;
                 }
-                if ((focus.length && !focus.find(b => item['Investment Focus'].includes(b)))) {
+                if ((focus.length && !focus.find(b => item.InvestmentFocus.includes(b)))) {
                     return false;
                 }
-                if ((indication.length && !indication.find(b => item['Prefered Indication'].includes(b)))) {
+                if ((indication.length && !indication.find(b => item.PreferedIndication.includes(b)))) {
                     return false;
                 }
-                if ((investment.length && !investment.find(b => item['Investment Stage'].includes(b)))) {
+                if ((investment.length && !investment.find(b => item.InvestmentStage.includes(b)))) {
                     return false;
                 }
                 return true;

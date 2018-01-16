@@ -3,3 +3,23 @@
     margin-left: 0px;
     margin-right: 0px;
 }
+
+.btn-primary{
+    background: #7AACD6;
+    border-color: #9EC5E6;
+}
+
+.btn-primary[disabled]:hover{
+    background: #1f66a5;
+    border-color: #7AACD6;
+}
+
+.btn-primary:hover{
+    background: #1f66a5;
+    border-color: #7AACD6;
+}
+
+.btn-primary:focus{
+    background: #1f66a5;
+    border-color: #7AACD6;
+}

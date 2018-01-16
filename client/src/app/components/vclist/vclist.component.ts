@@ -1,7 +1,9 @@
 import { Component, OnInit, NgModule } from '@angular/core';
+import { Router } from '@angular/router';
 import { VclistService } from '../../services/vclist.service';
 import { Meta } from '@angular/platform-browser';
-import { VcfilterPipe } from '../../vcfilter.pipe';
+import { VcfilterPipe } from '../../pipes/vcfilter.pipe';
+import { AuthService } from '../../services/auth.service';
 declare var $: any;
 
 
@@ -12,19 +14,22 @@ declare var $: any;
   providers: [VcfilterPipe]
 })
 
-@NgModule({
-  declarations: [VcfilterPipe],
-})
-
 
 export class VclistComponent implements OnInit {
+  username;
+  role;
 
-  constructor(private vclistService: VclistService, private metaService: Meta, private listFilter: VcfilterPipe) {
+  constructor(private vclistService: VclistService,
+    private metaService: Meta,
+    private listFilter: VcfilterPipe,
+    private router: Router,
+    private authService: AuthService,
+  ) {
 
     this.vclistService.getVclist().subscribe((data) => {
       this.vclists = data;
       this.saveList = this.vclists;
-      const allowed = ['VC Name'];
+      const allowed = ['VCName'];
       const vc_name = [];
       var locat = [];
       var focus = [];
@@ -33,17 +38,17 @@ export class VclistComponent implements OnInit {
 
       data.filter(function (val) {
         for (const key in val) {
-          if (key === 'VC Name') {
+          if (key === 'VCName') {
             vc_name.push(val[key]); // val1 and etc...
           } else if (key === 'Location') {
             val[key].forEach(element => {
               locat.push(element.split(' ').splice(-1)[0]);
             });
-          } else if (key === 'Investment Focus') {
+          } else if (key === 'InvestmentFocus') {
             focus.push(val[key].split(','));
-          } else if (key === 'Prefered Indication') {
+          } else if (key === 'PreferedIndication') {
             indication.push(val[key].split(','));
-          } else if (key === 'Investment Stage') {
+          } else if (key === 'InvestmentStage') {
             investment.push(val[key].split(','));
           }
         }
@@ -62,7 +67,7 @@ export class VclistComponent implements OnInit {
       focus = focus.map(function (el) {
         return el.trim();
       });
-      this.focus = focus.filter(onlyUnique).filter(Boolean);
+      this.focus = this.vclistService.focus = focus.filter(onlyUnique).filter(Boolean);
 
       // Prefered Indication
       indication = [].concat.apply([], indication);
@@ -70,7 +75,7 @@ export class VclistComponent implements OnInit {
         return el.trim();
       });
       indication = indication.filter(onlyUnique);
-      this.indication = indication.filter(Boolean);
+      this.indication = this.vclistService.indication = indication.filter(Boolean);
 
       // Investment Stage
       investment = [].concat.apply([], investment);
@@ -78,13 +83,12 @@ export class VclistComponent implements OnInit {
         return el.trim();
       });
       investment = investment.filter(onlyUnique);
-      this.investment = investment.filter(Boolean);
+      this.investment = this.vclistService.investment = investment.filter(Boolean);
 
       this.metaService.addTags([
         { name: 'keywords', content: vc_name.toString() }
       ]);
     });
-
   }
 
   vclists: any = [];
@@ -109,6 +113,14 @@ export class VclistComponent implements OnInit {
   listOpen = false;
 
   ngOnInit() {
+    this.authService.getProfile().subscribe(profile => {
+      if (profile.user) {
+        this.username = profile.user.username;
+      }
+      if (profile.user) {
+        this.role = profile.user.role;
+      }
+    });
 
     const stickyOffset = $('.sticky').offset().top;
 
@@ -124,7 +136,8 @@ export class VclistComponent implements OnInit {
     });
     const self = this;
     document.addEventListener('click', function (event) {
-      if (event.srcElement.className.toString() !== 'overSelect' && event.srcElement.className.toString() !== 'hide-box') {
+      if (event.srcElement.className.toString() !== 'overSelect' &&
+        event.srcElement.className.toString() !== 'hide-box' && self.router.url.toString() === '/vc_list') {
         self.onBlur();
       }
     });
@@ -136,14 +149,26 @@ export class VclistComponent implements OnInit {
     const indicationCheckboxes = document.getElementById('indicationCheckboxes');
     const investmentCheckboxes = document.getElementById('investmentCheckboxes');
 
-    locationCheckboxes.style.display = 'none';
-    this.location = false;
-    focusCheckboxes.style.display = 'none';
-    this.focus1 = false;
-    indicationCheckboxes.style.display = 'none';
-    this.indication1 = false;
-    investmentCheckboxes.style.display = 'none';
-    this.investment1 = false;
+    if (locationCheckboxes.style.display) {
+      locationCheckboxes.style.display = 'none';
+      this.location = false;
+    }
+
+    if (focusCheckboxes.style.display) {
+      focusCheckboxes.style.display = 'none';
+      this.focus1 = false;
+    }
+
+    if (indicationCheckboxes.style.display) {
+      indicationCheckboxes.style.display = 'none';
+      this.indication1 = false;
+    }
+
+    if (investmentCheckboxes.style.display) {
+      investmentCheckboxes.style.display = 'none';
+      this.investment1 = false;
+    }
+
   }
 
   updateUrl(event) {

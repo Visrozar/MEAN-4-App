@@ -1,0 +1,103 @@
+<h2 class="page-header text-center">Contact Person</h2>
+<p class="text-center">List your investment deal, company or research project in two simple steps and reach out automatically to our growing investors
+  community. These information will be available freely and exclusively to our registered investors.</p>
+
+<div class="row bs-wizard" style="border-bottom:0;">
+
+  <div class="col-xs-4 bs-wizard-step active">
+    <div class="text-center bs-wizard-stepnum">Contact person</div>
+    <div class="progress">
+      <div class="progress-bar"></div>
+    </div>
+    <a class="bs-wizard-dot"></a>
+  </div>
+
+  <div class="col-xs-4 bs-wizard-step disabled">
+    <div class="text-center bs-wizard-stepnum">Deal description</div>
+    <div class="progress">
+      <div class="progress-bar"></div>
+    </div>
+    <a class="bs-wizard-dot"></a>
+  </div>
+
+  <div class="col-xs-4 bs-wizard-step disabled">
+    <div class="text-center bs-wizard-stepnum">Review</div>
+    <div class="progress">
+      <div class="progress-bar"></div>
+    </div>
+    <a class="bs-wizard-dot"></a>
+  </div>
+</div>
+
+<form #personalForm="ngForm" class="editForm" novalidate>
+  <div class="tab-pane fade in active">
+    <!-- <h4 class="head text-center">{{title}}</h4> -->
+    <br/>
+    <div class='row'>
+      <div class='col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8'>
+        <div class="row">
+          <div class='col-xs-12 col-sm-6'>
+            <div class="form-group">
+              <label class="control-label" for="name">Name</label>
+              <input class="form-control input-md" #name="ngModel" required pattern="^[a-zA-Z ]{2,20}$" name="name" type="text" placeholder="Name"
+                [(ngModel)]="personal.name">
+              <div class="alert alert-danger" [hidden]="name.valid">Name is required and must be valid</div>
+            </div>
+          </div>
+          <div class='col-xs-12 col-sm-6'>
+            <div class="form-group">
+              <label class="control-label" for="role">Role in the Deal</label>
+              <select class="form-control select-md" #role="ngModel" required name="role" type="text" placeholder="role" [(ngModel)]="personal.role">
+                <option *ngFor="let rolel of roleList" value="{{rolel}}">{{rolel}}</option>
+              </select>
+              <div class="alert alert-danger" [hidden]="role.valid">Role is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class='col-xs-12 col-sm-6'>
+            <div class="form-group">
+              <label class="control-label" for="organization">Organization</label>
+              <input class="form-control input-md" #organization="ngModel" pattern="^[a-zA-Z ]{2,50}$" name="organization" type="text"
+                placeholder="Organization" [(ngModel)]="personal.organization">
+              <div class="alert alert-danger" [hidden]="organization.valid">Invalid organization name</div>
+            </div>
+          </div>
+          <div class='col-xs-12 col-sm-6'>
+            <div class="form-group">
+              <label class="control-label" for="telephone">Telephone</label>
+              <input class="form-control input-md" #telephone="ngModel" pattern="^\s*-?[0-9]{8,15}\s*$" name="telephone" type="number"
+                placeholder="Telephone" [(ngModel)]="personal.telephone">
+              <div class="alert alert-danger" [hidden]="telephone.valid">Telephone number must be valid</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class='col-xs-12 col-sm-6'>
+            <div class="form-group">
+              <label class="control-label" for="email">Email</label>
+              <input class="form-control input-md" #email="ngModel" required pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$" name="email" type="text"
+                placeholder="Email" [(ngModel)]="personal.email">
+              <div class="alert alert-danger" [hidden]="email.valid">Email is required and must be valid</div>
+            </div>
+          </div>
+          <div class='col-xs-12 col-sm-6'>
+            <div class="form-group">
+              <label class="control-label" for="website">Website</label>
+              <input class="form-control input-md" #website="ngModel" pattern="^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$"
+                name="website" type="text" placeholder="Website" [(ngModel)]="personal.website">
+              <div class="alert alert-danger" [hidden]="website.valid">Website must be valid</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group text-right">
+          <button type="button" class="btn btn-primary btn-outline-rounded" [disabled]="!personalForm.valid" (click)="goToNext(personalForm)">
+            Deal Discription
+            <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

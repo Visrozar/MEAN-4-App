@@ -51,6 +51,11 @@ export class RegisterComponent implements OnInit {
         Validators.maxLength(35), // Maximum length is 35 characters
         // this.validatePassword // Custom validation
       ])],
+      // Role Input
+      role: ['', Validators.compose([
+        Validators.required, // Field is required
+        this.validateRole // Custom validation
+      ])],
       // Confirm Password Input
       confirm: ['', Validators.required] // Field is required
     }, { validator: this.matchingPasswords('password', 'confirm') }); // Add custom validator to form for matching passwords
@@ -62,6 +67,7 @@ export class RegisterComponent implements OnInit {
     this.form.controls['username'].disable();
     this.form.controls['password'].disable();
     this.form.controls['confirm'].disable();
+    this.form.controls['role'].disable();
   }
 
   // Function to enable the registration form
@@ -70,6 +76,7 @@ export class RegisterComponent implements OnInit {
     this.form.controls['username'].enable();
     this.form.controls['password'].enable();
     this.form.controls['confirm'].enable();
+    this.form.controls['role'].enable();
   }
 
   // Function to validate e-mail is proper format
@@ -80,7 +87,7 @@ export class RegisterComponent implements OnInit {
     if (regExp.test(controls.value)) {
       return null; // Return as valid email
     } else {
-      return { 'validateEmail': true } // Return as invalid email
+      return { 'validateEmail': true }; // Return as invalid email
     }
   }
 
@@ -108,6 +115,16 @@ export class RegisterComponent implements OnInit {
   //   }
   // }
 
+  // Function to validate role
+  validateRole(controls) {
+    // Test role
+    if (controls.value === 'investor' || controls.value === 'enterpreneur') {
+      return null; // Return as valid role
+    } else {
+      return { 'validateRole': true }; // Return as invalid role
+    }
+  }
+
   // Funciton to ensure passwords match
   matchingPasswords(password, confirm) {
     return (group: FormGroup) => {
@@ -115,7 +132,7 @@ export class RegisterComponent implements OnInit {
       if (group.controls[password].value === group.controls[confirm].value) {
         return null; // Return as a match
       } else {
-        return { 'matchingPasswords': true } // Return as error: do not match
+        return { 'matchingPasswords': true }; // Return as error: do not match
       }
     }
   }
@@ -128,7 +145,8 @@ export class RegisterComponent implements OnInit {
     const user = {
       email: this.form.get('email').value, // E-mail input field
       username: this.form.get('username').value, // Username input field
-      password: this.form.get('password').value // Password input field
+      password: this.form.get('password').value, // Password input field
+      role: this.form.get('role').value // Role input field
     }
 
     // Function from authentication service to register user
