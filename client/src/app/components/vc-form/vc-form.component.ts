@@ -1,10 +1,11 @@
-import { Component, OnInit, Input, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormService } from '../../services/form.service';
 import { VclistService } from '../../services/vclist.service';
 import { VcData } from '../../vcData.model';
 import { FileUpload } from '../../fileupload';
 import { UploadFileService } from '../../services/upload-file.service';
+import { AuthService } from '../../services/auth.service';
 declare var $: any;
 
 @Component({
@@ -12,8 +13,8 @@ declare var $: any;
   templateUrl: './vc-form.component.html',
   styleUrls: ['./vc-form.component.scss']
 })
-export class VcFormComponent implements OnInit {
-  // @Input() vcData;
+export class VcFormComponent implements OnInit, AfterViewInit {
+
   vcData: VcData;
   currentFileUpload: FileUpload;
   progress: { percentage: number } = { percentage: 0 };
@@ -23,6 +24,7 @@ export class VcFormComponent implements OnInit {
   constructor(private uploadService: UploadFileService,
     public formService: FormService,
     public vclistService: VclistService,
+    public authService: AuthService,
     private elem: ElementRef,
     private router: Router) {
     this.focus = this.vclistService.focus;
@@ -39,16 +41,9 @@ export class VcFormComponent implements OnInit {
 
   ngOnInit() {
 
-    // if (this.formService.vceditClick === true) {
-    //   this.vcData = this.formService.vcdata;
-    // } else {
-    //   this.vcData = this.formService.getVcFormData();
-    // }
-
     if (this.formService.vceditClick === true) {
-      this.vcData = this.formService.vcdata;
-      this.vcData.Research = {IndustryPartner: this.formService.vcdata.IndustryPartner};
-      if (this.vcData.fileName !== '') {
+      this.setEditForm();
+      if (this.vcData.fileName) {
         this.alreadyFileUpload = true;
       }
     } else {
@@ -57,12 +52,46 @@ export class VcFormComponent implements OnInit {
     }
   }
 
+  ngAfterViewInit() {
+    if (this.formService.vceditClick === true) {
+      let focus = [];
+      focus = this.formService.vcdata.InvestmentFocus.split(', ');
+      const input = $(`input[name=focu]`);
+      for (let i = 0; i < focus.length; i++) {
+        for (let j = 0; j < input.length; j++) {
+          if (focus[i] === input[j].nextSibling.data) {
+            input[j].checked = 'checked';
+          }
+        }
+      }
+
+      let stage = [];
+      stage = this.formService.vcdata.InvestmentStage.split(', ');
+      const input1 = $(`input[name=inves]`);
+      for (let i = 0; i <= stage.length; i++) {
+        for (let j = 0; j < input1.length; j++) {
+          if (stage[i] === input1[j].nextSibling.data) {
+            input1[j].checked = 'checked';
+          }
+        }
+      }
+    }
+    // this.checkClicked();
+  }
+
+  setEditForm() {
+    this.vcData = this.formService.vcdata;
+    if (!this.vcData.IndustryPartner) {
+      this.vcData.IndustryPartner = this.formService.vcdata.Research.IndustryPartner;
+    }
+  }
+
   uploadFile() {
     if (this.elem.nativeElement.querySelector('#selectFile').files[0]) {
       const fileSelected: File = this.elem.nativeElement.querySelector('#selectFile').files[0];
       this.currentFileUpload = new FileUpload(fileSelected);
       this.uploadService.pushFileToStorage(this.currentFileUpload, this.progress);
-      // this.formService.file = fileSelected.name;
+      this.formService.file = fileSelected.name;
     }
   }
 
@@ -70,7 +99,7 @@ export class VcFormComponent implements OnInit {
     this.alreadyFileUpload = false;
     // document.getElementById('selectFile').value = '';
     $('#selectFile').val('');
-    // this.formService.file = '';
+    this.formService.file = '';
   }
 
   closeModal() {
@@ -86,17 +115,17 @@ export class VcFormComponent implements OnInit {
   }
 
   submit() {
-    this.vcData.Research = { IndustryPartner: this.vcData.IndustryPartner };
+    this.vcData.Research = { 'IndustryPartner': this.vcData.IndustryPartner };
     // this.formData.createdBy = this.username;
     if (this.formService.vceditClick === true) {
-      // this.formData._id = this.formService.id;
+      this.vcData._id = this.formService.vcId;
       if (this.formService.file === '') {
         this.formService.fileName = '';
         this.formService.fileUrl = '';
       }
       this.vcData.fileName = this.formService.fileName;
       this.vcData.fileUrl = this.formService.fileUrl;
-      this.uploadService.editVC(this.vcData).subscribe(data => {
+      this.authService.editVC(this.vcData).subscribe(data => {
         if (!data.success) {
           this.showThanks = false;
           this.showError = true;
@@ -114,7 +143,7 @@ export class VcFormComponent implements OnInit {
       }
       this.vcData.fileName = this.formService.fileName;
       this.vcData.fileUrl = this.formService.fileUrl;
-      this.uploadService.newVC(this.vcData).subscribe(data => {
+      this.authService.newVC(this.vcData).subscribe(data => {
         if (!data.success) {
           this.showThanks = false;
           this.showError = true;
