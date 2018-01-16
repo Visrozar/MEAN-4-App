@@ -4,6 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { VclistComponent } from './components/vclist/vclist.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProjectFormComponent } from './components/project-form/project-form.component';
+import { VcFormComponent } from './components/vc-form/vc-form.component';
 import { ContactPersonComponent } from './components/project-form/contact-person/contact-person.component';
 import { DealDescriptionComponent } from './components/project-form/deal-description/deal-description.component';
 import { FormResultComponent } from './components/project-form/form-result/form-result.component';
@@ -19,6 +20,10 @@ const appRoutes: Routes = [
   {
     path: 'project_details',
     component: ProjectDetailComponent
+  },
+  {
+    path: 'vc_form',
+    component: VcFormComponent
   },
   {
     path: 'project_form',

@@ -31,6 +31,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { NotAuthGuard } from './guards/notAuth.guard';
 import { ProjectDetailComponent } from './components/project-detail/project-detail.component';
 import { DashboardPipe } from './pipes/dashboard.pipe';
+import { VcFormComponent } from './components/vc-form/vc-form.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { DashboardPipe } from './pipes/dashboard.pipe';
     LoginComponent,
     DashboardComponent,
     ProjectDetailComponent,
-    DashboardPipe
+    DashboardPipe,
+    VcFormComponent
   ],
   imports: [
     BrowserModule,

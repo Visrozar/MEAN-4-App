@@ -5,6 +5,9 @@ import 'rxjs/Rx';
 @Injectable()
 
 export class VclistService {
+  focus: any;
+  indication: any;
+  investment: any;
 
   constructor(public http: Http) { }
 

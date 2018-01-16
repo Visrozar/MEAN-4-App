@@ -1,0 +1,134 @@
+<div class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" (click)="closeModal();">&times;</span>
+    <h2 class="page-header text-center">Add VC</h2>
+    <form #vcForm="ngForm" class="editForm" novalidate>
+      <div class="tab-pane fade in active">
+        <br/>
+        <div class='row'>
+          <div class='col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8'>
+            <div class="row">
+              <div class='col-xs-12 col-sm-6'>
+                <div class="form-group">
+                  <label class="control-label" for="vcname">VC Name</label>
+                  <input class="form-control input-md" #vcname="ngModel" required pattern="^[a-zA-Z ]{2,20}$" name="vcname" type="text" placeholder="VC Name"
+                    [(ngModel)]="vcData.VCName">
+                  <div class="alert alert-danger" [hidden]="vcname.valid">VC Name is required and must be valid</div>
+                </div>
+              </div>
+              <div class='col-xs-12 col-sm-6'>
+                <div class="form-group">
+                  <label class="control-label" for="location">Location</label>
+                  <input class="form-control input-md" #location="ngModel" required pattern="^[a-zA-Z ]{2,20}$" name="location" type="text"
+                    placeholder="Location" [(ngModel)]="vcData.Location">
+                  <div class="alert alert-danger" [hidden]="location.valid">Location is required</div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class='col-xs-12 col-sm-6'>
+                <div class="form-group">
+                  <label class="control-label" for="featured">Featured</label>
+                  <select class="form-control select-md" #featured="ngModel" name="featured" type="text" placeholder="Featured" [(ngModel)]="vcData.Featured">
+                    <option value=""></option>
+                    <option value="yes">Yes</option>
+                    <option selected="selected" value="no">No</option>
+                  </select>
+                  <div class="alert alert-danger" [hidden]="featured.valid">Featured is required</div>
+                </div>
+              </div>
+              <div class='col-xs-12 col-sm-6'>
+                <div class="form-group">
+                  <label class="control-label" for="research">Research</label>
+                  <input class="form-control input-md" #research="ngModel" pattern="^[a-zA-Z ]{2,20}$" name="research" type="text" placeholder="Research"
+                    [(ngModel)]="vcData.IndustryPartner">
+                  <div class="alert alert-danger" [hidden]="research.valid">Industry partner is required</div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+
+              <div class='col-xs-12 col-sm-6'>
+                <div class="form-group">
+                  <label class="control-label" for="fundStatus">Fund Status</label>
+                  <input class="form-control input-md" #fundStatus="ngModel" pattern="^[a-zA-Z ]{2,20}$" name="fundStatus" type="text" placeholder="Fund Status"
+                    [(ngModel)]="vcData.FundStatus">
+                  <div class="alert alert-danger" [hidden]="fundStatus.valid">Fund status is required</div>
+                </div>
+              </div>
+              <div class='col-xs-12 col-sm-6'>
+                <div class="form-group">
+                  <label class="control-label" for="specialCriteria">Special Criteria</label>
+                  <input class="form-control input-md" #specialCriteria="ngModel" pattern="^[a-zA-Z ]{2,20}$" name="specialCriteria" type="text"
+                    placeholder="Special Criteria" [(ngModel)]="vcData.SpecialCriteria">
+                  <div class="alert alert-danger" [hidden]="specialCriteria.valid">Special Criteria is required</div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class='col-xs-12 col-sm-6'>
+                <div class="form-group">
+                  <label class="control-label" for="preferedIndication">Prefered Indication</label>
+                  <input class="form-control input-md" #preferedIndication="ngModel" pattern="^[a-zA-Z ]{2,20}$" name="preferedIndication"
+                    type="text" placeholder="Prefered Indication" [(ngModel)]="vcData.PreferedIndication">
+                  <div class="alert alert-danger" [hidden]="preferedIndication.valid">Prefered Indication is required</div>
+                </div>
+              </div>
+              <div class='col-xs-12 col-sm-6'>
+                <div class="form-group">
+                  <label class="control-label" for="website">Website</label>
+                  <input class="form-control input-md" #website="ngModel" pattern="^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$"
+                    name="website" type="text" placeholder="Website" [(ngModel)]="vcData.Website">
+                  <div class="alert alert-danger" [hidden]="website.valid">Website must be valid</div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12">
+                <div class="form-group">
+                  <label class="control-label" for="investmentFocus">Investment Focus</label>
+                  <label class="hide-box inline-input" *ngFor="let foc of focus">
+                    <input class="hide-box check-box" type="checkbox" name="focu" (click)="checkClicked()" />{{ foc==''?'Investment Focus':foc }}</label>
+                  <div class="alert alert-danger" [hidden]="focusValid">Investment Focus is required</div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-12">
+                <div class="form-group">
+                  <label class="control-label" for="investmentStage">Investment Stage</label>
+                  <label class="hide-box inline-input" *ngFor="let invest of investment">
+                    <input class="hide-box check-box" type="checkbox" name="inves" (click)="checkClicked()" />{{ invest==''?'Investment Stage':invest }}</label>
+                  <div class="alert alert-danger" [hidden]="stageValid">Investment Stage is required</div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class='col-xs-12 col-sm-12'>
+                <div class="form-group text-center">
+                  <label class="control-label" for="pic">Upload company logo</label>
+                  <div *ngIf="this.alreadyFileUpload">Uploaded file: {{this.vcData.fileName}}</div>
+                  <div *ngIf="currentFileUpload" class="progress" style="width:400px">
+                    <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+                      aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width:progress.percentage+'%'}">
+                      {{progress.percentage}}%</div>
+                  </div>
+                  <input style="margin: 0 auto;" id="selectFile" type="file" name="myFile" placeholder="Upload File">
+
+                  <button style="margin-top:5px;" class="btn btn-info btn-outline-rounded" (click)="uploadFile()"> Upload File</button>
+                  <button style="margin-top:5px;" class="btn btn-default btn-outline-rounded" (click)="removeFile()"> Remove File</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group text-center">
+              <button type="button" class="btn btn-primary btn-outline-rounded" [disabled]="!vcForm.valid || !this.focusValid || !this.stageValid" (click)="submit()">
+                Submit
+                <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -5,23 +5,22 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class DashboardPipe implements PipeTransform {
 
-  transform(items: any[], location: any[], focus: any[], indication: any[], investment: any[]): any {
+  transform(items: any[], role: any[], sector: any[], indication: any[], stageLead: any[], financing: any[]): any {
 
     if (items && items.length) {
         return items.filter(item => {
-            if (item.Featured) {
-                return true;
-            }
-            if ((location.length && !location.find(b => item.Location[0].includes(b)))) {
+            if ((role.length && !role.find(b => item.role.includes(b)))) {
                 return false;
             }
-            if ((focus.length && !focus.find(b => item['Investment Focus'].includes(b)))) {
+            if ((sector.length && !sector.find(b => item.sector.includes(b)))) {
                 return false;
             }
-            if ((indication.length && !indication.find(b => item['Prefered Indication'].includes(b)))) {
+            if ((indication.length && !indication.find(b => item.indication.includes(b)))) {
                 return false;
             }
-            if ((investment.length && !investment.find(b => item['Investment Stage'].includes(b)))) {
+            if ((stageLead.length && !stageLead.find(b => item.stageLead.includes(b)))) {
+                return false;
+            }if ((financing.length && !financing.find(b => item.financing.includes(b)))) {
                 return false;
             }
             return true;

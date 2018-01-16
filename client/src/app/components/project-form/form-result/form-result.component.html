@@ -1,197 +1,227 @@
 <div [hidden]="this.formService.showThanks || this.showError" class="tab-pane fade in active">
-    <h4 class="page-header text-center">Here is a copy of the information you have entered:</h4>
-    <div class='row'>
-        <div class='col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-8 col-md-offset-4 col-md-8'>
-            <div class="row">
-                <div class='col-xs-3 col-sm-2'>
-                    <div class="form-group">
-                        <label class="control-label" for="name">Name: </label>
-                    </div>
-                </div>
-                <div class='col-xs-9 col-sm-10'>
-                    {{formData.name}}
-                </div>
-            </div>
-            <div class="row">
-                <div class='col-xs-3 col-sm-2'>
-                    <div class="form-group">
-                        <label class="control-label" for="name">Role: </label>
-                    </div>
-                </div>
-                <div class='col-xs-9 col-sm-10'>
-                    {{formData.role}}
-                </div>
-            </div>
-            <div *ngIf="formData.organization" class="row">
-                <div class='col-xs-3 col-sm-2'>
-                    <div class="form-group">
-                        <label class="control-label" for="name">Organization: </label>
-                    </div>
-                </div>
-                <div class='col-xs-9 col-sm-10'>
-                    {{formData.organization}}
-                </div>
-            </div>
-            <div *ngIf="formData.telephone" class="row">
-                <div class='col-xs-3 col-sm-2'>
-                    <div class="form-group">
-                        <label class="control-label" for="name">Telephone: </label>
-                    </div>
-                </div>
-                <div class='col-xs-9 col-sm-10'>
-                    {{formData.telephone}}
-                </div>
-            </div>
-            <div *ngIf="formData.website" class="row">
-                <div class='col-xs-3 col-sm-2'>
-                    <div class="form-group">
-                        <label class="control-label" for="name">Website: </label>
-                    </div>
-                </div>
-                <div class='col-xs-9 col-sm-10'>
-                    {{formData.website}}
-                </div>
-            </div>
-            <div class="row">
-                <div class='col-xs-3 col-sm-2'>
-                    <div class="form-group">
-                        <label class="control-label" for="email">Email: </label>
-                    </div>
-                </div>
-                <div class='col-xs-9 col-sm-10'>
-                    {{formData.email}}
-                </div>
-            </div>
-            <div class="row">
-                <div class='col-xs-3 col-sm-2'>
-                    <div class="form-group">
-                        <label class="control-label" for="email">Deal Name: </label>
-                    </div>
-                </div>
-                <div class='col-xs-9 col-sm-10'>
-                    {{formData.dealName}}
-                </div>
-            </div>
-            <div class="row">
-                <div class='col-xs-3 col-sm-2'>
-                    <div class="form-group">
-                        <label class="control-label" for="email">Location: </label>
-                    </div>
-                </div>
-                <div class='col-xs-9 col-sm-10'>
-                    {{formData.location}}
-                </div>
-            </div>
-            <div class="row">
-                <div class='col-xs-3 col-sm-2'>
-                    <div class="form-group">
-                        <label class="control-label" for="email">Sector: </label>
-                    </div>
-                </div>
-                <div class='col-xs-9 col-sm-10'>
-                    {{formData.sector}}
-                </div>
-            </div>
-            <div *ngIf="formData.indication" class="row">
-                <div class='col-xs-3 col-sm-2'>
-                    <div class="form-group">
-                        <label class="control-label" for="name">Indication: </label>
-                    </div>
-                </div>
-                <div class='col-xs-9 col-sm-10'>
-                    {{formData.indication}}
-                </div>
-            </div>
-            <div *ngIf="formData.stageLead" class="row">
-                <div class='col-xs-3 col-sm-2'>
-                    <div class="form-group">
-                        <label class="control-label" for="name">Stage of lead program: </label>
-                    </div>
-                </div>
-                <div class='col-xs-9 col-sm-10'>
-                    {{formData.stageLead}}
-                </div>
-            </div>
-            <div *ngIf="formData.financing" class="row">
-                <div class='col-xs-3 col-sm-2'>
-                    <div class="form-group">
-                        <label class="control-label" for="name">Financing round: </label>
-                    </div>
-                </div>
-                <div class='col-xs-9 col-sm-10'>
-                    {{formData.financing}}
-                </div>
-            </div>
-            <div *ngIf="formData.investment" class="row">
-                <div class='col-xs-3 col-sm-2'>
-                    <div class="form-group">
-                        <label class="control-label" for="name">Investment amount: </label>
-                    </div>
-                </div>
-                <div class='col-xs-9 col-sm-10'>
-                    {{formData.investment}}
-                </div>
-            </div>
-            <div *ngIf="formData.technology" class="row">
-                <div class='col-xs-3 col-sm-2'>
-                    <div class="form-group">
-                        <label class="control-label" for="name">Technology Description: </label>
-                    </div>
-                </div>
-                <div class='col-xs-9 col-sm-10'>
-                    {{formData.technology}}
-                </div>
-            </div>
-            <div *ngIf="formData.technology" class="row">
-                <div class='col-xs-3 col-sm-2'>
-                    <div class="form-group">
-                        <label class="control-label" for="name">Lead program description: </label>
-                    </div>
-                </div>
-                <div class='col-xs-9 col-sm-10'>
-                    {{formData.programDescription}}
-                </div>
-            </div>
-            <div *ngIf="formData.comments" class="row">
-                <div class='col-xs-3 col-sm-2'>
-                    <div class="form-group">
-                        <label class="control-label" for="name">Other comments: </label>
-                    </div>
-                </div>
-                <div class='col-xs-9 col-sm-10'>
-                    {{formData.comments}}
-                </div>
-            </div>
-            <div *ngIf="this.formService.file" class="row">
-                <div class='col-xs-3 col-sm-2'>
-                    <div class="form-group">
-                        <label class="control-label" for="name">File to upload: </label>
-                    </div>
-                </div>
-                <div class='col-xs-9 col-sm-10'>
-                    {{this.formService.file}}
-                </div>
-            </div>
+  <h4 class="page-header text-center">Here is a copy of the information you have entered:</h4>
+  <p class="text-center">List your investment deal, company or research project in two simple steps and reach out automatically to our growing investors
+    community. These information will be available freely and exclusively to our registered investors.</p>
+
+    <div class="row bs-wizard" style="border-bottom:0;">
+
+      <div class="col-xs-4 bs-wizard-step complete">
+        <div class="text-center bs-wizard-stepnum">Contact person</div>
+        <div class="progress">
+          <div class="progress-bar"></div>
         </div>
+        <a class="bs-wizard-dot"></a>
+      </div>
+
+      <div class="col-xs-4 bs-wizard-step complete">
+        <div class="text-center bs-wizard-stepnum">Deal description</div>
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+        <a class="bs-wizard-dot"></a>
+      </div>
+
+      <div class="col-xs-4 bs-wizard-step active">
+        <div class="text-center bs-wizard-stepnum">Review</div>
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+        <a class="bs-wizard-dot"></a>
+      </div>
     </div>
-    <div class="text-center">
-        <button type="button" class="btn btn-outline-rounded btn-primary" (click)="goToPrevious(isFormValid)">
-            <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span> Deal Discripton</button>
-        <button class="btn btn-success btn-outline-rounded" (click)="submit()"> Submit</button>
+
+  <div class='row'>
+    <div class='col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-8 col-md-offset-4 col-md-8'>
+      <div class="row">
+        <div class='col-xs-3 col-sm-2'>
+          <div class="form-group">
+            <label class="control-label" for="name">Name: </label>
+          </div>
+        </div>
+        <div class='col-xs-9 col-sm-10'>
+          {{formData.name}}
+        </div>
+      </div>
+      <div class="row">
+        <div class='col-xs-3 col-sm-2'>
+          <div class="form-group">
+            <label class="control-label" for="name">Role: </label>
+          </div>
+        </div>
+        <div class='col-xs-9 col-sm-10'>
+          {{formData.role}}
+        </div>
+      </div>
+      <div *ngIf="formData.organization" class="row">
+        <div class='col-xs-3 col-sm-2'>
+          <div class="form-group">
+            <label class="control-label" for="name">Organization: </label>
+          </div>
+        </div>
+        <div class='col-xs-9 col-sm-10'>
+          {{formData.organization}}
+        </div>
+      </div>
+      <div *ngIf="formData.telephone" class="row">
+        <div class='col-xs-3 col-sm-2'>
+          <div class="form-group">
+            <label class="control-label" for="name">Telephone: </label>
+          </div>
+        </div>
+        <div class='col-xs-9 col-sm-10'>
+          {{formData.telephone}}
+        </div>
+      </div>
+      <div *ngIf="formData.website" class="row">
+        <div class='col-xs-3 col-sm-2'>
+          <div class="form-group">
+            <label class="control-label" for="name">Website: </label>
+          </div>
+        </div>
+        <div class='col-xs-9 col-sm-10'>
+          {{formData.website}}
+        </div>
+      </div>
+      <div class="row">
+        <div class='col-xs-3 col-sm-2'>
+          <div class="form-group">
+            <label class="control-label" for="email">Email: </label>
+          </div>
+        </div>
+        <div class='col-xs-9 col-sm-10'>
+          {{formData.email}}
+        </div>
+      </div>
+      <div class="row">
+        <div class='col-xs-3 col-sm-2'>
+          <div class="form-group">
+            <label class="control-label" for="email">Deal Name: </label>
+          </div>
+        </div>
+        <div class='col-xs-9 col-sm-10'>
+          {{formData.dealName}}
+        </div>
+      </div>
+      <div class="row">
+        <div class='col-xs-3 col-sm-2'>
+          <div class="form-group">
+            <label class="control-label" for="email">Location: </label>
+          </div>
+        </div>
+        <div class='col-xs-9 col-sm-10'>
+          {{formData.location}}
+        </div>
+      </div>
+      <div class="row">
+        <div class='col-xs-3 col-sm-2'>
+          <div class="form-group">
+            <label class="control-label" for="email">Sector: </label>
+          </div>
+        </div>
+        <div class='col-xs-9 col-sm-10'>
+          {{formData.sector}}
+        </div>
+      </div>
+      <div *ngIf="formData.indication" class="row">
+        <div class='col-xs-3 col-sm-2'>
+          <div class="form-group">
+            <label class="control-label" for="name">Indication: </label>
+          </div>
+        </div>
+        <div class='col-xs-9 col-sm-10'>
+          {{formData.indication}}
+        </div>
+      </div>
+      <div *ngIf="formData.stageLead" class="row">
+        <div class='col-xs-3 col-sm-2'>
+          <div class="form-group">
+            <label class="control-label" for="name">Stage of lead program: </label>
+          </div>
+        </div>
+        <div class='col-xs-9 col-sm-10'>
+          {{formData.stageLead}}
+        </div>
+      </div>
+      <div *ngIf="formData.financing" class="row">
+        <div class='col-xs-3 col-sm-2'>
+          <div class="form-group">
+            <label class="control-label" for="name">Financing round: </label>
+          </div>
+        </div>
+        <div class='col-xs-9 col-sm-10'>
+          {{formData.financing}}
+        </div>
+      </div>
+      <div *ngIf="formData.investment" class="row">
+        <div class='col-xs-3 col-sm-2'>
+          <div class="form-group">
+            <label class="control-label" for="name">Investment amount: </label>
+          </div>
+        </div>
+        <div class='col-xs-9 col-sm-10'>
+          {{formData.investment}}
+        </div>
+      </div>
+      <div *ngIf="formData.technology" class="row">
+        <div class='col-xs-3 col-sm-2'>
+          <div class="form-group">
+            <label class="control-label" for="name">Technology Description: </label>
+          </div>
+        </div>
+        <div class='col-xs-9 col-sm-10'>
+          {{formData.technology}}
+        </div>
+      </div>
+      <div *ngIf="formData.technology" class="row">
+        <div class='col-xs-3 col-sm-2'>
+          <div class="form-group">
+            <label class="control-label" for="name">Lead program description: </label>
+          </div>
+        </div>
+        <div class='col-xs-9 col-sm-10'>
+          {{formData.programDescription}}
+        </div>
+      </div>
+      <div *ngIf="formData.comments" class="row">
+        <div class='col-xs-3 col-sm-2'>
+          <div class="form-group">
+            <label class="control-label" for="name">Other comments: </label>
+          </div>
+        </div>
+        <div class='col-xs-9 col-sm-10'>
+          {{formData.comments}}
+        </div>
+      </div>
+      <div *ngIf="this.formService.file" class="row">
+        <div class='col-xs-3 col-sm-2'>
+          <div class="form-group">
+            <label class="control-label" for="name">File to upload: </label>
+          </div>
+        </div>
+        <div class='col-xs-9 col-sm-10'>
+          {{this.formService.file}}
+        </div>
+      </div>
     </div>
+  </div>
+  <div>
+    <button type="button" class="btn btn-outline-rounded btn-primary" (click)="goToPrevious(isFormValid)">
+      <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span> Deal Discripton</button>
+    <button class="btn btn-success btn-outline-rounded right" (click)="submit()"> Submit</button>
+  </div>
 </div>
 <div [hidden]="!this.formService.showThanks">
-    <div class='row text-center thanks'>
-        <h4 class="text-center thank">Thank you for submitting your investment opportunity. The deal will be reviewed shortly and you will be notified
-            when the deal is added to our deal flow.</h4>
-    </div>
+  <div class='row text-center thanks'>
+    <h4 class="text-center thank">Thank you for submitting your investment opportunity. The deal will be reviewed shortly and you will be notified when
+      the deal is added to our deal flow.</h4>
+  </div>
 </div>
 
 <div [hidden]="!this.showError">
-    <div class='row text-center thanks'>
-        <h4 class="text-center thank">Oops something was not right, try resubmitting with proper details.</h4>
-    </div>
-    <button type="button" class="btn btn-outline-rounded btn-primary" (click)="goToStart()">
-        <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span>Go back
-    </button>
+  <div class='row text-center thanks'>
+    <h4 class="text-center thank">Oops something was not right, try resubmitting with proper details.</h4>
+  </div>
+  <button type="button" class="btn btn-outline-rounded btn-primary" (click)="goToStart()">
+    <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span>Go back
+  </button>
 </div>

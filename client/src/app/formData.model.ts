@@ -4,6 +4,8 @@ export class FormData {
     role: string = '';
     organization: string = '';
     telephone: number = null;
+    approvestatus: number = null;
+    message: string = '';
     email: string = '';
     website: string = '';
     work: string = '';
@@ -29,6 +31,8 @@ export class FormData {
         this.name = '';
         this.organization = '';
         delete this.telephone;
+        delete this.approvestatus;
+        this.message = '';
         this.website = '';
         this.role = '';
         this.email = '';

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormData, Personal, Deal } from '../formData.model';
+import { VcData } from '../vcData.model';
 import { WorkflowService } from './workflow.service';
 import { STEPS } from '../workflow.model';
 import { Http, Response } from '@angular/http';
@@ -8,6 +9,7 @@ import { Observable } from 'rxjs/Rx';
 @Injectable()
 export class FormService {
     private formData: FormData = new FormData();
+    private vcData: VcData = new VcData();
     private isPersonalFormValid = false;
     private isWorkFormValid = false;
     private isAddressFormValid = false;
@@ -18,10 +20,13 @@ export class FormService {
     public showDealForm = false;
     public showResultForm = false;
     public submited = false;
+    public vcsubmited = false;
     public showThanks = false;
     public contact: any;
+    public vcdata: any;
     public deal: any;
     public editClick = false;
+    public vceditClick = false;
     public id: any;
     public detailData: any;
     public showError = false;
@@ -119,6 +124,15 @@ export class FormService {
     getFormData(): FormData {
         // Return the entire Form Data
         return this.formData;
+    }
+
+    getVcFormData(): VcData {
+        return this.vcData;
+    }
+
+    resetVcData(): VcData {
+        this.vcData.clear();
+        return this.vcData;
     }
 
     resetFormData(): FormData {
