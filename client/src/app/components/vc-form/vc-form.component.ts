@@ -36,6 +36,8 @@ export class VcFormComponent implements OnInit {
   indicationDisabled = true;
   stageDisabled = true;
   alreadyFileUpload = false;
+  focusValid = false;
+  stageValid = false;
   focus: any = [];
   indication: any = [];
   investment: any = [];
@@ -164,6 +166,23 @@ export class VcFormComponent implements OnInit {
     } else {
       this.stageActive = false;
       this.stageDisabled = true;
+    }
+  }
+
+  checkClicked() {
+    const focus = $(`input[name=focu]:checked`);
+    const stage = $(`input[name=inves]:checked`);
+
+    if (focus.length !== 0) {
+      this.focusValid = true;
+    } else {
+      this.focusValid = false;
+    }
+
+    if (stage.length !== 0) {
+      this.stageValid = true;
+    } else {
+      this.stageValid = false;
     }
   }
 
