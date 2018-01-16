@@ -168,6 +168,12 @@ module.exports = (router) => {
   MIDDLEWARE - Used to grab user's token from headers
   ================================================ */
   router.use((req, res, next) => {
+    // Don't use middleware on routes before middleware
+    if (req.path == '/register' || req.path == '/login' || req.path == '/checkEmail/:email' || req.path == '/checkUsername/:username') {
+      console.log('Used Token Route before middleware');
+      return next();
+    }
+    // Middleware Code
     const token = req.headers['authorization']; // Create token found in headers
     // Check if token was found in headers
     if (!token) {
