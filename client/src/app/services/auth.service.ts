@@ -97,12 +97,12 @@ export class AuthService {
 
   saveFilter(obj) {
     this.createAuthenticationHeaders(); // Create headers before sending to API
-    return this.http.post(this.domain + '/filter/savedFilter/', obj).map(res => res.json());
+    return this.http.post(this.domain + '/filters/addFilter/', obj).map(res => res.json());
   }
 
   deleteFilter(name) {
     this.createAuthenticationHeaders(); // Create headers before sending to API
-    return this.http.delete(this.domain + '/filter/savedFilter/', name).map(res => res.json());
+    return this.http.delete(this.domain + '/filters/deleteFilter/', name).map(res => res.json());
   }
 
   // Function to check if user is logged in
