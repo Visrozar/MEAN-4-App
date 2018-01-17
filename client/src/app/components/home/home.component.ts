@@ -21,8 +21,11 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.authService.getProfile().subscribe(profile => {
-      this.username = profile.user.username;
-      this.role = profile.user.role;
+      if (!profile.success) {
+      } else {
+        this.username = profile.user.username;
+        this.role = profile.user.role;
+      }
     });
   }
 

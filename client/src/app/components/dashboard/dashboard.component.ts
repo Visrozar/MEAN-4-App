@@ -405,7 +405,7 @@ export class DashboardComponent implements OnInit {
 
   getFilterList() {
     this.authService.getFilterList().subscribe(data => {
-      this.filterLabels = data;
+      this.filterLabels = data.filters;
     });
   }
 

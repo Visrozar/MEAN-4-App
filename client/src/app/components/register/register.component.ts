@@ -35,7 +35,9 @@ export class RegisterComponent implements OnInit {
       this.indicationList.unshift('');
       this.financingList = data.financing;
       this.financingList.unshift('');
-      this.stage = data.stage;
+      this.therapeuticsList = data.stage.Therapeutics;
+      this.diagnosticsList = data.stage.DiagnosticsandHealth;
+      this.agroList = data.stage.Agro;
     });
   }
 
@@ -43,6 +45,9 @@ export class RegisterComponent implements OnInit {
   indicationList: any = [];
   stage: any = {};
   financingList: any = [];
+  therapeuticsList: any = [];
+  diagnosticsList: any = [];
+  agroList: any = [];
 
   // Function to create registration form
   createForm() {
@@ -71,7 +76,7 @@ export class RegisterComponent implements OnInit {
       // Role Input
       role: ['', Validators.compose([
         Validators.required, // Field is required
-        this.validateRole // Custom validation
+        // this.validateRole // Custom validation
       ])],
       // Confirm Password Input
       confirm: ['', Validators.required] // Field is required
