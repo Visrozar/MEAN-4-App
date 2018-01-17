@@ -42,6 +42,8 @@ export class VcFormComponent implements OnInit, AfterViewInit {
   ngOnInit() {
 
     if (this.formService.vceditClick === true) {
+      this.focusValid = true;
+      this.stageValid = true;
       this.setEditForm();
       if (this.vcData.fileName) {
         this.alreadyFileUpload = true;
@@ -76,7 +78,6 @@ export class VcFormComponent implements OnInit, AfterViewInit {
         }
       }
     }
-    // this.checkClicked();
   }
 
   setEditForm() {

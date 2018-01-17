@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
+import { FormService } from '../../services/form.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -22,10 +23,26 @@ export class RegisterComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private formService: FormService
   ) {
     this.createForm(); // Create Angular 4 Form when component loads
+
+    this.formService.getSelectregData().subscribe((data) => {
+      this.subsectorList = data.subsector;
+      this.subsectorList.unshift('');
+      this.indicationList = data.indication;
+      this.indicationList.unshift('');
+      this.financingList = data.financing;
+      this.financingList.unshift('');
+      this.stage = data.stage;
+    });
   }
+
+  subsectorList: any = [];
+  indicationList: any = [];
+  stage: any = {};
+  financingList: any = [];
 
   // Function to create registration form
   createForm() {
@@ -146,7 +163,7 @@ export class RegisterComponent implements OnInit {
       email: this.form.get('email').value, // E-mail input field
       username: this.form.get('username').value, // Username input field
       password: this.form.get('password').value, // Password input field
-      role: this.form.get('role').value // Role input field
+      role: 'investor' // Role input field
     }
 
     // Function from authentication service to register user

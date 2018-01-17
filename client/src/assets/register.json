@@ -1,0 +1,69 @@
+{
+    "subsector": [
+        "Therapeutics",
+        "Medical devices",
+        "diagnostics",
+        "Health tech",
+        "Agro"
+    ],
+    "indication": [
+        "Ageing",
+        "Cardiovascular diseases",
+        "Dental and oral health",
+        "Dermatology",
+        "Diabetes and metabolic syndrome",
+        "Endocrinology",
+        "Gastroenterology",
+        "Genetic diseases",
+        "Hematology",
+        "Infectious diseases",
+        "Musculoskeletal",
+        "Nephrology",
+        "Neurology",
+        "Nutrition and weight loss",
+        "Gynecology and Obstetrics",
+        "Oncology",
+        "Ophthalmology",
+        "Orthopedics",
+        "Otolaryngology",
+        "Pediatrics and Neonatology",
+        "Pharmacology and Toxicology",
+        "Psychiatry and Psychology",
+        "Respiratory diseases",
+        "Degenerative diseases",
+        "Rheumatology and Autoimmune diseases",
+        "Sleep disorders",
+        "Emergency medicine",
+        "Urology",
+        "Vaccines",
+        "NA"
+    ],
+    "stage": {
+        "Therapeutics": [
+            "Discovery",
+            "Pre-clinical",
+            "Clinical", 
+            "Medical devices"
+        ],
+        "DiagnosticsandHealth-Tech": [
+            "Concept",
+            "Pre-clinical",
+            "Clinical",
+            "CE mark",
+            "market"
+        ],
+        "Agro": [
+            "Concept",
+            "Greenhouse",
+            "Field",
+            "Market"
+        ] 
+    },
+    "financing": [
+        "seed",
+        "Series A",
+        "Series B",
+        "Series C",
+        "Series D"
+    ]
+}
