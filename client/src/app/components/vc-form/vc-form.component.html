@@ -109,15 +109,15 @@
                   <div *ngIf="this.alreadyFileUpload">Uploaded file:
                   <a class="inline-link" href={{this.vcData.fileUrl}} download="{{this.vcData.fileName}}"> {{this.vcData.fileName}}</a>
                   </div>
-                  <div *ngIf="currentFileUpload" class="progress" style="width:400px">
+                  <div *ngIf="currentFileUpload" class="progress file-progress">
                     <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
                       aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width:progress.percentage+'%'}">
                       {{progress.percentage}}%</div>
                   </div>
-                  <input style="margin: 0 auto;" id="selectFile" type="file" name="myFile" accept="image/*" placeholder="Upload File">
+                  <input class="select-file" id="selectFile" type="file" name="myFile" accept="image/*" placeholder="Upload File">
 
-                  <button style="margin-top:5px;" class="btn btn-info btn-outline-rounded" (click)="uploadFile()"> Upload File</button>
-                  <button style="margin-top:5px;" class="btn btn-default btn-outline-rounded" (click)="removeFile()"> Remove File</button>
+                  <button class="file-btns" class="btn btn-info btn-outline-rounded" (click)="uploadFile()"> Upload File</button>
+                  <button class="file-btns" class="btn btn-default btn-outline-rounded" (click)="removeFile()"> Remove File</button>
                 </div>
               </div>
             </div>
@@ -125,7 +125,7 @@
             <div class="form-group text-center">
               <button type="button" class="btn btn-primary btn-outline-rounded" [disabled]="!vcForm.valid || !this.focusValid || !this.stageValid || (progress.percentage !== 100 && progress.percentage !== 0)" (click)="submit()">
                 Submit
-                <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span>
+                <span class="glyphicon glyphicon-arrow-right icon-left"></span>
               </button>
             </div>
           </div>
@@ -143,7 +143,7 @@
         <h4 class="text-center thank">Oops something was not right, try resubmitting with proper details.</h4>
       </div>
       <button type="button" class="btn btn-outline-rounded btn-primary" (click)="goToStart()">
-        <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span>Go back
+        <span class="glyphicon glyphicon-arrow-left icon-right"></span>Go back
       </button>
     </div>
   </div>

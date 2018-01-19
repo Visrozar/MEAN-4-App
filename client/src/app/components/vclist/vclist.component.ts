@@ -165,6 +165,14 @@ export class VclistComponent implements OnInit {
     this.projectoverlayActive = true;
   }
 
+  removeVC() {
+    this.authService.deleteVC(this.vcId).subscribe(data => {
+      this.message = data.message;
+    });
+    this.clearProjectdata();
+    this.getVclist();
+  }
+
   clearProjectdata() {
     this.vcId = '';
     this.projectoverlayActive = false;

@@ -1,7 +1,7 @@
 <h2 class="page-header text-center">Deal Discription</h2>
 <p class="text-center">List your investment deal, company or research project in two simple steps and reach out automatically to our growing investors community. These information will be available freely and exclusively to our registered investors.</p>
 
-  <div class="row bs-wizard" style="border-bottom:0;">
+  <div class="row bs-wizard">
 
     <div class="col-xs-4 bs-wizard-step complete">
       <div class="text-center bs-wizard-stepnum">Contact person</div>
@@ -135,25 +135,25 @@
               <div *ngIf="this.alreadyFileUpload">Uploaded file:
               <a class="inline-link"  href={{this.deal.fileUrl}} download="{{this.deal.fileName}}">{{this.deal.fileName}}</a>
               </div>
-              <div *ngIf="currentFileUpload" class="progress" style="width:400px">
+              <div *ngIf="currentFileUpload" class="progress file-progress">
                 <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
                   aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width:progress.percentage+'%'}">
                   {{progress.percentage}}%</div>
               </div>
-              <input style="margin: 0 auto;" id="selectFile" type="file" name="myFile" placeholder="Upload File">
+              <input class="select-file" id="selectFile" type="file" name="myFile" placeholder="Upload File">
               
-              <button style="margin-top:5px;" class="btn btn-info btn-outline-rounded" (click)="uploadFile()"> Upload File</button>
-              <button style="margin-top:5px;" class="btn btn-default btn-outline-rounded" (click)="removeFile()"> Remove File</button>
+              <button class="file-btns" class="btn btn-info btn-outline-rounded" (click)="uploadFile()"> Upload File</button>
+              <button class="file-btns" class="btn btn-default btn-outline-rounded" (click)="removeFile()"> Remove File</button>
             </div>
           </div>
         </div>
         <div class="form-group space-20">
           <button type="button" class="btn btn-outline-rounded btn-primary left" (click)="goToPrevious(workForm)">
-            <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span> Contact Person</button>
+            <span class="glyphicon glyphicon-arrow-left icon-right"></span> Contact Person</button>
           <button type="button" class="btn btn-outline-rounded btn-primary right" [disabled]="!workForm.valid || (progress.percentage !== 100 && progress.percentage !== 0)"
             (click)="goToNext(workForm)">
             Review
-            <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span>
+            <span class="glyphicon glyphicon-arrow-right icon-left"></span>
           </button>
         </div>
       </div>

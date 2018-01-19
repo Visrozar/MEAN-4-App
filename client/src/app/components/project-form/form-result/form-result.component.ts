@@ -87,7 +87,7 @@ export class FormResultComponent implements OnInit {
       }
       this.formData.fileName = this.formService.fileName;
       this.formData.fileUrl = this.formService.fileUrl;
-      this.formData.approvestatus = 0;
+      this.formData.approvestatus = 2;
       this.formData.message = '';
       this.uploadService.newProject(this.formData).subscribe(data => {
         if (!data.success) {

@@ -119,7 +119,7 @@ export class DashboardComponent implements OnInit {
         }
 
         if (this.role === 'admin') {
-          if (ar.approvestatus === 0) {
+          if (ar.approvestatus === 2) {
             return true;
           } else {
             return false;
@@ -329,7 +329,7 @@ export class DashboardComponent implements OnInit {
       this.isMessageEmpty = true;
     } else {
       this.isMessageEmpty = false;
-      dash.approvestatus = 2;
+      dash.approvestatus = 0;
       dash.message = entryName;
       this.uploadService.editProject(dash).subscribe(data => {
         if (!data.success) {

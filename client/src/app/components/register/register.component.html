@@ -8,7 +8,7 @@
 </div>
 
 <!-- Registration Form -->
-<form [formGroup]="form" (submit)="onRegisterSubmit()">
+<form [formGroup]="form" (submit)="onRegisterSubmit()"  [hidden]="!step1">
 
   <div class="row">
     <div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8">
@@ -117,15 +117,17 @@
         <input [disabled]="!form.valid || processing || !emailValid || !usernameValid" class="btn btn-primary"  value="Submit"
         />
       </div> -->
-      <div class="form-group text-center">
-        <button type="button" class="btn btn-primary btn-outline-rounded" [disabled]="!form.valid || processing || !emailValid || !usernameValid" (click)="showNextstep();">
+      <!-- <div class="form-group text-center">
+        <button type="button" class="btn btn-primary btn-outline-rounded" [disabled]="!form.valid || processing || !emailValid || !usernameValid"
+          (click)="showNextstep();">
           Submit</button>
-      </div>
+      </div> -->
     </div>
   </div>
 
-  <div class="row" >
-    <h4 class="text-center">Thank you for your interest. your application will be verified within 48 hours. Please specify your main interest</h4>
+  <h3 class="header text-center">Please specify your main interest</h3>
+
+  <div class="row">
     <div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8">
 
       <div class="row">
@@ -168,10 +170,10 @@
             <div class="sub-head">Therapeutics:</div>
             <label class="hide-box inline-input" *ngFor="let thera of therapeuticsList">
               <input class="hide-box check-box" type="checkbox" name="thera" value="{{ thera }}" (change)="checkClicked()" />{{ thera }}</label>
-              <div class="sub-head">Diagnostics and Health-Tech:</div>
+            <div class="sub-head">Diagnostics and Health-Tech:</div>
             <label class="hide-box inline-input" *ngFor="let diagnostic of diagnosticsList">
               <input class="hide-box check-box" type="checkbox" name="diagnostic" value="{{ diagnostic }}" (change)="checkClicked()" />{{ diagnostic }}</label>
-              <div class="sub-head">Agro:</div>
+            <div class="sub-head">Agro:</div>
             <label class="hide-box inline-input" *ngFor="let agro of agroList">
               <input class="hide-box check-box" type="checkbox" name="agro" value="{{ agro }}" (change)="checkClicked()" />{{ agro }}</label>
           </div>
@@ -180,12 +182,14 @@
 
       <!-- Submit Input -->
       <div class="row text-center">
-        <input [disabled]="!form.valid || processing || !emailValid || !usernameValid" class="btn btn-primary"  value="Submit" type="submit"
+        <input [disabled]="!form.valid || processing || !emailValid || !usernameValid" class="btn btn-primary" value="Submit" type="submit"
         />
       </div>
-      
+
     </div>
   </div>
 
 </form>
 <!-- Registration Form /-->
+
+<h4 class="text-center" [hidden]="step1">Thank you for your interest. your application will be verified within 48 hours. Please specify your main interest</h4>

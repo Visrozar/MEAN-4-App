@@ -83,11 +83,11 @@
         </div>
       </div>
       <div class="col-xs-12 filter-label text-center">
-        <button class="btn btn-primary clear-filter" style="margin-top:10px;" (click)="clearFilter()">Clear Filter</button>
+        <button class="btn btn-primary clear-filter" (click)="clearFilter()">Clear Filter</button>
       </div>
       <div class="col-xs-12 filter-label text-center">
-        <button class="btn btn-info clear-filter" style="margin-top:10px;" (click)="saveFilter()">Save Filter</button>
-        <input class="form-control input-md" style="margin-top:5px;" name="filterName" type="text" placeholder="Filter Name">
+        <button class="btn btn-info clear-filter" (click)="saveFilter()">Save Filter</button>
+        <input class="form-control input-md filter-name" name="filterName" type="text" placeholder="Filter Name">
         <div class="alert alert-danger" [hidden]="!isEmpty">Name cannot be empty</div>
       </div>
     </div>
@@ -99,7 +99,7 @@
 <div class="container">
   <div class="card" *ngFor="let project of projects">
     <div class="card-body">
-      <div class="row" style="cursor: pointer;" (click)="viewEntry(project);">
+      <div class="row point-row" (click)="viewEntry(project);">
         <h4 class="card-title text-center">{{project.dealName}}</h4>
       </div>
       <div class='col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8'>
@@ -158,12 +158,12 @@
         </div>
         <div class="row" *ngIf="this.role==='admin'">
           <div class="col-xs-12 text-center">
-            <input class="form-control input-md" style="margin-bottom:10px;" name="entryName" type="text" placeholder="Add message">
+            <input class="form-control input-md add-msg" name="entryName" type="text" placeholder="Add message">
             <div class="alert alert-danger" [hidden]="!isMessageEmpty">Message cannot be empty</div>
           </div>
         </div>
       </div>
-      <table class="table" (click)="viewEntry(project);" style="cursor: pointer;">
+      <table class="table" (click)="viewEntry(project);">
         <tr *ngIf="project.name">
           <td class="vr">Name:</td>
           <td>{{project.name}}</td>
