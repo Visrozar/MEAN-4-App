@@ -2,6 +2,14 @@
 @import '~scss/_multi-select';
 @import '~scss/_modal';
 
+.modal{
+  background: rgba(0, 0, 0, 0.01)
+}
+
+.modal-content{
+  box-shadow: none;
+}
+
 a {
   color: #3C84C4;
 }
@@ -22,14 +30,6 @@ a {
 .two-btns {
   margin-top: 30px;
 }
-
-// .close1 {
-//   color: #aaaaaa;
-//   float: right;
-//   font-size: 28px;
-//   font-weight: bold;
-//   margin-top: -15px;
-// }
 
 .delete-head {
   padding-bottom: 20px;
@@ -323,7 +323,6 @@ hr {
     max-width: 140px;
   }
 }
-
 .location-labels {
   height: 25px;
 }

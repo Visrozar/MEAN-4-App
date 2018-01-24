@@ -1,4 +1,4 @@
-<div *ngIf="this.role!=='admin'" class="col-md-12 header-img">
+<div [hidden]="this.role=='admin'" class="col-md-12 header-img">
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
     irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
@@ -17,8 +17,9 @@
 </div>
 
 <div class="row body-style">
-  <form class="col-md-3">
-    <div class="form-group sticky">
+<form class="col-md-3 sticky">
+
+    <div class="form-group">
       <div class="multiselect col-md-12 filter hide-box">
         <div class="selectBox hide-box" (click)="showCheckboxes('location')">
           <select>
