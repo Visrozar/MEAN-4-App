@@ -1,4 +1,5 @@
 export class VcData {
+    _id: number;
     VCName: string = '';
     Location: string = '';
     InvestmentFocus: string = '';
@@ -14,6 +15,7 @@ export class VcData {
     fileName: string = '';
 
     clear() {
+        delete this._id;
         this.VCName = '';
         this.Location = '';
         this.InvestmentFocus = '';

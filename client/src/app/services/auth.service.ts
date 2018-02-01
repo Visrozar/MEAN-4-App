@@ -105,6 +105,27 @@ export class AuthService {
     return this.http.delete(this.domain + '/filters/deleteFilter/', name).map(res => res.json());
   }
 
+  newVC(data) {
+    this.createAuthenticationHeaders(); // Create headers before sending to API
+    return this.http.post(this.domain + '/vcs/addVc', data, this.options).map(res => res.json());
+  }
+
+  getVC() {
+    this.createAuthenticationHeaders(); // Create headers before sending to API
+    return this.http.get(this.domain + '/vcs/getVc', this.options).map(res => res.json());
+  }
+
+  editVC(data) {
+    this.createAuthenticationHeaders(); // Create headers before sending to API
+    return this.http.put(this.domain + '/vcs/editVc', data, this.options).map(res => res.json());
+  }
+
+  // Function to delete a VC
+  deleteVC(id) {
+    this.createAuthenticationHeaders(); // Create headers before sending to API
+    return this.http.delete(this.domain + '/vcs/deleteVc/' + id, this.options).map(res => res.json());
+  }
+
   // Function to check if user is logged in
   loggedIn() {
     return tokenNotExpired();
