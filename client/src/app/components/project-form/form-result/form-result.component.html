@@ -3,7 +3,7 @@
   <p class="text-center">List your investment deal, company or research project in two simple steps and reach out automatically to our growing investors
     community. These information will be available freely and exclusively to our registered investors.</p>
 
-    <div class="row bs-wizard" style="border-bottom:0;">
+    <div class="row bs-wizard">
 
       <div class="col-xs-4 bs-wizard-step complete">
         <div class="text-center bs-wizard-stepnum">Contact person</div>
@@ -202,11 +202,21 @@
           {{this.formService.file}}
         </div>
       </div>
+      <div *ngIf="(this.formService.editClick === true) || this.formData.fileName" class="row">
+        <div class='col-xs-3 col-sm-2'>
+          <div class="form-group">
+            <label class="control-label" for="name">File to upload: </label>
+          </div>
+        </div>
+        <div class='col-xs-9 col-sm-10'>
+         <a class="inline-link" href={{this.formData.fileUrl}} download="{{this.formData.fileName}}">{{this.formData.fileName}}</a>
+        </div>
+      </div>
     </div>
   </div>
   <div>
     <button type="button" class="btn btn-outline-rounded btn-primary" (click)="goToPrevious(isFormValid)">
-      <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span> Deal Discripton</button>
+      <span class="glyphicon glyphicon-arrow-left icon-right"></span> Deal Discripton</button>
     <button class="btn btn-success btn-outline-rounded right" (click)="submit()"> Submit</button>
   </div>
 </div>
@@ -222,6 +232,6 @@
     <h4 class="text-center thank">Oops something was not right, try resubmitting with proper details.</h4>
   </div>
   <button type="button" class="btn btn-outline-rounded btn-primary" (click)="goToStart()">
-    <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span>Go back
+    <span class="glyphicon glyphicon-arrow-left icon-right"></span>Go back
   </button>
 </div>

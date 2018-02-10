@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
+import { FormService } from '../../services/form.service';
 import { Router } from '@angular/router';
+
+declare var $: any;
 
 @Component({
   selector: 'app-register',
@@ -22,10 +25,35 @@ export class RegisterComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private formService: FormService
   ) {
     this.createForm(); // Create Angular 4 Form when component loads
+
+    this.formService.getSelectregData().subscribe((data) => {
+      this.subsectorList = data.subsector;
+      this.subsectorList.unshift('');
+      this.indicationList = data.indication;
+      this.indicationList.unshift('');
+      this.financingList = data.financing;
+      this.financingList.unshift('');
+      this.therapeuticsList = data.stage.Therapeutics;
+      this.diagnosticsList = data.stage.DiagnosticsandHealth;
+      this.agroList = data.stage.Agro;
+    });
   }
+
+  subsectorList: any = [];
+  indicationList: any = [];
+  stage: any = {};
+  financingList: any = [];
+  therapeuticsList: any = [];
+  diagnosticsList: any = [];
+  agroList: any = [];
+  therapeuticsArray = [];
+  diagnosticsArray = [];
+  agroArray = [];
+  step1 = true;
 
   // Function to create registration form
   createForm() {
@@ -52,10 +80,10 @@ export class RegisterComponent implements OnInit {
         // this.validatePassword // Custom validation
       ])],
       // Role Input
-      role: ['', Validators.compose([
-        Validators.required, // Field is required
-        this.validateRole // Custom validation
-      ])],
+      // role: ['', Validators.compose([
+      //   Validators.required, // Field is required
+      //   // this.validateRole // Custom validation
+      // ])],
       // Confirm Password Input
       confirm: ['', Validators.required] // Field is required
     }, { validator: this.matchingPasswords('password', 'confirm') }); // Add custom validator to form for matching passwords
@@ -68,6 +96,12 @@ export class RegisterComponent implements OnInit {
     this.form.controls['password'].disable();
     this.form.controls['confirm'].disable();
     this.form.controls['role'].disable();
+    this.form.controls['subsector'].disable();
+    this.form.controls['indication'].disable();
+    this.form.controls['financing'].disable();
+    this.form.controls['thera'].disable();
+    this.form.controls['diagnostic'].disable();
+    this.form.controls['agro'].disable();
   }
 
   // Function to enable the registration form
@@ -77,6 +111,12 @@ export class RegisterComponent implements OnInit {
     this.form.controls['password'].enable();
     this.form.controls['confirm'].enable();
     this.form.controls['role'].enable();
+    this.form.controls['subsector'].enable();
+    this.form.controls['indication'].enable();
+    this.form.controls['financing'].enable();
+    this.form.controls['thera'].enable();
+    this.form.controls['diagnostic'].enable();
+    this.form.controls['agro'].enable();
   }
 
   // Function to validate e-mail is proper format
@@ -139,6 +179,7 @@ export class RegisterComponent implements OnInit {
 
   // Function to submit form
   onRegisterSubmit() {
+    this.step1 = false;
     this.processing = true; // Used to notify HTML that form is in processing, so that it can be disabled
     this.disableForm(); // Disable the form
     // Create user object form user's inputs
@@ -146,8 +187,16 @@ export class RegisterComponent implements OnInit {
       email: this.form.get('email').value, // E-mail input field
       username: this.form.get('username').value, // Username input field
       password: this.form.get('password').value, // Password input field
-      role: this.form.get('role').value // Role input field
+      role: 'investor', // Role input field
+      subsector: $('select[name="subsector"]').val(),
+      indication: $('select[name="indication"]').val(),
+      financing: $('select[name="financing"]').val(),
+      Therapeutics: this.therapeuticsArray,
+      Diagnostics: this.diagnosticsArray,
+      agro: this.agroArray,
     }
+
+    console.log(user);
 
     // Function from authentication service to register user
     this.authService.registerUser(user).subscribe(data => {
@@ -162,8 +211,8 @@ export class RegisterComponent implements OnInit {
         this.message = data.message; // Set a success message
         // After 2 second timeout, navigate to the login page
         setTimeout(() => {
-          this.router.navigate(['/login']); // Redirect to login view
-        }, 2000);
+          this.router.navigate(['/home']); // Redirect to login view
+        }, 3000);
       }
     });
 
@@ -199,7 +248,26 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-  }
+  checkClicked() {
+
+    const thera = $(`input[name=thera]:checked`);
+    const diagnostic = $(`input[name=diagnostic]:checked`);
+    const agro = $(`input[name=agro]:checked`);
+
+    for (let i = 0; i < thera.length; i++) {
+      this.therapeuticsArray.push(thera[i].nextSibling.data);
+    }
+
+    for (let i = 0; i < diagnostic.length; i++) {
+      this.diagnosticsArray.push(diagnostic[i].nextSibling.data);
+    }
+
+    for (let i = 0; i < agro.length; i++) {
+      this.agroArray.push(agro[i].nextSibling.data);
+    }
+}
+
+ngOnInit() {
+}
 
 }

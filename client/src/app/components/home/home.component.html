@@ -5,9 +5,23 @@
        <p class="small-heading">VirtualBiotech is a non-commercial initiative managed by venture capital professionals with the aim
       to form a free online community for life science investors in Europe.</p>
       <div class="row banner-btns">
-        <a class="btn btn-primary overlay-buttons" style="display:table-cell; vertical-align:middle; text-align:center"
-        routerLink="/login" role="button">VIEW DEAL-FLOW &raquo;</a>
-        <a class="btn btn-primary overlay-buttons" style="display:table-cell; vertical-align:middle; text-align:center"
+        <a class="btn btn-primary overlay-buttons home-btns"
+         (click)="activateOverlay()" role="button">VIEW DEAL-FLOW &raquo;</a>
+        <div class="modal" *ngIf="loginoverlayActive === true">
+          <div class="modal-content modal-small">
+            <span class="close" (click)="clearData();">&times;</span>
+            <h4 class="text-center log-head">Our Deal-flow is only accessible for registered investors</h4>
+            <div class="row">
+              <div class="col-xs-6 text-center">
+                <button class="btn btn-danger" (click)="gotoLogin();">Log-in</button>
+              </div>
+              <div class="col-xs-6 text-center">
+                <button class="btn btn-default" (click)="gotoRegister();">Register</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="btn btn-primary overlay-buttons home-btns"
         routerLink="/login" role="button">LIST A COMPANY &raquo;</a>
       </div>
       <div class="row">

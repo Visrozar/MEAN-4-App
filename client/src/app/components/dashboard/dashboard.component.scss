@@ -1,3 +1,5 @@
+@import '~scss/_modal';
+
 *,
  ::after,
  ::before {
@@ -7,6 +9,18 @@
 .form-group {
   width: 200px;
   margin: 0 auto;
+}
+
+.clear-filter {
+  margin-top: 10px;
+}
+
+.point-row {
+  cursor: pointer;
+}
+
+.filter-name {
+  margin-top: 5px;
 }
 
 .filter-labels {
@@ -37,6 +51,7 @@ button.close {
   border-top: 1px solid rgba(0, 0, 0, .125);
   margin-bottom: 0px;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .table>thead>tr>th,
@@ -199,57 +214,8 @@ label {
   display: none;
 }
 
-.modal {
-  display: block;
-  /* Hidden by default */
-  position: fixed;
-  /* Stay in place */
-  z-index: 1;
-  /* Sit on top */
-  padding-top: 100px;
-  /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%;
-  /* Full width */
-  height: 100%;
-  /* Full height */
-  overflow: auto;
-  /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0);
-  /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4);
-  /* Black w/ opacity */
-}
-
-
-/* Modal Content */
-
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  top: 25%;
-}
-
-
-/* The Close Button */
-
-.close1 {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  margin-top: -15px;
-}
-
-.close1:hover,
-.close1:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+.add-msg {
+  margin-bottom: 10px;
 }
 
 .delete-head {
@@ -266,9 +232,3 @@ label {
   margin: 0 auto;
   width: 80%/* value of your choice which suits your alignment */
 }
-
-// @media only screen and (max-width: 992px) {
-//     .col-md-12 {
-//         float: none;
-//     }
-// }

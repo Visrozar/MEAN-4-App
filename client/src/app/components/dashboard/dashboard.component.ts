@@ -119,7 +119,7 @@ export class DashboardComponent implements OnInit {
         }
 
         if (this.role === 'admin') {
-          if (ar.approvestatus === 0) {
+          if (ar.approvestatus === 2) {
             return true;
           } else {
             return false;
@@ -329,7 +329,7 @@ export class DashboardComponent implements OnInit {
       this.isMessageEmpty = true;
     } else {
       this.isMessageEmpty = false;
-      dash.approvestatus = 2;
+      dash.approvestatus = 0;
       dash.message = entryName;
       this.uploadService.editProject(dash).subscribe(data => {
         if (!data.success) {
@@ -392,7 +392,7 @@ export class DashboardComponent implements OnInit {
       }
 
       const object = {
-        name: filterName.toString(), role: roleArray, sector: sectorArray, indication: indicationArray,
+        name: filterName.toString(), createdBy: this.username, role: roleArray, sector: sectorArray, indication: indicationArray,
         stage: stageArray, financing: financingArray
       };
       this.authService.saveFilter(object).subscribe(data => {
@@ -405,7 +405,7 @@ export class DashboardComponent implements OnInit {
 
   getFilterList() {
     this.authService.getFilterList().subscribe(data => {
-      this.filterLabels = data;
+      this.filterLabels = data.filters;
     });
   }
 
