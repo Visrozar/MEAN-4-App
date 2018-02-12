@@ -48,7 +48,9 @@ export class DealDescriptionComponent implements OnInit {
 
     ngOnInit() {
         this.authService.getProfile().subscribe(profile => {
+            if (!this.formService.listCompany) {
             this.username = profile.user.username;
+            }
         });
         this.formData = this.formService.getFormData();
         if (this.formService.editClick === true) {
@@ -110,7 +112,9 @@ export class DealDescriptionComponent implements OnInit {
     }
 
     uploadFile() {
+        if (!this.formService.listCompany) {
         this.formData.createdBy = this.username;
+        }
         if (this.elem.nativeElement.querySelector('#selectFile').files[0]) {
             const fileSelected: File = this.elem.nativeElement.querySelector('#selectFile').files[0];
             this.currentFileUpload = new FileUpload(fileSelected);

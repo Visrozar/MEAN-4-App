@@ -6,7 +6,7 @@
   </p>
   <p class="text-center two-btns">
     <a class="btn btn-primary" href="#" role="button">VIEW DEAL-FLOW &raquo;</a>
-    <a class="btn btn-primary resp-btn" routerLink="/login" role="button">LIST A COMPANY &raquo;</a>
+    <a class="btn btn-primary resp-btn" routerLink="/project_form" role="button" (click)="this.formService.listCompany = true;">LIST A COMPANY &raquo;</a>
   </p>
 </div>
 
@@ -121,7 +121,7 @@
               </p>
             </div>
           </div>
-          <div class="row card" *ngIf="this.role!=='admin'">
+          <div class="row card" *ngIf="this.role==='admin'">
             <div class="col-xs-6 text-center padd">
               <a routerLink="/vc_form">
                 <button type="button" name="button" (click)="editEntry(vclist);" class="btn btn-sm btn-info">Edit</button>

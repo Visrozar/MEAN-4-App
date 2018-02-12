@@ -40,7 +40,9 @@ export class FormResultComponent implements OnInit {
 
     // get profile data
     this.authService.getProfile().subscribe(profile => {
-      this.username = profile.user.username;
+      if (!this.formService.listCompany) {
+        this.username = profile.user.username;
+      }
     });
     this.isFormValid = this.formService.isFormValid();
   }
@@ -60,7 +62,9 @@ export class FormResultComponent implements OnInit {
 
   submit() {
 
-    this.formData.createdBy = this.username;
+    if (!this.formService.listCompany) {
+      this.formData.createdBy = this.username;
+    }
 
     if (this.formService.editClick === true) {
       this.formData._id = this.formService.id;
