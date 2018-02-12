@@ -35,6 +35,7 @@ export class VcFormComponent implements OnInit, AfterViewInit {
   alreadyFileUpload = false;
   focusValid = false;
   stageValid = false;
+  imageUploaded = false;
   focus: any = [];
   indication: any = [];
   investment: any = [];
@@ -93,6 +94,7 @@ export class VcFormComponent implements OnInit, AfterViewInit {
       this.currentFileUpload = new FileUpload(fileSelected);
       this.uploadService.pushFileToStorage(this.currentFileUpload, this.progress);
       this.formService.file = fileSelected.name;
+      this.imageUploaded = true;
     }
   }
 
@@ -101,6 +103,8 @@ export class VcFormComponent implements OnInit, AfterViewInit {
     // document.getElementById('selectFile').value = '';
     $('#selectFile').val('');
     this.formService.file = '';
+    this.imageUploaded = false;
+    this.currentFileUpload = null;
   }
 
   closeModal() {
@@ -158,6 +162,11 @@ export class VcFormComponent implements OnInit, AfterViewInit {
     }
     this.formService.vcsubmited = true;
     // this.isFormValid = false;
+  }
+
+  goToStart() {
+    this.showThanks = false;
+    this.showError = false;
   }
 
   checkClicked() {

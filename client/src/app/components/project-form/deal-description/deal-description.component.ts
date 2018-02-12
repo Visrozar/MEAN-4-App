@@ -25,7 +25,7 @@ export class DealDescriptionComponent implements OnInit {
     constructor(private uploadService: UploadFileService,
         private router: Router, private formService: FormService,
         private elem: ElementRef, private authService: AuthService) {
-        this.formService.getSelectData().subscribe((data) => {
+        this.authService.getVC().subscribe((data) => {
             this.sectorList = data.sector;
             this.sectorList.unshift('');
             this.indicationList = data.indication;
@@ -126,5 +126,6 @@ export class DealDescriptionComponent implements OnInit {
     removeFile() {
         this.alreadyFileUpload = false;
         this.formService.file = '';
+        this.currentFileUpload = null;
     }
 }

@@ -118,12 +118,13 @@
 
                   <button class="file-btns" class="btn btn-info btn-outline-rounded" (click)="uploadFile()"> Upload File</button>
                   <button class="file-btns" class="btn btn-default btn-outline-rounded" (click)="removeFile()"> Remove File</button>
+                  <div class="alert alert-danger alert-top" [hidden]="this.imageUploaded">Company logo required</div>
                 </div>
               </div>
             </div>
 
             <div class="form-group text-center">
-              <button type="button" class="btn btn-primary btn-outline-rounded" [disabled]="!vcForm.valid || !this.focusValid || !this.stageValid || (progress.percentage !== 100 && progress.percentage !== 0)" (click)="submit()">
+              <button type="button" class="btn btn-primary btn-outline-rounded" [disabled]="!vcForm.valid || !this.imageUploaded || !this.focusValid || !this.stageValid || (progress.percentage !== 100 && progress.percentage !== 0)" (click)="submit()">
                 Submit
                 <span class="glyphicon glyphicon-arrow-right icon-left"></span>
               </button>
