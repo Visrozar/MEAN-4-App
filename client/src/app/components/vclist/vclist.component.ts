@@ -30,7 +30,6 @@ export class VclistComponent implements OnInit {
 
     this.authService.getVC().subscribe((data) => {
       this.vclists = data.vcs;
-      console.log(data.vcs);
       this.saveList = this.vclists;
       const allowed = ['VCName'];
       const vc_name = [];
@@ -45,7 +44,12 @@ export class VclistComponent implements OnInit {
             vc_name.push(val[key]); // val1 and etc...
           } else if (key === 'Location') {
             if (val[key]) {
-              locat.push(val[key].split(','));
+              // locat.push(val[key].split(' ').splice(-1)[0]);
+              // val[key].split(/\s*,\s*/).forEach(function (myString) {
+              //   locat.push(myString);
+              // });
+              // locat.push(val[key].split(',').pop().replace(/\s/g, ''));
+              locat.push(val[key].split(', ').splice(-1));
             }
           } else if (key === 'InvestmentFocus') {
             if (val[key]) {
@@ -176,8 +180,8 @@ export class VclistComponent implements OnInit {
     this.authService.deleteVC(this.vcId).subscribe(data => {
       this.message = data.message;
     });
-    this.clearProjectdata();
     this.getVclist();
+    this.clearProjectdata();
   }
 
   clearProjectdata() {

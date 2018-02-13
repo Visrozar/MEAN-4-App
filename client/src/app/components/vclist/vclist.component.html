@@ -115,7 +115,7 @@
                 <h3 class="text-center small-name">{{vclist.VCName}}</h3>
               </a>
             </div>
-            <div class="col-xs-3 show-btn">
+            <div *ngIf="vclist.Website" class="col-xs-3 show-btn">
               <p class="website">
                 <a class="website btn btn-primary" href="{{vclist.Website}}" role="button" target="_blank">visit website &raquo;</a>
               </p>
