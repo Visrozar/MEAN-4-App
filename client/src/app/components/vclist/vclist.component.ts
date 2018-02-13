@@ -28,15 +28,15 @@ export class VclistComponent implements OnInit {
     private formService: FormService,
   ) {
 
-    this.vclistService.getVclist().subscribe((data) => {
+    this.authService.getVC().subscribe((data) => {
       this.vclists = data;
       this.saveList = this.vclists;
       const allowed = ['VCName'];
       const vc_name = [];
-      var locat = [];
-      var focus = [];
-      var indication = [];
-      var investment = [];
+      let locat = [];
+      let focus = [];
+      let indication = [];
+      let investment = [];
 
       data.filter(function (val) {
         for (const key in val) {

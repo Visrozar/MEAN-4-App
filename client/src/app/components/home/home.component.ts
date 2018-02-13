@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { FormService } from '../../services/form.service';
 
 declare var $: any;
 
@@ -14,7 +15,7 @@ export class HomeComponent implements OnInit {
   username;
   role;
 
-  constructor(private router: Router, private authService: AuthService) { }
+  constructor(private router: Router, private authService: AuthService, private formService: FormService) { }
 
   showModal = false;
   loginoverlayActive = false;

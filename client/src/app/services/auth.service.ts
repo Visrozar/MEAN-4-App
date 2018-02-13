@@ -112,7 +112,7 @@ export class AuthService {
 
   getVC() {
     this.createAuthenticationHeaders(); // Create headers before sending to API
-    return this.http.get(this.domain + '/vcs/getVc', this.options).map(res => res.json());
+    return this.http.get(this.domain + '/vcs/getVcs', this.options).map(res => res.json());
   }
 
   editVC(data) {

@@ -30,6 +30,7 @@ export class FormService {
     public id: any;
     public detailData: any;
     public showError = false;
+    public listCompany = false;
     public fileName;
     public fileUrl;
     public vcId;
