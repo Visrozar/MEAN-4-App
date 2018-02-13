@@ -13,6 +13,7 @@ declare var $: any;
   templateUrl: './vc-form.component.html',
   styleUrls: ['./vc-form.component.scss']
 })
+
 export class VcFormComponent implements OnInit, AfterViewInit {
 
   vcData: VcData;
@@ -27,17 +28,18 @@ export class VcFormComponent implements OnInit, AfterViewInit {
     public authService: AuthService,
     private elem: ElementRef,
     private router: Router) {
-    this.focus = this.vclistService.focus;
+    // this.focus = this.vclistService.focus;
     this.indication = this.vclistService.indication;
-    this.investment = this.vclistService.investment;
+    // this.investment = this.vclistService.investment;
   }
 
   alreadyFileUpload = false;
   focusValid = false;
   stageValid = false;
-  focus: any = [];
+  imageUploaded = false;
+  focus: any = ['Therapeutics', 'Diagnostics', 'Medical devices', 'Agrobio', 'Health-tech'];
   indication: any = [];
-  investment: any = [];
+  investment: any = ['Seed', 'Early Stage', 'Late Stage'];
 
   ngOnInit() {
 
@@ -47,6 +49,7 @@ export class VcFormComponent implements OnInit, AfterViewInit {
       this.setEditForm();
       if (this.vcData.fileName) {
         this.alreadyFileUpload = true;
+        this.imageUploaded = true;
       }
     } else {
       this.vcData = this.formService.getVcFormData();
@@ -93,6 +96,7 @@ export class VcFormComponent implements OnInit, AfterViewInit {
       this.currentFileUpload = new FileUpload(fileSelected);
       this.uploadService.pushFileToStorage(this.currentFileUpload, this.progress);
       this.formService.file = fileSelected.name;
+      this.imageUploaded = true;
     }
   }
 
@@ -101,6 +105,8 @@ export class VcFormComponent implements OnInit, AfterViewInit {
     // document.getElementById('selectFile').value = '';
     $('#selectFile').val('');
     this.formService.file = '';
+    this.imageUploaded = false;
+    this.currentFileUpload = null;
   }
 
   closeModal() {
@@ -123,9 +129,13 @@ export class VcFormComponent implements OnInit, AfterViewInit {
       if (this.formService.file === '') {
         this.formService.fileName = '';
         this.formService.fileUrl = '';
+        this.imageUploaded = false;
       }
-      this.vcData.fileName = this.formService.fileName;
-      this.vcData.fileUrl = this.formService.fileUrl;
+      if (!this.vcData.fileName) {
+        this.vcData.fileName = this.formService.fileName;
+        this.vcData.fileUrl = this.formService.fileUrl;
+      }
+
       this.authService.editVC(this.vcData).subscribe(data => {
         if (!data.success) {
           this.showThanks = false;
@@ -141,6 +151,7 @@ export class VcFormComponent implements OnInit, AfterViewInit {
       if (this.formService.file === '') {
         this.formService.fileName = '';
         this.formService.fileUrl = '';
+        this.imageUploaded = false;
       }
       this.vcData.fileName = this.formService.fileName;
       this.vcData.fileUrl = this.formService.fileUrl;
@@ -158,6 +169,11 @@ export class VcFormComponent implements OnInit, AfterViewInit {
     }
     this.formService.vcsubmited = true;
     // this.isFormValid = false;
+  }
+
+  goToStart() {
+    this.showThanks = false;
+    this.showError = false;
   }
 
   checkClicked() {

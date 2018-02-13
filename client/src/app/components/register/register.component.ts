@@ -95,13 +95,12 @@ export class RegisterComponent implements OnInit {
     this.form.controls['username'].disable();
     this.form.controls['password'].disable();
     this.form.controls['confirm'].disable();
-    this.form.controls['role'].disable();
-    this.form.controls['subsector'].disable();
-    this.form.controls['indication'].disable();
-    this.form.controls['financing'].disable();
-    this.form.controls['thera'].disable();
-    this.form.controls['diagnostic'].disable();
-    this.form.controls['agro'].disable();
+    // this.form.controls['subsector'].disable();
+    // this.form.controls['indication'].disable();
+    // this.form.controls['financing'].disable();
+    // this.form.controls['thera'].disable();
+    // this.form.controls['diagnostic'].disable();
+    // this.form.controls['agro'].disable();
   }
 
   // Function to enable the registration form
@@ -110,13 +109,13 @@ export class RegisterComponent implements OnInit {
     this.form.controls['username'].enable();
     this.form.controls['password'].enable();
     this.form.controls['confirm'].enable();
-    this.form.controls['role'].enable();
-    this.form.controls['subsector'].enable();
-    this.form.controls['indication'].enable();
-    this.form.controls['financing'].enable();
-    this.form.controls['thera'].enable();
-    this.form.controls['diagnostic'].enable();
-    this.form.controls['agro'].enable();
+    // this.form.controls['role'].enable();
+    // this.form.controls['subsector'].enable();
+    // this.form.controls['indication'].enable();
+    // this.form.controls['financing'].enable();
+    // this.form.controls['thera'].enable();
+    // this.form.controls['diagnostic'].enable();
+    // this.form.controls['agro'].enable();
   }
 
   // Function to validate e-mail is proper format
@@ -187,7 +186,7 @@ export class RegisterComponent implements OnInit {
       email: this.form.get('email').value, // E-mail input field
       username: this.form.get('username').value, // Username input field
       password: this.form.get('password').value, // Password input field
-      role: 'investor', // Role input field
+      role: "investor", // Role input field
       subsector: $('select[name="subsector"]').val(),
       indication: $('select[name="indication"]').val(),
       financing: $('select[name="financing"]').val(),

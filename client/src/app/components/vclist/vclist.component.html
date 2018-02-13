@@ -6,7 +6,7 @@
   </p>
   <p class="text-center two-btns">
     <a class="btn btn-primary" href="#" role="button">VIEW DEAL-FLOW &raquo;</a>
-    <a class="btn btn-primary resp-btn" routerLink="/login" role="button">LIST A COMPANY &raquo;</a>
+    <a class="btn btn-primary resp-btn" routerLink="/project_form" role="button" (click)="this.formService.listCompany = true;">LIST A COMPANY &raquo;</a>
   </p>
 </div>
 
@@ -115,13 +115,13 @@
                 <h3 class="text-center small-name">{{vclist.VCName}}</h3>
               </a>
             </div>
-            <div class="col-xs-3 show-btn">
+            <div *ngIf="vclist.Website" class="col-xs-3 show-btn">
               <p class="website">
                 <a class="website btn btn-primary" href="{{vclist.Website}}" role="button" target="_blank">visit website &raquo;</a>
               </p>
             </div>
           </div>
-          <div class="row card" *ngIf="this.role!=='admin'">
+          <div class="row card" *ngIf="this.role=='admin'">
             <div class="col-xs-6 text-center padd">
               <a routerLink="/vc_form">
                 <button type="button" name="button" (click)="editEntry(vclist);" class="btn btn-sm btn-info">Edit</button>
@@ -169,7 +169,7 @@
               </tr>
               <tr *ngIf="vclist.Location">
                 <td class="vr">Location:</td>
-                <td>{{vclist.Location.join(' | ')}}</td>
+                <td>{{vclist.Location.split(',').join(' | ')}}</td>
               </tr>
             </table>
           </div>

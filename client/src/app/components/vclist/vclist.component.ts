@@ -28,30 +28,41 @@ export class VclistComponent implements OnInit {
     private formService: FormService,
   ) {
 
-    this.vclistService.getVclist().subscribe((data) => {
-      this.vclists = data;
+    this.authService.getVC().subscribe((data) => {
+      this.vclists = data.vcs;
       this.saveList = this.vclists;
       const allowed = ['VCName'];
       const vc_name = [];
-      var locat = [];
-      var focus = [];
-      var indication = [];
-      var investment = [];
+      let locat = [];
+      let focus = [];
+      let indication = [];
+      let investment = [];
 
-      data.filter(function (val) {
+      data.vcs.filter(function (val) {
         for (const key in val) {
           if (key === 'VCName') {
             vc_name.push(val[key]); // val1 and etc...
           } else if (key === 'Location') {
-            val[key].forEach(element => {
-              locat.push(element.split(' ').splice(-1)[0]);
-            });
+            if (val[key]) {
+              // locat.push(val[key].split(' ').splice(-1)[0]);
+              // val[key].split(/\s*,\s*/).forEach(function (myString) {
+              //   locat.push(myString);
+              // });
+              // locat.push(val[key].split(',').pop().replace(/\s/g, ''));
+              locat.push(val[key].split(', ').splice(-1));
+            }
           } else if (key === 'InvestmentFocus') {
-            focus.push(val[key].split(','));
+            if (val[key]) {
+              focus.push(val[key].split(','));
+            }
           } else if (key === 'PreferedIndication') {
-            indication.push(val[key].split(','));
+            if (val[key]) {
+              indication.push(val[key].split(','));
+            }
           } else if (key === 'InvestmentStage') {
-            investment.push(val[key].split(','));
+            if (val[key]) {
+              investment.push(val[key].split(','));
+            }
           }
         }
       });
@@ -169,8 +180,8 @@ export class VclistComponent implements OnInit {
     this.authService.deleteVC(this.vcId).subscribe(data => {
       this.message = data.message;
     });
-    this.clearProjectdata();
     this.getVclist();
+    this.clearProjectdata();
   }
 
   clearProjectdata() {
@@ -187,8 +198,8 @@ export class VclistComponent implements OnInit {
   }
 
   getVclist() {
-    this.vclistService.getVclist().subscribe((data) => {
-      this.vclists = data;
+    this.authService.getVC().subscribe((data) => {
+      this.vclists = data.vcs;
     });
   }
 

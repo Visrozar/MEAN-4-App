@@ -25,7 +25,7 @@ export class DealDescriptionComponent implements OnInit {
     constructor(private uploadService: UploadFileService,
         private router: Router, private formService: FormService,
         private elem: ElementRef, private authService: AuthService) {
-        this.formService.getSelectData().subscribe((data) => {
+        this.authService.getVC().subscribe((data) => {
             this.sectorList = data.sector;
             this.sectorList.unshift('');
             this.indicationList = data.indication;
@@ -48,7 +48,9 @@ export class DealDescriptionComponent implements OnInit {
 
     ngOnInit() {
         this.authService.getProfile().subscribe(profile => {
+            if (!this.formService.listCompany) {
             this.username = profile.user.username;
+            }
         });
         this.formData = this.formService.getFormData();
         if (this.formService.editClick === true) {
@@ -110,7 +112,9 @@ export class DealDescriptionComponent implements OnInit {
     }
 
     uploadFile() {
+        if (!this.formService.listCompany) {
         this.formData.createdBy = this.username;
+        }
         if (this.elem.nativeElement.querySelector('#selectFile').files[0]) {
             const fileSelected: File = this.elem.nativeElement.querySelector('#selectFile').files[0];
             this.currentFileUpload = new FileUpload(fileSelected);
@@ -122,5 +126,6 @@ export class DealDescriptionComponent implements OnInit {
     removeFile() {
         this.alreadyFileUpload = false;
         this.formService.file = '';
+        this.currentFileUpload = null;
     }
 }
