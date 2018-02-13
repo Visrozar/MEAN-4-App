@@ -169,7 +169,7 @@
               </tr>
               <tr *ngIf="vclist.Location">
                 <td class="vr">Location:</td>
-                <td>{{vclist.Location.join(' | ')}}</td>
+                <td>{{vclist.Location.split(',').join(' | ')}}</td>
               </tr>
             </table>
           </div>
