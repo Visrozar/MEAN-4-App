@@ -1,23 +1,25 @@
-<div class="col-md-12 header-img">
+<div [hidden]="this.role=='admin'" class="col-md-12 header-img">
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
     irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
     cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   </p>
-  <p class="text-center" style="margin-top:30px;">
+  <p class="text-center two-btns">
     <a class="btn btn-primary" href="#" role="button">VIEW DEAL-FLOW &raquo;</a>
-    <a class="btn btn-primary resp-btn" href="#" role="button">LIST A COMPANY &raquo;</a>
+    <a class="btn btn-primary resp-btn" routerLink="/project_form" role="button" (click)="this.formService.listCompany = true;">LIST A COMPANY &raquo;</a>
   </p>
 </div>
 
+<div *ngIf="this.role=='admin'" class="add-vc text-center">
+  <a routerLink="/vc_form">
+    <button class="btn btn-primary clear-filter">Add VC</button>
+  </a>
+</div>
+
 <div class="row body-style">
-  <form class="col-md-3">
-    <div class="form-group sticky">
-      <div class="col-xs-12 filter-label text-center">
-        <a routerLink="/vc_form">
-          <button class="btn btn-primary clear-filter">Add VC</button>
-        </a>
-      </div>
+<form class="col-md-3 sticky">
+
+    <div class="form-group">
       <div class="multiselect col-md-12 filter hide-box">
         <div class="selectBox hide-box" (click)="showCheckboxes('location')">
           <select>
@@ -81,7 +83,7 @@
         </div>
       </div>
       <div class="col-xs-12 filter-label text-center">
-        <button class="btn btn-primary clear-filter" style="margin-top:10px;" (click)="clearFilter()">Clear Filter</button>
+        <button class="btn btn-primary clear-filter" (click)="clearFilter()">Clear Filter</button>
       </div>
 
       <div class="col-xs-12 filter-label">
@@ -103,7 +105,9 @@
           <div class="row card">
             <div class="col-xs-3">
               <img class="feature-logo" *ngIf="vclist.Featured" src="../assets/images/feature1.png">
-              <img class="sh-styles" src="assets/images/company-logos/{{vclist.VCName}}.png" (error)="this.error=null; updateUrl($event)"
+              <img *ngIf="!vclist.fileUrl" class="sh-styles" src="assets/images/company-logos/{{vclist.VCName}}.png" (error)="this.error=null; updateUrl($event)"
+                alt="company logo">
+              <img *ngIf="vclist.fileUrl" class="sh-styles" src="{{vclist.fileUrl}}" (error)="this.error=null; updateUrl($event)"
                 alt="company logo">
             </div>
             <div class="col-xs-6 slide-name">
@@ -111,10 +115,34 @@
                 <h3 class="text-center small-name">{{vclist.VCName}}</h3>
               </a>
             </div>
-            <div class="col-xs-3 show-btn">
+            <div *ngIf="vclist.Website" class="col-xs-3 show-btn">
               <p class="website">
                 <a class="website btn btn-primary" href="{{vclist.Website}}" role="button" target="_blank">visit website &raquo;</a>
               </p>
+            </div>
+          </div>
+          <div class="row card" *ngIf="this.role=='admin'">
+            <div class="col-xs-6 text-center padd">
+              <a routerLink="/vc_form">
+                <button type="button" name="button" (click)="editEntry(vclist);" class="btn btn-sm btn-info">Edit</button>
+              </a>
+            </div>
+            <div class="col-xs-6 text-center padd">
+              <button type="button" name="button" (click)="activateOverlay(vclist._id)" class="btn btn-sm btn-danger">Delete</button>
+            </div>
+            <div class="modal" *ngIf="projectoverlayActive === true">
+              <div class="modal-content modal-small">
+                <span class="close" (click)="clearProjectdata();">&times;</span>
+                <h4 class="text-center delete-head">Are you sure you want to delete this project?</h4>
+                <div class="row">
+                  <div class="col-md-6 text-center">
+                    <button class="btn btn-danger" (click)="removeVC();">Delete</button>
+                  </div>
+                  <div class="col-md-6 text-center">
+                    <button class="btn btn-default" (click)="clearProjectdata();">Cancel</button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="row">
@@ -141,7 +169,7 @@
               </tr>
               <tr *ngIf="vclist.Location">
                 <td class="vr">Location:</td>
-                <td>{{vclist.Location.join(' | ')}}</td>
+                <td>{{vclist.Location.split(',').join(' | ')}}</td>
               </tr>
             </table>
           </div>

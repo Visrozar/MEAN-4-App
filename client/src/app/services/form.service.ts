@@ -30,14 +30,21 @@ export class FormService {
     public id: any;
     public detailData: any;
     public showError = false;
+    public listCompany = false;
     public fileName;
     public fileUrl;
+    public vcId;
 
     constructor(private workflowService: WorkflowService, public http: Http) {
     }
 
     getSelectData() {
         return this.http.get('../assets/form.json')
+            .map((res: Response) => res.json());
+    }
+
+    getSelectregData() {
+        return this.http.get('../assets/register.json')
             .map((res: Response) => res.json());
     }
 
@@ -49,7 +56,7 @@ export class FormService {
 
     getPersonal(): Personal {
         // Return the Personal data
-        var personal: Personal = {
+        const personal: Personal = {
             _id: this.formData._id,
             name: this.formData.name,
             role: this.formData.role,
@@ -88,7 +95,7 @@ export class FormService {
 
     getAddress(): Deal {
         // Return the Address data
-        var deal: Deal = {
+        const deal: Deal = {
             dealName: this.formData.dealName,
             location: this.formData.location,
             sector: this.formData.sector,
@@ -148,7 +155,4 @@ export class FormService {
         return this.isPersonalFormValid &&
             this.isAddressFormValid;
     }
-
-
-
 }
