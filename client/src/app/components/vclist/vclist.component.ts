@@ -54,11 +54,6 @@ export class VclistComponent implements OnInit {
             vc_name.push(val[key]); // val1 and etc...
           } else if (key === 'Location') {
             if (val[key]) {
-              // locat.push(val[key].split(' ').splice(-1)[0]);
-              // val[key].split(/\s*,\s*/).forEach(function (myString) {
-              //   locat.push(myString);
-              // });
-              // locat.push(val[key].split(',').pop().replace(/\s/g, ''));
               locat.push(val[key].split(', ').splice(-1));
             }
           } else if (key === 'InvestmentFocus') {
@@ -83,6 +78,10 @@ export class VclistComponent implements OnInit {
       }
 
       // country
+      locat = [].concat.apply([], locat);
+      locat = locat.map(function (el) {
+        return el.trim();
+      });
       this.country = locat.filter(onlyUnique).filter(Boolean);
 
       // Investment Focus
