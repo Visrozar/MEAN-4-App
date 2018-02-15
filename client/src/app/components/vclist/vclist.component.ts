@@ -5,6 +5,7 @@ import { Meta } from '@angular/platform-browser';
 import { VcfilterPipe } from '../../pipes/vcfilter.pipe';
 import { AuthService } from '../../services/auth.service';
 import { FormService } from '../../services/form.service';
+// import { reverse } from 'dns';
 declare var $: any;
 
 
@@ -29,7 +30,16 @@ export class VclistComponent implements OnInit {
   ) {
 
     this.authService.getVC().subscribe((data) => {
-      this.vclists = data.vcs;
+      const reverseArray = [];
+      data.vcs.forEach(function (arrayItem) {
+        if (arrayItem.Featured === 'true') {
+          reverseArray.push(arrayItem);
+          const index = data.vcs.indexOf(arrayItem);
+          data.vcs.splice(index, 1);
+        }
+      });
+      const data1 = reverseArray.concat(data.vcs);
+      this.vclists = data1;
       this.saveList = this.vclists;
       const allowed = ['VCName'];
       const vc_name = [];
@@ -44,11 +54,6 @@ export class VclistComponent implements OnInit {
             vc_name.push(val[key]); // val1 and etc...
           } else if (key === 'Location') {
             if (val[key]) {
-              // locat.push(val[key].split(' ').splice(-1)[0]);
-              // val[key].split(/\s*,\s*/).forEach(function (myString) {
-              //   locat.push(myString);
-              // });
-              // locat.push(val[key].split(',').pop().replace(/\s/g, ''));
               locat.push(val[key].split(', ').splice(-1));
             }
           } else if (key === 'InvestmentFocus') {
@@ -73,6 +78,10 @@ export class VclistComponent implements OnInit {
       }
 
       // country
+      locat = [].concat.apply([], locat);
+      locat = locat.map(function (el) {
+        return el.trim();
+      });
       this.country = locat.filter(onlyUnique).filter(Boolean);
 
       // Investment Focus
@@ -199,7 +208,16 @@ export class VclistComponent implements OnInit {
 
   getVclist() {
     this.authService.getVC().subscribe((data) => {
-      this.vclists = data.vcs;
+      const reverseArray = [];
+      data.vcs.forEach(function (arrayItem) {
+        if (arrayItem.Featured === 'true') {
+          reverseArray.push(arrayItem);
+          const index = data.vcs.indexOf(arrayItem);
+          data.vcs.splice(index, 1);
+        }
+      });
+      const data1 = reverseArray.concat(data.vcs);
+      this.vclists = data1;
     });
   }
 

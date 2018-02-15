@@ -46,7 +46,7 @@
           <div class='col-xs-12 col-sm-6'>
             <div class="form-group">
               <label class="control-label" for="location">Location</label>
-              <input class="form-control select-md" #location="ngModel" required pattern="^[a-zA-Z ]{2,30}$" name="location" type="text"
+              <input class="form-control select-md" #location="ngModel" required pattern="^[a-zA-Z,/- ]{2,30}$" name="location" type="text"
                 placeholder="Location" [(ngModel)]="deal.location">
               <div class="alert alert-danger" [hidden]="location.valid">Location is required</div>
             </div>
