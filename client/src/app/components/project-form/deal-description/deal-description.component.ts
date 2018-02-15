@@ -25,7 +25,7 @@ export class DealDescriptionComponent implements OnInit {
     constructor(private uploadService: UploadFileService,
         private router: Router, private formService: FormService,
         private elem: ElementRef, private authService: AuthService) {
-        this.authService.getVC().subscribe((data) => {
+        this.formService.getSelectData().subscribe((data) => {
             this.sectorList = data.sector;
             this.sectorList.unshift('');
             this.indicationList = data.indication;
