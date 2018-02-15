@@ -17,7 +17,7 @@
 </div>
 
 <div class="row body-style">
-<form class="col-md-3 sticky">
+  <form class="col-md-3 sticky">
 
     <div class="form-group">
       <div class="multiselect col-md-12 filter hide-box">
@@ -107,13 +107,15 @@
               <img class="feature-logo" *ngIf="vclist.Featured" src="../assets/images/feature1.png">
               <img *ngIf="!vclist.fileUrl" class="sh-styles" src="assets/images/company-logos/{{vclist.VCName}}.png" (error)="this.error=null; updateUrl($event)"
                 alt="company logo">
-              <img *ngIf="vclist.fileUrl" class="sh-styles" src="{{vclist.fileUrl}}" (error)="this.error=null; updateUrl($event)"
-                alt="company logo">
+              <img *ngIf="vclist.fileUrl" class="sh-styles" src="{{vclist.fileUrl}}" (error)="this.error=null; updateUrl($event)" alt="company logo">
             </div>
-            <div class="col-xs-6 slide-name">
+            <div *ngIf="vclist.Website" class="col-xs-6 slide-name">
               <a class="no-underline" href="{{vclist.Website}}" target="_blank">
                 <h3 class="text-center small-name">{{vclist.VCName}}</h3>
               </a>
+            </div>
+            <div *ngIf="!vclist.Website" class="col-xs-6 slide-name">
+              <h3 class="color-blu text-center small-name">{{vclist.VCName}}</h3>
             </div>
             <div *ngIf="vclist.Website" class="col-xs-3 show-btn">
               <p class="website">
@@ -135,10 +137,10 @@
                 <span class="close" (click)="clearProjectdata();">&times;</span>
                 <h4 class="text-center delete-head">Are you sure you want to delete this project?</h4>
                 <div class="row">
-                  <div class="col-md-6 text-center">
+                  <div class="col-xs-6 text-center">
                     <button class="btn btn-danger" (click)="removeVC();">Delete</button>
                   </div>
-                  <div class="col-md-6 text-center">
+                  <div class="col-xs-6 text-center">
                     <button class="btn btn-default" (click)="clearProjectdata();">Cancel</button>
                   </div>
                 </div>

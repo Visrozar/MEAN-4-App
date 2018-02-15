@@ -5,6 +5,7 @@ import { Meta } from '@angular/platform-browser';
 import { VcfilterPipe } from '../../pipes/vcfilter.pipe';
 import { AuthService } from '../../services/auth.service';
 import { FormService } from '../../services/form.service';
+// import { reverse } from 'dns';
 declare var $: any;
 
 
@@ -29,7 +30,16 @@ export class VclistComponent implements OnInit {
   ) {
 
     this.authService.getVC().subscribe((data) => {
-      this.vclists = data.vcs;
+      const reverseArray = [];
+      data.vcs.forEach(function (arrayItem) {
+        if (arrayItem.Featured === 'true') {
+          reverseArray.push(arrayItem);
+          const index = data.vcs.indexOf(arrayItem);
+          data.vcs.splice(index, 1);
+        }
+      });
+      const data1 = reverseArray.concat(data.vcs);
+      this.vclists = data1;
       this.saveList = this.vclists;
       const allowed = ['VCName'];
       const vc_name = [];
@@ -199,7 +209,16 @@ export class VclistComponent implements OnInit {
 
   getVclist() {
     this.authService.getVC().subscribe((data) => {
-      this.vclists = data.vcs;
+      const reverseArray = [];
+      data.vcs.forEach(function (arrayItem) {
+        if (arrayItem.Featured === 'true') {
+          reverseArray.push(arrayItem);
+          const index = data.vcs.indexOf(arrayItem);
+          data.vcs.splice(index, 1);
+        }
+      });
+      const data1 = reverseArray.concat(data.vcs);
+      this.vclists = data1;
     });
   }
 
