@@ -6,11 +6,11 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyAqCL3HM6QL1qCJ6mIjxE7jlxHoq4y-Y0Y',
-    authDomain: 'virtual-biotech.firebaseapp.com',
-    databaseURL: 'https://virtual-biotech.firebaseio.com',
-    projectId: 'virtual-biotech',
-    storageBucket: 'gs://virtual-biotech.appspot.com',
-    messagingSenderId: '1067100368417'
+    apiKey: 'AIzaSyDKnR2twPdudrMUPlI7MFvRW55WSsTDjQM',
+    authDomain: 'virtualbiotech2017.firebaseapp.com',
+    databaseURL: 'https://virtualbiotech2017.firebaseio.com',
+    projectId: 'virtualbiotech2017',
+    storageBucket: 'gs://virtualbiotech2017.appspot.com/',
+    messagingSenderId: '62567647331'
   }
 };
