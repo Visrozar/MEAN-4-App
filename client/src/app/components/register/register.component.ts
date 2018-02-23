@@ -195,8 +195,6 @@ export class RegisterComponent implements OnInit {
       agro: this.agroArray,
     }
 
-    console.log(user);
-
     // Function from authentication service to register user
     this.authService.registerUser(user).subscribe(data => {
       // Resposne from registration attempt
@@ -209,9 +207,35 @@ export class RegisterComponent implements OnInit {
         this.messageClass = 'alert alert-success'; // Set a success class
         this.message = data.message; // Set a success message
         // After 2 second timeout, navigate to the login page
+        // setTimeout(() => {
+        //   this.router.navigate(['/home']); // Redirect to login view
+        // }, 3000);
+      }
+    });
+
+    const user1 = {
+      username: this.form.get('username').value, // Username input field
+      password: this.form.get('password').value // Password input field
+    }
+
+    // Function to send login data to API
+    this.authService.login(user1).subscribe(data => {
+      // Check if response was a success or error
+      if (!data.success) {
+        this.messageClass = 'alert alert-danger'; // Set bootstrap error class
+        this.message = data.message; // Set error message
+        this.processing = false; // Enable submit button
+        this.enableForm(); // Enable form for editting
+      } else {
+        this.messageClass = 'alert alert-success'; // Set bootstrap success class
+        this.message = data.message; // Set success message
+        // Function to store user's token in client local storage
+        this.authService.storeUserData(data.token, data.user);
+        this.authService.loggedIn();
+        // After 2 seconds, redirect to dashboard page
         setTimeout(() => {
-          this.router.navigate(['/home']); // Redirect to login view
-        }, 3000);
+          this.router.navigate(['/dashboard']); // Navigate to dashboard view
+        }, 2000);
       }
     });
 

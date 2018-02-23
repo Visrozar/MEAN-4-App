@@ -32,6 +32,10 @@ export class AuthService {
     this.authToken = localStorage.getItem('token'); // Get token and asssign to variable to be used elsewhere
   }
 
+  getToken(){
+    return this.authToken = localStorage.getItem('token'); // Get token and asssign to variable to be used elsewhere
+  }
+
   // Function to register user accounts
   registerUser(user) {
     return this.http.post(this.domain + '/authentication/register', user).map(res => res.json());
@@ -97,12 +101,12 @@ export class AuthService {
 
   saveFilter(obj) {
     this.createAuthenticationHeaders(); // Create headers before sending to API
-    return this.http.post(this.domain + '/filters/addFilter/', obj).map(res => res.json());
+    return this.http.post(this.domain + '/filters/addFilter/', obj, this.options).map(res => res.json());
   }
 
-  deleteFilter(name) {
+  deleteFilter(id) {
     this.createAuthenticationHeaders(); // Create headers before sending to API
-    return this.http.delete(this.domain + '/filters/deleteFilter/', name).map(res => res.json());
+    return this.http.delete(this.domain + '/filters/deleteFilter/' + id, this.options).map(res => res.json());
   }
 
   newVC(data) {

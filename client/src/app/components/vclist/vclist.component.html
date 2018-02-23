@@ -4,7 +4,7 @@
     irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
     cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   </p>
-  <p class="text-center two-btns">
+  <p *ngIf="this.role=='enterpreneur' || this.role=='investor'" class="text-center two-btns">
     <a class="btn btn-primary" href="#" role="button">VIEW DEAL-FLOW &raquo;</a>
     <a class="btn btn-primary resp-btn" routerLink="/project_form" role="button" (click)="this.formService.listCompany = true;">LIST A COMPANY &raquo;</a>
   </p>

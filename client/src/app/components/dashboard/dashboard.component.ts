@@ -48,6 +48,11 @@ export class DashboardComponent implements OnInit {
   indicationList: any = [];
   stageProgramList: any = [];
   financingList: any = [];
+  role1: any =[];
+  sector1: any =[];
+  indication1: any =[];
+  stage1: any =[];
+  financing1: any =[];
   roleActive = false;
   sectorActive = false;
   indicationActive = false;
@@ -244,11 +249,11 @@ export class DashboardComponent implements OnInit {
   }
 
   filterList() {
-    const role = $(`input[name=role2]:checked`);
-    const sector = $(`input[name=sector2]:checked`);
-    const indication = $(`input[name=indication2]:checked`);
-    const stage = $(`input[name=stage2]:checked`);
-    const financing = $(`input[name=financing2]:checked`);
+    this.role1 = $(`input[name=role2]:checked`);
+    this.sector1 = $(`input[name=sector2]:checked`);
+    this.indication1 = $(`input[name=indication2]:checked`);
+    this.stage1 = $(`input[name=stage2]:checked`);
+    this.financing1 = $(`input[name=financing2]:checked`);
 
     const roleArray = [];
     const sectorArray = [];
@@ -256,33 +261,33 @@ export class DashboardComponent implements OnInit {
     const stageArray = [];
     const financingArray = [];
 
-    if (role.length !== 0) {
-      for (let i = 0; i < role.length; i++) {
-        roleArray.push(role[i].nextSibling.data);
+    if (this.role1.length !== 0) {
+      for (let i = 0; i < this.role1.length; i++) {
+        roleArray.push(this.role1[i].nextSibling.data);
       }
     }
 
-    if (sector.length !== 0) {
-      for (let i = 0; i < sector.length; i++) {
-        sectorArray.push(sector[i].nextSibling.data);
+    if (this.sector1.length !== 0) {
+      for (let i = 0; i < this.sector1.length; i++) {
+        sectorArray.push(this.sector1[i].nextSibling.data);
       }
     }
 
-    if (indication.length !== 0) {
-      for (let i = 0; i < indication.length; i++) {
-        indicationArray.push(indication[i].nextSibling.data);
+    if (this.indication1.length !== 0) {
+      for (let i = 0; i < this.indication1.length; i++) {
+        indicationArray.push(this.indication1[i].nextSibling.data);
       }
     }
 
-    if (stage.length !== 0) {
-      for (let i = 0; i < stage.length; i++) {
-        stageArray.push(stage[i].nextSibling.data);
+    if (this.stage1.length !== 0) {
+      for (let i = 0; i < this.stage1.length; i++) {
+        stageArray.push(this.stage1[i].nextSibling.data);
       }
     }
 
-    if (financing.length !== 0) {
-      for (let i = 0; i < financing.length; i++) {
-        financingArray.push(financing[i].nextSibling.data);
+    if (this.financing1.length !== 0) {
+      for (let i = 0; i < this.financing1.length; i++) {
+        financingArray.push(this.financing1[i].nextSibling.data);
       }
     }
     this.projects = this.dashFilter.transform(this.saveList, roleArray, sectorArray, indicationArray, stageArray, financingArray);
@@ -349,11 +354,18 @@ export class DashboardComponent implements OnInit {
       this.isEmpty = true;
     } else {
       this.isEmpty = false;
-      const role = $(`input[name=role2]:checked`);
-      const sector = $(`input[name=sector2]:checked`);
-      const indication = $(`input[name=indication2]:checked`);
-      const stage = $(`input[name=stage2]:checked`);
-      const financing = $(`input[name=financing2]:checked`);
+
+      let role = [];
+      let sector = []
+      let indication = [];
+      let stage = [];
+      let financing =[];
+
+      role = $(`input[name=role2]:checked`);
+      sector = $(`input[name=sector2]:checked`);
+      indication = $(`input[name=indication2]:checked`);
+      stage = $(`input[name=stage2]:checked`);
+      financing = $(`input[name=financing2]:checked`);
 
       const roleArray = [];
       const sectorArray = [];
@@ -365,41 +377,57 @@ export class DashboardComponent implements OnInit {
         for (let i = 0; i < role.length; i++) {
           roleArray.push(role[i].nextSibling.data);
         }
+      } else {
+        role.length = 0;
       }
 
       if (sector.length !== 0) {
         for (let i = 0; i < sector.length; i++) {
           sectorArray.push(sector[i].nextSibling.data);
         }
+      } else {
+        role.length = 0;
       }
 
       if (indication.length !== 0) {
         for (let i = 0; i < indication.length; i++) {
           indicationArray.push(indication[i].nextSibling.data);
         }
+      } else {
+        role.length = 0;
       }
 
       if (stage.length !== 0) {
         for (let i = 0; i < stage.length; i++) {
           stageArray.push(stage[i].nextSibling.data);
         }
+      } else {
+        role.length = 0;
       }
 
       if (financing.length !== 0) {
         for (let i = 0; i < financing.length; i++) {
           financingArray.push(financing[i].nextSibling.data);
         }
+      } else {
+        role.length = 0;
       }
 
       const object = {
         name: filterName.toString(), createdBy: this.username, role: roleArray, sector: sectorArray, indication: indicationArray,
         stage: stageArray, financing: financingArray
       };
-      this.authService.saveFilter(object).subscribe(data => {
-        if (!data.success) {
-        } else {
-        }
-      });
+      if (this.isEmpty == false &&
+        role.length !== 0 ||
+        sector.length !== 0 ||
+        indication.length !== 0 ||
+        stage.length !== 0 || financing.length !== 0) {
+        this.authService.saveFilter(object).subscribe(data => {
+          if (!data.success) {
+          } else {
+          }
+        });
+      }
     }
   }
 
@@ -410,7 +438,7 @@ export class DashboardComponent implements OnInit {
   }
 
   clearSpecificFilter() {
-    this.authService.deleteFilter(this.deleteData.name).subscribe(data => {
+    this.authService.deleteFilter(this.deleteData._id).subscribe(data => {
       // Check if response was a success or error
       if (!data.success) {
         // error
@@ -421,6 +449,7 @@ export class DashboardComponent implements OnInit {
       }
     });
     this.clearDeletedata();
+    this.getFilterList();
   }
 
   useFilter(filter) {

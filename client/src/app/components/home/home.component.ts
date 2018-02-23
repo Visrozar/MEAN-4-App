@@ -14,6 +14,7 @@ declare var $: any;
 export class HomeComponent implements OnInit {
   username;
   role;
+  token;
 
   constructor(private router: Router, private authService: AuthService, private formService: FormService) { }
 
@@ -21,6 +22,8 @@ export class HomeComponent implements OnInit {
   loginoverlayActive = false;
 
   ngOnInit() {
+    this.token = this.authService.getToken();
+    this.formService.homeClick = true;
     this.authService.getProfile().subscribe(profile => {
       if (!profile.success) {
       } else {
