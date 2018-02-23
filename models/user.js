@@ -158,6 +158,12 @@ const userSchema = new Schema({
   username: { type: String, required: true, unique: true, lowercase: true, validate: usernameValidators },
   password: { type: String, required: true, validate: passwordValidators },
   role: { type: String, required: true, validate: roleValidators },
+  subsector: { type: String },
+  indication: { type: String },
+  financing: { type: String },
+  therapeutics: { type: String },
+  diagnostics: { type: String },
+  agro: { type: String }
 });
 
 // Schema Middleware to Encrypt Password

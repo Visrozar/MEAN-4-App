@@ -190,9 +190,9 @@ export class RegisterComponent implements OnInit {
       subsector: $('select[name="subsector"]').val(),
       indication: $('select[name="indication"]').val(),
       financing: $('select[name="financing"]').val(),
-      Therapeutics: this.therapeuticsArray,
-      Diagnostics: this.diagnosticsArray,
-      agro: this.agroArray,
+      therapeutics: this.therapeuticsArray,
+      diagnostics: this.diagnosticsArray,
+      agro: this.agroArray
     }
 
     console.log(user);
