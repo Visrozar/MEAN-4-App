@@ -1,9 +1,25 @@
 const User = require('../models/user'); // Import User Model Schema
 const Project = require('../models/project'); // Import Project Model Schema
+const Vc = require('../models/vc'); // Import Vc Model Schema
 const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 
 module.exports = (router) => {
+  router.get('/getVcs', (req, res) => {
+    // Search for vclist in database
+    Vc.find({}).exec((err, vcs) => {
+      if (err) {
+        res.json({ success: false, message: err }); // Return error
+      }
+      else {
+        if (!vcs) {
+          res.json({ success: false, message: 'No VClist found' }); // Return error, vc list was not found in db
+        } else {
+          res.json({ success: true, vcs: vcs }); // Return success, send vclist object to frontend
+        }
+      }
+    });
+  });
   /* ==============
      Register Route
   ============== */
