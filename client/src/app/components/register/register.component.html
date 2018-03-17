@@ -8,9 +8,9 @@
 </div>
 
 <!-- Registration Form -->
-<form [formGroup]="form" (submit)="onRegisterSubmit()"  [hidden]="!step1">
+<form [formGroup]="form" (submit)="onRegisterSubmit()" [hidden]="!step1">
 
-  <div class="row">
+  <div class="row" [hidden]="!step2">
     <div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8">
 
 
@@ -18,7 +18,7 @@
       <div class="row">
         <div class='col-xs-12 col-sm-12'>
           <div class="form-group">
-            <label for="username">Username</label>
+            <label for="username">Full Name</label>
             <div [ngClass]="{'has-error': (form.controls.username.errors && form.controls.username.dirty) || (!usernameValid && form.controls.username.dirty), 'has-success': !form.controls.username.errors && usernameValid}">
               <input type="text" name="username" class="form-control" autocomplete="off" placeholder="*Username" formControlName="username"
                 (blur)="checkUsername()" />
@@ -28,6 +28,40 @@
                 <li *ngIf="form.controls.username.errors?.minlength && form.controls.username.dirty || form.controls.username.errors?.maxlength && form.controls.username.dirty ">Minimum characters: 3, Maximum characters: 15</li>
                 <!-- <li *ngIf="form.controls.username.errors?.validateUsername && form.controls.username.dirty">Username must not have any special characters</li> -->
                 <li *ngIf="usernameMessage">{{ usernameMessage }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Company Name -->
+      <div class="row">
+        <div class='col-xs-12 col-sm-12'>
+          <div class="form-group">
+            <label for="companyname">Company Name</label>
+            <div [ngClass]="{'has-error': form.controls.companyname.errors && form.controls.companyname.dirty, 'has-success': !form.controls.companyname.errors}">
+              <input type="text" name="companyname" class="form-control" autocomplete="off" placeholder="*Company Name" formControlName="companyname"
+              />
+              <!-- Validation -->
+              <ul class="help-block">
+                <li *ngIf="form.controls.companyname.errors?.minlength && form.controls.companyname.dirty || form.controls.companyname.errors?.maxlength && form.controls.companyname.dirty ">Minimum characters: 3, Maximum characters: 35</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Job Title -->
+      <div class="row">
+        <div class='col-xs-12 col-sm-12'>
+          <div class="form-group">
+            <label for="jobtitle">Job Title</label>
+            <div [ngClass]="{'has-error': form.controls.jobtitle.errors && form.controls.jobtitle.dirty, 'has-success': !form.controls.jobtitle.errors}">
+              <input type="text" name="jobtitle" class="form-control" autocomplete="off" placeholder="*Job Title" formControlName="jobtitle"
+              />
+              <!-- Validation -->
+              <ul class="help-block">
+                <li *ngIf="form.controls.jobtitle.errors?.minlength && form.controls.jobtitle.dirty || form.controls.jobtitle.errors?.maxlength && form.controls.jobtitle.dirty ">Minimum characters: 3, Maximum characters: 35</li>
               </ul>
             </div>
           </div>
@@ -96,96 +130,81 @@
           <div class="form-group">
             <label for="role">Role</label>
             <div>Investor</div>
-            <!-- <div [ngClass]="{'has-error': (form.controls.role.errors && form.controls.role.dirty), 'has-success': !form.controls.role.errors}">
-              <input type="password" name="password" class="form-control" autocomplete="off" placeholder="*Password" formControlName="password" />
-              <select placeholder="*Role" class="form-control" id="role" formControlName="role" required>
-                <option value="investor">Investor</option>
-                <option value="enterpreneur">Entrepreneur</option>
-              </select>
-              Validation
-              <ul class="help-block">
-                <li *ngIf="form.controls.role.errors?.required && form.controls.role.dirty">This field is required</li>
-                <li *ngIf="form.controls.role.errors?.validateRole && form.controls.role.dirty">Must be Valid Role</li>
-              </ul>
-            </div> -->
           </div>
         </div>
       </div>
 
-      <!-- Submit Input -->
-      <!-- <div class="row ">
-        <input [disabled]="!form.valid || processing || !emailValid || !usernameValid" class="btn btn-primary"  value="Submit"
-        />
-      </div> -->
-      <!-- <div class="form-group text-center">
-        <button type="button" class="btn btn-primary btn-outline-rounded" [disabled]="!form.valid || processing || !emailValid || !usernameValid"
-          (click)="showNextstep();">
-          Submit</button>
-      </div> -->
+      <!-- Next Input -->
+      <div class="row text-center">
+        <button (click)="step2 = false;"  [disabled]="!form.valid || processing || !emailValid || !usernameValid" class="btn btn-primary" value="Next" type="next">Next</button>
+      </div>
     </div>
   </div>
 
-  <h3 class="header text-center">Please specify your main interest</h3>
+  <div class="second-half" [hidden]="step2">
 
-  <div class="row">
-    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8">
+    <h3 class="header text-center">Please specify your main interest</h3>
 
-      <div class="row">
-        <div class='col-xs-12 col-sm-12'>
-          <div class="form-group">
-            <label for="subsector">Subsector</label>
-            <select class="form-control select-md" name="subsector" type="text" placeholder="Subsector">
-              <option *ngFor="let sector of subsectorList" value="{{sector}}">{{sector}}</option>
-            </select>
+    <div class="row">
+      <div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8">
+
+        <div class="row">
+          <div class='col-xs-12 col-sm-12'>
+            <div class="form-group">
+              <label for="subsector">Subsector</label>
+              <select class="form-control select-md" name="subsector" type="text" placeholder="Subsector">
+                <option *ngFor="let sector of subsectorList" value="{{sector}}">{{sector}}</option>
+              </select>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class='col-xs-12 col-sm-12'>
-          <div class="form-group">
-            <label for="indication">Indication</label>
-            <select class="form-control select-md" name="indication" type="text" placeholder="Indication">
-              <option *ngFor="let indication of indicationList" value="{{indication}}">{{indication}}</option>
-            </select>
+        <div class="row">
+          <div class='col-xs-12 col-sm-12'>
+            <div class="form-group">
+              <label for="indication">Indication</label>
+              <select class="form-control select-md" name="indication" type="text" placeholder="Indication">
+                <option *ngFor="let indication of indicationList" value="{{indication}}">{{indication}}</option>
+              </select>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class='col-xs-12 col-sm-12'>
-          <div class="form-group">
-            <label for="financing">Financing</label>
-            <select class="form-control select-md" name="financing" type="text" placeholder="Financing">
-              <option *ngFor="let financing of financingList" value="{{financing}}">{{financing}}</option>
-            </select>
+        <div class="row">
+          <div class='col-xs-12 col-sm-12'>
+            <div class="form-group">
+              <label for="financing">Financing</label>
+              <select class="form-control select-md" name="financing" type="text" placeholder="Financing">
+                <option *ngFor="let financing of financingList" value="{{financing}}">{{financing}}</option>
+              </select>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class='col-xs-12 col-sm-12'>
-          <div class="form-group">
-            <label for="financing">Stage</label>
-            <div class="sub-head">Therapeutics:</div>
-            <label class="hide-box inline-input" *ngFor="let thera of therapeuticsList">
-              <input class="hide-box check-box" type="checkbox" name="thera" value="{{ thera }}" (change)="checkClicked()" />{{ thera }}</label>
-            <div class="sub-head">Diagnostics and Health-Tech:</div>
-            <label class="hide-box inline-input" *ngFor="let diagnostic of diagnosticsList">
-              <input class="hide-box check-box" type="checkbox" name="diagnostic" value="{{ diagnostic }}" (change)="checkClicked()" />{{ diagnostic }}</label>
-            <div class="sub-head">Agro:</div>
-            <label class="hide-box inline-input" *ngFor="let agro of agroList">
-              <input class="hide-box check-box" type="checkbox" name="agro" value="{{ agro }}" (change)="checkClicked()" />{{ agro }}</label>
+        <div class="row">
+          <div class='col-xs-12 col-sm-12'>
+            <div class="form-group">
+              <label for="financing">Stage</label>
+              <div class="sub-head">Therapeutics:</div>
+              <label class="hide-box inline-input" *ngFor="let thera of therapeuticsList">
+                <input class="hide-box check-box" type="checkbox" name="thera" value="{{ thera }}" (change)="checkClicked()" />{{ thera }}</label>
+              <div class="sub-head">Diagnostics and Health-Tech:</div>
+              <label class="hide-box inline-input" *ngFor="let diagnostic of diagnosticsList">
+                <input class="hide-box check-box" type="checkbox" name="diagnostic" value="{{ diagnostic }}" (change)="checkClicked()" />{{ diagnostic }}</label>
+              <div class="sub-head">Agro:</div>
+              <label class="hide-box inline-input" *ngFor="let agro of agroList">
+                <input class="hide-box check-box" type="checkbox" name="agro" value="{{ agro }}" (change)="checkClicked()" />{{ agro }}</label>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Submit Input -->
-      <div class="row text-center">
-        <input [disabled]="!form.valid || processing || !emailValid || !usernameValid" class="btn btn-primary" value="Submit" type="submit"
-        />
-      </div>
+        <!-- Submit Input -->
+        <div class="row text-center">
+          <input [disabled]="!form.valid || processing || !emailValid || !usernameValid" class="btn btn-primary" value="Submit" type="submit"
+          />
+        </div>
 
+      </div>
     </div>
   </div>
 
