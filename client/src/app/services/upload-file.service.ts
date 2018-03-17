@@ -61,6 +61,10 @@ export class UploadFileService {   // Development Domain - Not Needed in Product
     return this.http.post(this.authService.domain + '/projects/newProject', data, this.options).map(res => res.json());
   }
 
+  newUserProject(data) {
+    return this.http.post(this.authService.domain + '/authentication/newUserProject', data, this.options).map(res => res.json());
+  }
+
   editProject(data) {
     this.createAuthenticationHeaders(); // Create headers before sending to API
     return this.http.put(this.authService.domain + '/projects/editProject', data, this.options).map(res => res.json());

@@ -51,7 +51,7 @@ module.exports = (router) => {
               financing: req.body.financing,
               therapeutics: req.body.therapeutics,
               diagnostics: req.body.diagnostics,
-              agro: req.body.agro 
+              agro: req.body.agro
             });
             // Save user to database
             user.save((err) => {
@@ -101,144 +101,139 @@ module.exports = (router) => {
   router.post('/newUserProject', (req, res) => {
     User.findOne({ email: req.body.email }, (err, user) => {
       if (err) {
-          res.json({ success: false, message: err });
+        res.json({ success: false, message: err });
       } else {
-          if (!user) {
-            req.body.password = Math.random().toString(36).slice(-8);
-            console.log(req.body.password);
-            req.body.userRole = 'enterpreneur';
-            if (!req.body.email) {
-              res.json({ success: false, message: 'You must provide an e-mail' }); // Return error
+        if (!user) {
+          req.body.password = Math.random().toString(36).slice(-8);
+          console.log(req.body.password);
+          req.body.userRole = 'enterpreneur';
+          if (!req.body.email) {
+            res.json({ success: false, message: 'You must provide an e-mail' }); // Return error
+          } else {
+            // Check if username was provided
+            if (!req.body.name) {
+              res.json({ success: false, message: 'You must provide a username' }); // Return error
             } else {
-              // Check if username was provided
-              if (!req.body.name) {
-                res.json({ success: false, message: 'You must provide a username' }); // Return error
+              // Check if password was provided
+              if (!req.body.password) {
+                res.json({ success: false, message: 'You must provide a password' }); // Return error
               } else {
                 // Check if password was provided
-                if (!req.body.password) {
-                  res.json({ success: false, message: 'You must provide a password' }); // Return error
+                if (!req.body.userRole) {
+                  res.json({ success: false, message: 'You must provide a role' }); // Return error
                 } else {
-                  // Check if password was provided
-                  if (!req.body.userRole) {
-                    res.json({ success: false, message: 'You must provide a role' }); // Return error
-                  } else {
-                    // Create new user object and apply user input
-                    let user = new User({
-                      email: req.body.email.toLowerCase(),
-                      username: req.body.name.toLowerCase(),
-                      password: req.body.password,
-                      role: req.body.userRole.toLowerCase()
-                    });
-                    // Save user to database
-                    user.save((err) => {
-                      // Check if error occured
-                      if (err) {
-                        // Check if error is an error indicating duplicate account
-                        if (err.code === 11000) {
-                          res.json({ success: false, message: 'Username or e-mail already exists' }); // Return error
-                        } else {
-                          // Check if error is a validation rror
-                          if (err.errors) {
-                            // Check if validation error is in the email field
-                            if (err.errors.email) {
-                              res.json({ success: false, message: err.errors.email.message }); // Return error
+                  // Create new user object and apply user input
+                  let user = new User({
+                    email: req.body.email.toLowerCase(),
+                    username: req.body.name.toLowerCase(),
+                    password: req.body.password,
+                    role: req.body.userRole.toLowerCase()
+                  });
+                  // Save user to database
+                  user.save((err) => {
+                    // Check if error occured
+                    if (err) {
+                      // Check if error is an error indicating duplicate account
+                      if (err.code === 11000) {
+                        res.json({ success: false, message: 'Username or e-mail already exists' }); // Return error
+                      } else {
+                        // Check if error is a validation rror
+                        if (err.errors) {
+                          // Check if validation error is in the email field
+                          if (err.errors.email) {
+                            res.json({ success: false, message: err.errors.email.message }); // Return error
+                          } else {
+                            // Check if validation error is in the username field
+                            if (err.errors.username) {
+                              res.json({ success: false, message: err.errors.username.message }); // Return error
                             } else {
-                              // Check if validation error is in the username field
-                              if (err.errors.username) {
-                                res.json({ success: false, message: err.errors.username.message }); // Return error
+                              // Check if validation error is in the password field
+                              if (err.errors.password) {
+                                res.json({ success: false, message: err.errors.password.message }); // Return error
                               } else {
-                                // Check if validation error is in the password field
-                                if (err.errors.password) {
-                                  res.json({ success: false, message: err.errors.password.message }); // Return error
+                                // Check if validation error is in the role field
+                                if (err.errors.role) {
+                                  res.json({ success: false, message: err.errors.role.message }); // Return error
                                 } else {
-                                  // Check if validation error is in the role field
-                                  if (err.errors.role) {
-                                    res.json({ success: false, message: err.errors.role.message }); // Return error
-                                  } else {
-                                    res.json({ success: false, message: err }); // Return any other error not already covered
-                                  }
+                                  res.json({ success: false, message: err }); // Return any other error not already covered
                                 }
                               }
                             }
+                          }
+                        } else {
+                          res.json({ success: false, message: 'Could not save user. Error: ', err }); // Return error if not related to validation
+                        }
+                      }
+                    } else {
+                      if (!req.body.name) {
+                        res.json({ success: false, message: 'Name is required' });
+                      } else {
+                        if (!req.body.role) {
+                          res.json({ success: false, message: 'Role is required' });
+                        } else {
+                          if (!req.body.email) {
+                            res.json({ success: false, message: 'Email is required' });
                           } else {
-                            res.json({ success: false, message: 'Could not save user. Error: ', err }); // Return error if not related to validation
+                            if (!req.body.dealName) {
+                              res.json({ success: false, message: 'Deal Name is required' });
+                            } else {
+                              if (!req.body.location) {
+                                res.json({ success: false, message: 'Location is required' });
+                              } else {
+                                if (!req.body.createdBy) {
+                                  req.body.createdBy = req.body.name;
+                                }
+                                const project = new Project({
+                                  name: req.body.name,
+                                  role: req.body.role,
+                                  organization: req.body.organization,
+                                  telephone: req.body.telephone,
+                                  email: req.body.email,
+                                  website: req.body.website,
+                                  work: req.body.work,
+                                  dealName: req.body.dealName,
+                                  location: req.body.location,
+                                  sector: req.body.sector,
+                                  indication: req.body.indication,
+                                  stageLead: req.body.stageLead,
+                                  financing: req.body.financing,
+                                  investment: req.body.investment,
+                                  technology: req.body.technology,
+                                  programDescription: req.body.programDescription,
+                                  comments: req.body.comments,
+                                  fileUrl: req.body.fileUrl,
+                                  fileName: req.body.fileName,
+                                  createdBy: req.body.createdBy,
+                                  approvestatus: req.body.approvestatus,
+                                  message: req.body.message
+                                });
+                                project.save((err) => {
+                                  if (err) {
+                                    if (err.errors) {
+                                      res.json({ success: false, message: err.errmsg });
+                                    } else {
+                                      res.json({ success: false, message: err });
+                                    }
+                                  } else {
+                                    res.json({ success: true, message: 'Project and User Saved' });
+                                  }
+                                });
+                              }
+                            }
                           }
                         }
-                      } else {
-                        if (!req.body.name) {
-                          res.json({ success: false, message: 'Name is required' });
-                      } else {
-                          if (!req.body.role) {
-                              res.json({ success: false, message: 'Role is required' });
-                          } else {
-                              if (!req.body.email) {
-                                  res.json({ success: false, message: 'Email is required' });
-                              } else {
-                                  if (!req.body.dealName) {
-                                      res.json({ success: false, message: 'Deal Name is required' });
-                                  } else {
-                                      if (!req.body.location) {
-                                          res.json({ success: false, message: 'Location is required' });
-                                      } else {
-                                          if (!req.body.sector) {
-                                              res.json({ success: false, message: 'Sector is required' });
-                                          } else {
-                                              if (!req.body.createdBy) {
-                                                  res.json({ success: false, message: 'Project Creator is required' });
-                                              } else {
-                                                  const project = new Project({
-                                                      name: req.body.name,
-                                                      role: req.body.role,
-                                                      organization: req.body.organization,
-                                                      telephone: req.body.telephone,
-                                                      email: req.body.email,
-                                                      website: req.body.website,
-                                                      work: req.body.work,
-                                                      dealName: req.body.dealName,
-                                                      location: req.body.location,
-                                                      sector: req.body.sector,
-                                                      indication: req.body.indication,
-                                                      stageLead: req.body.stageLead,
-                                                      financing: req.body.financing,
-                                                      investment: req.body.investment,
-                                                      technology: req.body.technology,
-                                                      programDescription: req.body.programDescription,
-                                                      comments: req.body.comments,
-                                                      fileUrl: req.body.fileUrl,
-                                                      fileName: req.body.fileName,
-                                                      createdBy: req.body.createdBy,
-                                                      approvestatus: req.body.approvestatus,
-                                                      message: req.body.message
-                                                  });
-                                                  project.save((err) => {
-                                                      if (err) {
-                                                          if (err.errors) {
-                                                              res.json({ success: false, message: err.errmsg });
-                                                          } else {
-                                                              res.json({ success: false, message: err });
-                                                          }
-                                                      } else {
-                                                          res.json({ success: true, message: 'Project and User Saved' });
-                                                      }
-                                                  });
-                                              }
-                                          }
-                                      }
-                                  }
-                              }
-                          }
                       }
-                      }
-                    });
-                  }
+                    }
+                  });
                 }
               }
             }
-          } else {
-            res.json({ success: false, message: 'User is already present' });
           }
+        } else {
+          res.json({ success: false, message: 'User is already present' });
+        }
       }
-  });
+    });
   });
 
   /* ============================================================
