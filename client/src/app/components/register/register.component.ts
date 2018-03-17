@@ -54,6 +54,7 @@ export class RegisterComponent implements OnInit {
   diagnosticsArray = [];
   agroArray = [];
   step1 = true;
+  step2 = true;
 
   // Function to create registration form
   createForm() {
@@ -79,11 +80,18 @@ export class RegisterComponent implements OnInit {
         Validators.maxLength(35), // Maximum length is 35 characters
         // this.validatePassword // Custom validation
       ])],
-      // Role Input
-      // role: ['', Validators.compose([
-      //   Validators.required, // Field is required
-      //   // this.validateRole // Custom validation
-      // ])],
+      // Company Name Input
+      companyname: ['', Validators.compose([
+        Validators.required, // Field is required
+        Validators.minLength(3), // Custom validation
+        Validators.maxLength(35),
+      ])],
+      // Job Title
+      jobtitle: ['', Validators.compose([
+        Validators.required, // Field is required
+        Validators.minLength(3), // Custom validation
+        Validators.maxLength(35),
+      ])],
       // Confirm Password Input
       confirm: ['', Validators.required] // Field is required
     }, { validator: this.matchingPasswords('password', 'confirm') }); // Add custom validator to form for matching passwords
@@ -95,6 +103,8 @@ export class RegisterComponent implements OnInit {
     this.form.controls['username'].disable();
     this.form.controls['password'].disable();
     this.form.controls['confirm'].disable();
+    this.form.controls['companyname'].disable();
+    this.form.controls['jobtitle'].disable();
     // this.form.controls['subsector'].disable();
     // this.form.controls['indication'].disable();
     // this.form.controls['financing'].disable();
@@ -109,6 +119,8 @@ export class RegisterComponent implements OnInit {
     this.form.controls['username'].enable();
     this.form.controls['password'].enable();
     this.form.controls['confirm'].enable();
+    this.form.controls['companyname'].enable();
+    this.form.controls['jobtitle'].enable();
     // this.form.controls['role'].enable();
     // this.form.controls['subsector'].enable();
     // this.form.controls['indication'].enable();
@@ -187,12 +199,14 @@ export class RegisterComponent implements OnInit {
       username: this.form.get('username').value, // Username input field
       password: this.form.get('password').value, // Password input field
       role: "investor", // Role input field
+      companyname: this.form.get('companyname').value, // Company name input field
+      jobtitle: this.form.get('jobtitle').value, // Job title input field
       subsector: $('select[name="subsector"]').val(),
       indication: $('select[name="indication"]').val(),
       financing: $('select[name="financing"]').val(),
-      Therapeutics: this.therapeuticsArray,
-      Diagnostics: this.diagnosticsArray,
-      agro: this.agroArray,
+      therapeutics: this.therapeuticsArray,
+      diagnostics: this.diagnosticsArray,
+      agro: this.agroArray
     }
 
     console.log(user);
@@ -264,9 +278,9 @@ export class RegisterComponent implements OnInit {
     for (let i = 0; i < agro.length; i++) {
       this.agroArray.push(agro[i].nextSibling.data);
     }
-}
+  }
 
-ngOnInit() {
-}
+  ngOnInit() {
+  }
 
 }

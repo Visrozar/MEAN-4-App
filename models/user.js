@@ -50,12 +50,12 @@ let validRoleChecker = (role) => {
   if (!role) {
     return false; // Return error
   } else {
-  // Test for a valid role
-  if (role === 'investor' || role === 'enterpreneur'){
-    return true;
-  }
-  return false;
-  // Return test results (true or false)
+    // Test for a valid role
+    if (role === 'investor' || role === 'enterpreneur') {
+      return true;
+    }
+    return false;
+    // Return test results (true or false)
   }
 };
 
@@ -158,10 +158,18 @@ const userSchema = new Schema({
   username: { type: String, required: true, unique: true, lowercase: true, validate: usernameValidators },
   password: { type: String, required: true, validate: passwordValidators },
   role: { type: String, required: true, validate: roleValidators },
+  companyname: { type: String },
+  jobtitle: { type: String },
+  subsector: { type: String },
+  indication: { type: String },
+  financing: { type: String },
+  therapeutics: { type: String },
+  diagnostics: { type: String },
+  agro: { type: String }
 });
 
 // Schema Middleware to Encrypt Password
-userSchema.pre('save', function(next) {
+userSchema.pre('save', function (next) {
   // Ensure password is new or modified before applying encryption
   if (!this.isModified('password'))
     return next();

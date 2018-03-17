@@ -12,7 +12,7 @@ export class VcfilterPipe implements PipeTransform {
                 if (item.Featured === 'true') {
                     return true;
                 }
-                if ((location.length && !location.find(b => item.Location[0].includes(b)))) {
+                if ((location.length && !location.find(b => item.Location.includes(b)))) {
                     return false;
                 }
                 if ((focus.length && !focus.find(b => item.InvestmentFocus.includes(b)))) {

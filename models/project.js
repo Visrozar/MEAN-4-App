@@ -80,7 +80,7 @@ const projectSchema = new Schema({
   website: { type: String},
   work: { type: String},
   dealName: { type: String, required: true, unique: true, validate: usernameValidators },
-  location: { type: String, required: true},
+  location: { type: String},
   sector: { type: String, required: true},
   indication: { type: String},
   stageLead: { type: String},
