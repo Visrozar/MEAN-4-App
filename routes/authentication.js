@@ -179,9 +179,9 @@ module.exports = (router) => {
                             if (!req.body.dealName) {
                               res.json({ success: false, message: 'Deal Name is required' });
                             } else {
-                              if (!req.body.location) {
-                                res.json({ success: false, message: 'Location is required' });
-                              } else {
+                              // if (!req.body.location) {
+                              //   res.json({ success: false, message: 'Location is required' });
+                              // } else {
                                 if (!req.body.createdBy) {
                                   req.body.createdBy = req.body.name;
                                 }
@@ -220,7 +220,7 @@ module.exports = (router) => {
                                     res.json({ success: true, message: 'Project and User Saved' });
                                   }
                                 });
-                              }
+                              // }
                             }
                           }
                         }
