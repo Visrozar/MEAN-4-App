@@ -45,6 +45,8 @@ module.exports = (router) => {
               email: req.body.email.toLowerCase(),
               username: req.body.username.toLowerCase(),
               password: req.body.password,
+              companyname: req.body.companyname,
+              jobtitle: req.body.jobtitle,
               role: req.body.role.toLowerCase(),
               subsector: req.body.subsector,
               indication: req.body.indication,
