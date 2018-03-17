@@ -405,7 +405,22 @@ module.exports = (router) => {
                 }
               });
             } else {
-              res.json({ success: false, message: 'No Role found' });
+              if (user.role === 'admin') {
+                Project.find({}).exec((err, projects) => {
+                  if (err) {
+                    res.json({ success: false, message: err }); // Return error
+                  }
+                  else {
+                    if (!projects) {
+                      res.json({ success: false, message: 'No Projects found' }); // Return error, user was not found in db
+                    } else {
+                      res.json({ success: true, projects: projects }); // Return success, send project object to frontend for profile
+                    }
+                  }
+                });
+              } else {
+                res.json({ success: false, message: 'No Role found' });
+              }
             }
           }
 
